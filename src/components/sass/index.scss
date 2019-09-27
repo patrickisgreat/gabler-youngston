@@ -1,0 +1,80 @@
+.home-slides {
+    overflow: hidden;
+        
+    .panel {
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        background-color: #222222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            
+            50% {
+                transform: translatey(-20px);
+            }
+            
+            100% {
+                transform: translatey(0px);
+            }   
+        }
+        .scroll-bob {
+            animation: float 4s ease-in-out infinite;
+            color: white;
+            display: block;
+            width: 100px;
+        }
+        
+    }
+
+    .panel-2 {
+        flex-direction: row;
+        //margin-bottom: 600px;
+        .sidebar {
+            width: 99px;
+            height: 100%;
+            background-color: red;
+            z-index: 2;
+            p.purpose {
+                writing-mode: tb-rl;
+                transform: rotate(-180deg);
+                color: white;
+                font-size: 3em;
+                padding: 10%;
+                margin-top: 20%;
+            }
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            .slideText {
+                width: 50%;
+                margin-left: 90px;
+                margin-top: 60px;
+                p {
+                    font-size: 25px;
+                    line-height: 3rem;
+                    text-align: left;
+                }
+            }
+            .scroll-bob {
+                margin: 0 auto;
+                margin-top: 450px;
+            }
+        }   
+        .animatedGeoShape {
+            margin-top: 100px;
+            position: absolute;
+            z-index: 999;
+            width: 2250px;
+        }
+    }   
+}
