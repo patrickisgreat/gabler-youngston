@@ -1,15 +1,18 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import './all.sass'
+import Nav from './Nav'
+import './sass/all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from "gatsby"
+import Typography from "../fonts/typography.js"
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ location, children }) => {
   const { title, description } = useSiteMetadata()
+  
   return (
     <div>
+      <Typography />
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -45,11 +48,21 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content={`${withPrefix("/")}img/og-image.jpg`} />
       </Helmet>
-      <Navbar />
+      <Nav />
       <div>{children}</div>
-      <Footer />
+      <RenderFooter location={location}/>
     </div>
   )
+}
+
+function RenderFooter(location) {
+  const footer = <Footer />
+
+  if (location.location !== "/") {
+    return footer
+  }
+
+  return ""
 }
 
 export default TemplateWrapper

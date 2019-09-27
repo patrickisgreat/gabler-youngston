@@ -1,144 +1,142 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import Layout from '../components/Layout';
+import { Tween, Timeline } from 'react-gsap';
+import { Controller, Scene } from 'react-scrollmagic';
+import geoShape from '../../static/img/home/geo_shape.png';
 
-import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+const tweenProps = {
+  ease: 'Strong.easeOut',
+  to: {
+    rotationY: 180,
+  }
+}
+
+const FlippyGeoShape = ({progress}) => {
+  return (
+    <Timeline
+      totalProgress={progress * 2}
+      paused
+    >
+      <Tween {...tweenProps}>
+        <img src={geoShape} />
+      </Tween>
+    </Timeline>
+  );
+};
 
 export const IndexPageTemplate = ({
   image,
   title,
-  heading,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => (
-  <div>
-    <div
-      className="full-width-image margin-top-0"
-      style={{
-        backgroundImage: `url(${
-          !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-        })`,
-        backgroundPosition: `top left`,
-        backgroundAttachment: `fixed`,
-      }}
-    >
-      <div
-        style={{
-          display: 'flex',
-          height: '150px',
-          lineHeight: '1',
-          justifyContent: 'space-around',
-          alignItems: 'left',
-          flexDirection: 'column',
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {title}
-        </h1>
-        <h3
-          className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
-          style={{
-            boxShadow:
-              'rgb(255, 68, 0) 0.5rem 0px 0px, rgb(255, 68, 0) -0.5rem 0px 0px',
-            backgroundColor: 'rgb(255, 68, 0)',
-            color: 'white',
-            lineHeight: '1',
-            padding: '0.25em',
-          }}
-        >
-          {subheading}
-        </h3>
-      </div>
-    </div>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
-                <div className="content">
-                  <div className="tile">
-                    <h1 className="title">{mainpitch.title}</h1>
-                  </div>
-                  <div className="tile">
-                    <h3 className="subtitle">{mainpitch.description}</h3>
-                  </div>
-                </div>
-                <div className="columns">
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      {heading}
-                    </h3>
-                    <p>{description}</p>
-                  </div>
-                </div>
-                <Features gridItems={intro.blurbs} />
-                <div className="columns">
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/products">
-                      See all products
-                    </Link>
-                  </div>
-                </div>
-                <div className="column is-12">
-                  <h3 className="has-text-weight-semibold is-size-2">
-                    Latest stories
-                  </h3>
-                  <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/blog">
-                      Read more
-                    </Link>
-                  </div>
-                </div>
+  slides,
+}) => {
+    const slide2 = slides[0].slide;
+    const slide3 = slides[1].slide;
+    return (
+    <div className="home-slides">
+      <Controller globalSceneOptions={{ triggerHook: 'onLeave' }}>
+        <Scene pin>
+          <div className="panel panel-1">
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: !!image.childImageSharp ? image.childImageSharp.fluid.src : image,
+                  alt: `featured image thumbnail for logo`,
+                  style: {
+                    width: '500px',
+                  }
+                }}
+              />
+              <span>
+                <span className="scroll-bob">SCROLL</span>
+              </span>
+          </div>
+        </Scene>
+        <Scene pin pinSettings={{ pushFollowers: false }} duration="900">
+          {(progress) => (
+          <div className="panel panel-2">
+            
+            <div className="sidebar">
+              <p className="purpose">
+                {slide2.sidebarHero}
+              </p>
+            </div>
+            
+            <div className="right">
+              <div className="slideText">
+                <p>
+                  {slide2.slideBlurb}
+                </p>
               </div>
+              <span>
+                <span className="scroll-bob">SCROLL</span>
+              </span>
+            </div>
+            <div className="animatedGeoShape">
+              <FlippyGeoShape progress={progress} />
+            </div> 
+          </div>
+          )}
+        </Scene>
+        <Scene pin>
+          <div className="panel panel-3">
+            <div className="left">
+              <div className="slideText">
+                <p>
+                  {slide3.slideBlurb}
+                </p>
+                <PreviewCompatibleImage
+                  imageInfo={{
+                      image: !!slide3.slideImg.childImageSharp ? slide3.slideImg.childImageSharp.fluid.src : slide3.slideImg,
+                      alt: `Himitsu Lounge Featured Image`,
+                  }}
+                />
+              </div>
+              <span>
+                <span className="scroll-bob">SCROLL</span>
+              </span>
+            </div>
+            <div className="sidebar">
+                <p className="sidebar-hero">
+                  {slide3.sidebarHero}
+                </p>
+                <p className="sidebar-desc">
+                  {slide3.sidebarDescription}
+                </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-  </div>
-)
+        </Scene>
+      </Controller>
+    </div>
+    )
+  }
+
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  heading: PropTypes.string,
-  subheading: PropTypes.string,
-  mainpitch: PropTypes.object,
-  description: PropTypes.string,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
+  slides: PropTypes.arrayOf(PropTypes.shape({
+    slide: PropTypes.shape({
+        sidebarHero: PropTypes.string,
+        sidebarDescription: PropTypes.string,
+        slideBlurb: PropTypes.string,
+        slideImg: PropTypes.object,
+      })
+    })
+  )
 }
+
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout location="/">
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
-        description={frontmatter.description}
-        intro={frontmatter.intro}
+        slides={frontmatter.slides}
       />
     </Layout>
   )
@@ -166,28 +164,25 @@ export const pageQuery = graphql`
             }
           }
         }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
+        slides {
+          slide {
+            sidebarHero
+            slideBlurb
+          }
+          slide {
+            sidebarHero
+            sidebarDescription
+            slideBlurb
+            slideImg {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
-            text
           }
-          heading
-          description
         }
       }
-    }
+    }  
   }
 `

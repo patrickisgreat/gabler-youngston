@@ -7,6 +7,7 @@
     "bulma": "^0.7.0",
     "gatsby": "^2.13.31",
     "gatsby-image": "^2.0.23",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-netlify-cms": "^4.1.6",
     "gatsby-plugin-purgecss": "^4.0.0",
@@ -29,7 +30,13 @@
     "prop-types": "^15.6.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-gsap": "^1.2.0",
     "react-helmet": "^5.2.0",
+    "react-scrollmagic": "^2.1.1",
+    "react-typography": "^0.16.19",
+    "styled-components": "^4.3.2",
+    "typography": "^0.16.19",
+    "typography-theme-us-web-design-standards": "^0.16.19",
     "uuid": "^3.2.1"
   },
   "keywords": [
@@ -52,7 +59,7 @@
   },
   "devDependencies": {
     "http-proxy-middleware": "^0.20.0",
-    "netlify-lambda": "^1.4.3",
+    "netlify-lambda": "1.4.7",
     "npm-run-all": "^4.1.5",
     "prettier": "^1.15.3"
   }
