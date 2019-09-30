@@ -12,7 +12,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
       <IndexPageTemplate
         image={data.image}
         title={data.title}
-        stuff={data.stuff}
+        slides={data.slides}
       />
     )
   } else {
