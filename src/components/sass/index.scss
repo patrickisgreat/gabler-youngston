@@ -39,7 +39,7 @@
         .sidebar {
             width: 99px;
             height: 100%;
-            background-color: red;
+            background-color: $gabler-red;
             z-index: 2;
             p.purpose {
                 writing-mode: tb-rl;
@@ -76,5 +76,66 @@
             z-index: 999;
             width: 2250px;
         }
-    }   
+    }
+
+    .panel-3 {
+        flex-direction: row;
+        background-color: white;
+        .left {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            img.slide-bg {
+                position: absolute;
+                width: 85%;
+                top: 0;
+                left: 30px;
+            }
+            .slideText {
+                padding: 30px;
+                width: 739px;
+                margin-top: 360px;
+                z-index: 100;
+                background-color: rgba(238, 68, 35, 0.5);
+                p {
+                    font-size: 25px;
+                    line-height: 3rem;
+                    text-align: left;
+                    font-family: "Futura-Koyu", sans-serif;
+                }
+            }
+            .scroll-bob {
+                margin: 0 auto;
+                margin-top: 450px;
+            }
+        }
+        .sidebar {
+            display: flex;
+            align-items: flex-start;
+            width: 105px;
+            height: 100%;
+            background-color: $sidebar-gray;
+            z-index: 2;
+            p.sidebar-hero {
+                writing-mode: tb-rl;
+                transform: rotate(-180deg);
+                color: white;
+                font-size: 3em;
+                padding: 10%;
+                margin-top: 20%;
+                padding-left: 1%;
+                padding-right: 20px;
+                line-height: 0.9;
+            }
+            p.sidebar-desc {
+                writing-mode: tb-rl;
+                transform: rotate(-180deg);
+                color: white;
+                font-size: 1em;
+                padding: 0;
+                margin-top: 25%;
+            }
+        }
+    }
 }

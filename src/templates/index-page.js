@@ -82,16 +82,17 @@ export const IndexPageTemplate = ({
         <Scene pin>
           <div className="panel panel-3">
             <div className="left">
+                <PreviewCompatibleImage
+                  className="slide-bg"
+                  imageInfo={{
+                    image: !!slide3.slideImg.childImageSharp ? slide3.slideImg.childImageSharp.fluid.src : slide3.slideImg,
+                    alt: `Himitsu Lounge Featured Image`,
+                  }}
+                />
               <div className="slideText">
                 <p>
                   {slide3.slideBlurb}
                 </p>
-                <PreviewCompatibleImage
-                  imageInfo={{
-                      image: !!slide3.slideImg.childImageSharp ? slide3.slideImg.childImageSharp.fluid.src : slide3.slideImg,
-                      alt: `Himitsu Lounge Featured Image`,
-                  }}
-                />
               </div>
               <span>
                 <span className="scroll-bob">SCROLL</span>

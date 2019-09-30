@@ -50,7 +50,7 @@ const TemplateWrapper = ({ location, children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-      <RenderFooter location={location}/>
+      {/* <RenderFooter location={location}/> */}
     </div>
   )
 }
