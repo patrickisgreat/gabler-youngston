@@ -30,10 +30,11 @@ const FlippyGeoShape = ({progress}) => {
 export const IndexPageTemplate = ({
   image,
   title,
-  slides,
+  stuff,
 }) => {
-    const slide2 = slides[0].slide;
-    const slide3 = slides[1].slide;
+    // const slides = homepage.slides;
+    // const slide2 = slides[0];
+    // const slide3 = slides[1];
     return (
     <div className="home-slides">
       <Controller globalSceneOptions={{ triggerHook: 'onLeave' }}>
@@ -59,14 +60,14 @@ export const IndexPageTemplate = ({
             
             <div className="sidebar">
               <p className="purpose">
-                {slide2.sidebarHero}
+                {/* {slide2.sidebarHero} */}
               </p>
             </div>
             
             <div className="right">
               <div className="slideText">
                 <p>
-                  {slide2.slideBlurb}
+                  {/* {slide2.slideBlurb} */}
                 </p>
               </div>
               <span>
@@ -84,14 +85,14 @@ export const IndexPageTemplate = ({
             <div className="left">
               <div className="slideText">
                 <p>
-                  {slide3.slideBlurb}
+                  {/* {slide3.slideBlurb} */}
                 </p>
-                <PreviewCompatibleImage
+                {/* <PreviewCompatibleImage
                   imageInfo={{
                       image: !!slide3.slideImg.childImageSharp ? slide3.slideImg.childImageSharp.fluid.src : slide3.slideImg,
                       alt: `Himitsu Lounge Featured Image`,
                   }}
-                />
+                /> */}
               </div>
               <span>
                 <span className="scroll-bob">SCROLL</span>
@@ -99,10 +100,10 @@ export const IndexPageTemplate = ({
             </div>
             <div className="sidebar">
                 <p className="sidebar-hero">
-                  {slide3.sidebarHero}
+                  {/* {slide3.sidebarHero} */}
                 </p>
                 <p className="sidebar-desc">
-                  {slide3.sidebarDescription}
+                  {/* {slide3.sidebarDescription} */}
                 </p>
             </div>
           </div>
@@ -116,15 +117,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  slides: PropTypes.arrayOf(PropTypes.shape({
-    slide: PropTypes.shape({
-        sidebarHero: PropTypes.string,
-        sidebarDescription: PropTypes.string,
-        slideBlurb: PropTypes.string,
-        slideImg: PropTypes.object,
-      })
-    })
-  )
+  homepage: PropTypes.object
 }
 
 
@@ -136,7 +129,7 @@ const IndexPage = ({ data }) => {
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
-        slides={frontmatter.slides}
+        stuff={frontmatter.stuff}
       />
     </Layout>
   )
@@ -164,24 +157,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        slides {
-          slide {
-            sidebarHero
-            slideBlurb
-          }
-          slide {
-            sidebarHero
-            sidebarDescription
-            slideBlurb
-            slideImg {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
+        stuff
       }
     }  
   }
