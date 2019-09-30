@@ -1,15 +1,6 @@
 ---
 templateKey: index-page
 title: Gabler Youngston Website
-image: /img/home/gy_icon_logo.png
-slides:
-  - slide:
-      sidebarHero: OUR PURPOSE
-      sidebarDescription: 
-      slideBlurb: Gabler Youngston is created on the belief that communities of high design built around wellbeing, expression, and impact can change the world.
-  - slide:
-      sidebarHero: HIMITSU LOUNGE
-      sidebarDescription: Design Studio Group, Atlanta GA
-      slideBlurb: Designed to inspire. Curated experiences that create an interactive bond between occupants and space.
-      slideImg: /img/home/himitsu.png
+image: /img/coffee-gear.png
+stuff: stuff
 ---
