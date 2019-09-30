@@ -134,7 +134,6 @@ const IndexPage = ({ data }) => {
     </Layout>
   )
 }
-
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
