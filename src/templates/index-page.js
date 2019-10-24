@@ -6,6 +6,7 @@ import Layout from '../components/Layout';
 import { Tween, Timeline } from 'react-gsap';
 import { Controller, Scene } from 'react-scrollmagic';
 import geoShape from '../../static/img/home/geo_shape.png';
+import Slider from "react-slick";
 
 const tweenProps = {
   ease: 'Strong.easeOut',
@@ -30,10 +31,18 @@ const FlippyGeoShape = ({progress}) => {
 export const IndexPageTemplate = ({
   image,
   title,
-  slides,
+  slides
 }) => {
     const slide2 = slides[0];
     const slide3 = slides[1];
+    const slide4 = slides[2];
+    const sliderSettings = {
+      dots: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
     return (
     <div className="home-slides">
       <Controller globalSceneOptions={{ triggerHook: 'onLeave' }}>
@@ -108,6 +117,47 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </Scene>
+        <Scene pin>
+
+          <div className="panel panel-4">
+              <div className="sidebar">
+                <p className="sidebar-hero">
+                  {slide4.sidebarHero}
+                </p>
+              </div>
+
+              <div className="right">
+                <div className="slideText">
+                  <p>
+                    {slide4.slideBlurb}
+                  </p>
+                </div>
+                {/* <div className="animatedGeoShape">
+                  <FlippyGeoShape progress={progress} />
+                </div>  */}
+                <Slider {...sliderSettings}>
+                  <div>
+                    <h3>1</h3>
+                  </div>
+                  <div>
+                    <h3>2</h3>
+                  </div>
+                  <div>
+                    <h3>3</h3>
+                  </div>
+                  <div>
+                    <h3>4</h3>
+                  </div>
+                  <div>
+                    <h3>5</h3>
+                  </div>
+                  <div>
+                    <h3>6</h3>
+                  </div>
+                </Slider>
+              </div>
+          </div>
+        </Scene>
       </Controller>
     </div>
     )
@@ -117,7 +167,7 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
-  slides: PropTypes.array
+  slides: PropTypes.array,
 }
 
 

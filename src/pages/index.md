@@ -11,4 +11,7 @@ slides:
       slideImg: /img/home/himitsu.png
       sidebarHero: HIMITSU LOUNGE
       sidebarDescription: Design Studio Group, Atlanta, Ga.
+    - slideBlurb: >
+        An encompassing approach interconnecting all pieces of the architectural puzzle, and resulting in a truly integrated design.
+      sidebarHero: OUR PROCESS
 ---

@@ -1,4 +1,6 @@
 @import "~bulma/sass/utilities/initial-variables";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 //@import "./debug";
 
 // Config vars;
@@ -14,6 +16,7 @@ $link-active: #EE4423;;
 $navbar-background-color: $dark-bg;
 $sidebar-gray: #3a3a3c;
 $gabler-red: #EE4423;
+$aqua: #8da492;
 
 @import "./nav";
 @import "./index";
