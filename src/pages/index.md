@@ -14,4 +14,8 @@ slides:
     - slideBlurb: >
         An encompassing approach interconnecting all pieces of the architectural puzzle, and resulting in a truly integrated design.
       sidebarHero: OUR PROCESS
+galleryImages:
+    - image: /img/home/test_gallery1.png
+    - image: /img/home/test_gallery2.png
+    - image: /img/home/test_gallery3.png
 ---

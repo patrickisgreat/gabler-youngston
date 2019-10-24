@@ -31,13 +31,14 @@ const FlippyGeoShape = ({progress}) => {
 export const IndexPageTemplate = ({
   image,
   title,
-  slides
+  slides,
+  galleryImages,
 }) => {
     const slide2 = slides[0];
     const slide3 = slides[1];
     const slide4 = slides[2];
     const sliderSettings = {
-      dots: false,
+      dots: true,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -132,29 +133,22 @@ export const IndexPageTemplate = ({
                     {slide4.slideBlurb}
                   </p>
                 </div>
-                {/* <div className="animatedGeoShape">
-                  <FlippyGeoShape progress={progress} />
-                </div>  */}
-                <Slider {...sliderSettings}>
-                  <div>
-                    <h3>1</h3>
-                  </div>
-                  <div>
-                    <h3>2</h3>
-                  </div>
-                  <div>
-                    <h3>3</h3>
-                  </div>
-                  <div>
-                    <h3>4</h3>
-                  </div>
-                  <div>
-                    <h3>5</h3>
-                  </div>
-                  <div>
-                    <h3>6</h3>
-                  </div>
-                </Slider>
+  
+                <div className="galleryContainer">
+                  <Slider {...sliderSettings}>                   
+                    {galleryImages.map((image) => {
+                      console.log('image');
+                      console.log(image);
+                      return <PreviewCompatibleImage
+                                className="gallery-img"
+                                imageInfo={{
+                                  image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
+                                  alt: `Gallery Test`,
+                                  }}
+                            />
+                    })}
+                  </Slider>
+                </div>
               </div>
           </div>
         </Scene>
@@ -168,6 +162,7 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   slides: PropTypes.array,
+  galleryImages: PropTypes.array,
 }
 
 
@@ -180,6 +175,7 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         slides={frontmatter.slides}
+        galleryImages={frontmatter.galleryImages}
       />
     </Layout>
   )
@@ -217,6 +213,15 @@ export const pageQuery = graphql`
           }
           sidebarHero
           sidebarDescription
+        }
+        galleryImages {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+              } 
+            }
+          }
         }
       }
     }  

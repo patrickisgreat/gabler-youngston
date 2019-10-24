@@ -28,6 +28,7 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Image", name: "image", widget: "image"}
           - {label: "Slides", name: "slides", widget: "list", fields: [{label: "Slide Blurb", name: "slideBlurb", widget: "text"}, {label: "Slide Image", name: "slideImg", widget: image}, {label: "Sidebar Hero", name: "sidebarHero", widget: "text"}, {label: "Sidebar Description", name: "sidebarDescription", widget: "text"}]}
+          - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"
