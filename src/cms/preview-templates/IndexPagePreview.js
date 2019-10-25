@@ -13,7 +13,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
         image={data.image}
         title={data.title}
         slides={data.slides}
-        stuff={data.stuff}
+        galleryImages={data.galleryImages}
       />
     )
   } else {

@@ -137,8 +137,6 @@ export const IndexPageTemplate = ({
                 <div className="galleryContainer">
                   <Slider {...sliderSettings}>                   
                     {galleryImages.map((image) => {
-                      console.log('image');
-                      console.log(image);
                       return <PreviewCompatibleImage
                                 className="gallery-img"
                                 imageInfo={{
