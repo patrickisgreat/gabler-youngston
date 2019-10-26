@@ -26,7 +26,7 @@ galleryImages:
     - image: /img/home/test_gallery3.png
 gallery2Images:
     - image: /img/home/test_gallery2.png
-    - image: /img/home/test_gallery2.png
-    - image: /img/home/test_gallery2.png
+    - image: /img/home/test_gallery22.png
+    - image: /img/home/test_gallery23.png
     - image: /img/home/test_gallery2.png
 ---

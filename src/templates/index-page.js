@@ -6,7 +6,10 @@ import Layout from '../components/Layout';
 import { Tween, Timeline } from 'react-gsap';
 import { Controller, Scene } from 'react-scrollmagic';
 import geoShape from '../../static/img/home/geo_shape.png';
+import leftArrow from '../../static/img/home/left_arrow.png';
+import rightArrow from '../../static/img/home/right_arrow.png';
 import Slider from "react-slick";
+import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
 
 const tweenProps = {
   ease: 'Strong.easeOut',
@@ -14,6 +17,12 @@ const tweenProps = {
     rotationY: 180,
   }
 }
+const scrollTopButtonStyle = {
+  backgroundColor: '#EE4423',
+  fill: '#fff',
+  width: '40px',
+  height: '40px'
+};
 
 const FlippyGeoShape = ({progress}) => {
   return (
@@ -28,12 +37,6 @@ const FlippyGeoShape = ({progress}) => {
   );
 };
 
-const NextArrow = ({props}) => {
-  return (
-    <div />
-  );
-}
-
 export const IndexPageTemplate = ({
   image,
   title,
@@ -45,12 +48,31 @@ export const IndexPageTemplate = ({
     const slide3 = slides[1];
     const slide4 = slides[2];
     const slide5 = slides[3];
+    const NextArrow = (props) => (
+      <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
+        <img src={rightArrow} />
+      </div>
+    );
+    const PrevArrow = (props) => (
+      <button className="slick-prev-arrow slick-arrow" onClick={props.onClick}>
+        <img src={leftArrow} />
+      </button>
+    );
     const sliderSettings = {
       dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 3,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      nextArrow: <NextArrow />,
+      prevArrow: <PrevArrow />,
+    };
+    const ScollTopButtonSettings = {
+      StopPosition:0,
+      ShowAtPosition:150,
+      EasingType:'easeOutCubic',
+      AnimationDuration:500,
+      style:scrollTopButtonStyle
     };
     return (
     <div className="home-slides">
@@ -156,7 +178,10 @@ export const IndexPageTemplate = ({
                                 imageInfo={{
                                   image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
                                   alt: `Gallery Test`,
-                                  }}
+                                  style: {
+                                    borderRadius: '0px',
+                                  }
+                                }}
                             />
                     })}
                   </Slider>
@@ -194,7 +219,10 @@ export const IndexPageTemplate = ({
                                 imageInfo={{
                                   image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
                                   alt: `Gallery Test`,
-                                  }}
+                                  style: {
+                                    borderRadius: '0px',
+                                  }
+                                }}
                             />
                     })}
                   </Slider>
@@ -202,6 +230,7 @@ export const IndexPageTemplate = ({
               </div>
           </div>
         </Scene>
+        <ScrollUpButton {...ScollTopButtonSettings} />
       </Controller>
     </div>
     )
