@@ -9,7 +9,7 @@ import Typography from "../fonts/typography.js"
 
 const TemplateWrapper = ({ location, children }) => {
   const { title, description } = useSiteMetadata()
-  
+
   return (
     <div>
       <Typography />
@@ -50,7 +50,7 @@ const TemplateWrapper = ({ location, children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-      {/* <RenderFooter location={location}/> */}
+      <RenderFooter location={location}/>
     </div>
   )
 }

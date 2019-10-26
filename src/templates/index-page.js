@@ -28,20 +28,28 @@ const FlippyGeoShape = ({progress}) => {
   );
 };
 
+const NextArrow = ({props}) => {
+  return (
+    <div />
+  );
+}
+
 export const IndexPageTemplate = ({
   image,
   title,
   slides,
   galleryImages,
+  gallery2Images,
 }) => {
     const slide2 = slides[0];
     const slide3 = slides[1];
     const slide4 = slides[2];
+    const slide5 = slides[3];
     const sliderSettings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
-      slidesToShow: 1,
+      slidesToShow: 3,
       slidesToScroll: 1
     };
     return (
@@ -66,13 +74,13 @@ export const IndexPageTemplate = ({
         <Scene pin pinSettings={{ pushFollowers: false }} duration="900">
           {(progress) => (
           <div className="panel panel-2">
-            
+
             <div className="sidebar">
               <p className="purpose">
                 {slide2.sidebarHero}
               </p>
             </div>
-            
+
             <div className="right">
               <div className="slideText">
                 <p>
@@ -85,7 +93,7 @@ export const IndexPageTemplate = ({
             </div>
             <div className="animatedGeoShape">
               <FlippyGeoShape progress={progress} />
-            </div> 
+            </div>
           </div>
           )}
         </Scene>
@@ -133,11 +141,55 @@ export const IndexPageTemplate = ({
                     {slide4.slideBlurb}
                   </p>
                 </div>
-  
+                <div className="animatedGeoShape">
+                  <FlippyGeoShape progress="20" />
+                </div>
+                <div className="slideDescription">
+                  <p>{slide5.sidebarDescription}</p>
+                </div>
                 <div className="galleryContainer">
-                  <Slider {...sliderSettings}>                   
-                    {galleryImages.map((image) => {
+                  <Slider {...sliderSettings}>
+                    {galleryImages.map((image, i) => {
                       return <PreviewCompatibleImage
+                                key={i}
+                                className="gallery-img"
+                                imageInfo={{
+                                  image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
+                                  alt: `Gallery Test`,
+                                  }}
+                            />
+                    })}
+                  </Slider>
+                </div>
+              </div>
+          </div>
+        </Scene>
+        <Scene pin>
+
+          <div className="panel panel-4">
+              <div className="sidebar">
+                <p className="sidebar-hero">
+                  {slide5.sidebarHero}
+                </p>
+              </div>
+
+              <div className="right">
+                <div className="slideText">
+                  <p>
+                    {slide5.slideBlurb}
+                  </p>
+                </div>
+                <div className="animatedGeoShape">
+                  <FlippyGeoShape progress="20" />
+                </div>
+                <div className="slideDescription">
+                  <p>{slide5.sidebarDescription}</p>
+                </div>
+                <div className="galleryContainer">
+                  <Slider {...sliderSettings}>
+                    {gallery2Images.map((image, i) => {
+                      return <PreviewCompatibleImage
+                                key={i}
                                 className="gallery-img"
                                 imageInfo={{
                                   image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
@@ -161,6 +213,7 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   slides: PropTypes.array,
   galleryImages: PropTypes.array,
+  gallery2Images: PropTypes.array,
 }
 
 
@@ -174,6 +227,7 @@ const IndexPage = ({ data }) => {
         title={frontmatter.title}
         slides={frontmatter.slides}
         galleryImages={frontmatter.galleryImages}
+        gallery2Images={frontmatter.gallery2Images}
       />
     </Layout>
   )
@@ -206,7 +260,7 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
-              } 
+              }
             }
           }
           sidebarHero
@@ -217,11 +271,20 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                   ...GatsbyImageSharpFluid
-              } 
+              }
+            }
+          }
+        }
+        gallery2Images {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+              }
             }
           }
         }
       }
-    }  
+    }
   }
 `

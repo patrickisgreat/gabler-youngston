@@ -3,7 +3,7 @@
 
 .home-slides {
     overflow: hidden;
-        
+
     .panel {
         height: 100vh;
         width: 100%;
@@ -18,14 +18,14 @@
             0% {
                 transform: translatey(0px);
             }
-            
+
             50% {
                 transform: translatey(-20px);
             }
-            
+
             100% {
                 transform: translatey(0px);
-            }   
+            }
         }
         .scroll-bob {
             animation: float 4s ease-in-out infinite;
@@ -33,7 +33,7 @@
             display: block;
             width: 100px;
         }
-        
+
     }
 
     .panel-2 {
@@ -44,7 +44,7 @@
             width: 99px;
             height: 100%;
             background-color: $gabler-red;
-            
+
             p.purpose {
                 writing-mode: tb-rl;
                 transform: rotate(-180deg);
@@ -73,7 +73,7 @@
                 margin: 0 auto;
                 margin-top: 450px;
             }
-        }   
+        }
         .animatedGeoShape {
             margin-top: 100px;
             position: absolute;
@@ -155,7 +155,7 @@
             height: 100%;
             .slideText {
                 padding: 30px;
-                width: 739px;
+                width: 835px;
                 margin-top: 50px;
                 z-index: 100;
                 p {
@@ -164,9 +164,32 @@
                     text-align: left;
                 }
             }
+            .animatedGeoShape {
+                margin-top: 150px;
+                position: absolute;
+                z-index: 3;
+            }
+            .slideDescription {
+                padding: 15px;
+                margin-top: 75px;
+                z-index: 100;
+                p {
+                    font-size: 22px;
+                    line-height: 3rem;
+                    text-align: center;
+                }
+            }
             .galleryContainer {
-                background-color: blue;
+                /*background-color: blue;*/
                 height: 100%;
+                .slick-prev{
+                  z-index: 99;
+                  left:15px;
+                }
+                .slick-next{
+                  z-index: 99;
+                  right:80px;
+                }
             }
             .scroll-bob {
                 margin: 0 auto;
