@@ -163,9 +163,9 @@ export const IndexPageTemplate = ({
                     {slide4.slideBlurb}
                   </p>
                 </div>
-                <div className="animatedGeoShape">
+                {/* <div className="animatedGeoShape">
                   <FlippyGeoShape progress="20" />
-                </div>
+                </div> */}
                 <div className="slideDescription">
                   <p>{slide5.sidebarDescription}</p>
                 </div>
@@ -191,7 +191,7 @@ export const IndexPageTemplate = ({
         </Scene>
         <Scene pin>
 
-          <div className="panel panel-4">
+          <div className="panel panel-5">
               <div className="sidebar">
                 <p className="sidebar-hero">
                   {slide5.sidebarHero}
