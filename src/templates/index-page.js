@@ -76,7 +76,7 @@ export const IndexPageTemplate = ({
     };
     const ScollTopButtonSettings = {
       StopPosition:0,
-      ShowAtPosition:1000,
+      ShowAtPosition:2500,
       EasingType:'easeOutCubic',
       AnimationDuration:500,
       style:scrollTopButtonStyle
@@ -257,7 +257,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 
   return (
-    <Layout location="/">
+    <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
