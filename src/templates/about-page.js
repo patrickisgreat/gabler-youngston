@@ -2,33 +2,35 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { HTMLContent } from '../components/Content'
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
-export const AboutPageTemplate = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content
+export const AboutPageTemplate = ({ title, image, contentComponent }) => {
 
   return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div className="about-slides">
+      <section>
+        <PreviewCompatibleImage
+          imageInfo={{
+            image: !!image.childImageSharp ? image.childImageSharp.fluid.src : image,
+            alt: `featured image thumbnail for about`,
+            style: {
+              width: '100%',
+              borderRadius: '0px'
+            }
+          }}
+        />
+      </section>
+      <section>
+      </section>
+    </div>
   )
 }
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  content: PropTypes.string,
   contentComponent: PropTypes.func,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
 }
 
 const AboutPage = ({ data }) => {
@@ -39,14 +41,18 @@ const AboutPage = ({ data }) => {
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
-        content={post.html}
+        image={post.frontmatter.image}
       />
     </Layout>
   )
 }
 
 AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 }
 
 export default AboutPage
@@ -54,9 +60,15 @@ export default AboutPage
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
-      html
       frontmatter {
         title
+        image {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

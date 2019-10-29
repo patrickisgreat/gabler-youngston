@@ -2,6 +2,5 @@
 templateKey: 'about-page'
 path: /about
 title: About Gabler Youngston
+image: /img/home/lifestyle_hero_image.png
 ---
-### This Page is under Local Development
-Thank you for your patience
