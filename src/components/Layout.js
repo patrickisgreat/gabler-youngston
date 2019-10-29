@@ -1,13 +1,12 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import Footer from '../components/Footer'
 import Nav from './Nav'
 import './sass/all.scss'
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from "gatsby"
 import Typography from "../fonts/typography.js"
 
-const TemplateWrapper = ({ location, children }) => {
+const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
 
   return (
@@ -50,19 +49,8 @@ const TemplateWrapper = ({ location, children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-      <RenderFooter location={location}/>
     </div>
   )
-}
-
-function RenderFooter(location) {
-  const footer = <Footer />
-
-  if (location.location !== "/") {
-    return footer
-  }
-
-  return ""
 }
 
 export default TemplateWrapper
