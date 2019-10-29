@@ -20,8 +20,15 @@ const tweenProps = {
 const scrollTopButtonStyle = {
   backgroundColor: '#EE4423',
   fill: '#fff',
-  width: '40px',
-  height: '40px'
+  width: '55px',
+  height: '55px',
+  bottom: '350px',
+  border: 0,
+  boxShadow: 'none',
+  '&:hover': {
+     border: 0
+  },
+  outline: 'none',
 };
 
 const FlippyGeoShape = ({progress}) => {
@@ -31,7 +38,7 @@ const FlippyGeoShape = ({progress}) => {
       paused
     >
       <Tween {...tweenProps}>
-        <img src={geoShape} />
+        <img src={geoShape} alt="" />
       </Tween>
     </Timeline>
   );
@@ -50,12 +57,12 @@ export const IndexPageTemplate = ({
     const slide5 = slides[3];
     const NextArrow = (props) => (
       <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
-        <img src={rightArrow} />
+        <img src={rightArrow} alt="next-arrow" />
       </div>
     );
     const PrevArrow = (props) => (
       <button className="slick-prev-arrow slick-arrow" onClick={props.onClick}>
-        <img src={leftArrow} />
+        <img src={leftArrow} alt="prev-arrow" />
       </button>
     );
     const sliderSettings = {
@@ -69,7 +76,7 @@ export const IndexPageTemplate = ({
     };
     const ScollTopButtonSettings = {
       StopPosition:0,
-      ShowAtPosition:150,
+      ShowAtPosition:1000,
       EasingType:'easeOutCubic',
       AnimationDuration:500,
       style:scrollTopButtonStyle
