@@ -9,13 +9,12 @@ const AboutPagePreview = ({ entry, getAsset, widgetsFor }) => {
       <AboutPageTemplate
         title={data.title}
         image={data.image}
-        content={widgetFor('body')}
       />
     )
   } else {
     return <div>Loading...</div>
   }
-)
+}
 
 AboutPagePreview.propTypes = {
   entry: PropTypes.shape({
