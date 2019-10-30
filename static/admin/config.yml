@@ -37,3 +37,5 @@ collections:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Body", name: "body", widget: "markdown"}
           - {label: "Image", name: "image", widget: "string"}
+          - {label: "section1", name: "section1", widget: "object", fields: [{label: "title", name: "title", widget: text}, {label: "description", name: "description", widget: "text"}, {label: "image", name: "image", widget: image}]}
+          - {label: "section2", name: "section2", widget: "object", fields: [{label: "title", name: "title", widget: text}, {label: "description", name: "description", widget: "text"}, {label: "image1", name: "image1", widget: image}, {label: "image2", name: "image2", widget: image}, {label: "image3", name: "image3", widget: image}, {label: "image4", name: "image4", widget: image}]}

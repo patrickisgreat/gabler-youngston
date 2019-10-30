@@ -18,6 +18,7 @@ $aqua: #8da492;
 
 @import "./nav";
 @import "./index";
+@import "./about";
 
 .section {
   background-color: #222222;
@@ -44,7 +45,7 @@ $aqua: #8da492;
 // Helper Classes;
 .full-width-image-container {
   width: 100vw;
-  height: 400px;
+  height: 660px;
   position: relative;
   left: 50%;
   right: 50%;

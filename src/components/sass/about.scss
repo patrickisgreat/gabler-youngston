@@ -1,0 +1,26 @@
+.about-slides {
+    .section-one{
+      .description {
+        padding: 100px 100px 100px 40px;
+        span{
+          color: #EE4423;
+          font-weight: 700;
+        }
+      };
+    }
+    .section-two{
+      .full{
+        padding:0px;
+      }
+      .title{
+        width: 40%;
+        color: #EE4423;
+        font-weight: 700;
+        padding: 20px 100px 5px 40px;
+        font-size: 45px;
+      }
+      .description {
+        padding: 10px 100px 5px 40px;
+      }
+    }
+}

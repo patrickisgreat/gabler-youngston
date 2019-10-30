@@ -188,8 +188,8 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
             <div className="sidebar">
               <p className="sidebar-hero">{slide3.sidebarHero}</p>
               <p className="sidebar-desc">{slide3.sidebarDescription}</p>
-              <a href="#">
-                <img className="portfolio-link" src="" />
+              <a href>
+                <img className="portfolio-link" src="" alt=""/>
               </a>
             </div>
           </div>
