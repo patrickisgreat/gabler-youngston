@@ -93,7 +93,7 @@
             height: 100%;
             img.slide-bg {
                 position: absolute;
-                width: 85%;
+                height: 100vh;
                 top: 0;
                 left: 30px;
             }
@@ -153,41 +153,43 @@
             flex-direction: column;
             width: 100%;
             height: 100%;
-            .slideText {
-                padding: 30px;
-                width: 835px;
-                margin-top: 50px;
-                z-index: 100;
-                p {
-                    font-size: 25px;
-                    line-height: 3rem;
-                    text-align: left;
+            .topContainer {
+                height: 60vh;
+                .slideText {
+                    padding: 30px;
+                    width: 835px;
+                    margin-top: 50px;
+                    z-index: 100;
+                    p {
+                        font-size: 25px;
+                        line-height: 3rem;
+                        text-align: left;
+                    }
                 }
-            }
-            .animatedGeoShape {
-                margin-top: 150px;
-                position: absolute;
-                z-index: 3;
-            }
-            .slideDescription {
-                padding: 25px;
-                margin-top: 75px;
-                z-index: 100;
-                p {
-                    font-size: 22px;
-                    line-height: 3rem;
-                    text-align: center;
+                .animatedGeoShape {
+                    //margin-top: 50px;
+                    width: 1550px;
+                    position: absolute;
+                    z-index: 3;
+                }
+                .slideDescription {
+                    padding: 25px;
+                    margin-top: 75px;
+                    z-index: 100;
+                    p {
+                        font-size: 22px;
+                        line-height: 3rem;
+                        text-align: center;
+                    }
                 }
             }
             .galleryContainer {
-                /*background-color: blue;*/
-                height: 100%;
                 .slick-list img.gallery-img{
                   width: 100%;
                   height: 325px;
                   max-height: 325px;
                 }
-                .slick-arrow{
+                .slick-arrow {
                   font-size: 0;
                   line-height: 0;
                   position: absolute;
@@ -204,114 +206,11 @@
                   outline: none;
                   background: transparent;
                 }
-                .slick-prev-arrow{
+                .slick-prev-arrow {
                   z-index: 99;
                   left:15px;
                 }
-                .slick-next-arrow{
-                  z-index: 99;
-                  right:85px;
-                }
-            }
-            .scroll-bob {
-                margin: 0 auto;
-                margin-top: 450px;
-            }
-        }
-        .sidebar {
-            display: flex;
-            align-items: flex-start;
-            width: 105px;
-            height: 100%;
-            background-color: $aqua;
-            z-index: 3;
-            p.sidebar-hero {
-                writing-mode: tb-rl;
-                transform: rotate(-180deg);
-                color: white;
-                font-size: 3em;
-                padding: 10%;
-                margin-top: 20%;
-                padding-left: 1%;
-                padding-right: 20px;
-                line-height: 0.9;
-            }
-            p.sidebar-desc {
-                writing-mode: tb-rl;
-                transform: rotate(-180deg);
-                color: white;
-                font-size: 1em;
-                padding: 0;
-                margin-top: 25%;
-            }
-        }
-    }
-
-    .panel-5 {
-        flex-direction: row;
-        background-color: $dark-bg;
-        z-index: 5;
-        .right {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            height: 100%;
-            .slideText {
-                padding: 30px;
-                width: 835px;
-                margin-top: 50px;
-                z-index: 100;
-                p {
-                    font-size: 25px;
-                    line-height: 3rem;
-                    text-align: left;
-                }
-            }
-            .animatedGeoShape {
-                margin-top: 150px;
-                position: absolute;
-                z-index: 3;
-            }
-            .slideDescription {
-                padding: 25px;
-                margin-top: 75px;
-                z-index: 100;
-                p {
-                    font-size: 22px;
-                    line-height: 3rem;
-                    text-align: center;
-                }
-            }
-            .galleryContainer {
-                /*background-color: blue;*/
-                height: 100%;
-                .slick-list img.gallery-img{
-                  width: 100%;
-                  height: 325px;
-                  max-height: 325px;
-                }
-                .slick-arrow{
-                  font-size: 0;
-                  line-height: 0;
-                  position: absolute;
-                  top: 50%;
-                  display: block;
-                  width: 20px;
-                  height: 20px;
-                  padding: 0;
-                  -webkit-transform: translate(0, -50%);
-                  transform: translate(0, -50%);
-                  cursor: pointer;
-                  color: transparent;
-                  border: none;
-                  outline: none;
-                  background: transparent;
-                }
-                .slick-prev-arrow{
-                  z-index: 99;
-                  left:15px;
-                }
-                .slick-next-arrow{
+                .slick-next-arrow {
                   z-index: 99;
                   right:85px;
                 }
