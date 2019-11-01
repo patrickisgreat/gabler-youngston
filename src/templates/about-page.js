@@ -6,9 +6,6 @@ import { HTMLContent } from '../components/Content'
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 export const AboutPageTemplate = ({ title, image, contentComponent, section1, section2, section3, section4, section5 }) => {
-  console.log(section3)
-  console.log(section4)
-  console.log(section5)
   return (
     <div className="about-slides">
       <div className="content">

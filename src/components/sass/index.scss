@@ -93,16 +93,43 @@
             height: 100%;
             img.slide-bg {
                 position: absolute;
-                height: 100vh;
                 top: 0;
-                left: 30px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                width: 20%
+            }
+            .slick-arrow {
+              font-size: 0;
+              line-height: 0;
+              position: absolute;
+              top: 40%;
+              display: block;
+              width: 20px;
+              height: 20px;
+              padding: 0;
+              -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+              cursor: pointer;
+              color: transparent;
+              border: none;
+              outline: none;
+              background: transparent;
+            }
+            .slick-prev-arrow {
+              z-index: 99;
+              left:15px;
+            }
+            .slick-next-arrow {
+              z-index: 99;
+              right:85px;
             }
             .slideText {
-                padding: 30px;
-                width: 739px;
-                margin-top: 360px;
                 z-index: 100;
                 background-color: rgba(238, 68, 35, 0.5);
+                position: absolute;
+                top: 50%;
+                width: 45%;
                 p {
                     font-size: 25px;
                     line-height: 3rem;
@@ -114,10 +141,24 @@
                 margin: 0 auto;
                 margin-top: 450px;
             }
+            .sidebar{
+              float: right;
+              position: relative;
+              p.sidebar-hero {
+                display: inline;
+              }
+              p.sidebar-desc {
+                  display: inline;
+                  float: right;
+                  padding: 8px;
+              }
+            }
+            .imagecontainer{
+              width: 100%;
+              min-height: 235px;
+            }
         }
         .sidebar {
-            display: flex;
-            align-items: flex-start;
             width: 105px;
             height: 100%;
             background-color: $sidebar-gray;
@@ -128,7 +169,6 @@
                 color: white;
                 font-size: 3em;
                 padding: 10%;
-                margin-top: 20%;
                 padding-left: 1%;
                 padding-right: 20px;
                 line-height: 0.9;
@@ -139,7 +179,6 @@
                 color: white;
                 font-size: 1em;
                 padding: 0;
-                margin-top: 25%;
             }
         }
     }

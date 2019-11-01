@@ -78,6 +78,15 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />
   };
+  const FeaturedsliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
 
   const ScollTopButtonSettings = {
     StopPosition: 0,
@@ -120,6 +129,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
       </Timeline>
     );
   };
+  console.log(slide3)
   return (
     <div className="home-slides">
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
@@ -169,30 +179,44 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
         <Scene pin>
           <div className="panel panel-3">
             <div className="left">
-              <PreviewCompatibleImage
-                className="slide-bg"
-                imageInfo={{
-                  image: !!slide3.slideImg.childImageSharp
-                    ? slide3.slideImg.childImageSharp.fluid.src
-                    : slide3.slideImg,
-                  alt: `Himitsu Lounge Featured Image`
-                }}
-              />
-              <div className="slideText">
-                <p>{slide3.slideBlurb}</p>
+
+            <Slider {...FeaturedsliderSettings}>
+
+            {slide3.slideImg.map((image, i) => {
+              return (
+                <div className="featuredContainer" key={i}>
+                  <div className="imagecontainer">
+                  <PreviewCompatibleImage
+                    className="slide-bg"
+                    imageInfo={{
+                      image: !!image.image.childImageSharp
+                        ? image.image.childImageSharp.fluid.src
+                        : image.image,
+                      alt: `Himitsu Lounge Featured Image`,
+                      style: {
+                        borderRadius: "0px",
+                        maxWidth: "100%"
+                      }
+                    }}
+                  />
+                  </div>
+                  <div className="sidebar">
+                    <p className="sidebar-hero">{slide3.slideImgText[i].text}</p>
+                    <p className="sidebar-desc">{slide3.slideImgDescription[i].text}</p>
+                  </div>
               </div>
+              );
+            })}
+            </Slider>
+            <div className="slideText">
+              <p>{slide3.slideBlurb}</p>
+            </div>
               <span>
                 <span className="scroll-bob">SCROLL</span>
               </span>
-            </div>
-            <div className="sidebar">
-              <p className="sidebar-hero">{slide3.sidebarHero}</p>
-              <p className="sidebar-desc">{slide3.sidebarDescription}</p>
-              <a href>
-                <img className="portfolio-link" src="" alt=""/>
-              </a>
-            </div>
           </div>
+            </div>
+
         </Scene>
 
         {/* SLIDE 4 GALLERY */}
@@ -271,14 +295,22 @@ export const pageQuery = graphql`
         slides {
           slideBlurb
           slideImg {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
+            image{
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
           sidebarHero
           sidebarDescription
+          slideImgText{
+            text
+          }
+          slideImgDescription{
+            text
+          }
         }
         galleryImages {
           image {
