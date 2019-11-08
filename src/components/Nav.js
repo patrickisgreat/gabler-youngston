@@ -60,7 +60,7 @@ const Nav = class extends React.Component {
           >
             <div className="navbar-end has-text-centered">
                 <Link activeClassName="is-active" className="navbar-item" to="/about">
-                  ABOUT
+                  ABOUT US
                 </Link>
                 <Link activeClassName="is-active" className="navbar-item" to="/work">
                   WORK
