@@ -2,305 +2,177 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import { HTMLContent } from '../components/Content'
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
+import Content, { HTMLContent } from '../components/Content'
+import AboutBanner from '../components/Aboutbanner/banner'
+import OurTeam from '../components/Team/team'
+import Aboutusimage from '../img/leadership_photo.png'
+import Purpose1 from '../img/Bitmap1.png'
+import Purpose2 from '../img/Bitmap2.png'
+import Purpose3 from '../img/Bitmap3.png'
+import Purpose4 from '../img/Bitmap4.png'
+import './allpage.css'
 
-export const AboutPageTemplate = ({ title, image, contentComponent, section1, section2, section3, section4, section5 }) => {
+export const AboutPageTemplate = ({ title, content, contentComponent }) => {
+  const PageContent = contentComponent || Content
+
   return (
-    <div className="about-slides">
-      <div className="content">
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `url(${
-              !!image.childImageSharp ? image.childImageSharp.fluid.src : image
-            })`,
-          }} />
-        </div>
-      <section className="section-one">
+    <section className="section section--gradient">
+      <div className="container">
         <div className="columns">
-          <div className="column is-4">
-          <PreviewCompatibleImage
-                className="gallery-img"
-                imageInfo={{
-                  image: !!section1.image.childImageSharp ? section1.image.childImageSharp.fluid.src : section1.image,
-                  alt: `Gallery Test`,
-                  style: {
-                    borderRadius: '0px',
-                  }
-                }}
-                />
-          </div>
-
-          <div className="column is-8">
-            <div className="description"><span>{section1.title}</span> {section1.description}</div>
+          <div className="column is-10 is-offset-1">
+            <div className="section">
+              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
+                {title}
+              </h2>
+              <PageContent className="content" content={content} />
+            </div>
           </div>
         </div>
+      </div>
     </section>
-    <section className="section-two">
-      <div className="columns">
-
-        <div className="column is-4">
-            <div className="column full">
-              <PreviewCompatibleImage
-                  className="gallery-img"
-                  imageInfo={{
-                    image: !!section2.image1.childImageSharp ? section2.image1.childImageSharp.fluid.src : section2.image,
-                    alt: `Gallery Test`,
-                    style: {
-                      borderRadius: '0px',
-                    }
-                  }}
-                  />
-            </div>
-            <div className="column">
-              <PreviewCompatibleImage
-                  className="gallery-img"
-                  imageInfo={{
-                    image: !!section2.image4.childImageSharp ? section2.image4.childImageSharp.fluid.src : section2.image,
-                    alt: `Gallery Test`,
-                    style: {
-                      borderRadius: '0px',
-                    }
-                  }}
-                  />
-            </div>
-        </div>
-
-        <div className="column is-8">
-          <div className="columns">
-
-            <div className="column is-6">
-              <PreviewCompatibleImage
-                  className="gallery-img"
-                  imageInfo={{
-                    image: !!section2.image2.childImageSharp ? section2.image2.childImageSharp.fluid.src : section2.image,
-                    alt: `Gallery Test`,
-                    style: {
-                      borderRadius: '0px',
-                    }
-                  }}
-                  />
-            </div>
-
-            <div className="column is-6">
-              <PreviewCompatibleImage
-                  className="gallery-img"
-                  imageInfo={{
-                    image: !!section2.image3.childImageSharp ? section2.image3.childImageSharp.fluid.src : section2.image,
-                    alt: `Gallery Test`,
-                    style: {
-                      borderRadius: '0px',
-                    }
-                  }}
-                  />
-            </div>
-
-          </div>
-          <div className="column is-12">
-            <div className="title">{section2.title}</div>
-            <div className="description">{section2.description}</div>
-          </div>
-        </div>
-        </div>
-      </section>
-      <section className="section-three">
-      <h4 className="title right">{section3.title}</h4>
-      <div className="columns">
-          {section3.images.map((image, i) => {
-            return (
-              <div className="column is-3" key={i}>
-                <PreviewCompatibleImage
-                  className="gallery-img"
-                  imageInfo={{
-                    image: !!image.image.childImageSharp
-                      ? image.image.childImageSharp.fluid.src
-                      : image.image,
-                    alt: `Gallery Test`,
-                    style: {
-                      borderRadius: "0px",
-                      maxWidth: "100%"
-                    }
-                  }}
-                />
-
-            </div>
-            );
-          })}
-
-         </div>
-      </section>
-      <section className="section-four">
-      <h4 className="title">{section4.title}</h4>
-      <div className="description">
-          <ul>
-          {section4.description.map((description, i) => {
-            return (
-              <li  key={i}>
-              {description.text}
-              </li>
-            );
-          })}
-          </ul>
-      </div>
-      </section>
-      <section className="section-five">
-      <h4 className="title">{section5.title}</h4>
-      <div className="description">
-        <ul>
-        {section5.description.map((description, i) => {
-          return (
-            <li  key={i}>
-            {description.text}
-            </li>
-          );
-        })}
-        </ul>
-      </div>
-      </section>
-    </div>
   )
 }
-
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
-  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-  section1: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-  }),
-  section2: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    image1: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image2: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image3: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
-    image4: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
-  }),
-  section3: PropTypes.shape({
-    title: PropTypes.string,
-    images: PropTypes.array
-  }),
-  section4: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.array
-  }),
-  section5: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.array
-  }),
 }
 
 const AboutPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
-  return (
-    <Layout>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        title={frontmatter.title}
-        image={frontmatter.image}
-        section1={frontmatter.section1}
-        section2={frontmatter.section2}
-        section3={frontmatter.section3}
-        section4={frontmatter.section4}
-        section5={frontmatter.section5}
-      />
-    </Layout>
-  )
+  const { markdownRemark: post } = data
+
+//   return (
+//     <Layout>
+//       <AboutPageTemplate
+//         contentComponent={HTMLContent}
+//         title={post.frontmatter.title}
+//         content={post.html}
+//       />
+//     </Layout>
+//   )
+// }
+return (
+  <Layout>
+     <div>
+     <AboutBanner></AboutBanner>
+       <div className="about-us">
+          <img
+              src={Aboutusimage}
+              alt="About us image"
+            />
+          <div className="about_text">
+              <p><span>GABLER YOUNGSTON</span> is an award winning architectural lighting design firm founded by Morgan Gabler and Jim Youngston. Morgan and Jim have more than thirty years’ combined professional experience in theatrical and architectural lighting design, contributing to over 300 architectural lighting projects in that time, and have worked as a team over the last eight years. Gabler-Youngston is the result of a shared vision for improved environments through creative lighting design and thorough documentation.</p>
+          </div>
+        </div>
+       <div className="Our_purpose">
+           <div className="columns">
+               <div className="column is-4">
+                  <img
+                    src={Purpose1}
+                    alt="Our purpose"
+                   />
+                  <img
+                    src={Purpose2}
+                    alt="Our purpose"
+                    style={{ padding: '25px 0 0 30px', width:'100%'}}
+                   />
+               </div>
+               <div className="column is-8">
+                  <div className="columns">
+                      <div className="column is-6 column.is-6-mobile">
+                        <img
+                          src={Purpose3}
+                          alt="Our purpose"
+                        />
+                      </div>
+                      <div className="column is-6 column.is-6-mobile">
+                        <img
+                          src={Purpose4}
+                          alt="Our purpose"
+                        />
+                      </div>
+                  </div>
+                  <div className="columns">
+                      <div className="column is-12 our-purpose">
+                        <h2>Our <br/> Purpose</h2>
+                        <p>Lighting design studies the interactions of volume, materials, user needs, and illumination. A successful design responds to and reinforces architectural elements without overwhelming them.</p>
+                        <p>As partners, Morgan and Jim respond to the needs of clients through a collaborative process. We work with designers and owners as our collaborators to create an aesthetically pleasing, practically functional design that is also maintenance and budget friendly. Ours is an encompassing approach interconnecting all the pieces of the architectural puzzle, and resulting in a truly integrated design.</p>
+                      </div>
+                  </div>
+               </div>
+           </div>
+        </div>
+        <OurTeam></OurTeam>
+        <div className="through_years">
+           <div className="container">
+               <h4>Through the years</h4>
+              <div className="columns">
+                 <div className="column is-2"></div>
+                 <div className="column is-10">
+                    <ul>
+                        <li><b>2007 GE Edison Award of Merit</b> – Showroom for Allsteel and Gunlocke</li>
+                        <li><b>2007 GE Edison Award for Sustainable Design </b>– Showroom for Allsteel and Gunlocke
+                               International Illumination Design Awards (IIDA), International Award of Merit 2007 (sustainability) – Showroom for Allsteel and Gunlocke, Atlanta, Georgia
+                        </li>
+                        <li><b>IIDA, Section Award, Georgia Section 2007 (interiors)</b> – Showroom for Allsteel and Gunlocke, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2006</b> – Studio, Buenos Aires, Argentina</li>
+                        <li><b>IIDA, International Award of Merit 2004</b> – Corporate Conference Center Lobby, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2003 (2)</b> – The Left Bank, Duck, North Carolina and Newcomb & Boyd Offices, Atlanta, Georgia</li>
+                        <li><b>IIDA, Section Award, San Jacinto Section, 2003</b> – Humphrey Residence, Houston, Texas</li>
+                        <li><b>IIDA, International Award of Merit 2002, Emory University</b> – Library for Music & Media, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2002</b> – Corporate Environments, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2001</b> – Residence for Art, Fort Worth, Texas</li>
+                        <li><b>IIDA, Section Award, San Jacinto Section 2000 (2)</b> – American General Corporate Headquarters, Houston, Texas and Piso 16, Mexico City, Mexico</li>
+                        <li><b>IIDA, International Award of Merit 1999 (2)</b> – British Airways Hospitality Suite, Houston, Texas and Riverbend Church, Austin, Texas</li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div className="through_years pt-0">
+           <div className="container">
+               <h4>Recognition</h4>
+              <div className="columns">
+                 <div className="column is-2"></div>
+                 <div className="column is-10">
+                    <ul>
+                        <li><b>2007 GE Edison Award of Merit </b> – Showroom for Allsteel and Gunlocke</li>
+                        <li><b>2007 GE Edison Award for Sustainable Design </b>– Showroom for Allsteel and Gunlocke International Illumination Design Awards (IIDA), International Award of Merit 2007 (sustainability) – Showroom for Allsteel and Gunlocke, Atlanta, Georgia
+                        </li>
+                        <li><b>IIDA, Section Award, Georgia Section 2007 (interiors)</b> – Showroom for Allsteel and Gunlocke, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2006</b> – Studio, Buenos Aires, Argentina</li>
+                        <li><b>IIDA, International Award of Merit 2004</b> – Corporate Conference Center Lobby, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2003 (2)</b> – The Left Bank, Duck, North Carolina and Newcomb & Boyd Offices, Atlanta, Georgia</li>
+                        <li><b>IIDA, Section Award, San Jacinto Section, 2003</b> – Humphrey Residence, Houston, Texas</li>
+                        <li><b>IIDA, International Award of Merit 2002, Emory University</b> – Library for Music & Media, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2002</b> – Corporate Environments, Atlanta, Georgia</li>
+                        <li><b>IIDA, International Award of Merit 2001</b> – Residence for Art, Fort Worth, Texas</li>
+                        <li><b>IIDA, Section Award, San Jacinto Section 2000 (2)</b> – American General Corporate Headquarters, Houston, Texas and Piso 16, Mexico City, Mexico</li>
+                        <li><b>IIDA, International Award of Merit 1999 (2)</b> – British Airways Hospitality Suite, Houston, Texas and Riverbend Church, Austin, Texas</li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+
+  </Layout>
+)
 }
 
 AboutPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+  data: PropTypes.object.isRequired,
 }
 
 export default AboutPage
 
 export const aboutPageQuery = graphql`
-  query AboutPage($id: String!)  {
-    markdownRemark(id: { eq: $id })  {
+  query AboutPage($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      html
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        section1 {
-          title
-          description
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        section2 {
-          title
-          description
-          image1 {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          image2 {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          image3 {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-          image4 {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        section3 {
-          title
-          images{
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
-        section4 {
-          title
-          description{
-            text
-          }
-        }
-        section5 {
-          title
-          description{
-            text
-          }
-        }
       }
     }
   }

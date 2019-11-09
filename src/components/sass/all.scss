@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap');
 //@import "./debug";
 
 // Config vars;
@@ -18,7 +19,6 @@ $aqua: #8da492;
 
 @import "./nav";
 @import "./index";
-@import "./about";
 
 .section {
   background-color: #222222;
@@ -45,7 +45,7 @@ $aqua: #8da492;
 // Helper Classes;
 .full-width-image-container {
   width: 100vw;
-  height: 660px;
+  height: 400px;
   position: relative;
   left: 50%;
   right: 50%;
