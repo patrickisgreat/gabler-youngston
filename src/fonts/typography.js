@@ -25,11 +25,11 @@ const Typography = () =>{
         }
         body {
             margin: 0;
-            font-family: "Gotham-Book", sans-serif;
+            font-family: "Gotham-Book", sans-serif !important;
             font-size: 18px;
         }
         .navbar-item, h1, h2, h3, h4, h5, h6 {
-            font-family: "Futura-Koyu", sans-serif;
+            font-family: "Futura-Koyu", sans-serif !important;
             font-weight: 300;
         }
         
