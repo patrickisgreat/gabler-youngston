@@ -1,260 +1,238 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
-import Layout from '../components/Layout';
-import { Tween, Timeline } from 'react-gsap';
-import { Controller, Scene } from 'react-scrollmagic';
-import geoShape from '../../static/img/home/geo_shape.png';
-import leftArrow from '../../static/img/home/left_arrow.png';
-import rightArrow from '../../static/img/home/right_arrow.png';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import Layout from "../components/Layout";
+import { Tween, Timeline } from "react-gsap";
+import { Controller, Scene } from "react-scrollmagic";
+import geoShape from "../../static/img/home/geo_shape.png";
+import leftArrow from "../../static/img/home/left_arrow.png";
+import rightArrow from "../../static/img/home/right_arrow.png";
 import Slider from "react-slick";
-import {TinyButton as ScrollUpButton} from "react-scroll-up-button";
+import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
 
-const tweenProps = {
-  ease: 'Strong.easeOut',
+// Tween to flip the shape around 180deg
+const flippyGeoShapeTweenProps = {
+  ease: "Strong.easeOut",
   to: {
-    rotationY: 180,
+    rotationY: 180
   }
-}
-const scrollTopButtonStyle = {
-  backgroundColor: '#EE4423',
-  fill: '#fff',
-  width: '55px',
-  height: '55px',
-  bottom: '350px',
-  border: 0,
-  boxShadow: 'none',
-  '&:hover': {
-     border: 0
-  },
-  outline: 'none',
 };
 
-const FlippyGeoShape = ({progress}) => {
+// Tween to animate the gallery up into the view
+const galleryTweenProps = {
+  from: {
+    marginTop: 1000
+  },
+  to: {
+    marginTop: 65
+  }
+};
+
+const scrollTopButtonStyle = {
+  backgroundColor: "#EE4423",
+  fill: "#fff",
+  width: "55px",
+  height: "55px",
+  bottom: "350px",
+  border: 0,
+  boxShadow: "none",
+  "&:hover": {
+    border: 0
+  },
+  outline: "none"
+};
+
+// Reusable Animated GeoShape component
+const FlippyGeoShape = ({ progress }) => {
   return (
-    <Timeline
-      totalProgress={progress * 2}
-      paused
-    >
-      <Tween {...tweenProps}>
+    <Timeline totalProgress={progress * 2} paused>
+      <Tween {...flippyGeoShapeTweenProps}>
         <img src={geoShape} alt="" />
       </Tween>
     </Timeline>
   );
 };
 
-export const IndexPageTemplate = ({
-  image,
-  title,
-  slides,
-  galleryImages,
-  gallery2Images,
-}) => {
-    const slide2 = slides[0];
-    const slide3 = slides[1];
-    const slide4 = slides[2];
-    const slide5 = slides[3];
-    const NextArrow = (props) => (
-      <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
-        <img src={rightArrow} alt="next-arrow" />
-      </div>
-    );
-    const PrevArrow = (props) => (
-      <button className="slick-prev-arrow slick-arrow" onClick={props.onClick}>
-        <img src={leftArrow} alt="prev-arrow" />
-      </button>
-    );
-    const sliderSettings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      nextArrow: <NextArrow />,
-      prevArrow: <PrevArrow />,
-    };
-    const ScollTopButtonSettings = {
-      StopPosition:0,
-      ShowAtPosition:2500,
-      EasingType:'easeOutCubic',
-      AnimationDuration:500,
-      style:scrollTopButtonStyle
-    };
+export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
+  const slide2 = slides[0];
+  const slide3 = slides[1];
+  const slide4 = slides[2];
+  const NextArrow = props => (
+    <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
+      <img src={rightArrow} alt="next-arrow" />
+    </div>
+  );
+  const PrevArrow = props => (
+    <button className="slick-prev-arrow slick-arrow" onClick={props.onClick}>
+      <img src={leftArrow} alt="prev-arrow" />
+    </button>
+  );
+
+  const sliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
+  };
+
+  const ScollTopButtonSettings = {
+    StopPosition: 0,
+    ShowAtPosition: 2500,
+    EasingType: "easeOutCubic",
+    AnimationDuration: 500,
+    style: scrollTopButtonStyle
+  };
+
+  // Reusable Animated Gallery Slider Component
+  const GallerySlider = ({ progress }) => {
     return (
+      <Timeline totalProgress={progress * 2} paused>
+        <Tween {...galleryTweenProps}>
+          <div className="slideDescription">
+            <p>{slide4.sidebarDescription}</p>
+          </div>
+          <div className="galleryContainer">
+            <Slider {...sliderSettings}>
+              {galleryImages.map((image, i) => {
+                return (
+                  <PreviewCompatibleImage
+                    key={i}
+                    className="gallery-img"
+                    imageInfo={{
+                      image: !!image.image.childImageSharp
+                        ? image.image.childImageSharp.fluid.src
+                        : image.image,
+                      alt: `Gallery Test`,
+                      style: {
+                        borderRadius: "0px"
+                      }
+                    }}
+                  />
+                );
+              })}
+            </Slider>
+          </div>
+        </Tween>
+      </Timeline>
+    );
+  };
+  return (
     <div className="home-slides">
-      <Controller globalSceneOptions={{ triggerHook: 'onLeave' }}>
+      <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
+        {/* SLIDE 1 */}
         <Scene pin>
           <div className="panel panel-1">
-              <PreviewCompatibleImage
-                imageInfo={{
-                  image: !!image.childImageSharp ? image.childImageSharp.fluid.src : image,
-                  alt: `featured image thumbnail for logo`,
-                  style: {
-                    width: '500px',
-                  }
-                }}
-              />
-              <span>
-                <span className="scroll-bob">SCROLL</span>
-              </span>
+            <PreviewCompatibleImage
+              imageInfo={{
+                image: !!image.childImageSharp
+                  ? image.childImageSharp.fluid.src
+                  : image,
+                alt: `featured image thumbnail for logo`,
+                style: {
+                  width: "500px"
+                }
+              }}
+            />
+            <span>
+              <span className="scroll-bob">SCROLL</span>
+            </span>
           </div>
         </Scene>
+        {/* SLIDE 2  */}
         <Scene pin pinSettings={{ pushFollowers: false }} duration="900">
-          {(progress) => (
-          <div className="panel panel-2">
-
-            <div className="sidebar">
-              <p className="purpose">
-                {slide2.sidebarHero}
-              </p>
-            </div>
-
-            <div className="right">
-              <div className="slideText">
-                <p>
-                  {slide2.slideBlurb}
-                </p>
+          {progress => (
+            <div className="panel panel-2">
+              <div className="sidebar">
+                <p className="purpose">{slide2.sidebarHero}</p>
               </div>
-              <span>
-                <span className="scroll-bob">SCROLL</span>
-              </span>
+
+              <div className="right">
+                <div className="slideText">
+                  <p>{slide2.slideBlurb}</p>
+                </div>
+                <span>
+                  <span className="scroll-bob">SCROLL</span>
+                </span>
+              </div>
+              <div className="animatedGeoShape">
+                <FlippyGeoShape progress={progress} />
+              </div>
             </div>
-            <div className="animatedGeoShape">
-              <FlippyGeoShape progress={progress} />
-            </div>
-          </div>
           )}
         </Scene>
+
+        {/* SLIDE 3 FULL BLEED PREVIEWS */}
         <Scene pin>
           <div className="panel panel-3">
             <div className="left">
-                <PreviewCompatibleImage
-                  className="slide-bg"
-                  imageInfo={{
-                    image: !!slide3.slideImg.childImageSharp ? slide3.slideImg.childImageSharp.fluid.src : slide3.slideImg,
-                    alt: `Himitsu Lounge Featured Image`,
-                  }}
-                />
+              <PreviewCompatibleImage
+                className="slide-bg"
+                imageInfo={{
+                  image: !!slide3.slideImg.childImageSharp
+                    ? slide3.slideImg.childImageSharp.fluid.src
+                    : slide3.slideImg,
+                  alt: `Himitsu Lounge Featured Image`
+                }}
+              />
               <div className="slideText">
-                <p>
-                  {slide3.slideBlurb}
-                </p>
+                <p>{slide3.slideBlurb}</p>
               </div>
               <span>
                 <span className="scroll-bob">SCROLL</span>
               </span>
             </div>
             <div className="sidebar">
-                <p className="sidebar-hero">
-                  {slide3.sidebarHero}
-                </p>
-                <p className="sidebar-desc">
-                  {slide3.sidebarDescription}
-                </p>
+              <p className="sidebar-hero">{slide3.sidebarHero}</p>
+              <p className="sidebar-desc">{slide3.sidebarDescription}</p>
+              <a href="#">
+                <img className="portfolio-link" src="" />
+              </a>
             </div>
           </div>
         </Scene>
-        <Scene pin>
 
-          <div className="panel panel-4">
+        {/* SLIDE 4 GALLERY */}
+        <Scene pin duration="800">
+          {progress => (
+            <div className="panel panel-4">
               <div className="sidebar">
-                <p className="sidebar-hero">
-                  {slide4.sidebarHero}
-                </p>
+                <p className="sidebar-hero">{slide4.sidebarHero}</p>
               </div>
 
               <div className="right">
-                <div className="slideText">
-                  <p>
-                    {slide4.slideBlurb}
-                  </p>
+                <div className="topContainer">
+                  <div className="slideText">
+                    <p>{slide4.slideBlurb}</p>
+                  </div>
+                  <div className="animatedGeoShape">
+                    <FlippyGeoShape progress={progress} />
+                  </div>
                 </div>
-                {/* <div className="animatedGeoShape">
-                  <FlippyGeoShape progress="20" />
-                </div> */}
-                <div className="slideDescription">
-                  <p>{slide5.sidebarDescription}</p>
-                </div>
-                <div className="galleryContainer">
-                  <Slider {...sliderSettings}>
-                    {galleryImages.map((image, i) => {
-                      return <PreviewCompatibleImage
-                                key={i}
-                                className="gallery-img"
-                                imageInfo={{
-                                  image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
-                                  alt: `Gallery Test`,
-                                  style: {
-                                    borderRadius: '0px',
-                                  }
-                                }}
-                            />
-                    })}
-                  </Slider>
-                </div>
+                <GallerySlider progress={progress} />
               </div>
-          </div>
-        </Scene>
-        <Scene pin>
-
-          <div className="panel panel-5">
-              <div className="sidebar">
-                <p className="sidebar-hero">
-                  {slide5.sidebarHero}
-                </p>
-              </div>
-
-              <div className="right">
-                <div className="slideText">
-                  <p>
-                    {slide5.slideBlurb}
-                  </p>
-                </div>
-                <div className="animatedGeoShape">
-                  <FlippyGeoShape progress="20" />
-                </div>
-                <div className="slideDescription">
-                  <p>{slide5.sidebarDescription}</p>
-                </div>
-                <div className="galleryContainer">
-                  <Slider {...sliderSettings}>
-                    {gallery2Images.map((image, i) => {
-                      return <PreviewCompatibleImage
-                                key={i}
-                                className="gallery-img"
-                                imageInfo={{
-                                  image: !!image.image.childImageSharp ? image.image.childImageSharp.fluid.src : image.image,
-                                  alt: `Gallery Test`,
-                                  style: {
-                                    borderRadius: '0px',
-                                  }
-                                }}
-                            />
-                    })}
-                  </Slider>
-                </div>
-              </div>
-          </div>
+            </div>
+          )}
         </Scene>
         <ScrollUpButton {...ScollTopButtonSettings} />
       </Controller>
     </div>
-    )
-  }
-
+  );
+};
 
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   slides: PropTypes.array,
   galleryImages: PropTypes.array,
-  gallery2Images: PropTypes.array,
-}
-
+  gallery2Images: PropTypes.array
+};
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter } = data.markdownRemark;
 
   return (
     <Layout>
@@ -266,17 +244,17 @@ const IndexPage = ({ data }) => {
         gallery2Images={frontmatter.gallery2Images}
       />
     </Layout>
-  )
-}
+  );
+};
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-}
+      frontmatter: PropTypes.object
+    })
+  })
+};
 
-export default IndexPage
+export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
@@ -295,7 +273,7 @@ export const pageQuery = graphql`
           slideImg {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -306,7 +284,7 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -315,7 +293,7 @@ export const pageQuery = graphql`
           image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -323,4 +301,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
