@@ -76,7 +76,24 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   const ScollTopButtonSettings = {
@@ -92,7 +109,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
     return (
       <Timeline totalProgress={progress * 2} paused>
         <Tween {...galleryTweenProps}>
-          <div className="slideDescription">
+          <div className="slideDescriptionv ">
             <p>{slide4.sidebarDescription}</p>
           </div>
           <div className="galleryContainer">
@@ -125,7 +142,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
       <Controller globalSceneOptions={{ triggerHook: "onLeave" }}>
         {/* SLIDE 1 */}
         <Scene pin>
-          <div className="panel panel-1">
+          <div className="panel panel-1 site-logo">
             <PreviewCompatibleImage
               imageInfo={{
                 image: !!image.childImageSharp

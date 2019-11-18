@@ -176,7 +176,7 @@
 }
 
 @media (max-width:999px){
-  .filter_div{
+  .work_min  .filter_div{
     padding-left:15px;
     padding-right:15px;
   }
@@ -190,9 +190,14 @@
   .hvrbox .hvrbox-text span {
     font-size:11px;
   }
-
+  .work_min .filter_div{
+    padding-left:15px;
+    padding-right:15px;
+    padding-top:10px;
+  }
   .latest-project-info{
     padding-left:15px;
     padding-right:15px;
   }
+
 }

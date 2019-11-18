@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../../components/Layout'
 import { Link } from 'gatsby'
@@ -15,19 +15,33 @@ export default class BlogIndexPage extends React.Component {
          <div className="all_news">
              <Container>
                 <Row>
-                   <Col md="7">
+                   <Col md="7" xs="6">
                      <h1>News</h1>
                    </Col>
-                   <Col md="5">
+                   <Col md="5" xs="6">
                      <div className="filter_div">
-                        <strong>Filter by category</strong>
-                        <ul>
-                          <li className="active-f"><a href="#">All </a></li>
-                          <li><a href="#">Announcements</a></li>
-                          <li><a href="#">Awards </a></li>
-                          <li><a href="#">Events </a></li>
-                          <li><a href="#">Publications </a></li>
-                        </ul>
+                        <Dropdown className="mobile-filter">
+                           <Dropdown.Toggle id="dropdown-basic">
+                              <strong>Filter</strong>
+                           </Dropdown.Toggle>
+                           <Dropdown.Menu>
+                              <Dropdown.Item href="#">All</Dropdown.Item>
+                              <Dropdown.Item href="#">Announcements</Dropdown.Item>
+                              <Dropdown.Item href="#">Awards</Dropdown.Item>
+                              <Dropdown.Item href="#">Events</Dropdown.Item>
+                              <Dropdown.Item href="#">Publications</Dropdown.Item>
+                           </Dropdown.Menu>
+                        </Dropdown>
+                        <div className="d-filter">
+                           <strong>Filter by category</strong>
+                           <ul>
+                           <li className="active-f"><a href="#">All </a></li>
+                           <li><a href="#">Announcements</a></li>
+                           <li><a href="#">Awards </a></li>
+                           <li><a href="#">Events </a></li>
+                           <li><a href="#">Publications </a></li>
+                           </ul>
+                        </div>
                      </div>
                    </Col>
                 </Row>

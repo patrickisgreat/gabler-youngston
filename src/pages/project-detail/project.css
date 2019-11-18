@@ -141,6 +141,9 @@
   .build2{
     padding-top:0px;
   }
+  .social_links li{
+    padding-right:8px;
+  }
 }
 @media screen and (max-width: 480px) {
   .banner-text{

@@ -88,15 +88,83 @@
     width: 85%;
     float: right;
 }
+
+.filter_div .dropdown button{
+    border:0px;
+    box-shadow:none;
+    background:transparent;
+    font-size: 17px;
+    color: #3C3C3B;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    position: relative;
+ 
+}
+
+.filter_div .dropdown button:hover, .filter_div .dropdown button:focus, .filter_div .dropdown button:active{
+    background:transparent;
+    border:0px!important;;
+    box-shadow:none;
+    color: #3C3C3B;
+}
+.show > .btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus{
+    background:transparent;
+    border:0px!important;;
+    box-shadow:none;
+    color: #3C3C3B;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled):active:focus{
+    color:#F15D4A;
+    
+}
+.dropdown-toggle::after{
+    color:#F15D4A;
+    position: absolute;
+    top:23px;
+}
+.mobile-filter{
+    display: none;
+}
+.filter_div .dropdown-menu {
+    min-width:135px;
+    padding:0px ;
+    width:135px;
+    text-align:right;
+}
+a.dropdown-item, button.dropdown-item{
+    padding-right:.500rem;
+}
+.dropdown-item{
+    padding:0.275rem .500rem;
+}
 @media screen and (max-width:768px){
+    .all_news{
+        padding-top:30px;
+    }
     .news{
         margin:0px auto;
         float: none;
         width:93%;
         display: block;
     }
+    .all_news h1{
+        font-size: 50px;
+        line-height:50px;
+    }
     .filter_div{
         padding-left:0px;
         padding-right:0px;
+        padding-top:10px;
+    }
+    .instagram_feed{
+        width:100%;
+    }
+    .d-filter{
+        display: none;
+    }
+    .mobile-filter{
+        display: block;
+    }
+    .news_feed{
+        padding-top:0px;
     }
 }
