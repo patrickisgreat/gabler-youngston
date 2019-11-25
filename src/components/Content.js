@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Markdown from '@danestves/react-markdown';
 
 export const HTMLContent = ({ content, className }) => (
-  <div className={className} dangerouslySetInnerHTML={{ __html: content }} />
+  <Markdown className={className} content={content} />
 )
 
 const Content = ({ content, className }) => (

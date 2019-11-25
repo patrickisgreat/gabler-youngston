@@ -1,0 +1,27 @@
+---
+templateKey: Projectdetail/index
+projectname: HIMITSU LOUNGE 2
+projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projectimage: /img/bitmap3.png
+projectcategory: Pub
+projectscope: Hospitality
+sortdescription: Sort Announcements
+descriptionblockone:
+  - description: >-
+      adipiscing elit. Pellentesque euismod malesuada iaculis. Nam id sapien
+      accumsan, lacinia diam nec, laoreet tortor. Proin mauris tellus, ultrices
+      sed consectetur ac, mattis nec arcu.
+    descriptiontitle: Himitsu Lounge consectetur
+    image: /img/chemex.jpg
+    imagepos: left
+extrafield:
+  - label: Architect
+    value: Piers Cunnington + Clinton Cuddington
+  - label: Measured
+    value: Team James Papa
+  - label: General Contractor
+    value: Powers Construction
+  - label: Consultants
+    value: 'Fast + Epp Structural Engineers, Geopacific Consultants'
+---
+

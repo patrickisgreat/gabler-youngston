@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
+    'gatsby-plugin-mdx',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
@@ -31,8 +32,6 @@ module.exports = {
         name: 'images',
       },
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
       options: {
@@ -55,12 +54,14 @@ module.exports = {
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: 'static',
+              destinationDir: `static`,
             },
           },
         ],
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
