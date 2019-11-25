@@ -8,6 +8,7 @@ import Purpose2 from '../../img/Bitmap2.png'
 import Purpose3 from '../../img/Bitmap3.png'
 import Purpose4 from '../../img/Bitmap4.png'
 import backbutton from '../../img/back-btn.jpg'
+
 const Teamdetails = () => (
       <Layout>
          <div>
