@@ -39,6 +39,15 @@
     color:#fff;
 }
 
+input[type="email"]{
+    background:transparent;
+    border:0px;
+    border-bottom:2px solid #fff;
+    width:100%;
+    font-size:15px;
+    color:#fff;
+}
+
 .submit-btn{
     background:url('../../img/submit-btn.jpg') no-repeat left top;
     width:65px;

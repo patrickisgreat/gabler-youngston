@@ -12,18 +12,24 @@ const Newsletter = class extends React.Component {
                      <h5>NEWSLETTER</h5>
                 </div>
                 <div className="column is-5">
+                <form action="/about" name="contact" method="POST" data-netlify="true">
+
+                <form name="subscribe" action="/about" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                <input type="hidden" name="bot-field">
+                <input type="hidden" name="form-name" value="subscribe">
                   <div className="form-group">
                      <label>Your name:</label>
-                     <input type="text" className=""/>
+                     <input name="name" type="text" className=""/>
                   </div>
                   <div className="form-group">
                      <label>Your email address:</label>
-                     <input type="text" className=""/>
+                     <input name="email" type="email" className=""/>
                   </div>
                   <div className="form-btm">
                      <em>Subscribe Now</em>
                      <input type="submit" className="submit-btn" value=" " />
                   </div>
+                 </form>
                 </div>
              </div>
          </div>

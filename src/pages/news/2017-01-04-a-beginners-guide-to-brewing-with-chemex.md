@@ -2,9 +2,10 @@
 templateKey: blog-post
 title: We are masters of photons!
 date: 2017-01-04T15:04:10.000Z
+description: I love lights!
 featuredpost: false
 featuredimage: /img/home/gy_icon_logo.png
-description: I love lights!
+newscategory: Publications
 tags:
   - brewing
   - chemex

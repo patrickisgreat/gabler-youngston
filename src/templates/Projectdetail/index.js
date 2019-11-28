@@ -19,9 +19,7 @@ import back_btn_up from '../../img/back-to-top-button.jpg'
 
 
 const Workdetails = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-
-
+const { frontmatter } = data.markdownRemark;
     return (
       <Layout>
          <div className="project_min">
@@ -42,59 +40,47 @@ const Workdetails = ({ data }) => {
             {frontmatter.descriptionblockone.map((items, i) => (
               <div className="project_details">
                   <Container>
-                     <Row className="d-flex flex-wrap align-items-center">
-                        <Col md="6" className="mt-4">
-                           {items.description}
-                        </Col>
-                        <Col md="6" className="mt-4">
-                            <Img
-                                fluid={items.image.childImageSharp.fluid}
-                                alt="Project Image"
-                                style={{ display: 'block', width:'100%'}}
-                            /> 
-                        </Col>
-                     </Row>
+                     
+                       {items.imagepos==="left"
+                       ?
+                          (
+                          <Row className="d-flex flex-wrap align-items-center">
+                            <Col md="6" className="mt-4">
+                              <Img
+                                  fluid={items.image.childImageSharp.fluid}
+                                  alt="Project Image"
+                                  style={{ display: 'block', width:'100%'}}
+                              /> 
+                            </Col>
+                            <Col md="6" className="mt-4">
+                             <h5><span>{i+1}</span> {items.descriptiontitle}</h5>
+                             {items.description}
+                            </Col>
+                          </Row>
+                          )
+                       :
+                          (
+                          <Row className="d-flex flex-wrap align-items-center">
+                            <Col md="6" className="mt-4">
+                             <h5><span>{i+1}</span> {items.descriptiontitle}</h5>
+                             {items.description}
+                            </Col>
+                            <Col md="6" className="mt-4">
+                              <Img
+                                  fluid={items.image.childImageSharp.fluid}
+                                  alt="Project Image"
+                                  style={{ display: 'block', width:'100%'}}
+                              /> 
+                            </Col>
+                          </Row>
+                          )
+                       }
+
                   </Container>
               </div>
             ))} 
            {/* Project Destils End */ }
 
-           {frontmatter.descriptionblocktwo.map((items, i) => (
-              <div className="project_details">
-              <Container>
-                  <Row className="d-flex flex-wrap align-items-center">
-                     <Col md="6" className="mt-4 position-relative">
-                           <Img
-                                fluid={items.image.childImageSharp.fluid}
-                                alt="Project Image"
-                                style={{ display: 'block', width:'100%'}}
-                           /> 
-                           <span>{items.number}</span>
-                     </Col>
-                     <Col md="6" className="mt-4">
-                          <h5>{items.title}</h5>
-                         {items.description}                       
-                     </Col>
-                  </Row>
-              </Container>
-           </div>
-            ))} 
-            
-            {frontmatter.descriptionblockthree.map((items, i) => (
-              <div className="project_details">
-              <Container>
-                  <Row className="">
-                     <Col md="6" className="mt-4 build2">
-                          {items.descriptionone}
-                     </Col>
-                     <Col md="6" className="mt-4">
-                          <h5>{items.number} <span>{items.title}</span></h5>
-                         {items.descriptiontwo}                       
-                     </Col>
-                  </Row>
-              </Container>
-           </div>
-            ))} 
            <div className="project-info">
              <Container>
                 <Row>
@@ -192,6 +178,8 @@ export const WorkdetailsQuery = graphql`
           }
           descriptionblockone {
             description
+            descriptiontitle
+            imagepos
             image {
               childImageSharp {
                 fluid(maxWidth: 2048, quality: 100) {
@@ -199,24 +187,6 @@ export const WorkdetailsQuery = graphql`
                 }
               }
             }
-          }
-          descriptionblocktwo {
-            description
-            image {
-              childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            number
-            title
-          }
-          descriptionblockthree {
-            descriptionone
-            descriptiontwo
-            number
-            title
           }
       }
     }

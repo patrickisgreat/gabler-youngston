@@ -16,7 +16,7 @@ collections:
       - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "category", name: "projectcategory", widget: "relation"}
+      - {label: "News Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "newscategory", name: "newscategory", widget: "relation"}
       - {label: "Tags", name: "tags", widget: "list"}
 
   - name: "team"
@@ -32,7 +32,6 @@ collections:
       - {label: "Designation", name: "designation", widget: "string"}
       - {label: "Description", name: "description", widget: "markdown"}
 
-
   - name: "category"
     label: "Categories"
     folder: "src/pages/categories"
@@ -43,6 +42,34 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Category/index"}
       - {label: "Category Name", name: "categoryname", widget: "string"}
+
+
+  - name: "newscategory"
+    label: "News Categories"
+    folder: "src/pages/news-categories"
+    create: true
+    delete: true
+    slug: "newscategories/{{slug}}"
+    identifier_field: categoryname
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "NewsCategory/index"}
+      - {label: "Category Name", name: "categoryname", widget: "string"}
+
+
+  - name: "footer"
+    label: "Footer"
+    folder: "src/pages/footer"
+    create: true
+    identifier_field: image
+    delete: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-page"}
+      - {label: "Logo Image", name: "image", widget: "image"}
+      - {label: "Copyright Content", name: "copyrightcontent", widget: "string"}
+      - {label: "Contact Number", name: "contactnumber", widget: "string"}
+      - {label: "Contact Email One", name: "contactnumberone", widget: "string"}
+      - {label: "Contact Email Two", name: "contactnumbertwo", widget: "string"}
+      - {label: "Address", name: "address", widget: "string"}
 
 
   - name: "project"
@@ -69,24 +96,6 @@ collections:
       - {label: "More Fields", name: "extrafield", widget: "list", fields: [
           {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
         ]}
-
-
-  - name: "footer"
-    label: "Footer"
-    delete: false
-    files:
-      - file: "src/pages/footer/index.md"
-        label: "Footer Data"
-        name: "footer"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-page"}
-          - {label: "Logo Image", name: "image", widget: "image"}
-          - {label: "Copyright Content", name: "copyrightcontent", widget: "string"}
-          - {label: "Contact Number", name: "contactnumber", widget: "string"}
-          - {label: "Contact Email One", name: "contactnumberone", widget: "string"}
-          - {label: "Contact Email Two", name: "contactnumbertwo", widget: "string"}
-          - {label: "Address", name: "address", widget: "string"}
-
 
  
   - name: "pages"

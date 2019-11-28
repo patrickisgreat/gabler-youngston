@@ -5,7 +5,7 @@ date: 2019-12-17T15:04:10.000Z
 description: Amazing!
 featuredpost: false
 featuredimage: /img/home/gy_icon_logo.png
-projectcategory: Awards
+newscategory: Social Event
 tags:
   - lights
   - pretty

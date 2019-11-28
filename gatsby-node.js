@@ -33,19 +33,43 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      })
+      if(edge.node.fields.slug != "/footer/") {
+        createPage({
+          path: edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+          },
+        })
+      }
     })
 
+    // works list page
+    var id = 'Projectdetail/index'
+    createPage({
+      path: '/works',
+      component: path.resolve(
+        `src/templates/work-page.js`
+      ),
+      context: {
+        id,
+      },
+    })
+    // news list page
+    var id = 'blog-post'
+    createPage({
+      path: '/news',
+      component: path.resolve(
+        `src/templates/news-page.js`
+      ),
+      context: {
+        id,
+      },
+    })
     // Tag pages:
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
