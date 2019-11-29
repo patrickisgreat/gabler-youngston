@@ -6,8 +6,8 @@ import Content, { HTMLContent } from '../components/Content'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Img from 'gatsby-image'
-import WorkLists from '../components/worklists'
-import LatestWork from '../components/latestwork'
+import WorkLists from '../components/Worklists/worklists'
+import LatestWork from '../components/Latestwork/latestwork'
 import WorkTypefilter from '../components/worktypesfilter'
 import '../pages/work/work.css'
 import Work1 from '../img/work/work1.jpg'

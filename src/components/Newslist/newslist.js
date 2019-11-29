@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import './Newslist/newslist.css'
+import './newslist.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
-import Instfeed1 from '../img/insta-post1.jpg'
-import Instfeed2 from '../img/insta-post2.jpg'
-import Instfeed3 from '../img/insta-post3.jpg'
-import Instfeed4 from '../img/insta-post4.jpg'
+import Instfeed1 from '../../img/insta-post1.jpg'
+import Instfeed2 from '../../img/insta-post2.jpg'
+import Instfeed3 from '../../img/insta-post3.jpg'
+import Instfeed4 from '../../img/insta-post4.jpg'
 
 class NewsList extends React.Component {
   render() {
