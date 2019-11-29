@@ -1,13 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import { StaticQuery } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
-import Img from 'gatsby-image'
-import NewsList from '../components/NewsList/NewsList'
 import '../pages/contact/contact-style.css'
 
 class ContactPage extends React.Component {
@@ -15,7 +12,6 @@ class ContactPage extends React.Component {
 
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
-    console.log(frontmatter);
     
     return (
         <Layout>
