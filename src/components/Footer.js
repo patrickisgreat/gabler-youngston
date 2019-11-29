@@ -67,22 +67,22 @@ export default () => (
   <StaticQuery
     query={graphql`
       query FooterQuery {
-        markdownRemark(frontmatter: {contactnumberone: {eq: "mgabler@gableryoungston.com"}}) {
-    frontmatter {
-      copyrightcontent
-      contactnumber
-      contactnumberone
-      contactnumbertwo
-      address
-      image {
-        childImageSharp {
-          fluid {
-            src
+        markdownRemark(frontmatter: {templateKey: {eq: "footer-page"}}) {
+          frontmatter {
+            copyrightcontent
+            contactnumber
+            contactnumberone
+            contactnumbertwo
+            address
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
           }
         }
-      }
-    }
-  }
       }
     `}
 

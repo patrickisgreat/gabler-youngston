@@ -52,16 +52,16 @@ export default () => (
   <StaticQuery
     query={graphql`
       query ContactPageQuery {
-        markdownRemark(id: {eq: "fb90893b-2dfb-523a-ae4d-55f1966d18aa"}) {
+        markdownRemark(frontmatter: {templateKey: {eq: "contact-page"}}) {
           frontmatter {
+            title
+            contactnumber
+            contactnumberone
+            contactnumbertwo
+            sidebarcontent {
+              description
               title
-              contactnumber
-              contactnumberone
-              contactnumbertwo
-              sidebarcontent {
-                description
-                title
-              }
+            }
           }
         }
       }
