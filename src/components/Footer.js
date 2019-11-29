@@ -11,7 +11,6 @@ class Footer extends React.Component {
 
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
-    console.log(frontmatter);
 
     return (
       <div className=" has-background-black has-text-white-ter">
@@ -23,7 +22,7 @@ class Footer extends React.Component {
                 <section className="menu">
                     <a title="FooterLogo" href="/">
                       <img
-                        src={frontmatter.image.childImageSharp.fluid.src}
+                        src={frontmatter.image.publicURL}
                         alt="FooterLogo"
                         style={{ display: 'block'}}
                       />
@@ -36,9 +35,9 @@ class Footer extends React.Component {
                     <div className="col-md-6">
                       <section>
                         <h6>Contact</h6>
-                        <span><a href="telto(404) 521-3166">{frontmatter.contactnumber}</a></span>
-                        <a href="mailto:mgabler@gableryoungston.com">{frontmatter.contactnumberone}</a> <br/>
-                        <a href="mailto:jyoungston@gableryoungston.com">{frontmatter.contactnumbertwo}</a>
+                        <span>T :<a href={`tel:${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
+                        <a href={`mailto:${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/>
+                        <a href={`mailto:${frontmatter.contactnumbertwo}`}>{frontmatter.contactnumbertwo}</a>
                       </section>
                     </div>
                     <div className="col-md-6">
@@ -76,6 +75,7 @@ export default () => (
             contactnumbertwo
             address
             image {
+              publicURL
               childImageSharp {
                 fluid {
                   src

@@ -2,102 +2,6 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "blog"
-    label: "News"
-    folder: "src/pages/news"
-    create: true
-    delete: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "News Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "newscategory", name: "newscategory", widget: "relation"}
-      - {label: "Tags", name: "tags", widget: "list"}
-
-  - name: "team"
-    label: "Team"
-    folder: "src/pages/team"
-    create: true
-    delete: true
-    slug: "team/{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Teamdetail/index"}
-      - {label: "Member Image", name: "memberimage", widget: image}
-      - {label: "Member Name", name: "title", widget: "string"}
-      - {label: "Designation", name: "designation", widget: "string"}
-      - {label: "Description", name: "description", widget: "markdown"}
-
-  - name: "category"
-    label: "Categories"
-    folder: "src/pages/categories"
-    create: true
-    delete: true
-    slug: "category/{{slug}}"
-    identifier_field: categoryname
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Category/index"}
-      - {label: "Category Name", name: "categoryname", widget: "string"}
-
-
-  - name: "newscategory"
-    label: "News Categories"
-    folder: "src/pages/news-categories"
-    create: true
-    delete: true
-    slug: "newscategories/{{slug}}"
-    identifier_field: categoryname
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "NewsCategory/index"}
-      - {label: "Category Name", name: "categoryname", widget: "string"}
-
-
-  - name: "footer"
-    label: "Footer"
-    folder: "src/pages/footer"
-    create: true
-    identifier_field: image
-    delete: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-page"}
-      - {label: "Logo Image", name: "image", widget: "image"}
-      - {label: "Copyright Content", name: "copyrightcontent", widget: "string"}
-      - {label: "Contact Number", name: "contactnumber", widget: "string"}
-      - {label: "Contact Email One", name: "contactnumberone", widget: "string"}
-      - {label: "Contact Email Two", name: "contactnumbertwo", widget: "string"}
-      - {label: "Address", name: "address", widget: "string"}
-
-
-  - name: "project"
-    label: "Work"
-    folder: "src/pages/project"
-    create: true
-    delete: true
-    slug: "project/{{slug}}"
-    identifier_field: projectname
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Projectdetail/index"}
-      - {label: "Work Name", name: "projectname", widget: "string"}
-      - {label: "Work Tagline", name: "projecttagline", widget: "string"}
-      - {label: "Work Image", name: "projectimage", widget: image}
-      - {label: "Work Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "category", name: "projectcategory", widget: "relation"}
-      - {label: "Work Scope", name: "projectscope", widget: "string"}
-      - {label: "Sort Description", name: "sortdescription", widget: "string"}
-      - {label: "Description Blocks", name: "descriptionblockone", widget: "list", fields: [
-          {name: "descriptiontitle", label: "Block Title", widget: "string"},
-          {name: "imagepos", label: "Block Image Position", widget: "select", options: ["left","right"]},
-          {name: "image", label: Block Image, widget: image}, 
-          {name: "description", label: Block Description, widget: "markdown"}
-        ]}
-      - {label: "More Fields", name: "extrafield", widget: "list", fields: [
-          {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
-        ]}
-
- 
   - name: "pages"
     label: "Pages"
     delete: false
@@ -161,6 +65,103 @@ collections:
                 {label: "title", name: "title", widget: "string"}, 
                 {label: "Description", name: "description", widget: "text"},
             ]}
+
+  - name: "team"
+    label: "Team"
+    folder: "src/pages/team"
+    create: true
+    delete: true
+    slug: "team/{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Teamdetail/index"}
+      - {label: "Member Image", name: "memberimage", widget: image}
+      - {label: "Member Name", name: "title", widget: "string"}
+      - {label: "Designation", name: "designation", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
+
+  - name: "category"
+    label: "Work Categories"
+    folder: "src/pages/categories"
+    create: true
+    delete: true
+    slug: "category/{{slug}}"
+    identifier_field: categoryname
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Category/index"}
+      - {label: "Category Name", name: "categoryname", widget: "string"}
+
+  - name: "project"
+    label: "Work"
+    folder: "src/pages/project"
+    create: true
+    delete: true
+    slug: "project/{{slug}}"
+    identifier_field: projectname
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Projectdetail/index"}
+      - {label: "Work Name", name: "projectname", widget: "string"}
+      - {label: "Work Tagline", name: "projecttagline", widget: "string"}
+      - {label: "Work Image", name: "projectimage", widget: image}
+      - {label: "Work Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "category", name: "projectcategory", widget: "relation"}
+      - {label: "Work Scope", name: "projectscope", widget: "string"}
+      - {label: "Sort Description", name: "sortdescription", widget: "string"}
+      - {label: "Description Blocks", name: "descriptionblockone", widget: "list", fields: [
+          {name: "descriptiontitle", label: "Block Title", widget: "string"},
+          {name: "imagepos", label: "Block Image Position", widget: "select", options: ["left","right"]},
+          {name: "image", label: Block Image, widget: image}, 
+          {name: "description", label: Block Description, widget: "markdown"}
+        ]}
+      - {label: "More Fields", name: "extrafield", widget: "list", fields: [
+          {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
+        ]}
+
+  - name: "newscategory"
+    label: "News Categories"
+    folder: "src/pages/news-categories"
+    create: true
+    delete: true
+    slug: "newscategories/{{slug}}"
+    identifier_field: categoryname
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "NewsCategory/index"}
+      - {label: "Category Name", name: "categoryname", widget: "string"}
+
+  - name: "blog"
+    label: "News"
+    folder: "src/pages/news"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "News Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "newscategory", name: "newscategory", widget: "relation"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      
+  - name: "footer"
+    label: "Footer"
+    folder: "src/pages/footer"
+    identifier_field: copyrightcontent
+    delete: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "footer-page"}
+      - {label: "Copyright Content", name: "copyrightcontent", widget: "string"}
+      - {label: "Logo Image", name: "image", widget: "image"}
+      - {label: "Contact Number", name: "contactnumber", widget: "string"}
+      - {label: "Contact Email One", name: "contactnumberone", widget: "string"}
+      - {label: "Contact Email Two", name: "contactnumbertwo", widget: "string"}
+      - {label: "Address", name: "address", widget: "string"}
+
+
+  
+
+ 
+  
 
      
 

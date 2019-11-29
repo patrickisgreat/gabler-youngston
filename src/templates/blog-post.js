@@ -38,6 +38,18 @@ export const BlogPostTemplate = ({
                           <strong className="news-date">{date}</strong>
                           <h6>{title}</h6>
                           <p>{description}</p>
+                          {tags && tags.length ? (
+              <div style={{ marginTop: `4rem` }}>
+                <h4>Tags</h4>
+                <ul className="taglist">
+                  {tags.map(tag => (
+                    <li key={tag + `tag`}>
+                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
                        </div>
                     </Col>
                     <Col md="4">
