@@ -8,9 +8,9 @@ import './sass/footer.scss'
 
 class Footer extends React.Component {
   render() {
-
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
+    console.log(frontmatter);
 
     return (
       <div className=" has-background-black has-text-white-ter">
@@ -22,7 +22,7 @@ class Footer extends React.Component {
                 <section className="menu">
                     <a title="FooterLogo" href="/">
                       <img
-                        src={frontmatter.image.publicURL}
+                        src={frontmatter.image.childImageSharp.fluid.src}
                         alt="FooterLogo"
                         style={{ display: 'block'}}
                       />
@@ -67,23 +67,22 @@ export default () => (
   <StaticQuery
     query={graphql`
       query FooterQuery {
-        markdownRemark(id: {eq: "d0f621b7-b588-5259-b6f6-8d639f512d7f"}) {
-          frontmatter {
-            copyrightcontent
-            contactnumber
-            contactnumberone
-            contactnumbertwo
-            address
-            image {
-              publicURL
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-            }
+        markdownRemark(frontmatter: {contactnumberone: {eq: "mgabler@gableryoungston.com"}}) {
+    frontmatter {
+      copyrightcontent
+      contactnumber
+      contactnumberone
+      contactnumbertwo
+      address
+      image {
+        childImageSharp {
+          fluid {
+            src
           }
         }
+      }
+    }
+  }
       }
     `}
 
