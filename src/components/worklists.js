@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
-import './worklists.css'
+import './Worklists/worklists.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
 
