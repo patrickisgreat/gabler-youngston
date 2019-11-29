@@ -6,7 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import Img from 'gatsby-image'
-import NewsList from '../components/newsList'
+import NewsList from '../components/newslist'
 import NewsTypefilter from '../components/newstypesfilter'
 import '../pages/news/news.css'
 

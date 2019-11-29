@@ -68,7 +68,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
       <img src={leftArrow} alt="prev-arrow" />
     </button>
   );
-
+  
   const sliderSettings = {
     dots: false,
     infinite: true,
