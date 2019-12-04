@@ -17,7 +17,6 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               tags
-              projectcategory
               templateKey
             }
           }
@@ -38,8 +37,6 @@ exports.createPages = ({ actions, graphql }) => {
         createPage({
           path: edge.node.fields.slug,
           tags: edge.node.frontmatter.tags,
-          projectcategory: edge.node.frontmatter.projectcategory,
-          newscategory: edge.node.frontmatter.newscategory,
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
           ),
@@ -62,7 +59,6 @@ exports.createPages = ({ actions, graphql }) => {
         id,
       },
     })
-
     // news list page
     var id = 'blog-post'
     createPage({
@@ -74,8 +70,6 @@ exports.createPages = ({ actions, graphql }) => {
         id,
       },
     })
-    
-
     // Tag pages:
     let tags = []
     // Iterate through each post, putting all found tags into `tags`
@@ -99,47 +93,6 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-
-    let projectcategory = []
-
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.projectcategory`)) {
-        projectcategory = projectcategory.concat(edge.node.frontmatter.projectcategory)
-      }
-    })
-   
-    projectcategory.forEach(category => {
-      const projectcategoryPath = `/projectcat/${_.kebabCase(category)}/`
-
-      createPage({
-        path: projectcategoryPath,
-        component: path.resolve(`src/templates/projectcat.js`),
-        context: {
-          category,
-        },
-      })
-    })
-
-
-    let newscategory = []
-
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.newscategory`)) {
-        newscategory = newscategory.concat(edge.node.frontmatter.newscategory)
-      }
-    })
-   
-    newscategory.forEach(category => {
-      const newscategoryPath = `/newscat/${_.kebabCase(category)}/`
-      createPage({
-        path: newscategoryPath,
-        component: path.resolve(`src/templates/newscat.js`),
-        context: {
-          category,
-        },
-      })
-    })
-
   })
 }
 

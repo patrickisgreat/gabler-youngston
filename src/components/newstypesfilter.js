@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { kebabCase } from 'lodash'
 import { Container, Row, Col, Dropdown, Button } from 'react-bootstrap';
 import { Link, graphql, StaticQuery } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'

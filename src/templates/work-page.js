@@ -26,19 +26,17 @@ import Work13 from '../img/work/work13.jpg'
 import Work14 from '../img/work/work14.jpg'
 import Work15 from '../img/work/work15.jpg'
 
-
 const WorkPage = ({ data }) => {
     
     return (
         <Layout>
-            
             <div className="work_min">
-                <Container>
-                    <h1>Work</h1>
-                </Container>
-                    <WorkTypefilter />
-                    <LatestWork />
-                    <WorkLists />
+            <Container>
+                <h1>Work</h1>
+            </Container>
+                <WorkTypefilter />
+                <LatestWork />
+                <WorkLists />
             </div>
         </Layout>
     )
