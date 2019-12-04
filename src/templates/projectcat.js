@@ -13,15 +13,15 @@ class CatRoute extends React.Component {
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
        <Col md="4" sm="6" xs="6">
-            <div class="hvrbox">
+            <div className="hvrbox">
               <img
                 src={post.node.frontmatter.projectimage.childImageSharp.original.src}
                 alt="Our Team"
                 style={{ display: 'block', width:'100%'}}
-                class="hvrbox-layer_bottom"
+                className="hvrbox-layer_bottom"
               />
               <Link to={post.node.fields.slug} className="hvrbox-layer_top">
-                <div class="hvrbox-text">
+                <div className="hvrbox-text">
                   <h5>{post.node.frontmatter.projectname}</h5>
                   <span>Scope  <b>{post.node.frontmatter.projectscope}</b></span>
                 </div>
@@ -29,12 +29,9 @@ class CatRoute extends React.Component {
             </div>
         </Col>
     ))
+    
     const category = this.props.pageContext.category
     const title = this.props.data.site.siteMetadata.title
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
-    const tagHeader = `${totalCount} post${
-      totalCount === 1 ? '' : 's'
-    } tagged with “${category}”`
 
     return (
       <Layout>

@@ -17,6 +17,7 @@ class WorkTypefilter extends React.Component {
             <div className="filter_div">
                 <strong>Filter by category</strong>
                 <ul>
+                    <li className="active-f"><Link to="/works">All</Link></li>
                   {cats.map((cat) => (
                     <li className="active-f">
                        <Link to={`/projectcat/${kebabCase(cat.frontmatter.categoryname)}/`}>

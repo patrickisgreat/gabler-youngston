@@ -5,33 +5,62 @@ import Layout from '../components/Layout'
 import LatestWork from '../components/Latestwork/latestwork'
 import NewsTypefilter from '../components/newstypesfilter'
 import { Container, Row, Col } from 'react-bootstrap';
+import Instfeed1 from '../img/insta-post1.jpg'
+import Instfeed2 from '../img/insta-post2.jpg'
+import Instfeed3 from '../img/insta-post3.jpg'
+import Instfeed4 from '../img/insta-post4.jpg'
 
 class NewscatRoute extends React.Component {
   render() {
 
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
-      <Col md="4" sm="6" xs="6">
-          <Link to={post.node.fields.slug} className="hvrbox-layer_top">
-            <div class="hvrbox-text">
-              <h5>{post.node.frontmatter.title}</h5>
-            </div>
-          </Link>
-      </Col>
+      <Link to={post.node.fields.slug} className="news">
+        <strong className="news-date">{post.node.frontmatter.date}</strong>
+        <h6>{post.node.frontmatter.title}</h6>
+        <p>{post.node.frontmatter.description}</p>
+      </Link>
     ))
     const category = this.props.pageContext.category
     const title = this.props.data.site.siteMetadata.title
-    const totalCount = this.props.data.allMarkdownRemark.totalCount
+    
 
     return (
       <Layout>
          <Helmet title={`${category} | ${title}`} />
-         <div className="work_min">
-         <Container>
-            <h1>News</h1>
-        </Container>
-        <NewsTypefilter />
-            <Row>{postLinks}</Row>
+           <div className="all_news">
+            <NewsTypefilter />
+              <div className="news_feed">
+                <Row>
+                    <Col md="8">
+                      {postLinks}
+                    </Col>
+                    <Col md="4">
+                       <div className="instagram_feed">
+                          <img
+                            src={Instfeed1}
+                            alt="Psot"
+                            style={{ display: 'block', width:'100%'}}
+                          /> 
+                          <img
+                            src={Instfeed2}
+                            alt="Psot"
+                            style={{ display: 'block', width:'100%'}}
+                          />
+                          <img
+                            src={Instfeed3}
+                            alt="Psot"
+                            style={{ display: 'block', width:'100%'}}
+                          />
+                          <img
+                            src={Instfeed4}
+                            alt="Psot"
+                            style={{ display: 'block', width:'100%'}}
+                          />                          
+                       </div>
+                    </Col>
+                </Row>
+              </div>
           </div>
      </Layout>
     )

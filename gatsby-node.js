@@ -18,6 +18,7 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags
               projectcategory
+              newscategory
               templateKey
             }
           }

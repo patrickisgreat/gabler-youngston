@@ -23,16 +23,26 @@ class NewsTypefilter extends React.Component {
                               <strong>Filter</strong>
                            </Dropdown.Toggle>
                            <Dropdown.Menu>
+                             <Link to="/news">
+                               <Dropdown.Item href="#">All</Dropdown.Item>
+                             </Link>
                             {newscats.map((newscat) => (
-                             <Dropdown.Item href="#">{newscat.frontmatter.categoryname} </Dropdown.Item>
+                             <Link to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}>
+                               <Dropdown.Item href="#">{newscat.frontmatter.categoryname} </Dropdown.Item>
+                             </Link>
                             ))}
                            </Dropdown.Menu>
                         </Dropdown>
                         <div className="d-filter">
                            <strong>Filter by category</strong>
                            <ul>
+                           <li className="active-f"><Link to="/news">All</Link></li>
                            {newscats.map((newscat) => (
-                              <li className="active-f"><a href="#">{newscat.frontmatter.categoryname} </a></li>
+                              <li className="active-f">
+                                <Link to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}>
+                                    {newscat.frontmatter.categoryname}
+                                </Link>
+                               </li>
                             ))}
                            </ul>
                         </div>
