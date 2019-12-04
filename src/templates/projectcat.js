@@ -38,7 +38,7 @@ class CatRoute extends React.Component {
          <Helmet title={`${category} | ${title}`} />
          <div className="work_min">
          <Container>
-            <h1>Work</h1>
+            <h1>Work </h1>
         </Container>
         <WorkTypefilter />
             <LatestWork />
