@@ -36,10 +36,10 @@ class NewsTypefilter extends React.Component {
                         <div className="d-filter">
                            <strong>Filter by category</strong>
                            <ul>
-                           <li className="active-f"><Link to="/news">All</Link></li>
+                           <li><Link activeClassName="active-cat" to="/news">All</Link></li>
                            {newscats.map((newscat) => (
-                              <li className="active-f">
-                                <Link to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}>
+                              <li>
+                                <Link activeClassName="active-cat" to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}>
                                     {newscat.frontmatter.categoryname}
                                 </Link>
                                </li>

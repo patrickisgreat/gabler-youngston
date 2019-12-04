@@ -10,6 +10,17 @@
     padding: 60px 0 70px;
 }
 
+.active-cat {
+    color: #EE4423 !important;
+    font-weight: 900;
+}
+
+.cat {
+    color: #414a4a !important;
+    font-size: 35px;
+}
+
+
 .through_years h4 {
     color: #E0E0E0;
     font-size: 90px;
