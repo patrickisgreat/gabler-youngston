@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { kebabCase } from 'lodash'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
@@ -16,9 +17,14 @@ class WorkTypefilter extends React.Component {
             <div className="filter_div">
                 <strong>Filter by category</strong>
                 <ul>
-                {cats.map((cat) => (
-                  <li className="active-f"><a href="#">{cat.frontmatter.categoryname} </a></li>
-                ))}
+                    <li className="active-f"><Link to="/works">All</Link></li>
+                  {cats.map((cat) => (
+                    <li className="active-f">
+                       <Link to={`/projectcat/${kebabCase(cat.frontmatter.categoryname)}/`}>
+                       {cat.frontmatter.categoryname}
+                       </Link>
+                    </li>
+                  ))}
                 </ul>
             </div>
          </Col>
