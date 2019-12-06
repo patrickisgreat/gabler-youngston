@@ -228,10 +228,11 @@ $breakpoint-phone: 568px;
     .sidebar {
       display: flex;
       align-items: flex-start;
-      width: 105px;
+      width: 107px;
       height: 100%;
       background-color: $aqua;
       z-index: 3;
+      box-sizing:border-box;
       p.sidebar-hero {
         writing-mode: tb-rl;
         transform: rotate(-180deg);
@@ -239,7 +240,7 @@ $breakpoint-phone: 568px;
         font-size: 3em;
         padding: 10%;
         margin-top: 20%;
-        padding-left: 1%;
+        padding-left: 20px;
         padding-right: 20px;
         line-height: 0.9;
       }
@@ -379,11 +380,15 @@ $breakpoint-phone: 568px;
   .home-slides .panel-2 .right .slideText,
   .home-slides .panel-4 .right .slideText {
     padding-left: 20px;
-    width: 90%;
+    width: 80%;
     box-sizing: border-box;
   }
   .panel-3 .left .slideText {
     width: 100% !important;
+  }
+  .slideDescriptionv {
+    text-align:left;
+    padding-left:20px;
   }
 }
 @media (max-width: $breakpoint-phone) {

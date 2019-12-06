@@ -38,7 +38,7 @@ const Nav = class extends React.Component {
             role="navigation" 
             aria-label="main-navigation" 
           >
-            <div className="container">
+            <div className="container post-s">
               <div className="navbar-brand">
                 <Link to="/" className="navbar-item" title="Logo">
                   <img src={logo} alt="Gabler Youngston" />

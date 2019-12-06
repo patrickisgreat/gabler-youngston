@@ -24,6 +24,10 @@
   box-sizing:border-box;
 
 }
+.team_detail_text ol{
+  padding-left:22px;
+  padding-top:10px;
+}
 .team_detail_min p{
   line-height:30px;
   padding-top:20px;
