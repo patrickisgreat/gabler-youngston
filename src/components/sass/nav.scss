@@ -31,8 +31,7 @@ nav {
   color: $primary;
 }
 
-
-  //Menu overrides
+//Menu overrides
 $menu-item-color: $white-ter;
 $menu-item-hover-color: $black !important;
 $menu-item-hover-background-color: $black;
@@ -57,7 +56,9 @@ a.navbar-item:hover{
   color:#fff !important
 }
 
-
+.post-s{
+  position:initial;
+}
 #sidebarMenu {
   height: 100%;
   position: fixed;
@@ -70,7 +71,7 @@ a.navbar-item:hover{
 }
 .sidebarMenuInner{
   margin:0;
-  padding:0;
+  padding:0 2rem;
 }
 
 
@@ -106,7 +107,7 @@ input[type=checkbox] {
   height: 100%;
   width: 100%;
   top: 19px;
-  right: 0px;
+  right: 25px;
   height: 22px;
   width: 22px;
 }
@@ -172,5 +173,8 @@ input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
     width:100%;
     position: fixed !important;
     top:0px;
+  }
+  .navbar-item {
+    padding: 0.5rem 0rem !important;
   }
 }
