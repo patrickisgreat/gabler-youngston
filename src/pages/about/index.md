@@ -10,7 +10,7 @@ section1:
     design, contributing to over 300 architectural lighting projects in that
     time, and have worked as a team over the last eight years. Gabler-Youngston
     is the result of a shared vision for improved environments through creative
-    lighting design and thorough documentation. Testing
+    lighting design and thorough documentation.
   title: GABLER YOUNGSTON
   image: /img/leadership_photo1.png
 section2:
