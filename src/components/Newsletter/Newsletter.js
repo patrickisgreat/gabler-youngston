@@ -76,12 +76,12 @@ class Newsletter extends React.Component {
                   <input type="hidden" name="form-name" value="subscribe" />
                   <div className="form-group">
                      <label>Your name:</label>
-                     <input name="name" type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} />
+                     <input name="name" type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} required/>
                      <span style={{color: "#ffffff", fontSize: "14px"}}>{this.state.errors["name"]}</span>
                   </div>
                   <div className="form-group">
                      <label>Your email address:</label>
-                     <input name="email" type="email" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} />
+                     <input name="email" type="email" onChange={this.handleChange.bind(this, "email")} value={this.state.fields["email"]} required/>
                      <span style={{color: "#ffffff", fontSize: "14px"}}>{this.state.errors["email"]}</span>
                   </div>
                   <div className="form-btm">
