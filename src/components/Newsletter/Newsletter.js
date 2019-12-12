@@ -10,18 +10,15 @@ class Newsletter extends React.Component {
            errors: {}
        }
     }
-
     handleValidation(){
         let fields = this.state.fields;
         let errors = {};
         let formIsValid = true;
-
         //Name
         if(!fields["name"]){
            formIsValid = false;
            errors["name"] = "Name cannot be empty";
         }
-
         if(typeof fields["name"] !== "undefined"){
            if(!fields["name"].match(/^[a-zA-Z]+$/)){
               formIsValid = false;
@@ -34,7 +31,6 @@ class Newsletter extends React.Component {
            formIsValid = false;
            errors["email"] = "Email cannot be empty";
         }
-
         if(typeof fields["email"] !== "undefined"){
            let lastAtPos = fields["email"].lastIndexOf('@');
            let lastDotPos = fields["email"].lastIndexOf('.');
@@ -51,15 +47,11 @@ class Newsletter extends React.Component {
 
    contactSubmit(e){
         e.preventDefault();
-
         if(this.handleValidation()){
            alert("You have successfully subscribed to our newsletter");
             let fields = "";      
             this.setState({fields});
-        }else{
-           
         }
-
     }
 
     handleChange(field, e){         
@@ -79,7 +71,7 @@ class Newsletter extends React.Component {
                      <h5>NEWSLETTER</h5>
                 </div>
                 <div className="column is-5">
-                <form name="subscribe" action="/about" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.contactSubmit.bind(this)}>
+                <form name="subscribe" action="/about" method="post" data-netlify="true" data-netlify-honeypot="bot-field" onChange={this.contactSubmit.bind(this)}>
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="subscribe" />
                   <div className="form-group">
