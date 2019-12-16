@@ -24,29 +24,59 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
        <div className="Our_purpose">
            <div className="columns">
                <div className="column is-4">
-                  <Img
+                  {section2.image1.childImageSharp ?
+                    <Img
                     fluid={section2.image1.childImageSharp.fluid}
                     alt="Our purpose"
                    />
-                  <Img
+                   :
+                   <img
+                    src={section2.image1}
+                    alt="Our purpose"
+                   />
+                  }
+                  {section2.image2.childImageSharp ?
+                    <Img
                     fluid={section2.image2.childImageSharp.fluid}
                     alt="Our purpose"
                     style={{ padding: '25px 0 0 30px', width:'100%'}}
                    />
+                   :
+                   <img
+                    src={section2.image2}
+                    alt="Our purpose"
+                    style={{ padding: '25px 0 0 30px', width:'100%'}}
+                   />
+                  }
                </div>
                <div className="column is-8">
                   <div className="columns">
                       <div className="column is-6 column.is-6-mobile">
-                        <Img
+                        {section2.image3.childImageSharp ?
+                          <Img
                           fluid={section2.image3.childImageSharp.fluid}
                           alt="Our purpose"
                         />
+                         :
+                         <img
+                          src={section2.image3}
+                          alt="Our purpose"
+                        />
+                        }
+                        
                       </div>
                       <div className="column is-6 column.is-6-mobile">
-                        <Img
+                        {section2.image4.childImageSharp ?
+                          <Img
                           fluid={section2.image4.childImageSharp.fluid}
                           alt="Our purpose"
                         />
+                         :
+                         <img
+                          src={section2.image4}
+                          alt="Our purpose"
+                        />
+                        }
                       </div>
                   </div>
                   <div className="columns">
