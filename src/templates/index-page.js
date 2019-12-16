@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
@@ -54,10 +54,23 @@ const FlippyGeoShape = ({ progress }) => {
   );
 };
 
+
 export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images }) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
-  const slide4 = slides[2];
+	const slide4 = slides[2];
+
+	
+	// slides get wonky on window resize
+	// this seems hacky but it works
+	const [value, setValue] = useState(0);
+	useEffect(() => {
+		function reRender() {
+			return () => setValue(value => ++value);
+		}
+		window.addEventListener('resize', reRender());
+	}, []);
+
   const NextArrow = props => (
     <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
       <img src={rightArrow} alt="next-arrow" />
