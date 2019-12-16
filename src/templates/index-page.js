@@ -22,10 +22,10 @@ const flippyGeoShapeTweenProps = {
 // Tween to animate the gallery up into the view
 const galleryTweenProps = {
   from: {
-    marginTop: 1000
+    marginTop: 500
   },
   to: {
-    marginTop: 65
+    marginTop: 20
   }
 };
 
@@ -54,7 +54,7 @@ const FlippyGeoShape = ({ progress }) => {
   );
 };
 
-export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
+export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images }) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
   const slide4 = slides[2];
@@ -68,7 +68,35 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
       <img src={leftArrow} alt="prev-arrow" />
     </button>
   );
-  
+
+  const largeSliderSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -109,7 +137,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
     return (
       <Timeline totalProgress={progress * 2} paused>
         <Tween {...galleryTweenProps}>
-          <div className="slideDescriptionv ">
+          <div className="slideDescription">
             <p>{slide4.sidebarDescription}</p>
           </div>
           <div className="galleryContainer">
@@ -186,15 +214,27 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
         <Scene pin>
           <div className="panel panel-3">
             <div className="left">
-              <PreviewCompatibleImage
-                className="slide-bg"
-                imageInfo={{
-                  image: !!slide3.slideImg.childImageSharp
-                    ? slide3.slideImg.childImageSharp.fluid.src
-                    : slide3.slideImg,
-                  alt: `Himitsu Lounge Featured Image`
-                }}
-              />
+              <div className="largeGalleryContainer">
+              <Slider {...largeSliderSettings}>
+                {gallery2Images.map((image, i) => {
+                  return (
+                    <PreviewCompatibleImage
+                      key={i}
+                      className="gallery-img"
+                      imageInfo={{
+                        image: !!image.image.childImageSharp
+                          ? image.image.childImageSharp.fluid.src
+                          : image.image,
+                        alt: `Gallery Test`,
+                        style: {
+                          borderRadius: "0px"
+                        }
+                      }}
+                    />
+                  );
+                })}
+              </Slider>
+              </div>
               <div className="slideText">
                 <p>{slide3.slideBlurb}</p>
               </div>
@@ -213,7 +253,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
         </Scene>
 
         {/* SLIDE 4 GALLERY */}
-        <Scene pin duration="800">
+				<Scene pin pinSettings={{ pushFollowers: false }} duration="700">
           {progress => (
             <div className="panel panel-4">
               <div className="sidebar">
@@ -229,7 +269,10 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages }) => {
                     <FlippyGeoShape progress={progress} />
                   </div>
                 </div>
-                <GallerySlider progress={progress} />
+								<div class="spacer"></div>
+                <div class="slidingElementsContainer">
+                  <GallerySlider progress={progress} />
+                </div>
               </div>
             </div>
           )}
