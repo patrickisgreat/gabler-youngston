@@ -11,21 +11,28 @@ import Purpose2 from '../../img/Bitmap2.png'
 import Purpose3 from '../../img/Bitmap3.png'
 import Purpose4 from '../../img/Bitmap4.png'
 import backbutton from '../../img/back-btn.jpg'
-const Teamdetails = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
 
+export const TeamPageTemplate = ({ frontmatter }) => {
   return (
-    <Layout>
       <div>
         <div className="team_detail_min">
          <h3>Team</h3>
           <div className="columns">
               <div className="column is-4">
+                  {frontmatter.memberimage.childImageSharp ?
                   <Img
                     fluid={frontmatter.memberimage.childImageSharp.fluid}
                     alt="Team"
                     style={{width:'100%'}}
                   />
+                  :
+                  <img
+                    src={frontmatter.memberimage}
+                    alt="Team"
+                    style={{width:'100%'}}
+                  />
+                  }
+                  
                   <img
                     className="hide-phone"
                     src={Purpose2}
@@ -46,7 +53,6 @@ const Teamdetails = ({ data }) => {
                   <div className="columns hide-phone">
                       <div className="column is-6 column.is-6-mobile">
                         <img
-
                           src={Purpose3}
                           alt="Our purpose"
                         />
@@ -77,7 +83,20 @@ const Teamdetails = ({ data }) => {
           </div>
         </div>
       </div>
-  </Layout>
+  );
+}
+
+TeamPageTemplate.propTypes = {
+  frontmatter: PropTypes.array,
+}
+
+const Teamdetails = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    <Layout>
+      <TeamPageTemplate frontmatter={frontmatter} />
+    </Layout>
   )
       
 }
