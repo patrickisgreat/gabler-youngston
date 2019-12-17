@@ -139,7 +139,7 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
 
   const ScollTopButtonSettings = {
     StopPosition: 0,
-    ShowAtPosition: 2500,
+    ShowAtPosition: 3000,
     EasingType: "easeOutCubic",
     AnimationDuration: 500,
     style: scrollTopButtonStyle
