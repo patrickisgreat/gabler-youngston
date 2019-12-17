@@ -306,7 +306,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
+  console.log(data.recentWorks);
   return (
     <Layout>
       <IndexPageTemplate
@@ -315,6 +315,7 @@ const IndexPage = ({ data }) => {
         slides={frontmatter.slides}
         galleryImages={frontmatter.galleryImages}
         gallery2Images={frontmatter.gallery2Images}
+        recentWorks={data.recentWorks}
       />
     </Layout>
   );
@@ -370,6 +371,24 @@ export const pageQuery = graphql`
               }
             }
           }
+        }
+      }
+    }
+    recentWorks: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}) {
+      nodes {
+        frontmatter {
+          projectname
+          projectimage {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
+          projectscope
+        }
+        fields {
+          slug
         }
       }
     }
