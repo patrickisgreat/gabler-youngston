@@ -37,10 +37,7 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: 'gatsby-remark-relative-images',
-            options: {
-              name: 'uploads',
-            },
+            resolve: 'gatsby-remark-relative-images'
           },
           {
             resolve: 'gatsby-remark-images',
@@ -54,7 +51,7 @@ module.exports = {
           {
             resolve: 'gatsby-remark-copy-linked-files',
             options: {
-              destinationDir: `static`,
+              destinationDir: `${__dirname}/static`,
             },
           },
         ],

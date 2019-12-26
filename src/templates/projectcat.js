@@ -9,14 +9,13 @@ import '../pages/work/work.css'
 
 class CatRoute extends React.Component {
   render() {
-
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
        <Col md="4" sm="6" xs="6">
             <div className="hvrbox">
               <img
                 src={
-                  typeof(post.node.frontmatter.projectimage) !== 'undefined' ? 
+                  post.node.frontmatter.projectimage !== null ? 
                   post.node.frontmatter.projectimage.childImageSharp.original.src : null
                 }
                 alt="Our Team"
