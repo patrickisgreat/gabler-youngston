@@ -1,5 +1,5 @@
 ---
-templateKey: Category/index
+templateKey: projectcat
 categoryname: Publications
 ---
 
