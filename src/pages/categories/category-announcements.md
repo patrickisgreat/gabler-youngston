@@ -1,5 +1,5 @@
 ---
 templateKey: projectcat
-categoryname: Announcements
+categoryname: 'Announcements '
 ---
 
