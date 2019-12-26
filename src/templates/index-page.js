@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Layout from "../components/Layout";
 import { Tween, Timeline } from "react-gsap";
@@ -55,21 +55,22 @@ const FlippyGeoShape = ({ progress }) => {
 };
 
 
-export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images, recentWorks }) => {
+export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images, recentWorks, footerWorks}) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
-	const slide4 = slides[2];
+  const slide4 = slides[2];
 
-	
-	// slides get wonky on window resize
-	// this seems hacky but it works
-	const [value, setValue] = useState(0);
-	useEffect(() => {
-		function reRender() {
-			return () => setValue(value => ++value);
-		}
-		window.addEventListener('resize', reRender());
-	}, []);
+  console.log("test project");
+  console.log(recentWorks);
+  // slides get wonky on window resize
+  // this seems hacky but it works
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    function reRender() {
+      return () => setValue(value => ++value);
+    }
+    window.addEventListener('resize', reRender());
+  }, []);
 
   const NextArrow = props => (
     <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
@@ -155,21 +156,21 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
           </div>
           <div className="galleryContainer">
             <Slider {...sliderSettings}>
-              {galleryImages.map((image, i) => {
+              {footerWorks.map((image, i) => {
                 return (
-                  <PreviewCompatibleImage
-                    key={i}
-                    className="gallery-img"
-                    imageInfo={{
-                      image: !!image.image.childImageSharp
-                        ? image.image.childImageSharp.fluid.src
-                        : image.image,
-                      alt: `Gallery Test`,
-                      style: {
-                        borderRadius: "0px"
-                      }
-                    }}
-                  />
+                  <div className="hvrbox">
+                    <img
+                      src={image.frontmatter.projectimage.childImageSharp.fluid.src}
+                      alt="Our Team"
+                      style={{ display: 'block', width:'100%'}}
+                      className="hvrbox-layer_bottom"
+                    />
+                    <Link to={image.fields.slug} className="hvrbox-layer_top">
+                      <div className="hvrbox-text">
+                        <h5>{image.frontmatter.projectname}</h5>
+                      </div>
+                    </Link>
+                  </div>
                 );
               })}
             </Slider>
@@ -228,25 +229,39 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
           <div className="panel panel-3">
             <div className="left">
               <div className="largeGalleryContainer">
-              <Slider {...largeSliderSettings}>
-                {gallery2Images.map((image, i) => {
-                  return (
-                    <PreviewCompatibleImage
-                      key={i}
-                      className="gallery-img"
-                      imageInfo={{
-                        image: !!image.image.childImageSharp
-                          ? image.image.childImageSharp.fluid.src
-                          : image.image,
-                        alt: `Gallery Test`,
-                        style: {
-                          borderRadius: "0px"
-                        }
-                      }}
-                    />
-                  );
-                })}
-              </Slider>
+                <Slider {...largeSliderSettings}>
+                  {recentWorks.map((image, i) => {
+                    return (
+                    <Link to={image.fields.slug}>
+                      <div className="slider-works">
+                        <div className="slider-img">
+                          <PreviewCompatibleImage
+                            key={i}
+                            className="gallery-img"
+                            imageInfo={{
+                              image: !!image.frontmatter.projectimage.childImageSharp
+                                ? image.frontmatter.projectimage.childImageSharp.fluid.src
+                                : image.frontmatter.projectimage.childImageSharp,
+                              alt: `Gallery Test`,
+                              style: {
+                                borderRadius: "0px"
+                              }
+                            }}
+                          />
+                        </div>
+                        <div className="sidebar slider-sidebar">
+                          <p className="sidebar-hero">{image.frontmatter.projectname}</p>
+                          {/*<p className="sidebar-desc">-</p>
+                          <a href="#">
+                            <img className="portfolio-link" src="" />
+                          </a>
+                          */}
+                        </div>
+                      </div>
+                    </Link>
+                    );
+                  })}
+                </Slider>
               </div>
               <div className="slideText">
                 <p>{slide3.slideBlurb}</p>
@@ -255,18 +270,12 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
                 <span className="scroll-bob">SCROLL</span>
               </span>
             </div>
-            <div className="sidebar">
-              <p className="sidebar-hero">{slide3.sidebarHero}</p>
-              <p className="sidebar-desc">{slide3.sidebarDescription}</p>
-              <a href="#">
-                <img className="portfolio-link" src="" />
-              </a>
-            </div>
+            
           </div>
         </Scene>
 
         {/* SLIDE 4 GALLERY */}
-				<Scene pin pinSettings={{ pushFollowers: false }} duration="700">
+        <Scene pin pinSettings={{ pushFollowers: false }} duration="700">
           {progress => (
             <div className="panel panel-4">
               <div className="sidebar">
@@ -282,8 +291,8 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
                     <FlippyGeoShape progress={progress} />
                   </div>
                 </div>
-								<div class="spacer"></div>
-                <div class="slidingElementsContainer">
+                <div className="spacer"></div>
+                <div className="slidingElementsContainer">
                   <GallerySlider progress={progress} />
                 </div>
               </div>
@@ -301,12 +310,15 @@ IndexPageTemplate.propTypes = {
   title: PropTypes.string,
   slides: PropTypes.array,
   galleryImages: PropTypes.array,
-  gallery2Images: PropTypes.array
+  gallery2Images: PropTypes.array,
+  recentWorks: PropTypes.array,
+  footerWorks: PropTypes.array
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   console.log(data.recentWorks);
+  console.log(data.footerWorks);
   return (
     <Layout>
       <IndexPageTemplate
@@ -315,7 +327,8 @@ const IndexPage = ({ data }) => {
         slides={frontmatter.slides}
         galleryImages={frontmatter.galleryImages}
         gallery2Images={frontmatter.gallery2Images}
-        recentWorks={data.recentWorks}
+        recentWorks={data.recentWorks.nodes}
+        footerWorks={data.footerWorks.nodes}
       />
     </Layout>
   );
@@ -374,16 +387,38 @@ export const pageQuery = graphql`
         }
       }
     }
-    recentWorks: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}) {
+    
+    recentWorks: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}, limit: 3) {
       nodes {
         frontmatter {
           projectname
           projectimage {
             childImageSharp {
-              original {
-                src
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
               }
             }
+
+          }
+          projectscope
+        }
+        fields {
+          slug
+        }
+      }
+    }
+
+    footerWorks: allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}) {
+      nodes {
+        frontmatter {
+          projectname
+          projectimage {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+
           }
           projectscope
         }

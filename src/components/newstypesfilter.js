@@ -20,16 +20,13 @@ class NewsTypefilter extends React.Component {
                      <div className="filter_div">
                         <Dropdown className="mobile-filter">
                            <Dropdown.Toggle id="dropdown-basic">
-                              <strong>Filter</strong>
+                              <strong>Filter by category</strong>
                            </Dropdown.Toggle>
                            <Dropdown.Menu>
-                             <Link to="/news">
-                               <Dropdown.Item href="#">All</Dropdown.Item>
-                             </Link>
+                             <Link to="/news" className="dropdown-item" role="button"> All</Link>
+
                             {newscats.map((newscat) => (
-                             <Link to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}>
-                               <Dropdown.Item href="#">{newscat.frontmatter.categoryname} </Dropdown.Item>
-                             </Link>
+                             <Link className="dropdown-item" role="button" to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}> {newscat.frontmatter.categoryname}</Link>
                             ))}
                            </Dropdown.Menu>
                         </Dropdown>

@@ -8,7 +8,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Img from 'gatsby-image'
 import NewsList from '../components/Newslist/newslist'
 import NewsTypefilter from '../components/newstypesfilter'
-import '../pages/news/news.css'
+
 
 const NewsPage = ({ data }) => {
     

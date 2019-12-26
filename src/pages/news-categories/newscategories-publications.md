@@ -1,5 +1,5 @@
 ---
-templateKey: NewsCategory/index
+templateKey: newscat
 categoryname: Publications
 ---
 

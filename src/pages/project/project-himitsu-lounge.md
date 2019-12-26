@@ -2,7 +2,7 @@
 templateKey: Projectdetail/index
 projectname: HIMITSU LOUNGE
 projecttagline: Tagline example
-projectimage: /img/bitmap3.png
+projectimage: /img/himitsu1.jpg
 projectcategory: Announcements
 projectscope: Hospitality
 sortdescription: Sort Announcements
@@ -17,7 +17,7 @@ descriptionblockone:
       Donec a dictum ex. Donec lacinia, velit at luctus sagittis, ipsum magna
       consectetur odio, vitae accumsan est mauris iaculis est.
     descriptiontitle: Himitsu
-    image: /img/bitmap2.png
+    image: /img/himitsuatlanta6.jpg
     imagepos: left
   - description: >-
       Lounge consectetur adipiscing elit. Pellentesque euismod malesuada

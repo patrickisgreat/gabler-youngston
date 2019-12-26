@@ -97,7 +97,7 @@ collections:
     slug: "category/{{slug}}"
     identifier_field: categoryname
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Category/index"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projectcat"}
       - {label: "Category Name", name: "categoryname", widget: "string"}
 
   - name: "project"
@@ -133,7 +133,7 @@ collections:
     slug: "newscategories/{{slug}}"
     identifier_field: categoryname
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "NewsCategory/index"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "newscat"}
       - {label: "Category Name", name: "categoryname", widget: "string"}
 
   - name: "blog"

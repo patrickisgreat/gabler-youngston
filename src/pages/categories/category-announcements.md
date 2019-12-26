@@ -1,5 +1,5 @@
 ---
-templateKey: Category/index
-categoryname: Announcements
+templateKey: projectcat
+categoryname: Announcement
 ---
 
