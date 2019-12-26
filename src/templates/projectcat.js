@@ -15,7 +15,10 @@ class CatRoute extends React.Component {
        <Col md="4" sm="6" xs="6">
             <div className="hvrbox">
               <img
-                src={post.node.frontmatter.projectimage.childImageSharp.original.src}
+                src={
+                  typeof(post.node.frontmatter.projectimage) !== 'undefined' ? 
+                  post.node.frontmatter.projectimage.childImageSharp.original.src : null
+                }
                 alt="Our Team"
                 style={{ display: 'block', width:'100%'}}
                 className="hvrbox-layer_bottom"
