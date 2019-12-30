@@ -45,7 +45,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query WorkTypefilterQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Category/index"}}}) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "projectcat"}}}) {
           nodes {
             frontmatter {
               categoryname

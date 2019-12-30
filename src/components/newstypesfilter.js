@@ -63,7 +63,7 @@ export default () => (
   <StaticQuery
     query={graphql`
       query NewsTypefilterQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "NewsCategory/index"}}}) {
+        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "newscat"}}}) {
           nodes {
             frontmatter {
               categoryname
