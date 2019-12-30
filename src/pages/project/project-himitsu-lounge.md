@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: HIMITSU LOUNGE
 projecttagline: Tagline example
 projectimage: /img/himitsu1.jpg
-projectcategory: Announcements
+projectcategory: Announcement
 projectscope: Hospitality
 sortdescription: Sort Announcements
 descriptionblockone:
