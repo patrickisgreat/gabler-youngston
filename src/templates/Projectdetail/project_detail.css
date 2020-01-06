@@ -43,9 +43,10 @@
 }
 
 .banner-text h2{
-  font-family: 'Source Sans Pro', sans-serif !important;
+  font-family: "Futura-Koyu", sans-serif !important;
   font-size: 45px;
-  font-weight: 700;
+  /* //font-weight: 700; */
+  padding-top: 20px;
   text-transform: uppercase;
   letter-spacing:3px;
 }

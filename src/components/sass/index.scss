@@ -147,7 +147,7 @@ $breakpoint-phone: 568px;
           font-size: 25px;
           line-height: 2.5rem;
           text-align: left;
-          // font-family: "Futura-Koyu", sans-serif;
+          font-family: "Futura-Koyu", sans-serif;
           font-weight: 400;
         }
       }
@@ -451,4 +451,13 @@ $breakpoint-phone: 568px;
     font-size: 15px;
     line-height: 2rem;
   }
+  .home-slides .panel-3 .slider-img {
+      width: 93%;
+      min-width: 105px;
+      float: left;
+      img{
+        width: 100%;
+        height: auto !important;
+      }
+    }
 }

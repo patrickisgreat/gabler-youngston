@@ -11,7 +11,7 @@ const Typography = () =>{
         @font-face {
             font-family:"Futura-Koyu";
             src:url(${FuturaKoyuWoff2}) format("woff2"),url(${FuturaKoyuWoff}) format("woff");
-            font-style:normal;font-weight:300;
+            font-style:normal;font-weight:100;
         }
 
         @font-face {

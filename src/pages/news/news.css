@@ -4,9 +4,9 @@
 
 .all_news h1 {
     font-size: 90px;
-    font-weight: 400;
+    font-weight: 100 !important;
     color: #E0E0E0;
-    font-family: 'Source Sans Pro', sans-serif !important;
+    font-family: "Futura-Koyu", sans-serif !important;
     line-height: 90px;
 }
 

@@ -6,11 +6,11 @@ import Layout from '../../components/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./team_detail.css";
 import Content, { HTMLContent } from '../../components/Content'
-import morgan from '../../img/teamimg1.jpg'
 import Purpose2 from '../../img/Bitmap2.png'
 import Purpose3 from '../../img/Bitmap3.png'
 import Purpose4 from '../../img/Bitmap4.png'
 import backbutton from '../../img/back-btn.jpg'
+import OurTeam from '../../components/Team/team'
 
 export const TeamPageTemplate = ({ frontmatter }) => {
   return (
@@ -71,6 +71,7 @@ export const TeamPageTemplate = ({ frontmatter }) => {
                         <HTMLContent content={frontmatter.description} className="description" />
                       </div>
                   </div>
+                  <OurTeam></OurTeam>
                   <Link to="/about" className="back-btn only-phone">
                       <img
                         src={backbutton}
