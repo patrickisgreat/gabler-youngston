@@ -13,6 +13,7 @@ import backbutton from '../../img/back-btn.jpg'
 import OurTeam from '../../components/Team/team'
 
 export const TeamPageTemplate = ({ frontmatter }) => {
+
   return (
       <div>
         <div className="team_detail_min">
@@ -69,7 +70,7 @@ export const TeamPageTemplate = ({ frontmatter }) => {
                         <h2>{frontmatter.title}</h2>
                         <span>{frontmatter.designation}</span><br />
                         <HTMLContent content={frontmatter.description} className="description" />
-                        <Link to={frontmatter.resume}>Download Resume</Link>
+                        {/* <Link to={frontmatter.resume.publicURL} download>Download Resume</Link> */}
                       </div>
                   </div>
                   <OurTeam></OurTeam>
@@ -94,7 +95,6 @@ TeamPageTemplate.propTypes = {
 
 const Teamdetails = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <TeamPageTemplate frontmatter={frontmatter} />
@@ -121,7 +121,6 @@ export const TeamdetailsQuery = graphql`
         templateKey
         description
         designation
-        resume
         memberimage {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
