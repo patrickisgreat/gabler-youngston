@@ -1,9 +1,9 @@
 ---
 templateKey: Projectdetail/index
-projectname: Aloft Sunnyvale
+projectname: ALOFT SUNNYVALE
 projecttagline: Test company name
 projectimage: /img/aloft_sunnyvale1.jpg
-projectcategory: Announcement
+projectcategory: Hospitality
 projectscope: Hospitality
 sortdescription: Hospitality
 descriptionblockone:
