@@ -1,8 +1,6 @@
 ---
 templateKey: about-page
 title: About Gabler Youngston
-headerImage: /img/gabler_youngston_jasonbelishaphotographer-2.jpg
-heroImage: /img/leadership_photo.png
 image: /img/gabler_youngston_jasonbelishaphotographer-2.jpg
 section1:
   description: >-
@@ -14,7 +12,7 @@ section1:
     is the result of a shared vision for improved environments through creative
     lighting design and thorough documentation.
   title: GABLER YOUNGSTON
-  image: /img/gabler_youngston_jasonbelishaphotographer-17.jpg
+  image: /img/gabler_youngston_jasonbelishaphotographer-8.jpg
 section2:
   description: >-
     Lighting design studies the interactions of volume, materials, user needs,
