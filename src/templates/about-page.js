@@ -3,20 +3,18 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Layout from '../components/Layout'
-import Content, {   } from '../components/Content'
 import AboutBanner from '../components/Aboutbanner/banner'
 import OurTeam from '../components/Team/team'
-import Aboutusimage from '../img/leadership_photo.png'
 import './allpage.css'
 
-export const AboutPageTemplate = ({ title, section1, section2, section3, section4, section5 }) => {
+export const AboutPageTemplate = ({ title, section1, section2, section3, section4, section5, heroImage }) => {
   return (
     <div>
        <div className="about-us">
           <img
-              src={Aboutusimage}
-              alt="About us image"
-            />
+            src={heroImage.childImageSharp.fluid.src}
+            alt="About us image"
+          />
           <div className="about_text">
               <p><span>{section1.title}</span> {section1.description}</p>
           </div>
@@ -141,6 +139,7 @@ const AboutPage = ({ data }) => {
       <AboutBanner headerImage={frontmatter.headerImage.childImageSharp.fluid.src}></AboutBanner>
       <AboutPageTemplate
         title={frontmatter.title}
+        heroImage={frontmatter.heroImage}
         section1={frontmatter.section1}
         section2={frontmatter.section2}
         section3={frontmatter.section3}
@@ -167,11 +166,18 @@ export const aboutPageQuery = graphql`
       frontmatter {
         headerImage {
           childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
             }
           }
+        }
+        heroImage {
+          childImageSharp {
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         title
         section1 {
           description
