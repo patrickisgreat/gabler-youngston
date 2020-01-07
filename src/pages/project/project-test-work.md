@@ -1,35 +1,31 @@
 ---
 templateKey: Projectdetail/index
-projectname: Test Work
+projectname: Atlanta United
 projecttagline: Test work tagline
-projectimage: /img/about-banner.jpg
-projectcategory: Publications
-projectscope: no scope
+projectimage: /img/atl_united1.jpg
+projectcategory: Announcement
+projectscope: Corporate
 sortdescription: Test description
 descriptionblockone:
   - description: >-
-      Lounge consectetur adipiscing elit. Pellentesque euismod malesuada
-      iaculis. Nam id sapien accumsan, lacinia diam nec, laoreet tortor. Proin
-      mauris tellus, ultrices sed consectetur ac, mattis nec arcu. Duis
-      scelerisque pretium ex, in bibendum tortor viverra id. Mauris fermentum,
-      nulla et elementum mattis, sem quam suscipit enim, quis sollicitudin enim
-      augue eu nulla. Proin finibus odio augue, ut posuere sem vulputate a.
-      Donec a dictum ex. Donec lacinia, velit at luctus sagittis, ipsum magna
-      consectetur odio, vitae accumsan est mauris iaculis est.
-    descriptiontitle: Himitsu
-    image: /img/bitmap2.png
+      Each area of the facility, from the gym and locker room to the lobby and
+      balcony, has its own unique lighting. By combining old and new styles,
+      warm and cool light tones, and considering available natural light in the
+      design, the lighting ensures that the athletes at the Atlanta United
+      Practice Facility get to experience both the energizing and relaxing
+      effects they need in their space.
+    descriptiontitle: Idea
+    image: /img/atl_united2.jpg
     imagepos: left
   - description: >-
-      Lounge consectetur adipiscing elit. Pellentesque euismod malesuada
-      iaculis. Nam id sapien accumsan, lacinia diam nec, laoreet tortor. Proin
-      mauris tellus, ultrices sed consectetur ac, mattis nec arcu. Duis
-      scelerisque pretium ex, in bibendum tortor viverra id. Mauris fermentum,
-      nulla et elementum mattis, sem quam suscipit enim, quis sollicitudin enim
-      augue eu nulla. Proin finibus odio augue, ut posuere sem vulputate a.
-      Donec a dictum ex. Donec lacinia, velit at luctus sagittis, ipsum magna
-      consectetur odio, vitae accumsan est mauris iaculis est.
+      Each area of the facility, from the gym and locker room to the lobby and
+      balcony, has its own unique lighting. By combining old and new styles,
+      warm and cool light tones, and considering available natural light in the
+      design, the lighting ensures that the athletes at the Atlanta United
+      Practice Facility get to experience both the energizing and relaxing
+      effects they need in their space.
     descriptiontitle: Live
-    image: /img/photo-1.png
+    image: /img/atl_united3.jpg
     imagepos: right
 extrafield:
   - label: Photographer
