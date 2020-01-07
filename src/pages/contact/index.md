@@ -8,7 +8,6 @@ sidebarcontent:
   - description: |-
       60 United Ave SE,
       Atlanta, GA 30312
-      Get Directions
     title: 'Gabler Youngston, LLC.'
   - description: |-
       Please Email:
