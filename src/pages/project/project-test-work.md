@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: ATLANTA UNITED
 projecttagline: Test work tagline
 projectimage: /img/atl_united1.jpg
-projectcategory: Announcement
+projectcategory: Corporate
 projectscope: Corporate
 sortdescription: Test description
 descriptionblockone:
