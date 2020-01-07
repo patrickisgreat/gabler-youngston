@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: Atlanta United
+projectname: ATLANTA UNITED
 projecttagline: Test work tagline
 projectimage: /img/atl_united1.jpg
 projectcategory: Announcement
