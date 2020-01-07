@@ -1,9 +1,6 @@
 ---
 templateKey: Teamdetail/index
-<<<<<<< HEAD
 resume: jim-resume.pdf
-=======
->>>>>>> cddb3e4d46577bb0f7248e90ca5d4916e0c62091
 memberimage: /img/team-jim.jpg
 title: JIM YOUNGSTON
 designation: Principal
