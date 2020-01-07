@@ -69,6 +69,7 @@ export const TeamPageTemplate = ({ frontmatter }) => {
                         <h2>{frontmatter.title}</h2>
                         <span>{frontmatter.designation}</span><br />
                         <HTMLContent content={frontmatter.description} className="description" />
+                        <Link to={frontmatter.resume}>Download Resume</Link>
                       </div>
                   </div>
                   <OurTeam></OurTeam>
@@ -120,6 +121,7 @@ export const TeamdetailsQuery = graphql`
         templateKey
         description
         designation
+        resume
         memberimage {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {

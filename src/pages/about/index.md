@@ -1,6 +1,7 @@
 ---
 templateKey: about-page
 title: About Gabler Youngston
+headerImage: /img/gabler_youngston_jasonbelishaphotographer-3.jpg
 image: /img/gabler_youngston_jasonbelishaphotographer-3.jpg
 section1:
   description: >-

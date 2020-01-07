@@ -32,6 +32,7 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Header Image", name: "headerImage", widget: "image"}
           - {label: "Image", name: "image", widget: "image"}
           - {label: "Section 1", name: "section1", widget: "object", fields: [
               {label: "title", name: "title", widget: "text"}, 
@@ -85,6 +86,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Teamdetail/index"}
       - {label: "Member Image", name: "memberimage", widget: image}
+      - {label: "Member Resume", name: "resume", widget: "file"}
       - {label: "Member Name", name: "title", widget: "string"}
       - {label: "Designation", name: "designation", widget: "string"}
       - {label: "Description", name: "description", widget: "markdown"}

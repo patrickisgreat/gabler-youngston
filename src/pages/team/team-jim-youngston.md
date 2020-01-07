@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+resume: /resumes/jim-resume.pdf
 memberimage: /img/team-jim.jpg
 title: JIM YOUNGSTON
 designation: Principal
