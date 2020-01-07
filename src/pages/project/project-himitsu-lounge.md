@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: HOLY INNOCENTS
 projecttagline: Tagline example
 projectimage: /img/holy_innocents1.jpg
-projectcategory: Announcement
+projectcategory: Liturgical
 projectscope: Liturgical
 sortdescription: Sort Announcements
 descriptionblockone:
