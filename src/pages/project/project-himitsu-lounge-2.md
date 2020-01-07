@@ -15,6 +15,13 @@ descriptionblockone:
     descriptiontitle: Idea
     image: /img/himitsuatlanta6.jpg
     imagepos: left
+  - description: >-
+      Rich gem colors in velvet and leather, dark mahogany woods and an underlit
+      bar inspire a feeling of richness. The way light peaks from the negative
+      spaces in Himitsu does best to highlight the focal points of the space.
+    descriptiontitle: Live
+    image: /img/photo-1.png
+    imagepos: right
 extrafield:
   - label: Architect
     value: Piers Cunnington + Clinton Cuddington
