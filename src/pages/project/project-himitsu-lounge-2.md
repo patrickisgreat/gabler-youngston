@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: HIMITSU LOUNGE
 projecttagline: 'Design Studio Group, Atlanta, Ga.'
 projectimage: /img/himitsu1.jpg
-projectcategory: Publications
+projectcategory: Hospitality
 projectscope: Hospitality
 sortdescription: This is short description
 descriptionblockone:
