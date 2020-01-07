@@ -6,12 +6,12 @@ contactnumberone: mgabler@gableryoungston.com
 contactnumbertwo: 'jyoungston@gableryoungston.com '
 sidebarcontent:
   - description: |-
-      692 Kirkwood Avenue, SE, Suite B2,
-      Atlanta, Georgia 30316, US
+      60 United Ave SE,
+      Atlanta, GA 30312
       Get Directions
     title: 'Gabler Youngston, LLC.'
   - description: |-
-      Email:
+      Please Email:
       mgabler@gableryoungston.com
       jyoungston@gableryoungston.com
     title: Press inquiries
