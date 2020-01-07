@@ -8,11 +8,12 @@ projectscope: Hospitality
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      adipiscing elit. Pellentesque euismod malesuada iaculis. Nam id sapien
-      accumsan, lacinia diam nec, laoreet tortor. Proin mauris tellus, ultrices
-      sed consectetur ac, mattis nec arcu.
-    descriptiontitle: Work
-    image: /img/chemex.jpg
+      This speakeasy style bar and lounge has a very early industrial look that
+      makes low lighting a requirement. While it certainly helps to set the
+      mood, the mild, broad-spectrum lighting also helps bring out the bold,
+      dark colors of the furniture and fixtures.
+    descriptiontitle: Idea
+    image: /img/himitsuatlanta6.jpg
     imagepos: left
 extrafield:
   - label: Architect
