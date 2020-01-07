@@ -1,40 +1,26 @@
 ---
 templateKey: Projectdetail/index
-projectname: HIMITSU LOUNGE
+projectname: HOLY INNOCENTS
 projecttagline: Tagline example
-projectimage: /img/himitsu1.jpg
+projectimage: /img/gy-website-images.jpg
 projectcategory: Announcement
-projectscope: Hospitality
+projectscope: Liturgical
 sortdescription: Sort Announcements
 descriptionblockone:
   - description: >-
-      Lounge consectetur adipiscing elit. Pellentesque euismod malesuada
-      iaculis. Nam id sapien accumsan, lacinia diam nec, laoreet tortor. Proin
-      mauris tellus, ultrices sed consectetur ac, mattis nec arcu. Duis
-      scelerisque pretium ex, in bibendum tortor viverra id. Mauris fermentum,
-      nulla et elementum mattis, sem quam suscipit enim, quis sollicitudin enim
-      augue eu nulla. Proin finibus odio augue, ut posuere sem vulputate a.
-      Donec a dictum ex. Donec lacinia, velit at luctus sagittis, ipsum magna
-      consectetur odio, vitae accumsan est mauris iaculis est.
-    descriptiontitle: Himitsu
-    image: /img/himitsuatlanta6.jpg
+      Every space has been lit with intention and thought. One room showcases
+      candle-shaped lights to give the impression of a community vigil, invoking
+      religious, reverent feelings. And in the sanctuary, the modern vaulted
+      ceiling is illuminated to call attention upward in wonder, while hanging
+      lanterns complete the theme of medieval religious architecture in a modern
+      way.
+    descriptiontitle: Idea
+    image: /img/holy_innocents2.jpg
     imagepos: left
-  - description: >-
-      Lounge consectetur adipiscing elit. Pellentesque euismod malesuada
-      iaculis. Nam id sapien accumsan, lacinia diam nec, laoreet tortor. Proin
-      mauris tellus, ultrices sed consectetur ac, mattis nec arcu. Duis
-      scelerisque pretium ex, in bibendum tortor viverra id. Mauris fermentum,
-      nulla et elementum mattis, sem quam suscipit enim, quis sollicitudin enim
-      augue eu nulla. Proin finibus odio augue, ut posuere sem vulputate a.
-      Donec a dictum ex. Donec lacinia, velit at luctus sagittis, ipsum magna
-      consectetur odio, vitae accumsan est mauris iaculis est.
-    descriptiontitle: Live
-    image: /img/photo-1.png
-    imagepos: right
 extrafield:
   - label: Photographer
     value: Ema Peter Photography
-  - label: Project Type Residential
-    value: new build
+  - label: 'Project Type '
+    value: Liturgical
 ---
 
