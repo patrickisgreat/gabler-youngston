@@ -106,13 +106,13 @@ export const WorkPageTemplate = ({ frontmatter }) => {
             <Row>
                <Col md="7">
                    <ul>
-                      {frontmatter.extrafield.map((items, i) => (
+                      {frontmatter.extrafield && frontmatter.extrafield.map((items, i) => (
                         <li><b>{items.label}</b> <span>{items.value} </span></li> 
                       ))} 
                    </ul>
                </Col>
                <Col md="5" className="social_links">
-                  <h6>Like it? Share it!</h6>
+                  {/* <h6>Like it? Share it!</h6>
                    <ul>
                       <li><a href=""> 
                        <img
@@ -144,7 +144,7 @@ export const WorkPageTemplate = ({ frontmatter }) => {
                              alt="email"
                           /> 
                       </a></li>
-                   </ul>
+                   </ul> */}
 
                    <div class="back-btn-up">
                        <Link to="/work">
