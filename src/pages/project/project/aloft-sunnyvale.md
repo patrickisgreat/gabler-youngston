@@ -16,7 +16,13 @@ descriptionblockone:
     image: /img/aloft_sunnyvale2.jpg
     imagepos: left
 extrafield:
-  - label: poop
-    value: test
+  - label: Architect
+    value: Test
+  - label: GY Team Member
+    value: Michael
+  - label: General Contractor
+    value: Test
+  - label: Consultants
+    value: Test
 ---
 
