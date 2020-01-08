@@ -15,5 +15,8 @@ descriptionblockone:
     descriptiontitle: Idea
     image: /img/aloft_sunnyvale2.jpg
     imagepos: left
+extrafield:
+  - label: poop
+    value: test
 ---
 
