@@ -2,8 +2,7 @@
 templateKey: about-page
 title: About Gabler Youngston
 headerImage: /img/gabler_youngston_jasonbelishaphotographer-2.jpg
-heroImage: /img/leadership_photo.png
-image: /img/gabler_youngston_jasonbelishaphotographer-2.jpg
+heroImage: /img/morgan-and-jim.jpg
 section1:
   description: >-
     is an award winning architectural lighting design firm founded by Morgan
@@ -13,8 +12,8 @@ section1:
     time, and have worked as a team over the last eight years. Gabler-Youngston
     is the result of a shared vision for improved environments through creative
     lighting design and thorough documentation.
-  title: GABLER YOUNGSTON
   image: /img/gabler_youngston_jasonbelishaphotographer-17.jpg
+  title: GABLER YOUNGSTON
 section2:
   description: >-
     Lighting design studies the interactions of volume, materials, user needs,
