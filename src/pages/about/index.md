@@ -36,29 +36,27 @@ section4:
   title: Through The Years
 section5:
   description:
-    - text: 2007 GE Edison Award of Merit – Showroom for Allsteel and Gunlocke
+    - text: GE Edison Award of Merit – Showroom for Allsteel and Gunlocke
     - text: >-
-        2007 GE Edison Award for Sustainable Design – Showroom for Allsteel and
+        GE Edison Award for Sustainable Design – Showroom for Allsteel and
         Gunlocke
     - text: >-
         International Illumination Design Awards (IIDA), International Award of
-        Merit 2007 (sustainability) – Showroom for Allsteel and Gunlocke,
+        Merit (sustainability) – Showroom for Allsteel and Gunlocke, Atlanta,
+        Georgia
+    - text: >-
+        IIDA, Section Award, Georgia Section (interiors) – Showroom for Allsteel
+        and Gunlocke, Atlanta, Georgia
+    - text: 'IIDA, International Award of Merit – Studio, Buenos Aires, Argentina'
+    - text: >-
+        IIDA, International Award of Merit  – Corporate Conference Center Lobby,
         Atlanta, Georgia
     - text: >-
-        IIDA, Section Award, Georgia Section 2007 (interiors) – Showroom for
-        Allsteel and Gunlocke, Atlanta, Georgia
-    - text: >-
-        IIDA, International Award of Merit 2006 – Studio, Buenos Aires,
-        Argentina
-    - text: >-
-        IIDA, International Award of Merit 2004 – Corporate Conference Center
-        Lobby, Atlanta, Georgia
-    - text: >-
-        IIDA, International Award of Merit 2003 (2) – The Left Bank, Duck, North
+        IIDA, International Award of Merit (2) – The Left Bank, Duck, North
         Carolina and Newcomb & Boyd Offices, Atlanta, Georgia
     - text: >-
-        IIDA, International Award of Merit 1999 (2) – British Airways
-        Hospitality Suite, Houston, Texas and Riverbend Church, Austin, Texas
+        IIDA, International Award of Merit (2) – British Airways Hospitality
+        Suite, Houston, Texas and Riverbend Church, Austin, Texas
   title: 'Recognition '
 ---
 
