@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: Bacardi US Headquarters
+projectname: BACARDI HQ
 projecttagline: Design Group
 projectimage: /img/bacardi1.jpg
 projectcategory: Hospitality
