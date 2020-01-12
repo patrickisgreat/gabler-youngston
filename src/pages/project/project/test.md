@@ -16,5 +16,14 @@ descriptionblockone:
     descriptiontitle: Idea
     image: /img/bacardi2.jpg
     imagepos: left
+extrafield:
+  - label: Architect
+    value: Test
+  - label: GY Team Member
+    value: Test
+  - label: General Contractor
+    value: Test
+  - label: Consultants
+    value: Test
 ---
 
