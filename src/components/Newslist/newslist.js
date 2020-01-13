@@ -4,15 +4,13 @@ import { Link, graphql, StaticQuery } from 'gatsby'
 import './newslist.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
-import Instfeed1 from '../../img/insta-post1.jpg'
-import Instfeed2 from '../../img/insta-post2.jpg'
-import Instfeed3 from '../../img/insta-post3.jpg'
-import Instfeed4 from '../../img/insta-post4.jpg'
 
 class NewsList extends React.Component {
   render() {
-    const { data } = this.props
-    const { nodes: newses } = data.allMarkdownRemark
+	const { data } = this.props;
+	const { edges: allInstaNode } = data.allInstaNode;
+	const { nodes: newses } = data.allMarkdownRemark;
+
     
     return (
       <div className="news_feed">
@@ -28,26 +26,15 @@ class NewsList extends React.Component {
             </Col>
             <Col md="4">
                <div className="instagram_feed">
-                  <img
-                    src={Instfeed1}
-                    alt="Psot"
-                    style={{ display: 'block', width:'100%'}}
-                  /> 
-                  <img
-                    src={Instfeed2}
-                    alt="Psot"
-                    style={{ display: 'block', width:'100%'}}
-                  />
-                  <img
-                    src={Instfeed3}
-                    alt="Psot"
-                    style={{ display: 'block', width:'100%'}}
-                  />
-                  <img
-                    src={Instfeed4}
-                    alt="Psot"
-                    style={{ display: 'block', width:'100%'}}
-                  />                          
+						{allInstaNode.map((post) => (
+						<Link to={post.node.preview}>
+							<img
+								src={post.node.preview}
+								alt={post.node.caption}
+								style={{ display: 'block', width: '100%', marginTop: '20px'}}
+							/>
+						</Link>
+						))}                        
                </div>
             </Col>
         </Row>
@@ -68,6 +55,27 @@ export default () => (
   <StaticQuery
     query={graphql`
       query NewsListQuery {
+			  allInstaNode {
+					edges {
+						node {
+							id
+							likes
+							comments
+							mediaType
+							preview
+							original
+							timestamp
+							caption
+							localFile {
+								childImageSharp {
+									fixed(width: 150, height: 150) {
+									...GatsbyImageSharpFixed
+									}
+								}
+							}
+						}
+					}
+				}
         allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
           nodes {
             frontmatter {

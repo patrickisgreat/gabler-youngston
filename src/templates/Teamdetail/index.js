@@ -66,12 +66,12 @@ export const TeamPageTemplate = ({ frontmatter }) => {
                       </div>
                   </div>
                   <div className="columns">
-                      <div className="column is-12 team_detail_text">
+                     <div className="column is-12 team_detail_text">
                         <h2>{frontmatter.title}</h2>
                         <span>{frontmatter.designation}</span><br />
                         <HTMLContent content={frontmatter.description} className="description" />
-                        {/* <Link to={frontmatter.resume.publicURL} download>Download Resume</Link> */}
-                      </div>
+                        <a href={frontmatter.resume} download>Download Resume</a>
+                     </div>
                   </div>
                   <OurTeam></OurTeam>
                   <Link to="/about" className="back-btn only-phone">
@@ -95,6 +95,8 @@ TeamPageTemplate.propTypes = {
 
 const Teamdetails = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log('team detail frontmatter');
+  console.log(frontmatter);
   return (
     <Layout>
       <TeamPageTemplate frontmatter={frontmatter} />
@@ -128,6 +130,7 @@ export const TeamdetailsQuery = graphql`
             }
           }
         }
+        resume
       }
     }
   }

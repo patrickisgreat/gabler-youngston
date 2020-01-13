@@ -89,7 +89,8 @@
 .instagram_feed {
     padding-top: 28px;
     width: 85%;
-    float: right;
+    /* //float: right; */
+    margin-right: 230px;
 }
 
 .back-btn-up{
