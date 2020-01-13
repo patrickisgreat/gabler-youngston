@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: Emmanuel Episcopal
+projectname: EMMANUEL EPISCOPAL
 projecttagline: 'Design group, Atlanta Ga'
 projectimage: /img/emmanuel1.jpg
 projectcategory: Liturgical
