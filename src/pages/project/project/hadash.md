@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: Hadash
+projectname: HADASH
 projecttagline: 'Design Group, Atlanta, Ga.'
 projectimage: /img/hadash.jpg
 projectcategory: Liturgical
