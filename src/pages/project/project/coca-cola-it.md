@@ -22,5 +22,12 @@ descriptionblockone:
     descriptiontitle: Live
     image: /img/cocacola_it3.jpg
     imagepos: right
+extrafield:
+  - label: Architect
+    value: Test
+  - label: GY Team Member
+    value: Test
+  - label: Consultant
+    value: Test
 ---
 
