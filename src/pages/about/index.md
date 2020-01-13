@@ -32,7 +32,8 @@ section2:
 section3:
   title: TEAM 1
 section4:
-  description: []
+  description:
+    - text: Calendar list
   title: Through The Years
 section5:
   description:
