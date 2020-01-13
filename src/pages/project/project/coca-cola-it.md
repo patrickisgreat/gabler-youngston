@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: Coca Cola IT
+projectname: COCA COLA IT
 projecttagline: 'Design Group, Atlanta, Ga.'
 projectimage: /img/cocacola_it1.jpg
 projectcategory: Corporate
