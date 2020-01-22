@@ -3,6 +3,10 @@
     padding:65px 0;
 }
 
+.newsletter-min.submitted {
+    background-color: #2AC940;
+}
+
 .newsletter-min span{
     font-size:30px;
     color:#333333;

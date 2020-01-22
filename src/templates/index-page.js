@@ -55,7 +55,7 @@ const FlippyGeoShape = ({ progress }) => {
 };
 
 
-export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images, recentWorks, footerWorks}) => {
+export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images, recentWorks, footerWorks }) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
   const slide4 = slides[2];
