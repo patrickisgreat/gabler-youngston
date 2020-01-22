@@ -5,9 +5,13 @@ projecttagline: 'Design Studio Group, Atlanta, Ga.'
 projectimage: /img/supergroup1.jpg
 projectcategory: Corporate
 projectscope: Corporate
-sortdescription: This is short description
+sortdescription: Blue light complements the orange accents of the furniture and interior.
 descriptionblockone:
-  - description: Blue light complements the orange accents of the furniture and interior.
+  - description: >-
+      Blue light complements the orange accents of the furniture and interior.
+      The futuristic features of the structure and decor are actually best
+      suited by a somewhat conventional style of lighting that allows them to
+      steal the show.
     descriptiontitle: Idea
     image: /img/supergroup2.jpg
     imagepos: left
