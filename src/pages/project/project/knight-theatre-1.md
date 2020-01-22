@@ -1,26 +1,24 @@
 ---
 templateKey: Projectdetail/index
-projectname: KNIGHT THEATRE
+projectname: LE CRUSET
 projecttagline: 'Design Studio Group, Atlanta, Ga.'
-projectimage: /img/knight-theater1.jpg
-projectcategory: The Arts
-projectscope: The Arts
+projectimage: /img/le-cruset1.jpg
+projectcategory: Corporate
+projectscope: Corporate
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      Stage performance venues call for soft, subtle lighting, which is what the
-      Knight Theatre showcases.
+      The bright, modern, space-age look of the architecture calls for lighting
+      to match.
     descriptiontitle: Idea
-    image: /img/knight-theater2.jpg
+    image: /img/le-cruset2.jpg
     imagepos: left
   - description: >-
-      While some lights are displayed in interesting patterns, much of the
-      illumination is more about where the light lands than the source of it.
-      And while there are many functional and aesthetic benefits to the lighting
-      in the Knight Theatre, the lighting draws the direction of attention
-      naturally towards the stage.
+      While the architecture and interior design supply natural wood and
+      colorful accents for highlighting, the total volume of light works to
+      provide enough brightness to set off the stark white walls and ceilings.
     descriptiontitle: Live
-    image: /img/knight-theater4.jpg
+    image: /img/le-cruset.jpg
     imagepos: right
 extrafield:
   - label: Architect
