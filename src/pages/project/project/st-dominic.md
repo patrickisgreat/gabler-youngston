@@ -1,25 +1,23 @@
 ---
 templateKey: Projectdetail/index
-projectname: ST. DOMINIC
+projectname: STEELCASE
 projecttagline: 'Design Studio Group, Atlanta, Ga.'
-projectimage: /img/st-dominic1.jpg
-projectcategory: Liturgical
-projectscope: Liturgical
+projectimage: /img/steelcase1.jpg
+projectcategory: Corporate
+projectscope: Corporate
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      In the sanctuary, the natural light is indistinguishable from the added
-      lighting, creating a very pleasing harmony. The light frequencies for the
-      dramatic black and white of the interior is balanced with the colored
-      glass windows and adornment.
+      Every individual light source is placed with care to match the unique
+      architecture and interior design of this irregular space.
     descriptiontitle: Idea
-    image: /img/st-dominic.jpg
+    image: /img/steelcase4.jpg
     imagepos: left
   - description: >-
-      Exterior lighting resembles sunlight even in the evening, and those
-      outdoor light sources are ethereal in how unobtrusively they are placed.
+      The almost invisibly simple fixture styles and mild tones are the result
+      of careful planning and intentional subtlety.
     descriptiontitle: Live
-    image: /img/st-dominic2.jpg
+    image: /img/steelcase2.jpg
     imagepos: right
 extrafield:
   - label: Architect
