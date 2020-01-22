@@ -1,25 +1,21 @@
 ---
 templateKey: Projectdetail/index
-projectname: TEXAS CHILDREN'S
+projectname: TRIDENT SCHOOL
 projecttagline: 'Design Studio Group, Atlanta, Ga.'
-projectimage: /img/texas-childrens.jpg
-projectcategory: Corporate
-projectscope: Corporate
+projectimage: /img/trident-school2.jpg
+projectcategory: Education
+projectscope: Education
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      As a hospital, the lighting has to provide practical, high-visibility
-      brightness while being energizing for medical staff.
+      The lighting design gives off a certain sense of sophistication and
+      creativity that’s both prestigious for the school and inspiring for
+      students. By contrast, the lecture hall appears lively and bright while
+      not being distracting or fatiguing, with linear lights subtly directing
+      attention towards the front of the presentation and lecture space.
     descriptiontitle: Idea
-    image: /img/texas-childrens1.jpg
+    image: /img/trident-school.jpg
     imagepos: left
-  - description: >-
-      The magic of crafting lighting for Texas Children’s Hospital is that the
-      facility must also feel safe, relaxing, and even playful for young
-      patients, and the lighting was crafted to do exactly that.
-    descriptiontitle: Live
-    image: /img/texas-childrens2.jpg
-    imagepos: right
 extrafield:
   - label: Architect
     value: Test
