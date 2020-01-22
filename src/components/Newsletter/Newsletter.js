@@ -65,7 +65,7 @@ class Newsletter extends React.Component {
               headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
               body: this.encode({
                  'form-name': form.getAttribute('name'),
-                 ...this.state,
+                 ...this.state.fields,
               }),
            }).catch((error) => alert(error))
             let fields = "";      
@@ -76,9 +76,7 @@ class Newsletter extends React.Component {
 
     handleChange(field, e){         
          let fields = this.state.fields;
-         fields[field] = e.target.value;
-         console.log("FIELD");
-         console.log(field);       
+         fields[field] = e.target.value;   
          this.setState({fields});
       }
 
