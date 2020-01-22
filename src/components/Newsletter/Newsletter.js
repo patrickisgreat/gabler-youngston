@@ -13,6 +13,12 @@ class Newsletter extends React.Component {
        }
     }
 
+    encode(data) {
+      return Object.keys(data)
+         .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+         .join('&')
+   }
+
     handleValidation(){
         let fields = this.state.fields;
         let errors = {};
@@ -50,11 +56,21 @@ class Newsletter extends React.Component {
 
    contactSubmit(e){
         e.preventDefault();
+         const form = e.target
         if(this.handleValidation()){
            this.setState({isSubmitted: true});
            //alert("You have successfully subscribed to our newsletter");
+           fetch('/', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+              body: this.encode({
+                 'form-name': form.getAttribute('name'),
+                 ...this.state,
+              }),
+           }).catch((error) => alert(error))
             let fields = "";      
             this.setState({fields});
+            
         }
     }
 
