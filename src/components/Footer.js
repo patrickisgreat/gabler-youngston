@@ -37,7 +37,6 @@ class Footer extends React.Component {
                         <h6>Contact</h6>
                         <span>T :<a href={`tel:${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
                         <a href={`mailto:${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/>
-                        <a href={`mailto:${frontmatter.contactnumbertwo}`}>{frontmatter.contactnumbertwo}</a>
                       </section>
                     </div>
                     <div className="col-md-6">
@@ -72,7 +71,6 @@ export default () => (
             copyrightcontent
             contactnumber
             contactnumberone
-            contactnumbertwo
             address
             image {
               childImageSharp {

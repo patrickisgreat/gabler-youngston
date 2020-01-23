@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+resume: /resumes/jim-resume.pdf
 memberimage: /img/team-morgan.jpg
 title: MORGAN GABLER
 designation: Principal

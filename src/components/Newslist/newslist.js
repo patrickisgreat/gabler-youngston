@@ -20,13 +20,12 @@ class NewsList extends React.Component {
                 <Link to={news.fields.slug} className="news">
                     <strong className="news-date">{news.frontmatter.date}</strong>
                     <h6>{news.frontmatter.title}</h6>
-                    <p>{news.frontmatter.description}</p>
                 </Link>
               ))}
             </Col>
             <Col md="4">
                <div className="instagram_feed">
-						{allInstaNode.map((post) => (
+						{/* {allInstaNode.map((post) => (
 						<Link to={post.node.preview}>
 							<img
 								src={post.node.preview}
@@ -34,7 +33,7 @@ class NewsList extends React.Component {
 								style={{ display: 'block', width: '100%', marginTop: '20px'}}
 							/>
 						</Link>
-						))}                        
+						))}*/}
                </div>
             </Col>
         </Row>

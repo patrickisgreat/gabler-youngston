@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+resume: /resumes/jim-resume.pdf
 memberimage: /img/michael2.jpg
 resume: /img/gabler-youngston-presentations-10.jpg
 title: MICHAEL MARVIN
