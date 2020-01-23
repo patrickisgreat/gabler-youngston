@@ -32,7 +32,9 @@ export const BlogPostTemplate = ({
                        <div className="news_details">
                           <strong className="news-date">{date}</strong>
                           <h6>{title}</h6>
-                          <div dangerouslySetInnerHTML={{ __html: content }} />
+                          <PostContent content={content} />
+                          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
+                          
                        </div>
                       {/* {tags && tags.length ? (
                         <div style={{ marginTop: `4rem` }}>

@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Markdown from '@danestves/react-markdown';
+import Markdown from 'react-markdown/with-html'
 
 export const HTMLContent = ({ content, className }) => (
-  <Markdown className={className} content={content} />
+  <Markdown source={content} escapeHtml={false} />
 )
 
 const Content = ({ content, className }) => (
