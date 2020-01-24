@@ -129,7 +129,6 @@ class Newsletter extends React.Component {
                   <div className="form-group">
                      <label>Your name:</label>
                      <input
-                        autofocus="true"
                         name="name"
                         type="text"
                         onChange={this.handleChange.bind(this, "name")}

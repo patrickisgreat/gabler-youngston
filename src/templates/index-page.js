@@ -25,7 +25,7 @@ const galleryTweenProps = {
     marginTop: 500
   },
   to: {
-    marginTop: 20
+    marginTop: 100
   }
 };
 
@@ -60,8 +60,6 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
   const slide3 = slides[1];
   const slide4 = slides[2];
 
-  console.log("test project");
-  console.log(recentWorks);
   // slides get wonky on window resize
   // this seems hacky but it works
   const [value, setValue] = useState(0);
@@ -152,7 +150,11 @@ export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery
       <Timeline totalProgress={progress * 2} paused>
         <Tween {...galleryTweenProps}>
           <div className="slideDescription">
-            <p>{slide4.sidebarDescription}</p>
+            <p>
+              <Link className="homeBottomGalleryLink" to="/works">
+                {slide4.sidebarDescription}
+              </Link>
+            </p>
           </div>
           <div className="galleryContainer">
             <Slider {...sliderSettings}>
@@ -317,8 +319,6 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log(data.recentWorks);
-  console.log(data.footerWorks);
   return (
     <Layout>
       <IndexPageTemplate

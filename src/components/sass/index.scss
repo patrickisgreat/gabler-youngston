@@ -222,8 +222,9 @@ $breakpoint-phone: 568px;
         z-index: 3;
       }
       .slideDescription {
+        position: absolute;
         padding: 25px;
-        z-index: 100;
+        z-index: 900;
         p {
           font-size: 22px;
           line-height: 3rem;
