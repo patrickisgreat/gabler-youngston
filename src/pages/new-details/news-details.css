@@ -106,7 +106,8 @@
 .back-btn-up img{
     margin-top:70px;
     display: block;
-    margin-right:30px
+    margin-right:30px;
+    transform: rotate(-90deg);
 }
 
 @media screen and (max-width:768px){

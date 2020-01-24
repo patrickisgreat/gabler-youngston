@@ -45,6 +45,7 @@ $breakpoint-phone: 568px;
       width: 99px;
       height: 100%;
       background-color: $gabler-red;
+      font-family: "Futura-Koyu", sans-serif !important;
 
       p.purpose {
         writing-mode: tb-rl;
@@ -126,7 +127,7 @@ $breakpoint-phone: 568px;
         }
         .slick-next-arrow {
           z-index: 99;
-          right: 85px;
+          right: 125px;
         }
       }
       img.slide-bg {
@@ -173,6 +174,7 @@ $breakpoint-phone: 568px;
       align-items: flex-start;
       height: 100vh;
       background-color: $sidebar-gray;
+      font-family: "Futura-Koyu", sans-serif !important;
       z-index: 3;
       p.sidebar-hero {
         writing-mode: tb-rl;
@@ -283,13 +285,14 @@ $breakpoint-phone: 568px;
       background-color: $aqua;
       z-index: 3;
       box-sizing:border-box;
+      font-family: "Futura-Koyu", sans-serif !important;
       p.sidebar-hero {
         writing-mode: tb-rl;
         transform: rotate(-180deg);
         color: white;
         font-size: 3em;
         padding: 10%;
-        margin-top: 20%;
+        margin-top: 40px;
         padding-left: 20px;
         padding-right: 20px;
         line-height: 0.9;
@@ -385,6 +388,7 @@ $breakpoint-phone: 568px;
       width: 105px;
       height: 100%;
       background-color: $aqua;
+      font-family: "Futura-Koyu", sans-serif !important;
       z-index: 3;
       p.sidebar-hero {
         writing-mode: tb-rl;
