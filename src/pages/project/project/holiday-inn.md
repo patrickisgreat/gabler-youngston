@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: HOLIDAY INN
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/holiday-inn4.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -15,16 +15,18 @@ descriptionblockone:
     imagepos: left
   - description: >-
       The home-style decor is best supported by conventional but creative lamps
-      and hanging fixtures in thoughtful, comforting arrangements.
+      and hanging fixtures in thoughtful, comforting arrangements that also
+      allow for the space to seamlessly transition from dining space in the
+      morning to lounge space at night. This prototype project serves as the
+      exemplar for all future Holiday Inn new construction and renovation
+      projects.
     descriptiontitle: Live
     image: /img/holiday-inn3.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: ai3
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 
