@@ -1,7 +1,7 @@
 ---
 templateKey: Teamdetail/index
-resume: /resumes/jim-resume.pdf
 memberimage: /img/team-jim.jpg
+resume: /resumes/jim-resume.pdf
 title: JIM YOUNGSTON
 designation: Principal
 description: >-
@@ -12,23 +12,16 @@ description: >-
   design.
 
 
-
-
   The driving principle for James is that lighting should be seamless with the
-  rest of a facility and complement its design, not distract attention away from
-  it. A user in a space shouldn’t notice the lighting specifically unless
-  there’s a reason to. While excellent lighting design is certainly artistic,
-  James believes that lighting designers should approach their projects
-  practically, humbly, and collaboratively.
+  rest of a facility and complement its design. A user in a space shouldn’t
+  notice the lighting specifically unless there’s a reason to do so. While
+  architectural lighting design is certainly an artistic endeavor, James
+  believes that lighting designers should approach their projects practically,
+  humbly, and collaboratively.
 
 
-
-
-  Because of his unique approach to unobtrusive design, James has a special
-  talent for finding more suitable and unique designs that might be missed for
-  more obvious options with other designers.
-
-
+  Because of his approach to design, James has a talent for finding bespoke
+  approaches that might be otherwise overlooked.
 
 
   James is a Professional Member of the International Association of Lighting
@@ -40,13 +33,11 @@ description: >-
   Board of Directors as Membership Chair from 2010-2013.
 
 
-
-
   He has been recognized with thirteen Sectional and International Illumination
   Design Awards and has seen his work and articles in a wide variety of
   publications such as Architectural Record, Professional Lighting Design, Mondo
   Arc, Metropolitan Home, and the Atlanta Journal Constitution. He has received
-  an Edison Award of Merit and an Edison Award for Sustainable Design. Jim has
+  an Edison Award of Merit and an Edison Award for Sustainable Design. James has
   also spoken at various trade shows, professional society meetings, and at The
   Savannah College of Art and Design and The University of Colorado, Boulder,
   among others.
