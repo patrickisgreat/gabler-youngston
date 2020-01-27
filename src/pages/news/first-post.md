@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: Lighting design firm Gabler-Youngston launches new website
+title: Lighting design firm Gabler Youngston launches new website
 date: 2020-01-27T15:42:04.729Z
 description: Hello Test
 featuredpost: true
