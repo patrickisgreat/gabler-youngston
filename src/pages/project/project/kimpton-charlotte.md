@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: KIMPTON CHARLOTTE
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Charlotte, NC'
 projectimage: /img/kinpton1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -9,28 +9,24 @@ sortdescription: This is short description
 descriptionblockone:
   - description: >-
       This hotel’s facade is illuminated in unified but distinct areas; the
-      lobby and parking with their warm glows, the rooms with their planet-like
-      orbs of light, and the rooftop, with colorful columns and roof in a
-      mythical Greek style.
+      lobby and parking with their warm glow and pedestrian-scale illumination,
+      the mid facade with its color changing glittering dots, and the rooftop,
+      with colorful columns and roof top bar.
     descriptiontitle: Idea
     image: /img/kimpton5.jpg
     imagepos: left
   - description: >-
-      This hotel’s facade is illuminated in unified but distinct areas; the
-      lobby and parking with their warm glows, the rooms with their planet-like
-      orbs of light, and the rooftop, with colorful columns and roof in a
-      mythical Greek style.
+      The design of Kimpton Tryon Park Hotel reflects the sophistication of the
+      Queen City, presenting a fluid, graceful façade that complements its
+      neighboring office tower while reflecting the contours of the 5.4-acre
+      Romare Bearden Park.
     descriptiontitle: Live
     image: /img/kimpton2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Piers Cunnington + Clinton Cuddington
-  - label: Measured
-    value: Team James Papa
-  - label: General Contractor
-    value: Powers Construction
-  - label: Consultants
-    value: 'Fast + Epp Structural Engineers, Geopacific Consultants'
+  - label: Client
+    value: Cooper Carry
+  - label: Location
+    value: 'Charlotte, NC'
 ---
 
