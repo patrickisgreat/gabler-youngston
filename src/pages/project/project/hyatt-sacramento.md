@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: HYATT SACRAMENTO
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Sacramento, CA'
 projectimage: /img/hyatt-sacramento2.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -13,16 +13,16 @@ descriptionblockone:
     descriptiontitle: Idea
     image: /img/hyatt-sacramento3.jpg
     imagepos: left
-  - description: Motifs are familiar white-glove lavishness with a touch of futuristic awe.
+  - description: >-
+      Clean lines draw the eye and move guests through the spaces with subtle
+      visual cues.
     descriptiontitle: Live
     image: /img/hyatt-sacramento4.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: Owner
+  - label: Location
+    value: 'Sacramento, CA'
 ---
 
