@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: COCA COLA IT
-projecttagline: 'Design Group, Atlanta, Ga.'
+projecttagline: 'Atlanta, Ga.'
 projectimage: /img/cocacola_it1.jpg
 projectcategory: Corporate
 projectscope: Corporate
@@ -22,11 +22,9 @@ descriptionblockone:
     image: /img/cocacola_it3.jpg
     imagepos: right
 extrafield:
-  - label: Architect
+  - label: Client
     value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Location
+    value: 'Atlanta, Ga.'
 ---
 
