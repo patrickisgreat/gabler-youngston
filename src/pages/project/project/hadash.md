@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: HADASH
-projecttagline: 'Design Group, Atlanta, Ga.'
+projecttagline: 'Sandy Springs, Ga. '
 projectimage: /img/hadash.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
@@ -20,5 +20,10 @@ descriptionblockone:
     descriptiontitle: Live
     image: /img/hadash2.jpg
     imagepos: right
+extrafield:
+  - label: Client
+    value: BLDGS
+  - label: Location
+    value: 'Sandy Springs, Ga.'
 ---
 
