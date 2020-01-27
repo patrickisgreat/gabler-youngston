@@ -7,15 +7,14 @@ projectcategory: Corporate
 projectscope: Corporate
 sortdescription: This is short description
 descriptionblockone:
-  - description: >-
-      Every individual light source is placed with care to match the unique
-      architecture and interior design of this irregular space.
+  - description: Blue light complements the orange accents of the furniture and interior.
     descriptiontitle: Idea
     image: /img/steelcase4.jpg
     imagepos: left
   - description: >-
-      The almost invisibly simple fixture styles and mild tones are the result
-      of careful planning and intentional direction to the product.
+      The futuristic features of the structure and decor are actually best
+      suited by a somewhat conventional style of lighting that allows them to
+      steal the show.
     descriptiontitle: Live
     image: /img/steelcase2.jpg
     imagepos: right
