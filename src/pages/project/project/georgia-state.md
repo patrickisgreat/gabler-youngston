@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
-projectname: GEORGIA STATE
-projecttagline: 'Design group, Atlanta Ga'
+projectname: GSU SCHOOL OF LAW
+projecttagline: 'Atlanta, GA'
 projectimage: /img/gsu1.jpg
 projectcategory: Education
 projectscope: Education
@@ -20,11 +20,9 @@ descriptionblockone:
     image: /img/gsu2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: Stevens + Wilkinson
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 
