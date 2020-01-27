@@ -1,18 +1,14 @@
 ---
 templateKey: Teamdetail/index
-resume: /resumes/jim-resume.pdf
 memberimage: /img/team-morgan.jpg
+resume: /resumes/jim-resume.pdf
 title: MORGAN GABLER
 designation: Principal
 description: >-
-
-
   Morgan has always been passionate about helping bring a collaborative vision
   to life through lighting. For her, this started with theater and working in
-  various lighting design firms before it manifested in co-founding
-  Gabler-Youngston.
-
-
+  various lighting design firms before it manifested in co-founding Gabler
+  Youngston.
 
 
   Now, Morgan and her team are dedicated to showing that lighting design isn’t
