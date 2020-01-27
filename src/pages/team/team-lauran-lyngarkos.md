@@ -1,7 +1,7 @@
 ---
 templateKey: Teamdetail/index
-resume: /resumes/jim-resume.pdf
 memberimage: /img/team-img4.jpg
+resume: /resumes/jim-resume.pdf
 title: LAUREN LYNGARKOS
 designation: Philidelphia Lead
 description: >-
@@ -19,7 +19,5 @@ description: >-
 
 
   Overall, her projects demonstrate that good lighting is humble but powerful.
-  Lauren understands that lighting design is a creative field that requires
-  vision, but she sees herself as a practical designer, not an artist.
 ---
 
