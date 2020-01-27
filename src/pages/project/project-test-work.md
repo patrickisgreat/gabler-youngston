@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: ATLANTA UNITED
-projecttagline: Test work tagline
+projecttagline: 'Atlanta, Ga. '
 projectimage: /img/atl_united1.jpg
 projectcategory: Corporate
 projectscope: Corporate
@@ -23,9 +23,9 @@ descriptionblockone:
     image: /img/atl_united3.jpg
     imagepos: right
 extrafield:
-  - label: Photographer
-    value: Ema Peter Photography
-  - label: Project Type Residential
-    value: new build
+  - label: Client
+    value: tvsdesign
+  - label: Location
+    value: 'Atlanta, Ga.'
 ---
 
