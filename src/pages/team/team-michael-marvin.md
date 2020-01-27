@@ -1,6 +1,6 @@
 ---
 templateKey: Teamdetail/index
-memberimage: /img/michael2.jpg
+memberimage: /img/michael3.jpg
 resume: /resumes/jim-resume.pdf
 title: MICHAEL MARVIN
 designation: International Lead & Designer
