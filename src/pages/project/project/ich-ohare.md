@@ -1,15 +1,16 @@
 ---
 templateKey: Projectdetail/index
 projectname: ICH O'HARE
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Rosemont, IL'
 projectimage: /img/ich1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
 sortdescription: Hospitality
 descriptionblockone:
   - description: >-
-      So many of the features resemble works of art that the lighting is
-      suitable for a gallery.
+      Conceived from the outset as a gallery space, the lighting draws focus to
+      the constantly rotating works of art throughout the lobby, corridors, and
+      meeting spaces.
     descriptiontitle: Idea
     image: /img/ich4.jpg
     imagepos: left
@@ -20,11 +21,9 @@ descriptionblockone:
     image: /img/ich5.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: Anderson | Miller
+  - label: Location
+    value: 'Rosemont, IL'
 ---
 
