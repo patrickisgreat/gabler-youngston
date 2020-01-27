@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: TRIDENT SCHOOL
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Charleston, SC'
 projectimage: /img/trident-school2.jpg
 projectcategory: Education
 projectscope: Education
@@ -12,18 +12,16 @@ descriptionblockone:
       creativity that’s both prestigious for the school and inspiring for
       students. By contrast, the lecture hall appears lively and bright while
       not being distracting or fatiguing, with linear lights subtly directing
-      attention towards the front of the presentation and lecture space.
+      attention towards the front of the presentation and lecture space. A
+      custom pendant provides practical and decorative lighting within the
+      stairwell.
     descriptiontitle: Idea
     image: /img/trident-school.jpg
     imagepos: left
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: General Contractor
-    value: Test
-  - label: Consultants
-    value: Test
+  - label: Client
+    value: LS3P
+  - label: Location
+    value: 'Charleston, SC'
 ---
 
