@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: ALOFT SUNNYVALE
-projecttagline: Test company name
+projecttagline: 'Sunnyvale, Ca.'
 projectimage: /img/aloft_sunnyvale1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -16,13 +16,9 @@ descriptionblockone:
     image: /img/aloft_sunnyvale2.jpg
     imagepos: left
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Michael
-  - label: General Contractor
-    value: Test
-  - label: Consultants
-    value: Test
+  - label: Client
+    value: Axis
+  - label: Location
+    value: 'Sunnyvale, Ca.'
 ---
 
