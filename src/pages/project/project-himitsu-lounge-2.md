@@ -8,9 +8,9 @@ projectscope: Hospitality
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      **This invitation-only speakeasy exemplifies refined luxury. While it
+      This invitation-only speakeasy exemplifies refined luxury. While it
       certainly helps to set the mood, the mild, broad-spectrum lighting also
-      helps bring out the bold, dark colors of the furniture and fittings.**
+      helps bring out the bold, dark colors of the furniture and fittings.
     descriptiontitle: Idea
     image: /img/himitsuatlanta6.jpg
     imagepos: left
@@ -22,13 +22,9 @@ descriptionblockone:
     image: /img/photo-1.png
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Piers Cunnington + Clinton Cuddington
-  - label: Measured
-    value: Team James Papa
-  - label: General Contractor
-    value: Powers Construction
-  - label: Consultants
-    value: 'Fast + Epp Structural Engineers, Geopacific Consultants'
+  - label: 'Client '
+    value: Architect
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 
