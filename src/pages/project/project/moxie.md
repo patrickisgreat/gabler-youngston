@@ -8,14 +8,18 @@ projectscope: Hopsitality
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
-      The exterior of this bar and restaurant uses various lighting techniques
-      to create the perception of greater scale.
+      The sheer size and variety of locations within this historic conversion
+      from a power plant to luxury hotel demands many lighting styles to match.
     descriptiontitle: Idea
     image: /img/nopsi2.jpg
     imagepos: left
   - description: >-
-      The interior, by contrast, uses clusters of lights to make each table feel
-      more intimate, creating a fun and cozy space.
+      While the lobby, hallways, and event space offer stunning chandeliers and
+      sconce-topped columns, individual rooms are sectioned by home-style lamps
+      and inspiring fixtures placed strategically to match the furnishings. The
+      various bars, patios, and gyms are also styled with lighting variations to
+      match their designs so that visitors can take a sort of journey just by
+      visiting.
     descriptiontitle: Live
     image: /img/nopsi1.jpg
     imagepos: right
