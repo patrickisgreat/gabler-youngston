@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: HIMITSU LOUNGE
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/himitsu1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -23,7 +23,7 @@ descriptionblockone:
     imagepos: right
 extrafield:
   - label: 'Client '
-    value: Architect
+    value: Plaza Restaurant Partners
   - label: Location
     value: 'Atlanta, GA'
 ---
