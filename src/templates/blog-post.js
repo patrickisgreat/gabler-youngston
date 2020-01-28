@@ -16,6 +16,7 @@ export const BlogPostTemplate = ({
   contentComponent,
   date,
   description,
+  featuredimage,
   tags,
   title,
   helmet,
@@ -32,9 +33,8 @@ export const BlogPostTemplate = ({
                        <div className="news_details">
                           <strong className="news-date">{date}</strong>
                           <h6>{title}</h6>
-                          <PostContent content={content} />
-                          {/* <div dangerouslySetInnerHTML={{ __html: content }} /> */}
-                          
+						  			<img src={featuredimage.childImageSharp.fluid.src} alt="" />
+                          <PostContent content={content} />			
                        </div>
                       {/* {tags && tags.length ? (
                         <div style={{ marginTop: `4rem` }}>
@@ -48,19 +48,20 @@ export const BlogPostTemplate = ({
                           </ul>
                         </div>
                       ) : null} */}
+                    <div className="col-md-12">
+                      <div className="back-btn-up">
+                        <Link to="/news">
+                          <img
+                            src={back_btn_up}
+                            alt="Back Button"
+                            style={{ display: 'block', }}
+                          />
+                        </Link>
+                      </div>
+                    </div>
                     </Col>
                     <Col md="4">
-                       <div className="col-md-12">
-                          <div className="back-btn-up">
-                            <Link to="/news">
-                                <img
-                                      src={back_btn_up}
-                                      alt="Back Button"
-                                      style={{ display: 'block', }}
-                                />
-                              </Link>
-                            </div>
-                       </div>
+                       
                     </Col>
                 </Row>
              </div>
@@ -97,7 +98,8 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        date={post.frontmatter.date}
+		  date={post.frontmatter.date}
+		  featuredimage={post.frontmatter.featuredimage}
       />
     </Layout>
   )
@@ -119,7 +121,14 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "DD MMM, YYYY")
         title
-        description
+		  description
+		  featuredimage {
+			  childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+		  }
         tags
       }
     }

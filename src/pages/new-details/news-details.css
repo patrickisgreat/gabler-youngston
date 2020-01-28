@@ -100,7 +100,7 @@
     text-align: center;
     width:100%;
     display: flex;
-    justify-content: flex-end;
+    margin-left: 170px;
 }
 
 .back-btn-up img{
