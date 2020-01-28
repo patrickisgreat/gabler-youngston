@@ -147,7 +147,7 @@ export const WorkPageTemplate = ({ frontmatter }) => {
                    </ul> */}
 
                    <div class="back-btn-up">
-                       <Link to="/work">
+                       <Link to="/works">
                             <img
                                   src={back_btn_up}
                                   alt="Back Button"
