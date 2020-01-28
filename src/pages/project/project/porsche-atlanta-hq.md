@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: PORSCHE ATLANTA HQ
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/porsche1.jpg
 projectcategory: Corporate
 projectscope: Corporate
@@ -23,13 +23,9 @@ descriptionblockone:
     image: /img/porsche2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: General Contractor
-    value: Test
-  - label: Consultants
-    value: Test
+  - label: Client
+    value: bldgs
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 

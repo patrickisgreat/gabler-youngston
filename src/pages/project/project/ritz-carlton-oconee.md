@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: RITZ CARLTON OCONEE
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/ritz-carlton2.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -21,13 +21,9 @@ descriptionblockone:
     image: /img/ritz-carlton3.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: General Contractor
-    value: Test
-  - label: Consultants
-    value: Test
+  - label: Client
+    value: Post/Novare
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 

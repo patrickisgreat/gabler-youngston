@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: HOTEL INDIGO
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/indigo-hotel1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
@@ -16,11 +16,9 @@ descriptionblockone:
     image: /img/indigo-hotel2.jpg
     imagepos: left
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: ai3
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 

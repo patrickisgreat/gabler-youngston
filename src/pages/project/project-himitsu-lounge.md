@@ -1,26 +1,25 @@
 ---
 templateKey: Projectdetail/index
 projectname: HOLY INNOCENTS
-projecttagline: Tagline example
+projecttagline: 'Atlanta, GA'
 projectimage: /img/holy_innocents1.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
 sortdescription: Sort Announcements
 descriptionblockone:
   - description: >-
-      Every space has been lit with intention and thought. One room showcases
-      candle-shaped lights to give the impression of a community vigil, invoking
-      religious, reverent feelings. And in the sanctuary, the modern vaulted
-      ceiling is illuminated to call attention upward in wonder, while hanging
-      lanterns complete the theme of medieval religious architecture in a modern
-      way.
+      Every space has been lit with intention and thought. The chapel defines
+      simplicity with candles, cove lighting, and a single downlight at the
+      altar. In the sanctuary, the peaked ceiling is subtly illuminated,
+      providing and warm and comfortable backdrop for the more traditional
+      pendants in the space.
     descriptiontitle: Idea
     image: /img/holy_innocents2.jpg
     imagepos: left
 extrafield:
-  - label: Photographer
-    value: Ema Peter Photography
-  - label: 'Project Type '
-    value: Liturgical
+  - label: Client
+    value: TVS Design
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 

@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: STEELCASE
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Atlanta, GA'
 projectimage: /img/steelcase1.jpg
 projectcategory: Corporate
 projectscope: Corporate
@@ -15,18 +15,14 @@ descriptionblockone:
     imagepos: left
   - description: >-
       The almost invisibly simple fixture styles and mild tones are the result
-      of careful planning and intentional subtlety.
+      of careful planning and intentional direction to the product.
     descriptiontitle: Live
     image: /img/steelcase2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: General Contractor
-    value: Test
-  - label: Consultants
-    value: Test
+  - label: Client
+    value: bldgs
+  - label: Location
+    value: 'Atlanta, GA'
 ---
 

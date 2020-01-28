@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: EMMANUEL EPISCOPAL
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Athens, Ga.'
 projectimage: /img/emmanuel1.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
@@ -21,11 +21,9 @@ descriptionblockone:
     image: /img/emmanuel2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: Houser Walker Architecture
+  - label: Location
+    value: 'Athens, Ga.'
 ---
 

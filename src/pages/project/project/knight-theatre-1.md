@@ -7,27 +7,22 @@ projectcategory: Corporate
 projectscope: Corporate
 sortdescription: This is short description
 descriptionblockone:
-  - description: >-
-      The bright, modern, space-age look of the architecture calls for lighting
-      to match.
+  - description: 'The bright, modern, interior design calls for lighting to match.'
     descriptiontitle: Idea
     image: /img/le-cruset2.jpg
     imagepos: left
   - description: >-
-      While the architecture and interior design supply natural wood and
-      colorful accents for highlighting, the total volume of light works to
-      provide enough brightness to set off the stark white walls and ceilings.
+      While the interior design supplies natural wood and colorful accents for
+      highlighting, the total volume of light works to provide enough brightness
+      to set off the crisp white walls and ceiling as backdrop, drawing further
+      focus to the colorful product displays.
     descriptiontitle: Live
     image: /img/le-cruset.jpg
     imagepos: right
 extrafield:
-  - label: Architect
+  - label: Client
     value: Test
-  - label: GY Team Member
-    value: Test
-  - label: General Contractor
-    value: Test
-  - label: Consultants
+  - label: Location
     value: Test
 ---
 

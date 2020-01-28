@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
 projectname: FISERV
-projecttagline: 'Design group, Atlanta Ga'
+projecttagline: 'Warren, NJ'
 projectimage: /img/fiserv3.jpg
 projectcategory: Corporate
 projectscope: Corporate
@@ -16,16 +16,16 @@ descriptionblockone:
     imagepos: left
   - description: >-
       These tensions match the style of the architecture itself, a mixture of
-      sterile modern and lively classical approaches.
+      sterile modern and lively classical approaches. The atrium space adjusts
+      to and mimics the color of the daylight outside over the course of each
+      sun cycle.
     descriptiontitle: Live
     image: /img/fiserv2.jpg
     imagepos: right
 extrafield:
-  - label: Architect
-    value: Test
-  - label: GY Team Member
-    value: Test
-  - label: Consultant
-    value: Test
+  - label: Client
+    value: tvsdesign
+  - label: Location
+    value: 'Warren, NJ'
 ---
 
