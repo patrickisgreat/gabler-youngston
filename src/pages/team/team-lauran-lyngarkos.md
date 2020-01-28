@@ -1,7 +1,7 @@
 ---
 templateKey: Teamdetail/index
 memberimage: /img/team-img4.jpg
-resume: /resumes/jim-resume.pdf
+resume: /resumes/lauren-resume.pdf
 title: LAUREN LYNGARKOS
 designation: Philidelphia Lead
 description: >-

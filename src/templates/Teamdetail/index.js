@@ -70,7 +70,7 @@ export const TeamPageTemplate = ({ frontmatter }) => {
                         <h2>{frontmatter.title}</h2>
                         <span>{frontmatter.designation}</span><br />
                         <HTMLContent content={frontmatter.description} className="description" />
-                        <a href={frontmatter.resume} download>Download Resume</a>
+                        <a class="res-link" href={frontmatter.resume} download>Download Resume</a>
                      </div>
                   </div>
                   <OurTeam></OurTeam>

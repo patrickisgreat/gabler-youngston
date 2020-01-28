@@ -24,6 +24,11 @@
   box-sizing:border-box;
 
 }
+.res-link {
+  display: block;
+  margin-top: 20px;
+}
+
 .team_detail_min p{
   line-height:30px;
   padding-top:20px;
