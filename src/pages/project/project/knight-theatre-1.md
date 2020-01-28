@@ -1,13 +1,18 @@
 ---
 templateKey: Projectdetail/index
 projectname: LE CRUSET
-projecttagline: 'Design Studio Group, Atlanta, Ga.'
+projecttagline: 'Charleston, SC'
 projectimage: /img/le-cruset1.jpg
 projectcategory: Corporate
 projectscope: Corporate
-sortdescription: This is short description
+sortdescription: 'The bright, modern, interior design calls for lighting to match.'
 descriptionblockone:
-  - description: 'The bright, modern, interior design calls for lighting to match.'
+  - description: >-
+      The bright, modern, interior design calls for lighting to match. While the
+      interior design supplies natural wood and colorful accents for
+      highlighting, the total volume of light works to provide enough brightness
+      to set off the crisp white walls and ceiling as backdrop, drawing further
+      focus to the colorful product displays.
     descriptiontitle: Idea
     image: /img/le-cruset2.jpg
     imagepos: left
@@ -21,7 +26,7 @@ descriptionblockone:
     imagepos: right
 extrafield:
   - label: Client
-    value: Test
+    value: LS3P
   - label: Location
     value: Test
 ---

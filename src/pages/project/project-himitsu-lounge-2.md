@@ -5,7 +5,10 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/himitsu1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
-sortdescription: This is short description
+sortdescription: >-
+  This invitation-only speakeasy exemplifies refined luxury. While it certainly
+  helps to set the mood, the mild, broad-spectrum lighting also helps bring out
+  the bold, dark colors of the furniture and fittings.
 descriptionblockone:
   - description: >-
       This invitation-only speakeasy exemplifies refined luxury. While it
