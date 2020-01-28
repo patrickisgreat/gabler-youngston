@@ -5,7 +5,12 @@ projecttagline: 'Charlotte, Nc.'
 projectimage: /img/duke1.jpg
 projectcategory: Corporate
 projectscope: Corporate
-sortdescription: Corporate
+sortdescription: >-
+  This 48-story skyscraper uses clever colored lighting to become an exceptional
+  and beautiful part of the Charlotte, North Carolina skyline, and highlight the
+  angular architecture of the building. Plus, because Duke Energy is an
+  electricity provider, the light design showcases their commitment to
+  sustainable and progressive electric lighting at a scale that can’t be missed.
 descriptionblockone:
   - description: >-
       This 48-story skyscraper uses clever colored lighting to become an
@@ -27,7 +32,7 @@ descriptionblockone:
     imagepos: right
 extrafield:
   - label: Client
-    value: Axon
+    value: tvsdesign
   - label: Location
     value: 'Charlotte, Nc.'
 ---
