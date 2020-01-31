@@ -4,8 +4,10 @@ projectname: HOLIDAY INN PROTOTYPE
 projecttagline: 'Gwinnett, GA'
 projectimage: /img/holiday-inn4.jpg
 projectcategory: Hospitality
-projectscope: Hospitality
-sortdescription: Hospitality
+projectscope: Lodging
+sortdescription: >-
+  For such a ubiquitous hospitality brand as Holiday Inn, the lighting walks the
+  line between familiarity and originality.
 descriptionblockone:
   - description: >-
       For such a ubiquitous hospitality brand as Holiday Inn, the lighting walks
