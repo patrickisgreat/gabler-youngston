@@ -18,18 +18,18 @@ class LatestWork extends React.Component {
           <Link to={work.fields.slug}>
             <img
                 src={work.frontmatter.projectimage.childImageSharp.original.src}
-                alt="latest project"
+                alt="Recently Completed Project"
                 style={{ display: 'block', width:'100%'}}
             />
             </Link>
           </Col>
           <Col md="5" className="mt-3">
             <div className="latest-project-info">
-              <strong>Latest Project</strong>
+              <strong>Recently Completed</strong>
                 <Link to={work.fields.slug}>
                 <h2>{work.frontmatter.projectname}</h2>
                 </Link>
-                <span>Scope <b>{work.frontmatter.projectscope}</b></span>
+                <span>Project Type <b>{work.frontmatter.projectscope}</b></span>
                 <p>{work.frontmatter.sortdescription}</p>
             </div>
           </Col>

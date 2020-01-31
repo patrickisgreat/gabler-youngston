@@ -24,7 +24,7 @@ class WorkLists extends React.Component {
               <Link to={work.fields.slug} className="hvrbox-layer_top">
                 <div class="hvrbox-text">
                   <h5>{work.frontmatter.projectname}</h5>
-                  <span>Scope  <b>{work.frontmatter.projectscope}</b></span>
+                  <span>Project Type:  <b>{work.frontmatter.projectscope}</b></span>
                 </div>
               </Link>
             </div>

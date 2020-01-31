@@ -25,7 +25,7 @@ class CatRoute extends React.Component {
               <Link to={post.node.fields.slug} className="hvrbox-layer_top">
                 <div className="hvrbox-text">
                   <h5>{post.node.frontmatter.projectname}</h5>
-                  <span>Scope  <b>{post.node.frontmatter.projectscope}</b></span>
+                  <span>Project Type:  <b>{post.node.frontmatter.projectscope}</b></span>
                 </div>
               </Link>
             </div>
