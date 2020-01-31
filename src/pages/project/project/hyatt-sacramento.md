@@ -4,8 +4,10 @@ projectname: HYATT SACRAMENTO
 projecttagline: 'Sacramento, CA'
 projectimage: /img/hyatt-sacramento2.jpg
 projectcategory: Hospitality
-projectscope: Hospitality
-sortdescription: Hospitality
+projectscope: Lodging
+sortdescription: >-
+  The lighting works to reveal the vast, richly decorated space of the luxury
+  hotel.
 descriptionblockone:
   - description: >-
       The lighting works to reveal the vast, richly decorated space of the
