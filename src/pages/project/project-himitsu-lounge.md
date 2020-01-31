@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: HOLY INNOCENTS
+projectname: HOLY INNOCENTS EPISCOPAL CHURCH
 projecttagline: 'Atlanta, GA'
 projectimage: /img/holy_innocents1.jpg
 projectcategory: Liturgical
