@@ -1,5 +1,5 @@
 ---
 templateKey: projectcat
-categoryname: Corporate
+categoryname: Commercial Interiors
 ---
 
