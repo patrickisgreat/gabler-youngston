@@ -22,7 +22,7 @@ descriptionblockone:
     imagepos: left
 extrafield:
   - label: Client
-    value: TVS Design
+    value: tvsdesign
   - label: Location
     value: 'Atlanta, GA'
 ---
