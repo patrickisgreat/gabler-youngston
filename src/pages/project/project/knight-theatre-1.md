@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: LE CRUSET
+projectname: LE CREUSET
 projecttagline: 'Charleston, SC'
 projectimage: /img/le-cruset1.jpg
 projectcategory: Corporate
