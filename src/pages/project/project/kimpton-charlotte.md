@@ -5,8 +5,8 @@ projecttagline: 'Charlotte, NC'
 projectimage: /img/kinpton1.jpg
 projectcategory: Hospitality
 projectscope: Facade
+date: 2020-01-31T15:42:04.729Z
 sortdescription: This is short description
-date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       This hotel’s facade is illuminated in unified but distinct areas; the
