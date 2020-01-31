@@ -3,8 +3,8 @@ templateKey: Projectdetail/index
 projectname: STEELCASE
 projecttagline: 'Atlanta, GA'
 projectimage: /img/steelcase1.jpg
-projectcategory: Corporate
-projectscope: Corporate
+projectcategory: Retail
+projectscope: Retail
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
