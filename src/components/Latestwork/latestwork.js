@@ -52,7 +52,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       query LatestWorkQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}, sort: {fields: id}, limit: 1) {
+        allMarkdownRemark(
+          filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}, 
+          sort: {order: DESC, fields: frontmatter___date}, limit: 1
+          ) {
           nodes {
             frontmatter {
               projectname

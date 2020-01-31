@@ -5,7 +5,7 @@ projecttagline: 'Charlotte, Nc.'
 projectimage: /img/duke1.jpg
 projectcategory: Corporate
 projectscope: Facade
-date: 2020-01-27T15:42:04.729Z
+date: 2020-01-25T15:42:04.729Z
 sortdescription: >-
   This 48-story skyscraper uses clever colored lighting to become an exceptional
   and beautiful part of the Charlotte, North Carolina skyline, and highlight the

@@ -47,7 +47,12 @@ export default () => (
   <StaticQuery
     query={graphql`
       query WorkListsQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}) {
+        allMarkdownRemark(
+          filter: {
+            frontmatter: {templateKey: {eq: "Projectdetail/index"}}
+          },
+          sort: {order: DESC, fields: frontmatter___date}
+          ) {
           nodes {
             frontmatter {
               projectname
