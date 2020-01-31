@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: EMMANUEL EPISCOPAL
+projectname: EMMANUEL EPISCOPAL CHURCH
 projecttagline: 'Athens, Ga.'
 projectimage: /img/emmanuel1.jpg
 projectcategory: Liturgical
