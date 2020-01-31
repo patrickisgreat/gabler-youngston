@@ -21,7 +21,7 @@ We did that by figuring out where our vision translated well to a website, and w
 
 One of the first challenges we faced was figuring out how to design a new website that could embody our own design expertise. While the medium of live lighting is different than the medium of a website, they both speak to how our eyes take in colors and forms.
 
-Our solution was to select a website design partner who shared our values. [Campfire Branding](https://www.campfirebranding.com/) in Atlanta, Georgia, was our choice, and their aesthetic really brought our work to life.
+Our solution was to select a website design partner who shared our values. [Campfire Branding](www.campfirebranding.com) in Atlanta, Georgia, was our choice, and their aesthetic really brought our work to life.
 
 The shared values Gabler Youngston and Campfire Branding were able to embody in the website are to:
 
