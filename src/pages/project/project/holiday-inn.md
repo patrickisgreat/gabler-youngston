@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: HOLIDAY INN
+projectname: HOLIDAY INN PROTOTYPE
 projecttagline: 'Atlanta, GA'
 projectimage: /img/holiday-inn4.jpg
 projectcategory: Hospitality
