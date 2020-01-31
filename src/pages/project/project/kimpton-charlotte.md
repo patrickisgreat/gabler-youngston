@@ -4,7 +4,7 @@ projectname: KIMPTON CHARLOTTE
 projecttagline: 'Charlotte, NC'
 projectimage: /img/kinpton1.jpg
 projectcategory: Hospitality
-projectscope: Hospitality
+projectscope: Facade
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
