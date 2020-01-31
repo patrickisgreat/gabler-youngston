@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: PORSCHE ATLANTA HQ
+projectname: PORSCHE USA HEADQUARTERS
 projecttagline: 'Atlanta, GA'
 projectimage: /img/porsche1.jpg
 projectcategory: Corporate
