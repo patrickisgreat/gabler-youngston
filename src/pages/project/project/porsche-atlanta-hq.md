@@ -24,7 +24,7 @@ descriptionblockone:
     imagepos: right
 extrafield:
   - label: Client
-    value: bldgs
+    value: HO+K
   - label: Location
     value: 'Atlanta, GA'
 ---
