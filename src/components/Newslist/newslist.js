@@ -18,6 +18,9 @@ class NewsList extends React.Component {
             <Col md="8">
               {newses.map((news) => (
                 <Link to={news.fields.slug} className="news">
+                  <img src={news.frontmatter.featuredimage.childImageSharp.fixed.src} />
+                    <br />
+                    <br />
                     <strong className="news-date">{news.frontmatter.date}</strong>
                     <h6>{news.frontmatter.title}</h6>
                 </Link>
@@ -81,6 +84,15 @@ export default () => (
               date(formatString: "DD MMM, YYYY")
               title
               description
+              featuredimage {
+                childImageSharp {
+                  # Specify the image processing specifications right in the query.
+                  # Makes it trivial to update as your page's design changes.
+                  fixed(width: 300, height: 200) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+              }
             }
             fields {
               slug
