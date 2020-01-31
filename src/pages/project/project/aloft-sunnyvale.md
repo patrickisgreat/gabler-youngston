@@ -4,7 +4,7 @@ projectname: ALOFT SUNNYVALE
 projecttagline: 'Sunnyvale, Ca.'
 projectimage: /img/aloft_sunnyvale1.jpg
 projectcategory: Hospitality
-projectscope: Hospitality
+projectscope: Lodging
 sortdescription: Hospitality
 descriptionblockone:
   - description: >-

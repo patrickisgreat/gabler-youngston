@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
-projectname: ATLANTA UNITED
-projecttagline: 'Atlanta, Ga. '
+projectname: ATLANTA UNITED HEADQUARTERS
+projecttagline: 'Marietta, GA'
 projectimage: /img/atl_united1.jpg
 projectcategory: Corporate
 projectscope: Corporate

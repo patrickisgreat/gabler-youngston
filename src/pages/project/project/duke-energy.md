@@ -4,7 +4,7 @@ projectname: DUKE ENERGY
 projecttagline: 'Charlotte, Nc.'
 projectimage: /img/duke1.jpg
 projectcategory: Corporate
-projectscope: Corporate
+projectscope: Facade
 sortdescription: >-
   This 48-story skyscraper uses clever colored lighting to become an exceptional
   and beautiful part of the Charlotte, North Carolina skyline, and highlight the

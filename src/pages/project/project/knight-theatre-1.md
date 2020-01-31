@@ -1,10 +1,10 @@
 ---
 templateKey: Projectdetail/index
-projectname: LE CRUSET
+projectname: LE CREUSET
 projecttagline: 'Charleston, SC'
 projectimage: /img/le-cruset1.jpg
 projectcategory: Corporate
-projectscope: Corporate
+projectscope: Retail
 sortdescription: 'The bright, modern, interior design calls for lighting to match.'
 descriptionblockone:
   - description: >-
@@ -28,6 +28,6 @@ extrafield:
   - label: Client
     value: LS3P
   - label: Location
-    value: Test
+    value: 'Charleston, SC'
 ---
 

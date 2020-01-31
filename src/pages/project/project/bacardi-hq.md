@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: BACARDI HQ
+projectname: BACARDI U.S. HEADQUARTERS
 projecttagline: 'Coral Gables, FL'
 projectimage: /img/bacardi1.jpg
 projectcategory: Corporate

@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: ST DOMINIC
+projectname: ST. DOMINIC PRAYER CHAPEL
 projecttagline: 'Jackson, MS'
 projectimage: /img/st-dominic1.jpg
 projectcategory: Liturgical

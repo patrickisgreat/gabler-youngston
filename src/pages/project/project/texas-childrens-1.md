@@ -1,10 +1,10 @@
 ---
 templateKey: Projectdetail/index
-projectname: TEXAS CHILDREN'S
+projectname: TEXAS CHILDREN'S HOSPITAL
 projecttagline: 'Katy, TX'
 projectimage: /img/texas-childrens.jpg
 projectcategory: Corporate
-projectscope: Corporate
+projectscope: Medical
 sortdescription: Corporate
 descriptionblockone:
   - description: >-

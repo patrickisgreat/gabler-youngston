@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: HADASH
+projectname: CONGREGATION OR HADASH
 projecttagline: 'Sandy Springs, Ga. '
 projectimage: /img/hadash.jpg
 projectcategory: Liturgical

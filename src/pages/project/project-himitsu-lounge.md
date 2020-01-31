@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: HOLY INNOCENTS
+projectname: HOLY INNOCENTS EPISCOPAL CHURCH
 projecttagline: 'Atlanta, GA'
 projectimage: /img/holy_innocents1.jpg
 projectcategory: Liturgical
@@ -22,7 +22,7 @@ descriptionblockone:
     imagepos: left
 extrafield:
   - label: Client
-    value: TVS Design
+    value: tvsdesign
   - label: Location
     value: 'Atlanta, GA'
 ---

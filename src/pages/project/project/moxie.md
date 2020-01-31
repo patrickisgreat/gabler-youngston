@@ -4,7 +4,7 @@ projectname: NOPSI
 projecttagline: 'New Orleans, LA'
 projectimage: /img/nopsi3.jpg
 projectcategory: Hospitality
-projectscope: Hopsitality
+projectscope: Lodging
 sortdescription: This is short description
 descriptionblockone:
   - description: >-
