@@ -1,7 +1,7 @@
 ---
 templateKey: about-page
 title: About Gabler Youngston
-headerImage: /img/gy-team.jpg
+headerImage: /img/about-hero.jpg
 heroImage: /img/morgan-and-jim.jpg
 section1:
   description: >-
