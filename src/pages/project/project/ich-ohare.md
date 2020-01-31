@@ -4,8 +4,11 @@ projectname: INTERCONTINENTAL HOTEL
 projecttagline: O’Hare Airport
 projectimage: /img/ich1.jpg
 projectcategory: Hospitality
-projectscope: Hospitality
-sortdescription: Hospitality
+projectscope: Lodging
+sortdescription: >-
+  Conceived from the outset as a gallery space, the lighting draws focus to the
+  constantly rotating works of art throughout the lobby, corridors, and meeting
+  spaces.
 descriptionblockone:
   - description: >-
       Conceived from the outset as a gallery space, the lighting draws focus to
