@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: TRIDENT SCHOOL
+projectname: TRIDENT TECH SCHOOL OF NURSING
 projecttagline: 'Charleston, SC'
 projectimage: /img/trident-school2.jpg
 projectcategory: Education
