@@ -1,7 +1,7 @@
 ---
 templateKey: Projectdetail/index
-projectname: ICH O'HARE
-projecttagline: 'Rosemont, IL'
+projectname: INTERCONTINENTAL HOTEL
+projecttagline: O’Hare Airport
 projectimage: /img/ich1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
