@@ -1,5 +1,0 @@
----
-templateKey: projectcat
-categoryname: Sustainable
----
-
