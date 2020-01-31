@@ -17,7 +17,7 @@ descriptionblockone:
     imagepos: left
 extrafield:
   - label: Client
-    value: MSME
+    value: Mack Scogin Merrill Elam Architects
   - label: Location
     value: 'Atlanta, GA'
 ---
