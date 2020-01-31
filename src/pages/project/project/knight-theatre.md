@@ -6,6 +6,7 @@ projectimage: /img/knight-theater1.jpg
 projectcategory: The Arts
 projectscope: The Arts
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       Stage performance venues call for soft, subtle lighting, which is what the

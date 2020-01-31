@@ -6,6 +6,7 @@ projectimage: /img/moxie2.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       The exterior of this bar and restaurant uses various lighting techniques

@@ -5,6 +5,7 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/indigo-hotel1.jpg
 projectcategory: Hospitality
 projectscope: Lodging
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   This hotel’s upscale, trendy decor allows some really unique, hip lighting to
   fit right in. The bright reception area might help perk you up at the end of a

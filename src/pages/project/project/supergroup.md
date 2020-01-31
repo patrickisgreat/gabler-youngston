@@ -5,6 +5,7 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/supergroup1.jpg
 projectcategory: Corporate
 projectscope: Corporate
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   Blue light complements the orange accents of the furniture and interior. The
   futuristic features of the structure and decor are actually best suited by a

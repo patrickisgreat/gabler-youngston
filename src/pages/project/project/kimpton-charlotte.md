@@ -6,6 +6,7 @@ projectimage: /img/kinpton1.jpg
 projectcategory: Hospitality
 projectscope: Facade
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       This hotel’s facade is illuminated in unified but distinct areas; the

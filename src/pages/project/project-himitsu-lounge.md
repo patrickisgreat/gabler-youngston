@@ -5,6 +5,7 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/holy_innocents1.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   Every space has been lit with intention and thought. The chapel defines
   simplicity with candles, cove lighting, and a single downlight at the altar.

@@ -6,6 +6,7 @@ projectimage: /img/emmanuel1.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
 sortdescription: Liturgical
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       Rods of light mounted to the walls and hanging from the ceiling contribute

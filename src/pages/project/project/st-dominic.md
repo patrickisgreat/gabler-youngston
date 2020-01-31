@@ -6,6 +6,7 @@ projectimage: /img/steelcase1.jpg
 projectcategory: Retail
 projectscope: Retail
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       Every individual light source is placed with care to match the unique

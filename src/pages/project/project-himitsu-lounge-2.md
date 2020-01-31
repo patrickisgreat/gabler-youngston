@@ -5,6 +5,7 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/himitsu1.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   This invitation-only speakeasy exemplifies refined luxury. While it certainly
   helps to set the mood, the mild, broad-spectrum lighting also helps bring out

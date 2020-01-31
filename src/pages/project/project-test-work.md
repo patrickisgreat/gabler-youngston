@@ -6,6 +6,7 @@ projectimage: /img/atl_united1.jpg
 projectcategory: Corporate
 projectscope: Corporate
 sortdescription: Test description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       Each area of the facility, from the gym and locker room to the lobby and

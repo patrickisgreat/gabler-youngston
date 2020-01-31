@@ -6,6 +6,7 @@ projectimage: /img/hadash.jpg
 projectcategory: Liturgical
 projectscope: Liturgical
 sortdescription: Liturgical
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       This synagogue features a combination of linear lights and constellations

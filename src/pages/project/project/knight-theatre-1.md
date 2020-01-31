@@ -6,6 +6,7 @@ projectimage: /img/le-cruset1.jpg
 projectcategory: Corporate
 projectscope: Retail
 sortdescription: 'The bright, modern, interior design calls for lighting to match.'
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       The bright, modern, interior design calls for lighting to match. While the

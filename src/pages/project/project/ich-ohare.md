@@ -5,6 +5,7 @@ projecttagline: O’Hare Airport
 projectimage: /img/ich1.jpg
 projectcategory: Hospitality
 projectscope: Lodging
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   Conceived from the outset as a gallery space, the lighting draws focus to the
   constantly rotating works of art throughout the lobby, corridors, and meeting

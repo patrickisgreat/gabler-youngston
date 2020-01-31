@@ -5,6 +5,7 @@ projecttagline: 'Coral Gables, FL'
 projectimage: /img/bacardi1.jpg
 projectcategory: Corporate
 projectscope: Corporate
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   The Bacardi Headquarters features daylight-bright lighting in a way that
   speaks to the professionalism of the company while imitating their tropical

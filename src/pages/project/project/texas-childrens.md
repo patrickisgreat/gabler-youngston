@@ -6,6 +6,7 @@ projectimage: /img/trident-school2.jpg
 projectcategory: Education
 projectscope: Education
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       The lighting design gives off a certain sense of sophistication and

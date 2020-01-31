@@ -6,6 +6,7 @@ projectimage: /img/gsu1.jpg
 projectcategory: Education
 projectscope: Education
 sortdescription: Education
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       The energizing brightness of the research and study space is impressive

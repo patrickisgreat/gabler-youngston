@@ -6,6 +6,7 @@ projectimage: /img/fiserv3.jpg
 projectcategory: Corporate
 projectscope: Corporate
 sortdescription: Corporate
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       Right angles and vertical lines at irregular intervals adds an artistic

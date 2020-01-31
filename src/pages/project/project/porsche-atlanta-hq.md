@@ -6,6 +6,7 @@ projectimage: /img/porsche1.jpg
 projectcategory: Corporate
 projectscope: Corporate
 sortdescription: This is short description
+date: 2020-01-27T15:42:04.729Z
 descriptionblockone:
   - description: >-
       The lighting for the Porsche headquarters displays the same intelligent,

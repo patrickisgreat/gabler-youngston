@@ -5,6 +5,7 @@ projecttagline: 'Sacramento, CA'
 projectimage: /img/hyatt-sacramento2.jpg
 projectcategory: Hospitality
 projectscope: Lodging
+date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   The lighting works to reveal the vast, richly decorated space of the luxury
   hotel.
