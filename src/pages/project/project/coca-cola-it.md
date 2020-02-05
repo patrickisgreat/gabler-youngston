@@ -4,7 +4,7 @@ projectname: COCA COLA IT
 projecttagline: 'Atlanta, Ga.'
 projectimage: /img/cocacola_it1.jpg
 projectcategory: Corporate
-projectscope: Corporate
+projectscope: Commercial Interiors
 date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   This open-structure office space lighting is casual and consistent with the
