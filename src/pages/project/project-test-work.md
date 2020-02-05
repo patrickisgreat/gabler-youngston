@@ -4,9 +4,9 @@ projectname: ATLANTA UNITED HEADQUARTERS
 projecttagline: 'Marietta, GA'
 projectimage: /img/atl_united1.jpg
 projectcategory: Corporate
-projectscope: Corporate
-sortdescription: Test description
+projectscope: Commercial Interiors
 date: 2020-01-27T15:42:04.729Z
+sortdescription: Test description
 descriptionblockone:
   - description: >-
       Each area of the facility, from the gym and locker room to the lobby and
