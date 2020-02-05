@@ -4,7 +4,7 @@ projectname: BACARDI U.S. HEADQUARTERS
 projecttagline: 'Coral Gables, FL'
 projectimage: /img/bacardi1.jpg
 projectcategory: Corporate
-projectscope: Corporate
+projectscope: Commercial Interiors
 date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
   The Bacardi Headquarters features daylight-bright lighting in a way that
