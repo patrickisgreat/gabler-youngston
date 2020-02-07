@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: BACARDI U.S. HEADQUARTERS
 projecttagline: 'Coral Gables, FL'
 projectimage: /img/bacardi1.jpg
-projectcategory: Corporate
+projectcategory: Commercial Interiors
 projectscope: Commercial Interiors
 date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
