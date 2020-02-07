@@ -1,5 +1,5 @@
 ---
 templateKey: newscat
-categoryname: Social Event
+categoryname: Social Events
 ---
 
