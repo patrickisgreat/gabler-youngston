@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: FISERV
 projecttagline: 'Alpharetta, GA'
 projectimage: /img/fiserv3.jpg
-projectcategory: Corporate
+projectcategory: Commercial Interiors
 projectscope: Commercial Interiors
 date: 2020-01-27T15:42:04.729Z
 sortdescription: Corporate
