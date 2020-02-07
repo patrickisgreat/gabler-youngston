@@ -32,7 +32,7 @@ description: >-
   also seen her work published in numerous trade journals, including recent
   articles on retail illumination and light pollution in Architectural Lighting
   and Professional Lighting Design magazines. Morgan has received six
-  International Illumination Design Awards, an Edison Award of Merit and an
+  International Illumination Design Awards, an Edison Award of Merit, and an
   Edison Award for Sustainable Design.
 ---
 
