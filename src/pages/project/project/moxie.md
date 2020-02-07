@@ -3,10 +3,10 @@ templateKey: Projectdetail/index
 projectname: NOPSI
 projecttagline: 'New Orleans, LA'
 projectimage: /img/nopsi3.jpg
-projectcategory: Hospitality
+projectcategory: Lodging
 projectscope: Lodging
-sortdescription: This is short description
 date: 2020-01-27T15:42:04.729Z
+sortdescription: This is short description
 descriptionblockone:
   - description: >-
       The sheer size and variety of locations within this historic conversion
