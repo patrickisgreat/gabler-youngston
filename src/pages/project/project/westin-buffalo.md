@@ -10,7 +10,7 @@ sortdescription: Placeholder
 descriptionblockone:
   - description: Placeholder
     descriptiontitle: Idea
-    image: /img/westin_buffalo_lobby.jpg
+    image: /img/westin_buffalo_boardroom.jpg
     imagepos: left
   - description: Placeholder
     descriptiontitle: Live
