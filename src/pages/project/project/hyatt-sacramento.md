@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: HYATT SACRAMENTO
 projecttagline: 'Sacramento, CA'
 projectimage: /img/hyatt-sacramento2.jpg
-projectcategory: Hospitality
+projectcategory: Lodging
 projectscope: Lodging
 date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
