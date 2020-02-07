@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: KIMPTON CHARLOTTE
 projecttagline: 'Charlotte, NC'
 projectimage: /img/kinpton1.jpg
-projectcategory: Hospitality
+projectcategory: Lodging
 projectscope: Facade
 date: 2020-01-31T15:42:04.729Z
 sortdescription: >-
