@@ -23,7 +23,7 @@ description: >-
 
   Michael invests a lot of thought into the wellbeing of Gabler Youngston’s
   clients, thinking of good design as conducive to health and life. That means
-  providing the best lighting solution for the occupants of the space and its’
+  providing the best lighting solution for the occupants of the space and its
   usage. If spaces have truly thoughtful lighting, the people working, living,
   or visiting in the spaces are more productive, feel better, and want to stay
   there, which synergizes with every client’s goals.
