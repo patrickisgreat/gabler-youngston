@@ -3,10 +3,10 @@ templateKey: Projectdetail/index
 projectname: MOXIE
 projecttagline: 'Jacksonville, FL'
 projectimage: /img/moxie2.jpg
-projectcategory: Hospitality
-projectscope: Hospitality
-sortdescription: This is short description
+projectcategory: Lodging
+projectscope: Lodging
 date: 2020-01-27T15:42:04.729Z
+sortdescription: This is short description
 descriptionblockone:
   - description: >-
       The exterior of this bar and restaurant uses various lighting techniques
