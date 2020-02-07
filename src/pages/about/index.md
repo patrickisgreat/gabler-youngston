@@ -17,8 +17,8 @@ section2:
   description: >-
     Lighting design studies the interactions of volume, materials, user needs,
     and illumination. A successful design responds to and reinforces
-    architectural elements without overwhelming them.As partners, Morgan and Jim
-    respond to the needs of clients through a collaborative process. We work
+    architectural elements without overwhelming them. As partners, Morgan and
+    Jim respond to the needs of clients through a collaborative process. We work
     with designers and owners as our collaborators to create an aesthetically
     pleasing, practically functional design that is also maintenance and budget
     friendly. Ours is an encompassing approach interconnecting all the pieces of
