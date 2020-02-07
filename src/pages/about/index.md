@@ -6,12 +6,11 @@ heroImage: /img/morgan-and-jim.jpg
 section1:
   description: >-
     is an award winning architectural lighting design firm founded by Morgan
-    Gabler and Jim Youngston. Morgan and Jim have more than thirty years’
-    combined professional experience in theatrical and architectural lighting
-    design, contributing to over 300 architectural lighting projects in that
-    time, and have worked as a team over the last eight years. Gabler-Youngston
-    is the result of a shared vision for improved environments through creative
-    lighting design and thorough documentation.
+    Gabler and Jim Youngston. Morgan and Jim have more than 50 years’ combined
+    professional experience, contributing to over 800 architectural lighting
+    projects in that time, and have worked as a team for 20 years.
+    Gabler-Youngston is the result of a shared vision for improved environments
+    through creative lighting design and thorough documentation.
   image: /img/gabler_youngston_jasonbelishaphotographer-17.jpg
   title: GABLER YOUNGSTON
 section2:
