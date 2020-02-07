@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: HOTEL INDIGO
 projecttagline: 'Atlanta, GA'
 projectimage: /img/indigo-hotel1.jpg
-projectcategory: Hospitality
+projectcategory: Lodging
 projectscope: Lodging
 date: 2020-01-27T15:42:04.729Z
 sortdescription: >-
