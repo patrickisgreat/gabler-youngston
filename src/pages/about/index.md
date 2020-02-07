@@ -5,7 +5,7 @@ headerImage: /img/about-hero.jpg
 heroImage: /img/morgan-and-jim.jpg
 section1:
   description: >-
-    is an award winning architectural lighting design firm founded by Morgan
+    is an award-winning architectural lighting design firm founded by Morgan
     Gabler and Jim Youngston. Morgan and Jim have more than 50 years’ combined
     professional experience, contributing to over 800 architectural lighting
     projects in that time, and have worked as a team for 20 years.
