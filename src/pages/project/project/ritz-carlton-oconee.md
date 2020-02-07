@@ -5,8 +5,8 @@ projecttagline: 'Atlanta, GA'
 projectimage: /img/ritz-carlton2.jpg
 projectcategory: Hospitality
 projectscope: Hospitality
-sortdescription: This is short description
 date: 2020-01-27T15:42:04.729Z
+sortdescription: This is short description
 descriptionblockone:
   - description: >-
       A high-end country club comes with particular expectations from the
