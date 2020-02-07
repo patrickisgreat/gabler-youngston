@@ -3,7 +3,7 @@ templateKey: Teamdetail/index
 memberimage: /img/team-img4.jpg
 resume: /resumes/lauren-resume.pdf
 title: LAUREN LYNGARKOS
-designation: Philidelphia Lead
+designation: Philadelphia Lead
 description: >-
   Lauren started her lighting career in theater and other live performance
   settings for lighting design. In graduate school, Lauren worked on a lighting
