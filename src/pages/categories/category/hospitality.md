@@ -1,5 +1,5 @@
 ---
 templateKey: projectcat
-categoryname: Hospitality
+categoryname: Lodging
 ---
 
