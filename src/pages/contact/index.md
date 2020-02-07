@@ -2,8 +2,8 @@
 templateKey: contact-page
 title: "Start the\r\n\nconversation"
 contactnumber: (404) 521-3166
-contactnumberone: mgabler@gableryoungston.com
-contactnumbertwo: 'jyoungston@gableryoungston.com '
+contactnumberone: info@gableryoungston.com
+contactnumbertwo: info@gableryoungston.com
 sidebarcontent:
   - description: |-
       760 United Ave SE,
