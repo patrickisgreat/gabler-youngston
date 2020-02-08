@@ -9,9 +9,8 @@ class NewsList extends React.Component {
   render() {
 	const { data } = this.props;
 	const { edges: allInstaNode } = data.allInstaNode;
-	const { nodes: newses } = data.allMarkdownRemark;
-
-    
+  const { nodes: newses } = data.allMarkdownRemark;
+  
     return (
       <div className="news_feed">
         <Row>

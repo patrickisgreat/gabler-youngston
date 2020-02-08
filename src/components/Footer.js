@@ -35,7 +35,7 @@ class Footer extends React.Component {
                     <div className="col-md-6">
                       <section>
                         <h6>Contact</h6>
-                        <span>T :<a href={`tel:${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
+                        <span>T: <a href={`tel:${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
                         <a href={`mailto:${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/>
                       </section>
                     </div>

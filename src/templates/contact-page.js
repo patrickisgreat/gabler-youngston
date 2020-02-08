@@ -16,7 +16,6 @@ export const ContactPageTemplate = ({frontmatter}) => {
                <h1>{frontmatter.title}</h1>
                <span>T: <a href={`tel: ${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
                <a href={`mailto: ${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/>
-               <a href={`mailto: ${frontmatter.contactnumbertwo}`}>{frontmatter.contactnumbertwo}</a>
             </Col>
             <Col md={4}>
               {frontmatter.sidebarcontent.map((sidebar, i) => (
