@@ -61,7 +61,9 @@
 .news_details {
     padding-top: 20px;
     width: 80%;
-    float: right;
+    position: relative;
+    margin: 0 auto;
+    z-index: 1000 !important;
 }
 .hidden {
     display: none;
