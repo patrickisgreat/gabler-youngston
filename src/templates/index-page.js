@@ -55,7 +55,7 @@ const FlippyGeoShape = ({ progress }) => {
 };
 
 
-export const IndexPageTemplate = ({ image, title, slides, galleryImages, gallery2Images, recentWorks, footerWorks }) => {
+export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWorks }) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
   const slide4 = slides[2];
@@ -311,8 +311,6 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   slides: PropTypes.array,
-  galleryImages: PropTypes.array,
-  gallery2Images: PropTypes.array,
   recentWorks: PropTypes.array,
   footerWorks: PropTypes.array
 };
@@ -325,8 +323,6 @@ const IndexPage = ({ data }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         slides={frontmatter.slides}
-        galleryImages={frontmatter.galleryImages}
-        gallery2Images={frontmatter.gallery2Images}
         recentWorks={data.recentWorks.nodes}
         footerWorks={data.footerWorks.nodes}
       />
@@ -366,24 +362,6 @@ export const pageQuery = graphql`
           }
           sidebarHero
           sidebarDescription
-        }
-        galleryImages {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        gallery2Images {
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
         }
       }
     }
