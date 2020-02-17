@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
 
 class WorkTypefilter extends React.Component {
+  
   render() {
     const { data } = this.props
     const { nodes: cats } = data.allMarkdownRemark
@@ -20,9 +21,9 @@ class WorkTypefilter extends React.Component {
                   <li><Link activeClassName="active-cat" to="/works">All</Link></li>
                   {cats.map((cat) => (
                     <li>
-                       <Link activeClassName="active-cat" to={`/projectcat/${kebabCase(cat.frontmatter.categoryname)}/`}>
+                      <Link activeClassName="active-cat" to={`/projectcat/${kebabCase(cat.frontmatter.categoryname)}/`} state={{ fromFilter: true }}>
                        {cat.frontmatter.categoryname}
-                       </Link>
+                      </Link>
                     </li>
                   ))}
                 </ul>

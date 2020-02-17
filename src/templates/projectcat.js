@@ -8,7 +8,31 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../pages/work/work.css'
 
 class CatRoute extends React.Component {
+
+  constructor(props) {
+    super(props);
+    console.log(props);
+    this.state = {
+      fromFilter: false
+    }
+    
+  }
+  
+  componentDidMount() {
+    console.log('this is running');
+    setTimeout(() => {
+      this.scrollDown();
+    }, 200)
+  }
+
+  scrollDown() {
+    console.log("working")
+    let workView = document.getElementById('hvrbox-id');
+    workView.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+  }
+
   render() {
+    let fromFilter  = this.props.location.state.fromFilter;
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
        <Col md="4" sm="6" xs="6">
@@ -21,6 +45,7 @@ class CatRoute extends React.Component {
                 alt="Our Team"
                 style={{ display: 'block', width:'100%'}}
                 className="hvrbox-layer_bottom"
+                id="hvrbox-id"
               />
               <Link to={post.node.fields.slug} className="hvrbox-layer_top">
                 <div className="hvrbox-text">
@@ -31,9 +56,10 @@ class CatRoute extends React.Component {
             </div>
         </Col>
     ))
-    
+
     const category = this.props.pageContext.category
     const title = this.props.data.site.siteMetadata.title
+    console.log(this.props.location.state.fromFilter);
 
     return (
       <Layout>

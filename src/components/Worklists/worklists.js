@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Row, Col } from 'react-bootstrap';
 
 class WorkLists extends React.Component {
+
   render() {
     const { data } = this.props
     const { nodes: works } = data.allMarkdownRemark

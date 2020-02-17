@@ -8,8 +8,6 @@ class LatestWork extends React.Component {
   render() {
     const { data } = this.props
     const { nodes: works } = data.allMarkdownRemark
-    console.log('WORKS');
-    console.log(works);
     return (
       <div>
         {works.map((work) => (

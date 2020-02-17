@@ -10,8 +10,6 @@ class Footer extends React.Component {
   render() {
     const { data } = this.props
     const { frontmatter } = data.markdownRemark
-    console.log(frontmatter);
-
     return (
       <div className=" has-background-black has-text-white-ter">
         <Newsletter></Newsletter>

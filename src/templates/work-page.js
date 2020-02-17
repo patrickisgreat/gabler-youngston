@@ -1,11 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col } from 'react-bootstrap';
-import Img from 'gatsby-image'
+import { Container} from 'react-bootstrap';
 import WorkLists from '../components/Worklists/worklists'
 import LatestWork from '../components/Latestwork/latestwork'
 import WorkTypefilter from '../components/worktypesfilter'
