@@ -32,7 +32,6 @@ class CatRoute extends React.Component {
   }
 
   render() {
-    let fromFilter  = this.props.location.state.fromFilter;
     const posts = this.props.data.allMarkdownRemark.edges
     const postLinks = posts.map(post => (
        <Col md="4" sm="6" xs="6">
