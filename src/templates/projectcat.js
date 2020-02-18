@@ -19,7 +19,6 @@ class CatRoute extends React.Component {
   }
   
   componentDidMount() {
-    console.log('this is running');
     setTimeout(() => {
       this.scrollDown();
     }, 200)
@@ -58,7 +57,6 @@ class CatRoute extends React.Component {
 
     const category = this.props.pageContext.category
     const title = this.props.data.site.siteMetadata.title
-    console.log(this.props.location.state.fromFilter);
 
     return (
       <Layout>
