@@ -8,7 +8,7 @@ sidebarcontent:
   - description: |-
       760 United Ave SE,
       Atlanta, GA 30312
-    title: 'Gabler Youngston, LLC.'
+    title: Gabler Youngston Inc.
   - description: |
       Please Email:
       info@gableryoungston.com
