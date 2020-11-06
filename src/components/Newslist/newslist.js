@@ -8,7 +8,6 @@ import { Row, Col } from 'react-bootstrap';
 class NewsList extends React.Component {
   render() {
 	const { data } = this.props;
-	const { edges: allInstaNode } = data.allInstaNode;
   const { nodes: newses } = data.allMarkdownRemark;
   
     return (
