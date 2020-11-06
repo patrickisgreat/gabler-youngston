@@ -56,27 +56,6 @@ export default () => (
   <StaticQuery
     query={graphql`
       query NewsListQuery {
-			  allInstaNode {
-					edges {
-						node {
-							id
-							likes
-							comments
-							mediaType
-							preview
-							original
-							timestamp
-							caption
-							localFile {
-								childImageSharp {
-									fixed(width: 150, height: 150) {
-									...GatsbyImageSharpFixed
-									}
-								}
-							}
-						}
-					}
-				}
         allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
           nodes {
             frontmatter {
