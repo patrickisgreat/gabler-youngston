@@ -1,10 +1,10 @@
 ---
 templateKey: Projectdetail/index
-projectname: 120 PIEDMONT THE MIX
+projectname: 120 PIEDMONT
 projecttagline: 'Atlanta, GA'
 projectimage: /img/the-mix.jpg
-projectcategory: Multi-Family Residential
-projectscope: Multi-Family Residential
+projectcategory: Facade
+projectscope: Facade
 date: 2020-01-01T21:28:43.098Z
 sortdescription: Placeholder
 descriptionblockone:
