@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+date: 2020-01-28T15:42:04.729Z
 memberimage: /img/team-jim.jpg
 resume: /resumes/jim-resume.pdf
 title: JIM YOUNGSTON

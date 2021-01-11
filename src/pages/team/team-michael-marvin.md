@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+date: 2020-01-30T15:42:04.729Z
 memberimage: /img/michael-final.jpg
 resume: /resumes/michael-resume.pdf
 title: MICHAEL MARVIN

@@ -49,10 +49,15 @@ export default () => (
   <StaticQuery
     query={graphql`
       query OurTeamQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "Teamdetail/index"}}}) {
+        allMarkdownRemark(
+          filter: {
+            frontmatter: {templateKey: {eq: "Teamdetail/index"}}
+          },
+          sort: {order: ASC, fields: frontmatter___date}
+          ) {
           nodes {
             frontmatter {
-              title
+            title
               memberimage {
                 childImageSharp {
                   fluid(maxWidth: 2048, quality: 100) {

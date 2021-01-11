@@ -1,5 +1,6 @@
 ---
 templateKey: Teamdetail/index
+date: 2020-01-29T15:42:04.729Z
 memberimage: /img/team-img4.jpg
 resume: /resumes/lauren-resume.pdf
 title: LAUREN LYNGARKOS

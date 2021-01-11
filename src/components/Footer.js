@@ -38,8 +38,9 @@ class Footer extends React.Component {
                       </section>
                     </div>
                     <div className="col-md-6">
-                        <h6>Address</h6>
-                        <address>{frontmatter.address}</address>
+                        <h6>Addresses</h6>
+                        <address>{frontmatter.address1}</address>
+                        <address>{frontmatter.address2}</address>
                     </div>
 
                   </div>
@@ -69,7 +70,8 @@ export default () => (
             copyrightcontent
             contactnumber
             contactnumberone
-            address
+            address1
+            address2
             image {
               childImageSharp {
                 fluid {
