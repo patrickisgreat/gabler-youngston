@@ -27,7 +27,7 @@
 .banner-text{
   background:#3a3a3c;
   color:#fff;
-  width: 92px;
+  width: 120px;
   height: 100%;
   -webkit-writing-mode: tb-rl;
   -ms-writing-mode: tb-rl;
@@ -36,6 +36,7 @@
   transform: rotate(-180deg);
   text-align: right;
   padding-bottom:10px;
+  padding: 10px;
   position: absolute;
   right:0px;
   top:0px;
@@ -44,7 +45,7 @@
 
 .banner-text h2{
   font-family: "Futura-Koyu", sans-serif !important;
-  font-size: 45px;
+  font-size: 30px;
   /* font-weight: 700; */
   text-transform: uppercase;
   letter-spacing:3px;

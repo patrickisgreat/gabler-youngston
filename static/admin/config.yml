@@ -85,6 +85,7 @@ collections:
     slug: "team/{{slug}}"
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "Teamdetail/index"}
+      - {label: "Date Posted", name: "date", widget: "datetime"}
       - {label: "Member Image", name: "memberimage", widget: image}
       - {label: "Member Resume", name: "resume", widget: "file"}
       - {label: "Member Name", name: "title", widget: "string"}
@@ -167,7 +168,8 @@ collections:
       - {label: "Logo Image", name: "image", widget: "image"}
       - {label: "Contact Number", name: "contactnumber", widget: "string"}
       - {label: "Contact Email One", name: "contactnumberone", widget: "string"}
-      - {label: "Address", name: "address", widget: "string"}
+      - {label: "Address 1", name: "address1", widget: "string"}
+      - {label: "Address 2", name: "address2", widget: "string"}
 
 
   
