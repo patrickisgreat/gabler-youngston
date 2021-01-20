@@ -3,10 +3,10 @@ templateKey: Projectdetail/index
 projectname: ALOFT SUNNYVALE
 projecttagline: 'Sunnyvale, Ca.'
 projectimage: /img/aloft_sunnyvale1.jpg
-projectcategory: Hospitality
+projectcategory: Facade
 projectscope: Lodging
-sortdescription: Hospitality
 date: 2020-01-30T15:42:04.729Z
+sortdescription: Hospitality
 descriptionblockone:
   - description: >-
       The lighting for this budget hotel creates an attractive, unique vibe on
