@@ -3,10 +3,10 @@ templateKey: Projectdetail/index
 projectname: ST. DOMINIC PRAYER CHAPEL
 projecttagline: 'Jackson, MS'
 projectimage: /img/st-dominic1.jpg
-projectcategory: Liturgical
-projectscope: Liturgical
-sortdescription: This is short description
+projectcategory: Facade
+projectscope: Facade
 date: 2020-01-27T15:42:04.729Z
+sortdescription: Liturgical
 descriptionblockone:
   - description: >-
       In the sanctuary, the natural light is indistinguishable from the added
