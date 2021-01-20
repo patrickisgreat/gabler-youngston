@@ -1,11 +1,7 @@
 ---
 templateKey: Projectdetail/index
-projectname: The Hub at Peachtree
-projecttagline: >-
-  The revamped space will be called The Hub, a nod to Peachtree Center's
-  position at the heart of Downtown and its connectivity, walkability and
-  energy. The retail center will evolve into The Hub, which debuted in spring
-  2019, bringing new food offerings and experiences to Downtown Atlanta.
+projectname: THE HUB AT PEACHTREE
+projecttagline: 'Atlanta, ga'
 projectimage: /img/01_ptreectr_plaza.jpg
 projectcategory: Facade
 projectscope: Commercial
