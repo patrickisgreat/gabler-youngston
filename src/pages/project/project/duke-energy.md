@@ -3,7 +3,7 @@ templateKey: Projectdetail/index
 projectname: DUKE ENERGY
 projecttagline: 'Charlotte, Nc.'
 projectimage: /img/duke1.jpg
-projectcategory: Corporate
+projectcategory: Facade
 projectscope: Facade
 date: 2020-01-25T15:42:04.729Z
 sortdescription: >-
