@@ -3,10 +3,10 @@ templateKey: Projectdetail/index
 projectname: TEXAS CHILDREN'S HOSPITAL
 projecttagline: 'Katy, TX'
 projectimage: /img/texas-childrens.jpg
-projectcategory: Corporate
+projectcategory: Facade
 projectscope: Medical
-sortdescription: Corporate
 date: 2020-01-27T15:42:04.729Z
+sortdescription: Corporate
 descriptionblockone:
   - description: >-
       As a hospital, the lighting has to provide practical, high-visibility
