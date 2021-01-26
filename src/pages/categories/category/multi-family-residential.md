@@ -1,5 +1,5 @@
 ---
 templateKey: projectcat
-categoryname: Multi-Family Residential
+categoryname: Residential
 ---
 
