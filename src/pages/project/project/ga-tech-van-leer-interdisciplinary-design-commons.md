@@ -1,6 +1,6 @@
 ---
 templateKey: Projectdetail/index
-projectname: GA TECH VAN LEER INTERDISCIPLINARY DESIGN COMMONS
+projectname: GA TECH VAN LEER INTERDISCIPLINARY COMMONS
 projecttagline: 'Atlanta, GA'
 projectimage: /img/ga_tech4.jpg
 projectcategory: Education
