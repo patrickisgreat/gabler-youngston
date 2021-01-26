@@ -9,11 +9,8 @@ date: 2020-01-27T15:42:04.729Z
 sortdescription: 'The bright, modern, interior design calls for lighting to match.'
 descriptionblockone:
   - description: >-
-      The bright, modern, interior design calls for lighting to match. While the
-      interior design supplies natural wood and colorful accents for
-      highlighting, the total volume of light works to provide enough brightness
-      to set off the crisp white walls and ceiling as backdrop, drawing further
-      focus to the colorful product displays.
+      Reinforce the strong visual brand of the company while supporting the
+      multi-use functions of the space.
     descriptiontitle: Idea
     image: /img/le-cruset2.jpg
     imagepos: left
