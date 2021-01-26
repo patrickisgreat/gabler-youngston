@@ -8,10 +8,17 @@ projectscope: Education
 date: 2020-01-01T21:28:43.098Z
 sortdescription: Placeholder
 descriptionblockone:
-  - description: Placeholder
+  - description: >-
+      A multi-function space capable of NCAA Division II lighting levels to
+      commencement ceremonies and dramatic presentations, connecting the
+      aesthetic to the visible concourses.
     descriptiontitle: Idea
     image: /img/ung1.jpg
     imagepos: left
+  - description: Seemingly simple solutions that are maintenance friendly.
+    descriptiontitle: Live
+    image: /img/ung1.jpg
+    imagepos: right
 extrafield:
   - label: Client
     value: 'Lord, Aeck and Sargent'
