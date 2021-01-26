@@ -23,7 +23,7 @@ One of the first challenges we faced was figuring out how to design a new websit
 
 Our solution was to select a website design partner who shared our values. [Campfire Branding](http://www.campfirebranding.com) in Atlanta, Georgia, was our choice, and their aesthetic really brought our work to life.
 
-The shared values Gabler Youngston and Campfire Branding were able to embody in the website are to:
+The shared values Gabler-Youngston and Campfire Branding were able to embody in the website are to:
 
 \- Make sure design always serves the practical goal of the space.
 
@@ -35,10 +35,10 @@ Once we established those paradigms, we were still able to accomplish on our web
 
 **Using 2D design to showcase live, 3D projects**
 
-The best possible way to experience a lighting design project by Gabler Youngston is to tangibly visit a physical project site for yourself. Unfortunately, the cost of travel and tight schedules rarely allow for this personal experience.
+The best possible way to experience a lighting design project by Gabler-Youngston is to tangibly visit a physical project site for yourself. Unfortunately, the cost of travel and tight schedules rarely allow for this personal experience.
 
 So we want to showcase more than our quality; we want to show the range of facility types and variety of styles we’ve worked on. Whether your space is built for work, hospitality, religious service, medicine, food service, residence, or something else entirely, we want you to see a reflection of your goals in our online portfolio.
 
 We accomplished this through a large digital gallery of work with verbal descriptions. By supplying multiple images and a summary for each project, we can help move our visitors to exactly what they’re looking for quickly. This simple but deep process also helps establish the kind of familiarity with our work that is important for a trusted partner in lighting design.
 
-We hope that you enjoy our new website and see how both the portfolio and the website itself convey the beauty, originality, and practicality of Gabler Youngston!
+We hope that you enjoy our new website and see how both the portfolio and the website itself convey the beauty, originality, and practicality of Gabler-Youngston!
