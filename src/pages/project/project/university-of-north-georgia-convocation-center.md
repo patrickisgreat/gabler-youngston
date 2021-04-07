@@ -15,10 +15,6 @@ descriptionblockone:
     descriptiontitle: Idea
     image: /img/ung1.jpg
     imagepos: left
-  - description: Seemingly simple solutions that are maintenance friendly.
-    descriptiontitle: Live
-    image: /img/ung1.jpg
-    imagepos: right
 extrafield:
   - label: Client
     value: 'Lord, Aeck and Sargent'
