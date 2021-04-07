@@ -22,7 +22,7 @@ descriptionblockone:
       While there is, naturally, plenty of practical lighting, the goal is that
       visitors cannot tell decoration apart from utility.
     descriptiontitle: Live
-    image: /img/ich4.jpg
+    image: /img/ich3.jpg
     imagepos: right
 extrafield:
   - label: Client
