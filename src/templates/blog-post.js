@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Container, Row, Col,  Dropdown } from 'react-bootstrap'
-import { kebabCase } from 'lodash'
+import { Row, Col } from 'react-bootstrap'
 import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'

@@ -16,7 +16,7 @@ class NewsList extends React.Component {
             <Col md="8">
               {newses.map((news) => (
                 <Link to={news.fields.slug} className="news">
-                  <img src={news.frontmatter.featuredimage.childImageSharp.fixed.src} />
+                  <img src={news.frontmatter.featuredimage.childImageSharp.fixed.src} alt=""/>
                     <br />
                     <br />
                     <strong className="news-date">{news.frontmatter.date}</strong>

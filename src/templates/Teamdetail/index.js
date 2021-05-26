@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 import Layout from '../../components/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import "./team_detail.css";
-import Content, { HTMLContent } from '../../components/Content'
+import { HTMLContent } from '../../components/Content'
 import Purpose2 from '../../img/Bitmap2.png'
 import Purpose3 from '../../img/Bitmap3.png'
 import Purpose4 from '../../img/Bitmap4.png'

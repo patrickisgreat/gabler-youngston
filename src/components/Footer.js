@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery } from 'gatsby'
 import Newsletter from './Newsletter/Newsletter'
-import FooterLogo from '../img/gy_logo_footer.png'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './sass/footer.scss'
 
