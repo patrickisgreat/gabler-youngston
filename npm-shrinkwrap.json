@@ -17031,9 +17031,9 @@
       }
     },
     "lodash": {
-      "version": "4.17.15",
-      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.15.tgz",
-      "integrity": "sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A=="
+      "version": "4.17.21",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz",
+      "integrity": "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
     },
     "lodash-es": {
       "version": "4.17.15",
@@ -22267,9 +22267,9 @@
       }
     },
     "react": {
-      "version": "0.0.0-d7382b6c4",
-      "resolved": "https://registry.npmjs.org/react/-/react-0.0.0-d7382b6c4.tgz",
-      "integrity": "sha512-cA0aW/k5CPPk1abKbQ9xZzbKxcvbYA2KxI8eopQifvW8+r9l0zS3m/2pXPauEJ6UmJw2ASr0WH7qjleOegCi/g==",
+      "version": "0.0.0-bb1c82155",
+      "resolved": "https://registry.npmjs.org/react/-/react-0.0.0-bb1c82155.tgz",
+      "integrity": "sha512-0xffSgXkYufaANvQt4V9eRluUkNC5u8cpuWN2U+LwfC7u2tzSUnkybFKic7qt233e1SLfACddhB+jalg9Uq2YQ==",
       "requires": {
         "loose-envify": "^1.1.0",
         "object-assign": "^4.1.1"
