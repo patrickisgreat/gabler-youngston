@@ -5,7 +5,6 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
-import '../pages/new-details/news-details.css'
 import back_btn_up from '../img/back-to-top-button.jpg'
 import NewsTypefilter from '../components/newstypesfilter'
 
@@ -14,9 +13,7 @@ export const BlogPostTemplate = ({
   content,
   contentComponent,
   date,
-  description,
   featuredimage,
-  tags,
   title,
   helmet,
 }) => {
