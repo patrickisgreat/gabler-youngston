@@ -62,7 +62,7 @@ export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWor
 
   // slides get wonky on window resize
   // this seems hacky but it works
-  const [value, setValue] = useState(0);
+  const [setValue] = useState(0);
   useEffect(() => {
     function reRender() {
       return () => setValue(value => ++value);

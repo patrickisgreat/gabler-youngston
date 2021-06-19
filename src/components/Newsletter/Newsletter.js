@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './newsletter.css'
 import submittedButton from "../../../static/img/success_icon.png"
 
@@ -44,7 +44,7 @@ class Newsletter extends React.Component {
            let lastAtPos = fields["email"].lastIndexOf('@');
            let lastDotPos = fields["email"].lastIndexOf('.');
 
-           if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') == -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+           if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
               formIsValid = false;
               errors["email"] = "Email is not valid";
             }
@@ -82,28 +82,28 @@ class Newsletter extends React.Component {
 
 
   render() {
-     const NewsLetterConfirm = () => {
-        return (
-           <div className="newsletter-min submitted">
-              <div className="container">
-                 <div className="columns">
-                    <div className="column is-7">
-                       <span>Stay in the loop, subscribe to our </span>
-                       <h5>NEWSLETTER</h5>
-                    </div>
-                    <div className="column is-5">
-                       <form name="subscribe-confirm">
-                          <div className="form-btm">
-                             <em>You're all Set!</em>
-                             <img src={submittedButton} />
-                          </div>
-                       </form>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        )
-     }
+   //   const NewsLetterConfirm = () => {
+   //      return (
+   //         <div className="newsletter-min submitted">
+   //            <div className="container">
+   //               <div className="columns">
+   //                  <div className="column is-7">
+   //                     <span>Stay in the loop, subscribe to our </span>
+   //                     <h5>NEWSLETTER</h5>
+   //                  </div>
+   //                  <div className="column is-5">
+   //                     <form name="subscribe-confirm">
+   //                        <div className="form-btm">
+   //                           <em>You're all Set!</em>
+   //                           <img src={submittedButton} />
+   //                        </div>
+   //                     </form>
+   //                  </div>
+   //               </div>
+   //            </div>
+   //         </div>
+   //      )
+   //   }
 
    return (
       <div className={this.state.isSubmitted ? "newsletter-min submitted" : "newsletter-min"} >
@@ -120,7 +120,7 @@ class Newsletter extends React.Component {
                      <input type="hidden" name="form-name" value="subscribe" />
                      <div className="form-btm">
                         <em>You're all Set!</em>
-                        <img src={submittedButton} />
+                        <img src={submittedButton} alt="You're Set"/>
                      </div>
                   </form>  ) : (
                      <form name = "subscribe" action = "/about" method = "post" data-netlify="true" data-netlify-honeypot="bot-field" onSubmit={this.contactSubmit.bind(this)}>

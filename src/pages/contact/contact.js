@@ -1,40 +1,9 @@
 import React from 'react'
-// import { navigate } from 'gatsby-link'
 import Layout from '../../components/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import './contact-style.css'
-
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
-
 export default class Index extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state = { isValidated: false }
-  // }
-
-  // handleChange = e => {
-  //   this.setState({ [e.target.name]: e.target.value })
-  // }
-
-  // handleSubmit = e => {
-  //   e.preventDefault()
-  //   const form = e.target
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode({
-  //       'form-name': form.getAttribute('name'),
-  //       ...this.state,
-  //     }),
-  //   })
-  //     .then(() => navigate(form.getAttribute('action')))
-  //     .catch(error => alert(error))
-  // }
 
   render() {
     return (
@@ -57,7 +26,7 @@ export default class Index extends React.Component {
                    </div>
                    <div className="contact-f">
                        <strong>Follow us</strong>
-                       <a href="#">Instagram</a>
+                       <a href="http://instagram.com">Instagram</a>
                    </div>
                    <div className="contact-f">
                        <strong>Press inquiries</strong>
