@@ -22267,9 +22267,9 @@
       }
     },
     "react": {
-      "version": "0.0.0-3c2341416",
-      "resolved": "https://registry.npmjs.org/react/-/react-0.0.0-3c2341416.tgz",
-      "integrity": "sha512-MpX6F3OrdZ6sOdOgWV9ag4rrrrpWHZiJPBK32JTK1jYmDMyvkutivTgufwD74xiqcFf6sDPJVBHeJY43ioKZKA==",
+      "version": "18.0.0-alpha-568dc3532",
+      "resolved": "https://registry.npmjs.org/react/-/react-18.0.0-alpha-568dc3532.tgz",
+      "integrity": "sha512-0mBgt3ILZoV1JQ5bohwI0vfyYxChmmY1u9g7Wg4ObnDci+nGrgtOAxRgyQMGYhV9da7yWgsIVJiKJFVFgVIVdA==",
       "requires": {
         "loose-envify": "^1.1.0",
         "object-assign": "^4.1.1"
@@ -26996,9 +26996,9 @@
       }
     },
     "ua-parser-js": {
-      "version": "0.7.20",
-      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.20.tgz",
-      "integrity": "sha512-8OaIKfzL5cpx8eCMAhhvTlft8GYF8b2eQr6JkCyVdrgjcytyOmPCXrqXFcUnhonRpLlh5yxEZVohm6mzaowUOw=="
+      "version": "0.7.28",
+      "resolved": "https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.28.tgz",
+      "integrity": "sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g=="
     },
     "uc.micro": {
       "version": "1.0.6",
