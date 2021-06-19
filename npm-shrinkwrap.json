@@ -8307,9 +8307,9 @@
       "integrity": "sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU="
     },
     "decompress": {
-      "version": "4.2.0",
-      "resolved": "https://registry.npmjs.org/decompress/-/decompress-4.2.0.tgz",
-      "integrity": "sha1-eu3YVCflqS2s/lVnSnxQXpbQH50=",
+      "version": "4.2.1",
+      "resolved": "https://registry.npmjs.org/decompress/-/decompress-4.2.1.tgz",
+      "integrity": "sha512-e48kc2IjU+2Zw8cTb6VZcJQ3lgVbS4uuB1TfCHbiZIP/haNXm+SVyhu+87jts5/3ROpd82GSVCoNs/z8l4ZOaQ==",
       "requires": {
         "decompress-tar": "^4.0.0",
         "decompress-tarbz2": "^4.0.0",
@@ -22282,9 +22282,9 @@
       }
     },
     "react": {
-      "version": "0.0.0-3c2341416",
-      "resolved": "https://registry.npmjs.org/react/-/react-0.0.0-3c2341416.tgz",
-      "integrity": "sha512-MpX6F3OrdZ6sOdOgWV9ag4rrrrpWHZiJPBK32JTK1jYmDMyvkutivTgufwD74xiqcFf6sDPJVBHeJY43ioKZKA==",
+      "version": "18.0.0-alpha-568dc3532",
+      "resolved": "https://registry.npmjs.org/react/-/react-18.0.0-alpha-568dc3532.tgz",
+      "integrity": "sha512-0mBgt3ILZoV1JQ5bohwI0vfyYxChmmY1u9g7Wg4ObnDci+nGrgtOAxRgyQMGYhV9da7yWgsIVJiKJFVFgVIVdA==",
       "requires": {
         "loose-envify": "^1.1.0",
         "object-assign": "^4.1.1"
