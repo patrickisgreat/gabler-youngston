@@ -127,8 +127,9 @@ class Newsletter extends React.Component {
                      <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="subscribe" />
                   <div className="form-group">
-                     <label>Your name:</label>
+                     <label htmlFor="name">Your name:</label>
                      <input
+                        id="name"
                         name="name"
                         type="text"
                         onChange={this.handleChange.bind(this, "name")}
@@ -139,8 +140,9 @@ class Newsletter extends React.Component {
                      <span style={{ color: "#ffffff", fontSize: "14px" }}>{this.state.errors["name"]}</span>
                   </div>
                   <div className="form-group">
-                     <label>Your email address:</label>
+                     <label htmlFor="email">Your email address:</label>
                      <input
+                        id="email"
                         name="email"
                         type="email"
                         onChange={this.handleChange.bind(this, "email")}

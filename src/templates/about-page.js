@@ -13,7 +13,7 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
        <div className="about-us">
           <img
             src={heroImage.childImageSharp.fluid.src}
-            alt="About us image"
+            alt="About us"
           />
           <div className="about_text">
               <p><span>{section1.title}</span> {section1.description}</p>
@@ -25,24 +25,24 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
                   {section2.image1.childImageSharp ?
                     <Img
                     fluid={section2.image1.childImageSharp.fluid}
-                    alt="Our purpose"
+                    alt="Our purpose 1"
                    />
                    :
                    <img
                     src={section2.image1}
-                    alt="Our purpose"
+                    alt="Our purpose 2"
                    />
                   }
                   {section2.image2.childImageSharp ?
                     <Img
                     fluid={section2.image2.childImageSharp.fluid}
-                    alt="Our purpose"
+                    alt="Our purpose 3"
                     style={{ padding: '25px 0 0 30px', width:'100%'}}
                    />
                    :
                    <img
                     src={section2.image2}
-                    alt="Our purpose"
+                    alt="Our purpose 4"
                     style={{ padding: '25px 0 0 30px', width:'100%'}}
                    />
                   }
@@ -53,12 +53,12 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
                         {section2.image3.childImageSharp ?
                           <Img
                           fluid={section2.image3.childImageSharp.fluid}
-                          alt="Our purpose"
+                          alt="Our purpose 5"
                         />
                          :
                          <img
                           src={section2.image3}
-                          alt="Our purpose"
+                          alt="Our purpose 6"
                         />
                         }
                         
@@ -67,12 +67,12 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
                         {section2.image4.childImageSharp ?
                           <Img
                           fluid={section2.image4.childImageSharp.fluid}
-                          alt="Our purpose"
+                          alt="Our purpose 7"
                         />
                          :
                          <img
                           src={section2.image4}
-                          alt="Our purpose"
+                          alt="Our purpose 8"
                         />
                         }
                       </div>

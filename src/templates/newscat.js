@@ -2,9 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import LatestWork from '../components/Latestwork/latestwork'
 import NewsTypefilter from '../components/newstypesfilter'
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import Instfeed1 from '../img/insta-post1.jpg'
 import Instfeed2 from '../img/insta-post2.jpg'
 import Instfeed3 from '../img/insta-post3.jpg'

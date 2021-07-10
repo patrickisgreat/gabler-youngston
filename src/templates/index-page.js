@@ -68,15 +68,15 @@ export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWor
       return () => setValue(value => ++value);
     }
     window.addEventListener('resize', reRender());
-  }, []);
+  });
 
   const NextArrow = props => (
-    <div className="slick-next-arrow slick-arrow" onClick={props.onClick}>
+    <div role="button" className="slick-next-arrow slick-arrow" onClick={props.onClick} onKeyDown={props.onClick} tabIndex={0}>
       <img src={rightArrow} alt="next-arrow" />
     </div>
   );
   const PrevArrow = props => (
-    <button className="slick-prev-arrow slick-arrow" onClick={props.onClick}>
+    <button className="slick-prev-arrow slick-arrow" onClick={props.onClick} onKeyDown={props.onClick}>
       <img src={leftArrow} alt="prev-arrow" />
     </button>
   );

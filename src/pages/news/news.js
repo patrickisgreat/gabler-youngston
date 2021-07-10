@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Dropdown, Button } from 'react-bootstrap';
+import { Container, Row, Col, Dropdown } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../../components/Layout'
 import { Link } from 'gatsby'
@@ -8,8 +8,11 @@ import Instfeed1 from '../../img/insta-post1.jpg'
 import Instfeed2 from '../../img/insta-post2.jpg'
 import Instfeed3 from '../../img/insta-post3.jpg'
 import Instfeed4 from '../../img/insta-post4.jpg'
+
 export default class BlogIndexPage extends React.Component {
   render() {
+   const noop = () => {};
+   const foo = noop;
     return (
       <Layout>
          <div className="all_news">
@@ -35,11 +38,11 @@ export default class BlogIndexPage extends React.Component {
                         <div className="d-filter">
                            <strong>Filter by category</strong>
                            <ul>
-                           <li className="active-f"><a href="#">All </a></li>
-                           <li><a href="#">Announcements</a></li>
-                           <li><a href="#">Awards </a></li>
-                           <li><a href="#">Events </a></li>
-                           <li><a href="#">Publications </a></li>
+                           <li className="active-f"><button onClick={foo}>All </button></li>
+                           <li><button onClick={foo}>Announcements</button></li>
+                           <li><button onClick={foo}>Awards </button></li>
+                           <li><button onClick={foo}>Events </button></li>
+                           <li><button onClick={foo}>Publications </button></li>
                            </ul>
                         </div>
                      </div>

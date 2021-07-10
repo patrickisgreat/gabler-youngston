@@ -41,7 +41,7 @@ export default class BlogIndexPage extends React.Component {
                         <Col md="6" className="mt-4">
                             <img
                                 src={prjectimg1}
-                                alt="Project Image"
+                                alt="Unique Ubuntus"
                                 style={{ display: 'block', width:'100%'}}
                             /> 
                         </Col>
@@ -55,7 +55,7 @@ export default class BlogIndexPage extends React.Component {
                      <Col md="6" className="mt-4 position-relative">
                            <img
                                 src={prjectimg2}
-                                alt="Project Image"
+                                alt="Incredible Ibex"
                                 style={{ display: 'block', width:'100%'}}
                            /> 
                            <span>01</span>
@@ -90,7 +90,7 @@ export default class BlogIndexPage extends React.Component {
                      <Col md="6" className="mt-4 position-relative porject-stp3">
                            <img
                                 src={prjectimg2}
-                                alt="Project Image"
+                                alt="Clipperships"
                                 style={{ display: 'block', width:'100%'}}
                            /> 
                            <span className="">03</span>
@@ -118,31 +118,31 @@ export default class BlogIndexPage extends React.Component {
                    <Col md="5" className="social_links">
                       <h6>Like it? Share it!</h6>
                        <ul>
-                          <li><a href=""> 
+                          <li><button href="https://gableryoungston.com"> 
                            <img
                                  src={facebook}
                                  alt="facebook"
                               /> 
-                          </a></li>
-                          <li><a href=""> 
+                          </button></li>
+                          <li><button href="https://gableryoungston.com"> 
                            <img
                                  src={twitter}
                                  alt="twitter"
                               /> 
-                          </a></li>
-                          <li><a href=""> 
+                          </button></li>
+                          <li><a href="https://gableryoungston.com"> 
                            <img
                                  src={linkdin}
                                  alt="linkdin"
                               /> 
                           </a></li>
-                          <li><a href=""> 
+                          <li><a href="https://gableryoungston.com"> 
                            <img
                                  src={googleplus}
                                  alt="googleplus"
                               /> 
                           </a></li>
-                          <li><a href=""> 
+                          <li><a href="https://gableryoungston.com"> 
                            <img
                                  src={email}
                                  alt="email"

@@ -86,7 +86,7 @@ export const WorkPageTemplate = ({ frontmatter }) => {
                           :
                           <img
                               src={items.image}
-                              alt="Project Image"
+                              alt="Projects"
                               style={{ display: 'block', width:'100%'}}
                           /> 
                           }

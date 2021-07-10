@@ -7,10 +7,11 @@
     "@danestves/react-markdown": "^1.0.6",
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
+    "@types/react": "^17.0.11",
     "bootstrap": "^4.3.1",
     "bulma": "^0.7.0",
     "gatsby": "^2.17.3",
-    "gatsby-cli": "^2.8.6",
+    "gatsby-cli": "^3.7.1",
     "gatsby-image": "^2.2.29",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-mdx": "^1.0.59",
@@ -27,6 +28,7 @@
     "gatsby-source-instagram": "^0.6.1",
     "gatsby-transformer-remark": "^2.6.30",
     "gatsby-transformer-sharp": "^2.3.0",
+    "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "lodash-webpack-plugin": "^0.11.4",
     "netlify-cli": "^2.19.0",
@@ -36,8 +38,9 @@
     "netlify-cms-media-library-uploadcare": "^0.5.2",
     "node-sass": "^4.13.1",
     "parcel-bundler": "^1.12.4",
+    "popper": "^1.0.1",
     "prop-types": "^15.6.0",
-    "react": "next",
+    "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.15",
     "react-dom": "^16.12.0",
     "react-gsap": "^1.2.0",
@@ -51,7 +54,7 @@
     "styled-components": "^4.3.2",
     "typography": "^0.16.19",
     "typography-theme-us-web-design-standards": "^0.16.19",
-    "uuid": "^3.2.1"
+    "uuid": "^8.0.0"
   },
   "keywords": [
     "gatsby"
