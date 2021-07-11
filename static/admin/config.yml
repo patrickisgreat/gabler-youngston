@@ -62,11 +62,12 @@ collections:
                 {name: "text", widget: "string"},
               ]}
             ]}
-            
+
       - file: "src/pages/resources/index.md"
         label: "Resources"
         name: "resources"
         fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources"}
           - {label: "Top Left Asset Download Card Image", name: "topLeftDownloadImage", widget: "image"}
           - {label: "Top Left Asset Download Card", name: "topLeftDownloadText", widget: "string"}
           - {label: "Top Left Asset Download Card File", name: "topLeftDownloadImageFile", widget: "file"}
