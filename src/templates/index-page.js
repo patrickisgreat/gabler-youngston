@@ -48,14 +48,14 @@ const FlippyGeoShape = ({ progress }) => {
   return (
     <Timeline totalProgress={progress * 2} paused>
       <Tween {...flippyGeoShapeTweenProps}>
-        <img src={geoShape} alt="" />
+        <img src={geoShape} alt="Flippy Geo Shape" />
       </Tween>
     </Timeline>
   );
 };
 
 
-export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWorks }) => {
+export const IndexPageTemplate = ({ image, slides, recentWorks, footerWorks }) => {
   const slide2 = slides[0];
   const slide3 = slides[1];
   const slide4 = slides[2];
@@ -158,7 +158,7 @@ export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWor
           </div>
           <div className="galleryContainer">
             <Slider {...sliderSettings}>
-              {footerWorks.map((image, i) => {
+              {footerWorks && footerWorks.map((image, i) => {
                 return (
                   <div className="hvrbox">
                     <img
@@ -232,7 +232,7 @@ export const IndexPageTemplate = ({ image, title, slides, recentWorks, footerWor
             <div className="left">
               <div className="largeGalleryContainer">
                 <Slider {...largeSliderSettings}>
-                  {recentWorks.map((image, i) => {
+                  {recentWorks && recentWorks.map((image, i) => {
                     return (
                     <Link to={image.fields.slug}>
                       <div className="slider-works">
@@ -329,6 +329,7 @@ const IndexPage = ({ data }) => {
     </Layout>
   );
 };
+
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({

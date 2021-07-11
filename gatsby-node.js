@@ -15,10 +15,8 @@ exports.createPages = ({ actions, graphql }) => {
             fields {
               slug
             }
-            frontmatter {
-              tags
+            frontmatter {             
               projectcategory
-              newscategory
               templateKey
             }
           }
@@ -38,9 +36,7 @@ exports.createPages = ({ actions, graphql }) => {
       if(edge.node.fields.slug != "/footer/") {
         createPage({
           path: edge.node.fields.slug,
-          tags: edge.node.frontmatter.tags,
           projectcategory: edge.node.frontmatter.projectcategory,
-          newscategory: edge.node.frontmatter.newscategory,
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
           ),
@@ -64,43 +60,6 @@ exports.createPages = ({ actions, graphql }) => {
       },
     })
 
-    // news list page
-    var id = 'blog-post'
-    createPage({
-      path: '/news',
-      component: path.resolve(
-        `src/templates/news-page.js`
-      ),
-      context: {
-        id,
-      },
-    })
-    
-
-    // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
-
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
-
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
-
     let projectcategory = []
 
     posts.forEach(edge => {
@@ -120,27 +79,6 @@ exports.createPages = ({ actions, graphql }) => {
         },
       })
     })
-
-
-    let newscategory = []
-
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.newscategory`)) {
-        newscategory = newscategory.concat(edge.node.frontmatter.newscategory)
-      }
-    })
-   
-    newscategory.forEach(category => {
-      const newscategoryPath = `/newscat/${_.kebabCase(category)}/`
-      createPage({
-        path: newscategoryPath,
-        component: path.resolve(`src/templates/newscat.js`),
-        context: {
-          category,
-        },
-      })
-    })
-
   })
 }
 

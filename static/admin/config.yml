@@ -62,6 +62,36 @@ collections:
                 {name: "text", widget: "string"},
               ]}
             ]}
+            
+      - file: "src/pages/resources/index.md"
+        label: "Resources"
+        name: "resources"
+        fields:
+          - {label: "Top Left Asset Download Card Image", name: "topLeftDownloadImage", widget: "image"}
+          - {label: "Top Left Asset Download Card", name: "topLeftDownloadText", widget: "string"}
+          - {label: "Top Left Asset Download Card File", name: "topLeftDownloadImageFile", widget: "file"}
+          - {label: "Top Right Asset Download Card Image", name: "topRightDownloadImage", widget: "image"}
+          - {label: "Top Right Asset Download Card", name: "topRightDownloadCard", widget: "string"}
+          - {label: "Top Right Asset Download Card File", name: "topRightDownloadFile", widget: "file"}
+          - {label: "Page Body Text", name: "bodyText", widget: "markdown"}
+          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadImage", widget: "image"}
+          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadText", widget: "string"}
+          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadFile", widget: "file"}
+          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadImage", widget: "image"}
+          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadText", widget: "string"}
+          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadFile", widget: "file"}
+          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadImage", widget: "image"}
+          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadText", widget: "string"}
+          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadFile", widget: "file"}
+          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadImage", widget: "image"}
+          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadText", widget: "string"}
+          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadFile", widget: "file"}
+          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadImage", widget: "image"}
+          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadText", widget: "string"}
+          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadFile", widget: "file"}
+          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadImage", widget: "image"}
+          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadText", widget: "string"}
+          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadFile", widget: "file"}
 
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -128,34 +158,6 @@ collections:
       - {label: "More Fields", name: "extrafield", widget: "list", fields: [
           {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
         ]}
-
-  - name: "newscategory"
-    label: "News Categories"
-    folder: "src/pages/news-categories"
-    create: true
-    delete: true
-    slug: "newscategories/{{slug}}"
-    identifier_field: categoryname
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "newscat"}
-      - {label: "Category Name", name: "categoryname", widget: "string"}
-
-  - name: "blog"
-    label: "News"
-    folder: "src/pages/news"
-    create: true
-    delete: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Post", name: "featuredpost", widget: "boolean"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "News Category", valueField: "categoryname", searchFields: "categoryname", displayFields: "categoryname", collection: "newscategory", name: "newscategory", widget: "relation"}
-      - {label: "Tags", name: "tags", widget: "list"}
       
   - name: "footer"
     label: "Footer"

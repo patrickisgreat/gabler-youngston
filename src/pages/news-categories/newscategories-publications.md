@@ -1,5 +1,0 @@
----
-templateKey: newscat
-categoryname: Publications
----
-

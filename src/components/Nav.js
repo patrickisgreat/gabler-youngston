@@ -52,8 +52,8 @@ const Nav = class extends React.Component {
                     <Link activeClassName="is-active" className="navbar-item" to="/works">
                       WORK
                     </Link>
-                    <Link activeClassName="is-active" className="navbar-item" to="/news">
-                      NEWS
+                    <Link activeClassName="is-active" className="navbar-item" to="/resources">
+                      RESOURCES
                     </Link>
                     <Link activeClassName="is-active" className="navbar-item" to="/contact">
                       CONTACT
@@ -87,8 +87,8 @@ const Nav = class extends React.Component {
                         <Link activeClassName="is-active" className="navbar-item" to="/works">
                           WORK
                         </Link>
-                        <Link activeClassName="is-active" className="navbar-item" to="/news">
-                          NEWS
+                        <Link activeClassName="is-active" className="navbar-item" to="/resources">
+                          RESOURCES
                         </Link>
                         <Link activeClassName="is-active" className="navbar-item" to="/contact">
                           CONTACT

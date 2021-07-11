@@ -132,8 +132,6 @@ AboutPageTemplate.propTypes = {
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log('stuff');
-  console.log(frontmatter);
   return (
     <Layout>
       <AboutBanner headerImage={frontmatter.headerImage.childImageSharp.fluid.src}></AboutBanner>
@@ -164,6 +162,7 @@ export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: {eq: $id}) {
       frontmatter {
+        title
         headerImage {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
@@ -178,7 +177,6 @@ export const aboutPageQuery = graphql`
             }
           }
         }
-        title
         section1 {
           description
           image {
