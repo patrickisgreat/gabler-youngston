@@ -69,16 +69,14 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources"}
           - {label: "Top Header Text", name: "topHeaderText", widget: "string"}
-          - {label: "Resources Download Card 1", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard1", widget: "relation"}
-          - {label: "Resources Download Card 2", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard2", widget: "relation"}
+          - {label: "Top Download Cards", name: "topDownloadCards", widget: "list", summary: 'Top List of Dynamic Download Cards', max: 2, fields: [
+              {label: "Resources Download Card", valueField: "title", searchFields: "title", displayFields: "title", collection: "resourcescards", name: "topDownloadCard", widget: "relation"}
+            ]}
           - {label: "Page Body Text", name: "bodyText", widget: "markdown"}
           - {label: "Bottom Header Text", name: "bottomHeaderText", widget: "string"}
-          - {label: "Resources Download Card 3", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard3", widget: "relation"}
-          - {label: "Resources Download Card 4", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard4", widget: "relation"}
-          - {label: "Resources Download Card 5", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard5", widget: "relation"}
-          - {label: "Resources Download Card 6", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard6", widget: "relation"}
-          - {label: "Resources Download Card 7", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard7", widget: "relation"}
-          - {label: "Resources Download Card 8", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard8", widget: "relation"}
+          - {label: "Bottom Download Cards", name: "bottomDownloadCards", widget: "list", summary: 'Bottom List of Dynamic Download Cards', max: 6, fields: [
+              {label: "Resources Download Card", valueField: "title", searchFields: "title", displayFields: "title", collection: "resourcescards", name: "bottomDownloadCard", widget: "relation"}
+            ]}
 
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -146,10 +144,9 @@ collections:
           {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
         ]}
   
-  - name: "resourcescard"
+  - name: "resourcescards"
     label: "Resources Download Cards"
     folder: "src/pages/resourcescards"
-    identifier_field: resourcescard
     create: true
     delete: true
     fields:
