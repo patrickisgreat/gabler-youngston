@@ -14,11 +14,11 @@ const ResourcesCardPreview = ({ entry, widgetFor }) => {
   	}
 }
 
-ResourcesCardTemplate.propTypes = {
+ResourcesCardPreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
   widgetFor: PropTypes.func,
 }
 
-export default ResourcesPagePreview;
+export default ResourcesCardPreview;
