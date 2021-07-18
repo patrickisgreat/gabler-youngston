@@ -25,7 +25,7 @@
 }
 
 .through_years h4 {
-    color: #E0E0E0;
+    color: #9D9D9A;
     font-size: 90px;
     line-height: 90px;
     font-weight: 400;
@@ -41,70 +41,83 @@
 .through_years li {
     padding-top: 10px;
 }
-.container{
-    width:96%;
+
+.container {
+    width: 96%;
 }
+
 .blog-container {
     position: relative;
 }
+
 @media screen and (max-width: 1100px) {
-  .about_text{
-      width:100%;
-      padding-right:10%;
-  } 
-  .about_text p {
-      font-size:16px;
-      line-height: 28px;
-  }
+    .about_text {
+        width: 100%;
+        padding-right: 10%;
+    }
+
+    .about_text p {
+        font-size: 16px;
+        line-height: 28px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    .about-us{
+    .about-us {
         flex-wrap: wrap;
-    } 
-    .about-us img{
-        width:100%;
-    } 
+    }
+
+    .about-us img {
+        width: 100%;
+    }
+
     .about_text {
-       padding-top:20px;
-       padding-left:15px;
-       padding-right:15px;
+        padding-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    .Our_purpose{
-        padding-left:15px;
-        padding-right:15px;
+
+    .Our_purpose {
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    .our-purpose{
-        max-width:90%;
-        padding-left:0px;
-        box-sizing:border-box;
-        margin:0px auto;
+
+    .our-purpose {
+        max-width: 90%;
+        padding-left: 0px;
+        box-sizing: border-box;
+        margin: 0px auto;
     }
-    .Our_purpose img, .Our_team img{
-        width:100%;
-        padding-left:0px !important;
+
+    .Our_purpose img,
+    .Our_team img {
+        width: 100%;
+        padding-left: 0px !important;
     }
-    .through_years h4{
+
+    .through_years h4 {
         padding-right: 0px;
-        font-size:45px;
-        line-height:45px;
+        font-size: 45px;
+        line-height: 45px;
     }
+
     .through_years {
-        padding-left:15px;
-        padding-right:15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
-    .through_years li{
-        font-size:16px;
-    }
-    .through_years ul{
-        padding-top:0px;
-    }
-    .Our_team{
-        padding-left:15px;
-        padding-right:15px;
-    }
-  }
 
-  @media screen and (max-width:568px) {
+    .through_years li {
+        font-size: 16px;
+    }
 
-  }
+    .through_years ul {
+        padding-top: 0px;
+    }
+
+    .Our_team {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+@media screen and (max-width:568px) {}

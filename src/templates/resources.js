@@ -12,17 +12,25 @@ export const ResourcesPageTemplate = ({frontmatter}) => {
         <Container>
           <Row>
             <Col md={8}>
-               <h1 style={{ padding: '100px', fontSize: '2.5em'}}>{frontmatter.title}</h1>
-               {/* <span>T: <a href={`tel: ${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
-               <a href={`mailto: ${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/> */}
+               <h1>{frontmatter.title}</h1>
+			   <img
+					src={frontmatter.topLeftDownloadImage.childImageSharp.fluid.src}
+					alt="Marketing Assets"
+					style={{ display: 'block', width:'100%'}}
+            	/>
+				<h4>{frontmatter.topLeftDownloadText}</h4>
+                <a class="res-link" href={frontmatter.topLeftDownloadFile} download>Download</a>
+
+			   <img
+					src={frontmatter.topLeftDownloadImage.childImageSharp.fluid.src}
+					alt="Marketing Assets"
+					style={{ display: 'block', width:'100%'}}
+            	/>
+				<h4>{frontmatter.topLeftDownloadText}</h4>
+                <a class="res-link" href={frontmatter.topLeftDownloadFile} download>Download</a>
             </Col>
             <Col md={4}>
-              {/* {frontmatter.sidebarcontent.map((sidebar, i) => (
-                  <div className="contact-f">
-                   <strong>{sidebar.title}</strong>
-                   <p>{sidebar.description}</p>
-               </div>
-              ))}  */}
+
             </Col>
           </Row>
         </Container>          

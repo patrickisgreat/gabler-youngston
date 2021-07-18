@@ -68,31 +68,17 @@ collections:
         name: "resources"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources"}
-          - {label: "Top Left Asset Download Card Image", name: "topLeftDownloadImage", widget: "image"}
-          - {label: "Top Left Asset Download Card", name: "topLeftDownloadText", widget: "string"}
-          - {label: "Top Left Asset Download Card File", name: "topLeftDownloadImageFile", widget: "file"}
-          - {label: "Top Right Asset Download Card Image", name: "topRightDownloadImage", widget: "image"}
-          - {label: "Top Right Asset Download Card", name: "topRightDownloadCard", widget: "string"}
-          - {label: "Top Right Asset Download Card File", name: "topRightDownloadFile", widget: "file"}
+          - {label: "Top Header Text", name: "topHeaderText", widget: "string"}
+          - {label: "Resources Download Card 1", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard1", widget: "relation"}
+          - {label: "Resources Download Card 2", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard2", widget: "relation"}
           - {label: "Page Body Text", name: "bodyText", widget: "markdown"}
-          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadImage", widget: "image"}
-          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadText", widget: "string"}
-          - {label: "Bottom Row 1 Left Asset Download Card", name: "btmRow1LeftDownloadFile", widget: "file"}
-          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadImage", widget: "image"}
-          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadText", widget: "string"}
-          - {label: "Bottom Row 1 Right Asset Download Card", name: "btmRow1RightDownloadFile", widget: "file"}
-          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadImage", widget: "image"}
-          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadText", widget: "string"}
-          - {label: "Bottom Row 2 Left Asset Download Card", name: "btmRow2LeftDownloadFile", widget: "file"}
-          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadImage", widget: "image"}
-          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadText", widget: "string"}
-          - {label: "Bottom Row 2 Right Asset Download Card", name: "btmRow2RightDownloadFile", widget: "file"}
-          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadImage", widget: "image"}
-          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadText", widget: "string"}
-          - {label: "Bottom Row 3 Left Asset Download Card", name: "btmRow3LeftDownloadFile", widget: "file"}
-          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadImage", widget: "image"}
-          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadText", widget: "string"}
-          - {label: "Bottom Row 3 Right Asset Download Card", name: "btmRow3RightDownloadFile", widget: "file"}
+          - {label: "Bottom Header Text", name: "bottomHeaderText", widget: "string"}
+          - {label: "Resources Download Card 3", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard3", widget: "relation"}
+          - {label: "Resources Download Card 4", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard4", widget: "relation"}
+          - {label: "Resources Download Card 5", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard5", widget: "relation"}
+          - {label: "Resources Download Card 6", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard6", widget: "relation"}
+          - {label: "Resources Download Card 7", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard7", widget: "relation"}
+          - {label: "Resources Download Card 8", valueField: "resourcescard", searchFields: "resourcescard", displayFields: "resourcescard", collection: "resourcescard", name: "downloadcard8", widget: "relation"}
 
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -159,7 +145,19 @@ collections:
       - {label: "More Fields", name: "extrafield", widget: "list", fields: [
           {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
         ]}
-      
+  
+  - name: "resourcescard"
+    label: "Resources Download Cards"
+    folder: "src/pages/resourcescards"
+    identifier_field: resourcescard
+    create: true
+    delete: true
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resourcescard"}
+      - {label: "Card Image", name: "image", widget: "image"}
+      - {label: "Card Title", name: "title", widget: "string"}
+      - {label: "Card File", name: "file", widget: "file"}
+  
   - name: "footer"
     label: "Footer"
     folder: "src/pages/footer"
