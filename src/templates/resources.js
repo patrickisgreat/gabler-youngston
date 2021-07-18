@@ -13,21 +13,6 @@ export const ResourcesPageTemplate = ({frontmatter}) => {
           <Row>
             <Col md={8}>
                <h1>{frontmatter.title}</h1>
-			   <img
-					src={frontmatter.topLeftDownloadImage.childImageSharp.fluid.src}
-					alt="Marketing Assets"
-					style={{ display: 'block', width:'100%'}}
-            	/>
-				<h4>{frontmatter.topLeftDownloadText}</h4>
-                <a class="res-link" href={frontmatter.topLeftDownloadFile} download>Download</a>
-
-			   <img
-					src={frontmatter.topLeftDownloadImage.childImageSharp.fluid.src}
-					alt="Marketing Assets"
-					style={{ display: 'block', width:'100%'}}
-            	/>
-				<h4>{frontmatter.topLeftDownloadText}</h4>
-                <a class="res-link" href={frontmatter.topLeftDownloadFile} download>Download</a>
             </Col>
             <Col md={4}>
 

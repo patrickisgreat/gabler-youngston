@@ -8,6 +8,7 @@ import ContactPagePreview from './preview-templates/ContactPagePreview'
 import WorkPagePreview from './preview-templates/WorkPagePreview'
 import TeamPagePreview from './preview-templates/TeamPagePreview'
 import ResourcesPagePreview from './preview-templates/ResourcesPagePreview'
+import ResourcesCardPreview from './preview-templates/ResourcesCardPreview'
 
 const config = {}
 console.log('NODE_ENV');
@@ -41,3 +42,4 @@ CMS.registerPreviewTemplate('contact', ContactPagePreview)
 CMS.registerPreviewTemplate('project', WorkPagePreview)
 CMS.registerPreviewTemplate('team', TeamPagePreview)
 CMS.registerPreviewTemplate('resources', ResourcesPagePreview)
+CMS.registerPreviewTemplate('resourcescard', ResourcesCardPreview)

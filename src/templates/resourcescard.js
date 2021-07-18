@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import '../pages/resources/resources.css'
 
-export const ResourcesCard = ({frontmatter}) => {
+export const ResourcesCardTemplate = ({frontmatter}) => {
   return (
     <section className="resources-card">
         <Container>
@@ -27,12 +27,12 @@ export const ResourcesCard = ({frontmatter}) => {
   );
 }
 
-ResourcesCard.propTypes = {
+ResourcesCardTemplate.propTypes = {
   frontmatter: PropTypes.array,
 }
 
 
-ResourcesCard.propTypes = {
+ResourcesCardTemplate.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       frontmatter: PropTypes.object
@@ -40,7 +40,7 @@ ResourcesCard.propTypes = {
   }),
 }
 
-export default ResourcesCard;
+export default ResourcesCardTemplate;
 
 export const ResourcesCardQuery = graphql
 `query ResourcesCardQuery($id: String!) {
