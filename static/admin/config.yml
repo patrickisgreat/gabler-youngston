@@ -148,14 +148,14 @@ collections:
   - name: "resourcescards"
     label: "Resources Download Cards"
     folder: "src/pages/resourcescards"
-    identifier_field: "cardname"
+    identifier_field: "cardName"
     create: true
     delete: true
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resourcescard"}
-      - {label: "Card Image", name: "image", widget: "image"}
-      - {label: "Card Title", name: "title", widget: "string"}
-      - {label: "Card File", name: "file", widget: "file"}
+      - {label: "Card Image", name: "cardImage", widget: "image"}
+      - {label: "Card Title", name: "cardName", widget: "string"}
+      - {label: "Card File", name: "cardFile", widget: "file"}
   
   - name: "footer"
     label: "Footer"
