@@ -1,7 +1,7 @@
 ---
 templateKey: resourcescard
 image: /img/rectangle.png
-title: Marketing Assets
+cardname: Marketing Assets
 file: /resumes/michael-resume.pdf
 ---
 

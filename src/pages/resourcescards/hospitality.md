@@ -1,6 +1,6 @@
 ---
 templateKey: resourcescard
 image: /img/rectangle.png
-title: Hospitality
+cardname: Hospitality
 file: /resumes/michael-resume.pdf
 ---

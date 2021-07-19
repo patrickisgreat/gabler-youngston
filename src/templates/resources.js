@@ -12,7 +12,7 @@ export const ResourcesPageTemplate = ({frontmatter}) => {
         <Container>
           <Row>
             <Col md={8}>
-               <h1>{frontmatter.title}</h1>
+               <h1>{frontmatter.topHeaderText}</h1>
             </Col>
             <Col md={4}>
 
@@ -53,80 +53,7 @@ export const ResourcesQuery = graphql
 `query ResourcesPageQuery($id: String!) {
 	markdownRemark(id: {eq: $id}) {
 		frontmatter {
-			title
-			topLeftDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				}    
-			}
-			topLeftDownloadText
-			topLeftDownloadFile
-			topRightDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			topRightDownloadText
-			topRightDownloadFile
-			bodyText
-			btmRow1LeftDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow1LeftDownloadText
-			btmRow1LeftDownloadFile
-			btmRow1LeftDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow1RightDownloadText
-			btmRow1RightDownloadFile 
-			btmRow1RightDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow2LeftDownloadText
-			btmRow2LeftDownloadFile
-			btmRow2RightDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow2RightDownloadText
-			btmRow2RightDownloadFile
-			btmRow3LeftDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow3LeftDownloadText
-			btmRow3LeftDownloadFile
-			btmRow3RightDownloadImage {
-				childImageSharp {
-					fluid(maxWidth: 2048, quality: 100) {
-						...GatsbyImageSharpFluid
-					}
-				} 
-			}
-			btmRow3RightDownloadText
-			btmRow3RightDownloadFile
+			topHeaderText
 		}
 	}
 }
