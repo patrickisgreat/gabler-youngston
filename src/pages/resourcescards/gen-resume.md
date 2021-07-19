@@ -1,6 +1,6 @@
 ---
 templateKey: resourcescard
-image: /img/rectangle.png
-cardname: Gen Resume
-file: /resumes/michael-resume.pdf
+cardImage: /img/rectangle.png
+cardName: Gen Resume
+cardFile: /resumes/michael-resume.pdf
 ---

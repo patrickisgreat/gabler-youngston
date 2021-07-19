@@ -1,6 +1,6 @@
 ---
 templateKey: resourcescard
-image: /img/rectangle.png
-cardname: Arts Portfolio 1
-file: /resumes/michael-resume.pdf
+cardImage: /img/rectangle.png
+cardName: Arts Portfolio 1
+cardFile: /resumes/michael-resume.pdf
 ---

@@ -1,6 +1,6 @@
 ---
 templateKey: resourcescard
-image: /img/rectangle.png
-cardname: Civic Portfolio
-file: /resumes/michael-resume.pdf
+cardImage: /img/rectangle.png
+cardName: Civic Portfolio
+cardFile: /resumes/michael-resume.pdf
 ---

@@ -1,6 +1,6 @@
 ---
 templateKey: resourcescard
-image: /img/rectangle.png
-cardname: Corporate Portfolio
-file: /resumes/michael-resume.pdf
+cardImage: /img/rectangle.png
+cardName: Corporate Portfolio
+cardFile: /resumes/michael-resume.pdf
 ---
