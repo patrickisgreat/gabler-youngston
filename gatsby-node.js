@@ -97,6 +97,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 }
 
 exports.onCreateDevServer = ({ app }) => {
-  const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs')
-  fsMiddlewareAPI(app)
+  // const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs')
+  // fsMiddlewareAPI(app)
 }

@@ -7,12 +7,6 @@ module.exports = {
       'This is the primary corporate website for Gabler Youngston',
   },
   plugins: [
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `gableryoungstonlighting`,
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-mdx',

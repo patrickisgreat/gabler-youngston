@@ -69,15 +69,18 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resources"}
           - {label: "Top Header Text", name: "topHeaderText", widget: "string"}
-          - {label: "Top Download Cards", name: "topDownloadCards", widget: "list", summary: 'Top List of Dynamic Download Cards', max: 2, collapsed: "false", fields: [
-              {label: "Resources Download Card", valueField: "cardName", searchFields: "cardName", displayField: "cardName", collection: "resourcescards", name: "topDownloadCard", widget: "relation"}
+          - {label: "Top Download Cards", name: "topDownloadCards", widget: "list", summary: 'Top List of Dynamic Download Cards', max: 2, collapsed: false, fields: [
+                {label: "Card Image", name: "cardImage", widget: "image"},
+                {label: "Card Title", name: "cardName", widget: "string"},
+                {label: "Card File", name: "cardFile", widget: "file"},
             ]}
           - {label: "Page Body Text", name: "bodyText", widget: "markdown"}
           - {label: "Bottom Header Text", name: "bottomHeaderText", widget: "string"}
-          - {label: "Bottom Download Cards", name: "bottomDownloadCards", widget: "list", summary: 'Bottom List of Dynamic Download Cards', max: 6, collapsed: "false", fields: [
-              {label: "Resources Download Card", valueField: "cardName", searchFields: "cardName", displayField: "cardName", collection: "resourcescards", name: "bottomDownloadCard", widget: "relation"}
+          - {label: "Bottom Download Cards", name: "bottomDownloadCards", widget: "list", summary: 'Bottom List of Dynamic Download Cards', max: 6, collapsed: false, fields: [
+                {label: "Card Image", name: "cardImage", widget: "image"},
+                {label: "Card Title", name: "cardName", widget: "string"},
+                {label: "Card File", name: "cardFile", widget: "file"},
             ]}
-          - {label: "Resources Download Card", valueField: "cardName", searchFields: "cardName", displayField: "cardName", collection: "resourcescards", name: "bottomDownloadCard", widget: "relation"}
 
       - file: "src/pages/contact/index.md"
         label: "Contact"
@@ -144,19 +147,6 @@ collections:
       - {label: "More Fields", name: "extrafield", widget: "list", fields: [
           {name: "label", label: Label,  widget: "string"}, {name: "value", label: Value, widget: "string"}
         ]}
-  
-  - name: "resourcescards"
-    label: "Resources Download Cards"
-    folder: "src/pages/resourcescards"
-    identifier_field: "cardName"
-    slug: "category/{{slug}}"
-    create: true
-    delete: true
-    fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "resourcescard"}
-      - {label: "Card Image", name: "cardImage", widget: "image"}
-      - {label: "Card Title", name: "cardName", widget: "string"}
-      - {label: "Card File", name: "cardFile", widget: "file"}
   
   - name: "footer"
     label: "Footer"
