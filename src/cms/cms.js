@@ -8,7 +8,6 @@ import ContactPagePreview from './preview-templates/ContactPagePreview'
 import WorkPagePreview from './preview-templates/WorkPagePreview'
 import TeamPagePreview from './preview-templates/TeamPagePreview'
 import ResourcesPagePreview from './preview-templates/ResourcesPagePreview'
-import ResourcesCardPreview from './preview-templates/ResourcesCardPreview'
 
 const config = {}
 console.log('NODE_ENV');
