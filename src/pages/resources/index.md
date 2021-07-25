@@ -1,13 +1,11 @@
 ---
 templateKey: resources
-topHeaderText: Resources
+topHeaderText: Resources!
 topDownloadCards:
-  - topDownloadCard: Civic Portfolio
-    cardImage: /img/apple-touch-icon.png
+  - cardImage: /img/apple-touch-icon.png
     cardName: Marketing Assets
     cardFile: /img/01_ptreectr_plaza.jpg
-  - topDownloadCard: Arts Portfolio 2
-    cardImage: /img/apple-touch-icon.png
+  - cardImage: /img/apple-touch-icon.png
     cardName: General Resume
     cardFile: /img/01_ptreectr_plaza.jpg
 bodyText: "**Lorem Ipsum**is simply dummy text of the printing and typesetting
@@ -19,7 +17,6 @@ bodyText: "**Lorem Ipsum**is simply dummy text of the printing and typesetting
   Ipsum passages, and more recently with desktop publishing software like Aldus
   PageMaker including versions of Lorem Ipsum."
 bottomHeaderText: Work By Industry
-bottomDownloadCard: Arts Portfolio 2
 bottomDownloadCards:
   - cardImage: static/img/rectangle.png
     cardName: Hospitality Portfolio
