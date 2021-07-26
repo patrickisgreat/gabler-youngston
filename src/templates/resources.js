@@ -37,7 +37,7 @@ const DownloadCards = ({cards}) => {
 export const ResourcesPageTemplate = ({frontmatter}) => {
   return (
     <section className="resources-page">
-      <Container>
+      <Container className="inner-container">
         <Row className="top-header"> 
           <h1>{frontmatter.topHeaderText}</h1>
         </Row>
@@ -101,6 +101,7 @@ export const ResourcesQuery = graphql
           id
         }
       }
+      middleHeader
       bodyText
       bottomHeaderText
       bottomDownloadCards {
