@@ -4,9 +4,8 @@ import { ResourcesPageTemplate } from '../../templates/resources'
 
 const ResourcesPagePreview = ({ entry, widgetFor }) => {
 	const data = entry.getIn(['data']).toJS();
-
+	console.log("RESOURCES DATA", data)
 	if (data) {
-		console.log(data)
     	return (
       		<ResourcesPageTemplate frontmatter={data} />
     	)

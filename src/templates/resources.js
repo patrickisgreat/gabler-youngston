@@ -14,11 +14,17 @@ const DownloadCards = ({cards}) => {
     JSX.push(
       <Row className="card-row">
         {cards.map((card, index, array) => {
+          let imageSrc;
+          if (card.cardImage.childImageSharp) {
+            imageSrc = card.cardImage.childImageSharp.original.src;
+          } else {
+            imageSrc = card.cardImage;
+          }
           if (index <= 1) {
             return (
               <Col className="download-card">
                 <img
-                  src={card.cardImage.childImageSharp.original.src}
+                  src={imageSrc}
                   alt={card.cardName}
                 />
                 <h3>{card.cardName}</h3>

@@ -1,14 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { AboutPageTemplate } from '../../templates/about-page'
+import { clearConfigCache } from 'prettier';
 
 const AboutPagePreview = ({ entry, widgetFor }) => {
 	const data = entry.getIn(['data']).toJS();
-
 	if (data) {
 		console.log(data);
     	return (
       		<AboutPageTemplate
+			  	heroImage={data.heroImage}
 		        title={data.title}
 		        section1={data.section1}
 		        section2={data.section2}
