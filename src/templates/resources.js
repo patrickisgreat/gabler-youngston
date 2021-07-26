@@ -6,19 +6,46 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import '../pages/resources/resources.css'
 
+const DownloadCards = ({cards}) => {
+  let JSX = [];
+  const rows = cards.length / 2;
+  for (let i = 0; i < rows; i++) {
+    JSX.push(
+      <Row>
+        {cards.map((card, index, array) => {
+          if (index <= 1) {
+            return (
+              <Col>
+                <img
+                  src={card.cardImage.childImageSharp.original.src}
+                  alt={card.cardName}
+                />
+                <h3>{card.cardName}</h3>
+              </Col>
+            )
+          }
+          array.shift(2);
+        })}
+      </Row>
+    )
+  }
+  return JSX;
+}
+
 export const ResourcesPageTemplate = ({frontmatter}) => {
   return (
     <section className="resources-page">
-        <Container>
-          <Row>
-            <Col md={8}>
-               <h1>{frontmatter.topHeaderText}</h1>
-            </Col>
-            <Col md={4}>
-
-            </Col>
-          </Row>
-        </Container>          
+      <Container>
+        <Row> <h1>{frontmatter.topHeaderText}</h1></Row>
+        <DownloadCards cards={frontmatter.topDownloadCards} />
+        <Row>
+          <p>{frontmatter.bodyText}</p>
+        </Row>
+        <Row>
+            <h1>{frontmatter.bottomHeaderText}</h1>
+        </Row>
+        <DownloadCards cards={frontmatter.bottomDownloadCards} />
+      </Container>          
     </section>
   );
 }
@@ -54,6 +81,34 @@ export const ResourcesQuery = graphql
 	markdownRemark(id: {eq: $id}) {
 		frontmatter {
 			topHeaderText
+      topDownloadCards {
+        cardImage {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+        cardName
+        cardFile {
+          id
+        }
+      }
+      bodyText
+      bottomHeaderText
+      bottomDownloadCards {
+        cardImage {
+          childImageSharp {
+            original {
+              src
+            }
+          }
+        }
+        cardName
+        cardFile {
+          id
+        }
+      }
 		}
 	}
 }
