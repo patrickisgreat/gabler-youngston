@@ -5,22 +5,24 @@ import Layout from '../components/Layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap'
 import '../pages/resources/resources.css'
+import { HTMLContent } from '../components/Content'
 
 const DownloadCards = ({cards}) => {
   let JSX = [];
   const rows = cards.length / 2;
   for (let i = 0; i < rows; i++) {
     JSX.push(
-      <Row>
+      <Row className="card-row">
         {cards.map((card, index, array) => {
           if (index <= 1) {
             return (
-              <Col>
+              <Col className="download-card">
                 <img
                   src={card.cardImage.childImageSharp.original.src}
                   alt={card.cardName}
                 />
                 <h3>{card.cardName}</h3>
+                <a class="download-link" href={card.cardFile} download>Download</a>
               </Col>
             )
           }
@@ -36,12 +38,17 @@ export const ResourcesPageTemplate = ({frontmatter}) => {
   return (
     <section className="resources-page">
       <Container>
-        <Row> <h1>{frontmatter.topHeaderText}</h1></Row>
-        <DownloadCards cards={frontmatter.topDownloadCards} />
-        <Row>
-          <p>{frontmatter.bodyText}</p>
+        <Row className="top-header"> 
+          <h1>{frontmatter.topHeaderText}</h1>
         </Row>
-        <Row>
+        <DownloadCards cards={frontmatter.topDownloadCards} />
+        <Row className="mid-header"> 
+          <h1>{frontmatter.middleHeader}</h1>
+        </Row>
+        <Row className="body-text">
+          <HTMLContent content={frontmatter.bodyText} className="body-text" />
+        </Row>
+        <Row className="bottom-header">
             <h1>{frontmatter.bottomHeaderText}</h1>
         </Row>
         <DownloadCards cards={frontmatter.bottomDownloadCards} />

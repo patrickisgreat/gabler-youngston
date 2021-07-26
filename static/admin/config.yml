@@ -74,7 +74,8 @@ collections:
                 {label: "Card Title", name: "cardName", widget: "string"},
                 {label: "Card File", name: "cardFile", widget: "file"},
             ]}
-          - {label: "Page Body Text", name: "bodyText", widget: "text"}
+          - {label: "Middle Header Text", name: "middleHeaderText", widget: "string"}
+          - {label: "Page Body Text", name: "bodyText", widget: "markdown"}
           - {label: "Bottom Header Text", name: "bottomHeaderText", widget: "string"}
           - {label: "Bottom Download Cards", name: "bottomDownloadCards", widget: "list", summary: 'Bottom List of Dynamic Download Cards', max: 6, collapsed: false, fields: [
                 {label: "Card Image", name: "cardImage", widget: "image"},
