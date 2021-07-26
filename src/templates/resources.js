@@ -14,6 +14,7 @@ const DownloadCards = ({cards}) => {
     JSX.push(
       <Row className="card-row">
         {cards.map((card, index, array) => {
+          // for previews
           let imageSrc;
           if (card.cardImage.childImageSharp) {
             imageSrc = card.cardImage.childImageSharp.original.src;
