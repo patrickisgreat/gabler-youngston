@@ -11,10 +11,17 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
   return (
     <div>
        <div className="about-us">
-          <img
-            src={heroImage.childImageSharp.fluid.src}
-            alt="About us"
-          />
+         {heroImage.childImageSharp ?
+            <img
+              src={heroImage.childImageSharp.fluid.src}
+              alt="About us"
+            /> 
+            : 
+            <img
+              src={heroImage}
+              alt="About us"
+            />
+          }
           <div className="about_text">
               <p><span>{section1.title}</span> {section1.description}</p>
           </div>
