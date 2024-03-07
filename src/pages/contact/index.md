@@ -6,8 +6,9 @@ contactnumberone: info@gableryoungston.com
 contactnumbertwo: info@gableryoungston.com
 sidebarcontent:
   - description: |-
-      760 United Ave SE, Suite 4
-      Atlanta, GA 30312
+      680 Murphy Avenue, SW
+      Building 4000, Suite 4210
+      Atlanta, Georgia 30310
     title: Gabler Youngston Inc.
   - description: |
       Please Email:
