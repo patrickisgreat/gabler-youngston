@@ -1,78 +1,81 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
-import Layout from '../components/Layout'
-import AboutBanner from '../components/Aboutbanner/banner'
-import OurTeam from '../components/Team/team'
-import './allpage.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Layout from "../components/Layout";
+import AboutBanner from "../components/Aboutbanner/banner";
+import OurTeam from "../components/Team/team";
+import "./allpage.css";
 
-export const AboutPageTemplate = ({ title, section1, section2, section3, section4, section5, heroImage }) => {
-  const heroImageGatsby = getImage(heroImage.childImageSharp) // Using getImage for GatsbyImage
+export const AboutPageTemplate = ({
+  title,
+  section1,
+  section2,
+  section3,
+  section4,
+  section5,
+  heroImage,
+}) => {
+  const heroImageGatsby = getImage(heroImage.childImageSharp); // Using getImage for GatsbyImage
 
   return (
     <div>
       <div className="about-us">
-        {heroImageGatsby && <GatsbyImage image={heroImageGatsby} alt="About us" />}
+        {heroImageGatsby && (
+          <GatsbyImage image={heroImageGatsby} alt="About us" />
+        )}
         <div className="about_text">
-          <p><span>{section1.title}</span> {section1.description}</p>
+          <p>
+            <span>{section1.title}</span> {section1.description}
+          </p>
         </div>
       </div>
       <div className="Our_purpose">
         <div className="columns">
           <div className="column is-4">
-            {section2.image1.childImageSharp ?
+            {section2.image1.childImageSharp ? (
               <GatsbyImage
                 image={getImage(section2.image1.childImageSharp)}
                 alt="Our purpose 1"
               />
-              :
-              <img
-                src={section2.image1}
-                alt="Our purpose 2"
-              />
-            }
-            {section2.image2.childImageSharp ?
+            ) : (
+              <img src={section2.image1} alt="Our purpose 2" />
+            )}
+            {section2.image2.childImageSharp ? (
               <GatsbyImage
                 image={getImage(section2.image2.childImageSharp)}
                 alt="Our purpose 3"
-                style={{ padding: '25px 0 0 30px', width:'100%'}}
+                style={{ padding: "25px 0 0 30px", width: "100%" }}
               />
-              :
+            ) : (
               <img
                 src={section2.image2}
                 alt="Our purpose 4"
-                style={{ padding: '25px 0 0 30px', width:'100%'}}
+                style={{ padding: "25px 0 0 30px", width: "100%" }}
               />
-            }
+            )}
           </div>
           <div className="column is-8">
             <div className="columns">
               <div className="column is-6 column.is-6-mobile">
-                {section2.image3.childImageSharp ?
+                {section2.image3.childImageSharp ? (
                   <GatsbyImage
                     image={getImage(section2.image3.childImageSharp)}
                     alt="Our purpose 5"
                   />
-                  :
-                  <img
-                    src={section2.image3}
-                    alt="Our purpose 6"
-                  />
-                }
+                ) : (
+                  <img src={section2.image3} alt="Our purpose 6" />
+                )}
               </div>
               <div className="column is-6 column.is-6-mobile">
-                {section2.image4.childImageSharp ?
+                {section2.image4.childImageSharp ? (
                   <GatsbyImage
                     image={getImage(section2.image4.childImageSharp)}
                     alt="Our purpose 7"
                   />
-                  :
-                  <img
-                    src={section2.image4}
-                    alt="Our purpose 8"
-                  />
-                }
+                ) : (
+                  <img src={section2.image4} alt="Our purpose 8" />
+                )}
               </div>
             </div>
             <div className="columns">
@@ -93,7 +96,7 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
             <div className="column is-10">
               <ul>
                 {section4.description.map((singletext) => {
-                  return <li key={singletext.text}>{singletext.text}</li> // Add key for list
+                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
                 })}
               </ul>
             </div>
@@ -108,7 +111,7 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
             <div className="column is-10">
               <ul>
                 {section5.description.map((singletext) => {
-                  return <li key={singletext.text}>{singletext.text}</li> // Add key for list
+                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
                 })}
               </ul>
             </div>
@@ -117,7 +120,7 @@ export const AboutPageTemplate = ({ title, section1, section2, section3, section
       </div>
     </div>
   );
-}
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
@@ -127,18 +130,17 @@ AboutPageTemplate.propTypes = {
   section4: PropTypes.object,
   section5: PropTypes.object,
   heroImage: PropTypes.object,
-}
+};
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-
-Certainly! Here's the completion of the updated AboutPage component:
-
-javascript
-Copy code
-      <AboutBanner headerImage={getImage(frontmatter.headerImage.childImageSharp)} />
+      Certainly! Here's the completion of the updated AboutPage component:
+      javascript Copy code
+      <AboutBanner
+        headerImage={getImage(frontmatter.headerImage.childImageSharp)}
+      />
       <AboutPageTemplate
         title={frontmatter.title}
         heroImage={frontmatter.heroImage}
@@ -164,7 +166,7 @@ export default AboutPage;
 
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         headerImage {
           childImageSharp {
@@ -212,7 +214,9 @@ export const aboutPageQuery = graphql`
         }
         section3 {
           title
-          description
+          description {
+            text
+          }
         }
         section4 {
           title
@@ -229,4 +233,4 @@ export const aboutPageQuery = graphql`
       }
     }
   }
-`
+`;

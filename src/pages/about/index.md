@@ -29,9 +29,12 @@ section2:
   image4: /img/aboutside4.png
   title: OUR PURPOSE
 section3:
+  description:
+    - text: stuff
   title: TEAM 1
 section4:
-  description: []
+  description:
+    - text: stuff
   title: Through The Years
 section5:
   description:

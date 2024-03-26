@@ -1,16 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import './worklists.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Row, Col } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import "./worklists.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Row, Col } from "react-bootstrap";
 
 class WorkLists extends React.Component {
-
   render() {
-    const { data } = this.props
-    const { nodes: works } = data.allMarkdownRemark
-    
+    const { data } = this.props;
+    const { nodes: works } = data.allMarkdownRemark;
+
     return (
       <Row>
         {works.map((work) => (
@@ -19,20 +18,22 @@ class WorkLists extends React.Component {
               <img
                 src={work.frontmatter.projectimage.childImageSharp.original.src}
                 alt="Our Team"
-                style={{ display: 'block', width:'100%'}}
+                style={{ display: "block", width: "100%" }}
                 class="hvrbox-layer_bottom"
               />
               <Link to={work.fields.slug} className="hvrbox-layer_top">
                 <div class="hvrbox-text">
                   <h5>{work.frontmatter.projectname}</h5>
-                  <span>Project Type:  <b>{work.frontmatter.projectscope}</b></span>
+                  <span>
+                    Project Type: <b>{work.frontmatter.projectscope}</b>
+                  </span>
                 </div>
               </Link>
             </div>
           </Col>
         ))}
       </Row>
-    )
+    );
   }
 }
 
@@ -42,7 +43,7 @@ WorkLists.propTypes = {
       nodes: PropTypes.array,
     }),
   }),
-}
+};
 
 export default () => (
   <StaticQuery
@@ -50,10 +51,10 @@ export default () => (
       query WorkListsQuery {
         allMarkdownRemark(
           filter: {
-            frontmatter: {templateKey: {eq: "Projectdetail/index"}}
-          },
-          sort: {order: DESC, fields: frontmatter___date}
-          ) {
+            frontmatter: { templateKey: { eq: "Projectdetail/index" } }
+          }
+          sort: { frontmatter: { date: DESC } }
+        ) {
           nodes {
             frontmatter {
               projectname
@@ -75,4 +76,4 @@ export default () => (
     `}
     render={(data, count) => <WorkLists data={data} count={count} />}
   />
-)
+);

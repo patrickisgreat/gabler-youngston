@@ -66,7 +66,7 @@ export default () => (
       query OurTeamQuery {
         allMarkdownRemark(
           filter: { frontmatter: { templateKey: { eq: "team-member" } } }
-          sort: { fields: [frontmatter___date], order: ASC }
+          sort: { frontmatter: { date: ASC } }
         ) {
           nodes {
             fields {
