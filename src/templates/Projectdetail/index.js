@@ -3,8 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../../components/Layout'
+import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
-import Img from 'gatsby-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import './project_detail.css'
 // import facebook from '../../img/facebook.jpg'
 // import twitter from '../../img/twitter.jpg'
@@ -18,19 +19,19 @@ export const WorkPageTemplate = ({ frontmatter }) => {
     <div className="project_min">
        {/* Banner Start */}
         <div className="project_banner">
-            {frontmatter.projectimage.childImageSharp ?
-              <Img
-                fluid={frontmatter.projectimage.childImageSharp.fluid}
-                alt="Banner"
-                style={{ display: 'block', width:'100%'}}
-              />
-              :
-              <img
-                src={frontmatter.projectimage}
-                alt="Banner"
-                style={{ display: 'block', width:'100%'}}
-              />
-            }
+          {frontmatter.projectimage.childImageSharp ?
+            <GatsbyImage
+              image={getImage(frontmatter.projectimage.childImageSharp)}
+              alt="Banner"
+              style={{ display: 'block', width: '100%' }}
+            />
+            :
+            <img
+              src={frontmatter.projectimage}
+              alt="Banner"
+              style={{ display: 'block', width: '100%' }}
+            />
+          }
                 
              <div className="banner-text">
                 <h2>{frontmatter.projectname}</h2>
@@ -49,17 +50,17 @@ export const WorkPageTemplate = ({ frontmatter }) => {
                       <Row className="d-flex flex-wrap align-items-center">
                         <Col md="6" className="mt-4">
                           {items.image.childImageSharp ? 
-                          <Img
-                              fluid={items.image.childImageSharp.fluid}
-                              alt="Project Image"
-                              style={{ display: 'block', width:'100%'}}
-                          /> 
+                            <GatsbyImage
+                            image={getImage(items.image.childImageSharp)}
+                            alt="Project Image"
+                            style={{ display: 'block', width: '100%' }}
+                          />
                           :
                           <img
-                              src={items.image}
-                              alt="Project Images"
-                              style={{ display: 'block', width:'100%'}}
-                          /> 
+                            src={items.image}
+                            alt="Project Images"
+                            style={{ display: 'block', width: '100%' }}
+                          />
                           }
                           
                         </Col>
@@ -199,9 +200,7 @@ export const WorkdetailsQuery = graphql`
           sortdescription
           projectimage {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
           extrafield {
@@ -214,9 +213,7 @@ export const WorkdetailsQuery = graphql`
             imagepos
             image {
               childImageSharp {
-                fluid(maxWidth: 2048, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
               }
             }
           }

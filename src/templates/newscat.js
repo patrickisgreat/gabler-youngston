@@ -69,30 +69,30 @@ class NewscatRoute extends React.Component {
 export default NewscatRoute
 
 export const newscatsPageQuery = graphql`
-  query NewsCatPage($category: String) {
-    site {
-      siteMetadata {
-        title
-      }
+query NewsCatPage($category: String) {
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { newscategory: { in: [$category] } } }
-    ) {
-      totalCount
-      edges {
-        node {
-          fields {
-            slug
-          }
-          frontmatter {
-              date(formatString: "DD MMM, YYYY")
-              title
-              description
-            }
+  }
+  allMarkdownRemark(
+    limit: 1000
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {newscategory: {in: [$category]}}}
+  ) {
+    totalCount
+    edges {
+      node {
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "DD MMM, YYYY")
+          title
+          description
         }
       }
     }
   }
+}
 `
