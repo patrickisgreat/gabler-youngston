@@ -7,7 +7,7 @@ import AboutBanner from "../components/Aboutbanner/banner";
 import OurTeam from "../components/Team/team";
 import "./allpage.css";
 
-const AboutPageTemplate = ({
+export const AboutPageTemplate = ({
   title,
   section1,
   section2,
@@ -16,11 +16,10 @@ const AboutPageTemplate = ({
   section5,
   heroImage,
 }) => {
-  console.log("SECTION 1", section1);
   return (
     <div>
       <div className="about-us">
-        {heroImage && <GatsbyImage image={heroImage} alt="About us" />}
+        <img src={heroImage.childImageSharp.fluid.src} alt="About us" />
         <div className="about_text">
           <p>
             <span>{section1.title}</span> {section1.description}
@@ -57,8 +56,9 @@ const AboutPageTemplate = ({
               <div className="column is-6 column.is-6-mobile">
                 {section2.image3.childImageSharp ? (
                   <GatsbyImage
-                    image={getImage(section2.image3.childImageSharp)}
-                    alt="Our purpose 5"
+                    image={getImage(section2.image2.childImageSharp)}
+                    alt="Our purpose 3"
+                    style={{ padding: "25px 0 0 30px", width: "100%" }}
                   />
                 ) : (
                   <img src={section2.image3} alt="Our purpose 6" />
@@ -67,8 +67,9 @@ const AboutPageTemplate = ({
               <div className="column is-6 column.is-6-mobile">
                 {section2.image4.childImageSharp ? (
                   <GatsbyImage
-                    image={getImage(section2.image4.childImageSharp)}
-                    alt="Our purpose 7"
+                    image={getImage(section2.image2.childImageSharp)}
+                    alt="Our purpose 3"
+                    style={{ padding: "25px 0 0 30px", width: "100%" }}
                   />
                 ) : (
                   <img src={section2.image4} alt="Our purpose 8" />
@@ -93,7 +94,7 @@ const AboutPageTemplate = ({
             <div className="column is-10">
               <ul>
                 {section4.description.map((singletext) => {
-                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
+                  return <li>{singletext.text}</li>;
                 })}
               </ul>
             </div>
@@ -108,7 +109,7 @@ const AboutPageTemplate = ({
             <div className="column is-10">
               <ul>
                 {section5.description.map((singletext) => {
-                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
+                  return <li>{singletext.text}</li>;
                 })}
               </ul>
             </div>
@@ -121,21 +122,22 @@ const AboutPageTemplate = ({
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  section1: PropTypes.object,
-  section2: PropTypes.object,
-  section3: PropTypes.object,
-  section4: PropTypes.object,
-  section5: PropTypes.object,
-  heroImage: PropTypes.object,
+  section1: PropTypes.array,
+  section2: PropTypes.array,
+  section3: PropTypes.array,
+  section4: PropTypes.array,
+  section5: PropTypes.array,
 };
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log("stuff");
+  console.log(frontmatter);
   return (
     <Layout>
       <AboutBanner
-        headerImage={getImage(frontmatter.headerImage.childImageSharp)}
-      />
+        headerImage={frontmatter.headerImage.childImageSharp.fluid.src}
+      ></AboutBanner>
       <AboutPageTemplate
         title={frontmatter.title}
         heroImage={frontmatter.heroImage}
@@ -157,59 +159,72 @@ AboutPage.propTypes = {
   }),
 };
 
-graphql`
+export default AboutPage;
+
+export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         headerImage {
           childImageSharp {
-            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         heroImage {
           childImageSharp {
-            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            fluid(maxWidth: 2048, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         title
         section1 {
-          title
           description
           image {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
+          title
         }
         section2 {
           title
           description
           image1 {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
           image2 {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
           image3 {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
           image4 {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
         section3 {
           title
-          description {
-            text
-          }
         }
         section4 {
           title
@@ -218,14 +233,12 @@ graphql`
           }
         }
         section5 {
-          title
           description {
             text
           }
+          title
         }
       }
     }
   }
 `;
-
-export default AboutPageTemplate;
