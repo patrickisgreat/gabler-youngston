@@ -67,7 +67,7 @@ LatestWork.propTypes = {
   }).isRequired,
 };
 
-export default () => (
+const LatestWorkWrapper = () => (
   <StaticQuery
     query={graphql`
       query LatestWorkQuery {
@@ -95,3 +95,5 @@ export default () => (
     render={(data) => <LatestWork data={data} />}
   />
 );
+
+export default LatestWorkWrapper;

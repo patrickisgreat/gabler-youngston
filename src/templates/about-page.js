@@ -7,7 +7,7 @@ import AboutBanner from "../components/Aboutbanner/banner";
 import OurTeam from "../components/Team/team";
 import "./allpage.css";
 
-export const AboutPageTemplate = ({
+const AboutPageTemplate = ({
   title,
   section1,
   section2,
@@ -16,14 +16,11 @@ export const AboutPageTemplate = ({
   section5,
   heroImage,
 }) => {
-  const heroImageGatsby = getImage(heroImage.childImageSharp); // Using getImage for GatsbyImage
-
+  console.log("SECTION 1", section1);
   return (
     <div>
       <div className="about-us">
-        {heroImageGatsby && (
-          <GatsbyImage image={heroImageGatsby} alt="About us" />
-        )}
+        {heroImage && <GatsbyImage image={heroImage} alt="About us" />}
         <div className="about_text">
           <p>
             <span>{section1.title}</span> {section1.description}
@@ -136,8 +133,6 @@ const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-      Certainly! Here's the completion of the updated AboutPage component:
-      javascript Copy code
       <AboutBanner
         headerImage={getImage(frontmatter.headerImage.childImageSharp)}
       />
@@ -162,9 +157,7 @@ AboutPage.propTypes = {
   }),
 };
 
-export default AboutPage;
-
-export const aboutPageQuery = graphql`
+graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
@@ -234,3 +227,5 @@ export const aboutPageQuery = graphql`
     }
   }
 `;
+
+export default AboutPageTemplate;

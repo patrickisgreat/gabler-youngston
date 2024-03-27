@@ -45,7 +45,7 @@ WorkLists.propTypes = {
   }),
 };
 
-export default () => (
+const WorkListsWrapper = () => (
   <StaticQuery
     query={graphql`
       query WorkListsQuery {
@@ -77,3 +77,5 @@ export default () => (
     render={(data, count) => <WorkLists data={data} count={count} />}
   />
 );
+
+export default WorkListsWrapper;

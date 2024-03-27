@@ -72,7 +72,7 @@ Footer.propTypes = {
   }),
 };
 
-export default () => (
+const FooterWrapper = () => (
   <StaticQuery
     query={graphql`
       query FooterQuery {
@@ -95,3 +95,5 @@ export default () => (
     render={(data) => <Footer data={data} />}
   />
 );
+
+export default FooterWrapper;

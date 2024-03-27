@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { graphql, Link } from "gatsby";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
 import Layout from "../components/Layout";
-import { gsap } from "gsap";
+import { gsap } from "gsap/all";
+import { useGSAP } from "@gsap/react";
 import { Controller, Scene } from "react-scrollmagic";
 import geoShape from "../../static/img/home/geo_shape.png";
 import leftArrow from "../../static/img/home/left_arrow.png";
@@ -11,23 +12,7 @@ import rightArrow from "../../static/img/home/right_arrow.png";
 import Slider from "react-slick";
 import { TinyButton as ScrollUpButton } from "react-scroll-up-button";
 
-// Tween to flip the shape around 180deg
-const flippyGeoShapeTweenProps = {
-  ease: "Strong.easeOut",
-  to: {
-    rotationY: 180,
-  },
-};
-
-// Tween to animate the gallery up into the view
-const galleryTweenProps = {
-  from: {
-    marginTop: 500,
-  },
-  to: {
-    marginTop: 100,
-  },
-};
+gsap.registerPlugin(useGSAP);
 
 const scrollTopButtonStyle = {
   backgroundColor: "#EE4423",
@@ -44,16 +29,24 @@ const scrollTopButtonStyle = {
 };
 
 // Reusable Animated GeoShape component
+
 const FlippyGeoShape = ({ progress }) => {
   const geoShapeRef = useRef(null);
 
-  useEffect(() => {
-    gsap.to(geoShapeRef.current, {
-      rotationY: 180,
-      ease: "Strong.easeOut",
-      duration: 1,
-      progress: progress * 2,
-    });
+  useGSAP(() => {
+    const timeline = gsap.timeline({ paused: true });
+
+    timeline.fromTo(
+      geoShapeRef.current,
+      { rotationY: 0 },
+      {
+        rotationY: 180,
+        ease: "Strong.easeOut",
+        duration: 1,
+      }
+    );
+
+    timeline.totalProgress(progress);
   }, [progress]);
 
   return <img src={geoShape} alt="" ref={geoShapeRef} />;
@@ -72,14 +65,18 @@ export const IndexPageTemplate = ({
 
   // slides get wonky on window resize
   // this seems hacky but it works
-  const [setValue] = useState(0);
+  // slides get wonky on window resize
+  // this seems hacky but it works
+  const [value, setValue] = useState(0);
   useEffect(() => {
     function reRender() {
-      return () => setValue((value) => ++value);
+      setValue((prevValue) => prevValue + 1);
     }
-    window.addEventListener("resize", reRender());
-  });
-
+    window.addEventListener("resize", reRender);
+    return () => {
+      window.removeEventListener("resize", reRender);
+    };
+  }, []);
   const NextArrow = (props) => (
     <div
       role="button"
@@ -163,12 +160,11 @@ export const IndexPageTemplate = ({
     style: scrollTopButtonStyle,
   };
 
-  // Reusable Animated Gallery Slider Component
   const GallerySlider = ({ progress }) => {
     const galleryContainerRef = useRef(null);
 
     useEffect(() => {
-      gsap.fromTo(
+      const tween = gsap.fromTo(
         galleryContainerRef.current,
         {
           marginTop: 500,
@@ -176,9 +172,11 @@ export const IndexPageTemplate = ({
         {
           marginTop: 100,
           duration: 1,
-          progress: progress * 2,
+          paused: true,
         }
       );
+
+      tween.totalProgress(progress * 2);
     }, [progress]);
 
     return (
@@ -194,7 +192,7 @@ export const IndexPageTemplate = ({
           <Slider {...sliderSettings}>
             {footerWorks.map((image, i) => {
               return (
-                <div className="hvrbox" key={i}>
+                <div className="hvrbox" key={image.fields.slug}>
                   <img
                     src={
                       image.frontmatter.projectimage.childImageSharp.fluid.src
@@ -270,7 +268,7 @@ export const IndexPageTemplate = ({
                 <Slider {...largeSliderSettings}>
                   {recentWorks.map((image, i) => {
                     return (
-                      <Link to={image.fields.slug}>
+                      <Link key={image.fields.slug} to={image.fields.slug}>
                         <div className="slider-works">
                           <div className="slider-img">
                             <PreviewCompatibleImage

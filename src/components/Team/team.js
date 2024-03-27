@@ -60,7 +60,7 @@ OurTeam.propTypes = {
   }),
 };
 
-export default () => (
+const TeamWrapper = () => (
   <StaticQuery
     query={graphql`
       query OurTeamQuery {
@@ -92,3 +92,5 @@ export default () => (
     render={(data) => <OurTeam data={data} />}
   />
 );
+
+export default TeamWrapper;
