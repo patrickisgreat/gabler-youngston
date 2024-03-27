@@ -1,20 +1,20 @@
 @import "~bulma/sass/utilities/initial-variables";
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap");
 //@import "./debug";
 $breakpoint-tablet: 768px;
 // Config vars;
-$kaldi-red: #D64000;
+$kaldi-red: #d64000;
 $kaldi-red-invert: #fff;
 
 $primary: $kaldi-red;
 $primary-invert: $kaldi-red-invert;
 $body-color: #333;
 $black: #2b2523;
-$dark-bg: #222222;;
-$link-active: #EE4423;;
+$dark-bg: #222222;
+$link-active: #ee4423;
 $navbar-background-color: $dark-bg;
 $sidebar-gray: #3a3a3c;
-$gabler-red: #EE4423;
+$gabler-red: #ee4423;
 $aqua: #8da492;
 
 @import "./nav";
@@ -74,22 +74,22 @@ $aqua: #8da492;
   font-size: 1rem;
   line-height: 1.25;
   background-color: #fff;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   text-decoration: none;
   font-weight: 700;
-  color: #CC3700;
+  color: #cc3700;
   text-align: center;
-  -webkit-box-shadow: inset 0 0 0 2px #CC3700;
+  -webkit-box-shadow: inset 0 0 0 2px #cc3700;
   box-shadow: inset 0 0 0 2px #f40;
-  -webkit-transition: all .15s ease;
-  transition: all .15s ease;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .margin-top-0 {
   margin-top: 0 !important;
 }
 
-  // Override for use of svg's from https://simpleicons.org/;
+// Override for use of svg's from https://simpleicons.org/;
 .icon svg {
   width: 1.5rem;
   height: 1.5rem;
@@ -100,7 +100,7 @@ $aqua: #8da492;
   background-color: $dark-bg;
 }
 
-.navbar-brand .navbar-item.logo{
+.navbar-brand .navbar-item.logo {
   padding: 0 1rem;
 }
 
@@ -118,43 +118,41 @@ footer.footer {
 }
 
 .social a {
-  padding: .5em .5em .3em .5em;
+  padding: 0.5em 0.5em 0.3em 0.5em;
   border-radius: 1em;
   background-color: $white-ter;
-  margin: .5em;
+  margin: 0.5em;
   width: 1em;
   height: 1em;
   vertical-align: middle;
   display: inline;
 }
-.ScrollUpButton__Container svg{
+.ScrollUpButton__Container svg {
   width: 70%;
   margin: 7px;
 }
 
 @import "~bulma";
 
-
 // responsiveness
-+tablet-only {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .blog-list-item .featured-thumbnail {
     flex-basis: 50%;
   }
 }
-
-+mobile {
-  .blog-list-item header {
+@media (max-width: 767px) {
+  x .blog-list-item header {
     display: block;
   }
 
-  .blog-list-item .featured-thumbnail {
+  .blog-list-item.featured-thumbnail {
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
   }
 }
 @media (max-width: $breakpoint-tablet) {
-   #___gatsby{
-     margin-top:70px;
-   }
+  #___gatsby {
+    margin-top: 70px;
+  }
 }

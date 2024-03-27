@@ -1,10 +1,10 @@
-const _ = require('lodash')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const _ = require("lodash");
+const path = require("path");
+const { createFilePath } = require("gatsby-source-filesystem");
+const { fmImagesToRelative } = require("gatsby-remark-relative-images-v2");
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage } = actions;
 
   return graphql(`
     {
@@ -25,17 +25,17 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
     }
-  `).then(result => {
+  `).then((result) => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()))
-      return Promise.reject(result.errors)
+      result.errors.forEach((e) => console.error(e.toString()));
+      return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges
+    const posts = result.data.allMarkdownRemark.edges;
 
-    posts.forEach(edge => {
-      const id = edge.node.id
-      if(edge.node.fields.slug != "/footer/") {
+    posts.forEach((edge) => {
+      const id = edge.node.id;
+      if (edge.node.fields.slug != "/footer/") {
         createPage({
           path: edge.node.fields.slug,
           tags: edge.node.frontmatter.tags,
@@ -48,49 +48,44 @@ exports.createPages = ({ actions, graphql }) => {
           context: {
             id,
           },
-        })
+        });
       }
-    })
+    });
 
     // works list page
-    var id = 'Projectdetail/index'
+    var id = "Projectdetail/index";
     createPage({
-      path: '/works',
-      component: path.resolve(
-        `src/templates/work-page.js`
-      ),
+      path: "/works",
+      component: path.resolve(`src/templates/work-page.js`),
       context: {
         id,
       },
-    })
+    });
 
     // news list page
-    var id = 'blog-post'
+    var id = "blog-post";
     createPage({
-      path: '/news',
-      component: path.resolve(
-        `src/templates/news-page.js`
-      ),
+      path: "/news",
+      component: path.resolve(`src/templates/news-page.js`),
       context: {
         id,
       },
-    })
-    
+    });
 
     // Tag pages:
-    let tags = []
+    let tags = [];
     // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
+    posts.forEach((edge) => {
       if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
+        tags = tags.concat(edge.node.frontmatter.tags);
       }
-    })
+    });
     // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    tags = _.uniq(tags);
 
     // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+    tags.forEach((tag) => {
+      const tagPath = `/tags/${_.kebabCase(tag)}/`;
 
       createPage({
         path: tagPath,
@@ -98,19 +93,21 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           tag,
         },
-      })
-    })
+      });
+    });
 
-    let projectcategory = []
+    let projectcategory = [];
 
-    posts.forEach(edge => {
+    posts.forEach((edge) => {
       if (_.get(edge, `node.frontmatter.projectcategory`)) {
-        projectcategory = projectcategory.concat(edge.node.frontmatter.projectcategory)
+        projectcategory = projectcategory.concat(
+          edge.node.frontmatter.projectcategory
+        );
       }
-    })
-   
-    projectcategory.forEach(category => {
-      const projectcategoryPath = `/projectcat/${_.kebabCase(category)}/`
+    });
+
+    projectcategory.forEach((category) => {
+      const projectcategoryPath = `/projectcat/${_.kebabCase(category)}/`;
 
       createPage({
         path: projectcategoryPath,
@@ -118,47 +115,39 @@ exports.createPages = ({ actions, graphql }) => {
         context: {
           category,
         },
-      })
-    })
+      });
+    });
 
+    let newscategory = [];
 
-    let newscategory = []
-
-    posts.forEach(edge => {
+    posts.forEach((edge) => {
       if (_.get(edge, `node.frontmatter.newscategory`)) {
-        newscategory = newscategory.concat(edge.node.frontmatter.newscategory)
+        newscategory = newscategory.concat(edge.node.frontmatter.newscategory);
       }
-    })
-   
-    newscategory.forEach(category => {
-      const newscategoryPath = `/newscat/${_.kebabCase(category)}/`
+    });
+
+    newscategory.forEach((category) => {
+      const newscategoryPath = `/newscat/${_.kebabCase(category)}/`;
       createPage({
         path: newscategoryPath,
         component: path.resolve(`src/templates/newscat.js`),
         context: {
           category,
         },
-      })
-    })
-
-  })
-}
+      });
+    });
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  fmImagesToRelative(node) // convert image paths for gatsby images
-
+  const { createNodeField } = actions;
+  fmImagesToRelative(node);
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+    const value = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
       value,
-    })
+    });
   }
-}
-
-exports.onCreateDevServer = ({ app }) => {
-  const fsMiddlewareAPI = require('netlify-cms-backend-fs/dist/fs')
-  fsMiddlewareAPI(app)
-}
+};

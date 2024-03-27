@@ -1,142 +1,141 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Layout from '../components/Layout'
-import AboutBanner from '../components/Aboutbanner/banner'
-import OurTeam from '../components/Team/team'
-import './allpage.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Layout from "../components/Layout";
+import AboutBanner from "../components/Aboutbanner/banner";
+import OurTeam from "../components/Team/team";
+import "./allpage.css";
 
-export const AboutPageTemplate = ({ title, section1, section2, section3, section4, section5, heroImage }) => {
+const AboutPageTemplate = ({
+  title,
+  section1,
+  section2,
+  section3,
+  section4,
+  section5,
+  heroImage,
+}) => {
+  console.log("SECTION 1", section1);
   return (
     <div>
-       <div className="about-us">
-          <img
-            src={heroImage.childImageSharp.fluid.src}
-            alt="About us"
-          />
-          <div className="about_text">
-              <p><span>{section1.title}</span> {section1.description}</p>
+      <div className="about-us">
+        {heroImage && <GatsbyImage image={heroImage} alt="About us" />}
+        <div className="about_text">
+          <p>
+            <span>{section1.title}</span> {section1.description}
+          </p>
+        </div>
+      </div>
+      <div className="Our_purpose">
+        <div className="columns">
+          <div className="column is-4">
+            {section2.image1.childImageSharp ? (
+              <GatsbyImage
+                image={getImage(section2.image1.childImageSharp)}
+                alt="Our purpose 1"
+              />
+            ) : (
+              <img src={section2.image1} alt="Our purpose 2" />
+            )}
+            {section2.image2.childImageSharp ? (
+              <GatsbyImage
+                image={getImage(section2.image2.childImageSharp)}
+                alt="Our purpose 3"
+                style={{ padding: "25px 0 0 30px", width: "100%" }}
+              />
+            ) : (
+              <img
+                src={section2.image2}
+                alt="Our purpose 4"
+                style={{ padding: "25px 0 0 30px", width: "100%" }}
+              />
+            )}
+          </div>
+          <div className="column is-8">
+            <div className="columns">
+              <div className="column is-6 column.is-6-mobile">
+                {section2.image3.childImageSharp ? (
+                  <GatsbyImage
+                    image={getImage(section2.image3.childImageSharp)}
+                    alt="Our purpose 5"
+                  />
+                ) : (
+                  <img src={section2.image3} alt="Our purpose 6" />
+                )}
+              </div>
+              <div className="column is-6 column.is-6-mobile">
+                {section2.image4.childImageSharp ? (
+                  <GatsbyImage
+                    image={getImage(section2.image4.childImageSharp)}
+                    alt="Our purpose 7"
+                  />
+                ) : (
+                  <img src={section2.image4} alt="Our purpose 8" />
+                )}
+              </div>
+            </div>
+            <div className="columns">
+              <div className="column is-12 our-purpose">
+                <h2>{section2.title}</h2>
+                {section2.description}
+              </div>
+            </div>
           </div>
         </div>
-       <div className="Our_purpose">
-           <div className="columns">
-               <div className="column is-4">
-                  {section2.image1.childImageSharp ?
-                    <Img
-                    fluid={section2.image1.childImageSharp.fluid}
-                    alt="Our purpose 1"
-                   />
-                   :
-                   <img
-                    src={section2.image1}
-                    alt="Our purpose 2"
-                   />
-                  }
-                  {section2.image2.childImageSharp ?
-                    <Img
-                    fluid={section2.image2.childImageSharp.fluid}
-                    alt="Our purpose 3"
-                    style={{ padding: '25px 0 0 30px', width:'100%'}}
-                   />
-                   :
-                   <img
-                    src={section2.image2}
-                    alt="Our purpose 4"
-                    style={{ padding: '25px 0 0 30px', width:'100%'}}
-                   />
-                  }
-               </div>
-               <div className="column is-8">
-                  <div className="columns">
-                      <div className="column is-6 column.is-6-mobile">
-                        {section2.image3.childImageSharp ?
-                          <Img
-                          fluid={section2.image3.childImageSharp.fluid}
-                          alt="Our purpose 5"
-                        />
-                         :
-                         <img
-                          src={section2.image3}
-                          alt="Our purpose 6"
-                        />
-                        }
-                        
-                      </div>
-                      <div className="column is-6 column.is-6-mobile">
-                        {section2.image4.childImageSharp ?
-                          <Img
-                          fluid={section2.image4.childImageSharp.fluid}
-                          alt="Our purpose 7"
-                        />
-                         :
-                         <img
-                          src={section2.image4}
-                          alt="Our purpose 8"
-                        />
-                        }
-                      </div>
-                  </div>
-                  <div className="columns">
-                      <div className="column is-12 our-purpose">
-                        <h2>{section2.title}</h2>
-                        {section2.description}
-                      </div>
-                  </div>
-               </div>
-           </div>
+      </div>
+      <OurTeam></OurTeam>
+      <div className="through_years">
+        <div className="container">
+          <h4>{section4.title}</h4>
+          <div className="columns">
+            <div className="column is-2"></div>
+            <div className="column is-10">
+              <ul>
+                {section4.description.map((singletext) => {
+                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
-        <OurTeam></OurTeam>
-        <div className="through_years">
-           <div className="container">
-               <h4>{section4.title}</h4>
-              <div className="columns">
-                 <div className="column is-2"></div>
-                 <div className="column is-10">
-                    <ul>
-                      {section4.description.map((singletext) => {
-                        return <li>{singletext.text}</li>
-                      })}
-                    </ul>
-                 </div>
-              </div>
-           </div>
+      </div>
+      <div className="through_years pt-0">
+        <div className="container">
+          <h4>{section5.title}</h4>
+          <div className="columns">
+            <div className="column is-2"></div>
+            <div className="column is-10">
+              <ul>
+                {section5.description.map((singletext) => {
+                  return <li key={singletext.text}>{singletext.text}</li>; // Add key for list
+                })}
+              </ul>
+            </div>
+          </div>
         </div>
-        <div className="through_years pt-0">
-           <div className="container">
-               <h4>{section5.title}</h4>
-              <div className="columns">
-                 <div className="column is-2"></div>
-                 <div className="column is-10">
-                    <ul>
-                      {section5.description.map((singletext) => {
-                        return <li>{singletext.text}</li>
-                      })}
-                    </ul>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
+      </div>
+    </div>
   );
-}
+};
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  section1: PropTypes.array,
-  section2: PropTypes.array,
-  section3: PropTypes.array,
-  section4: PropTypes.array,
-  section5: PropTypes.array,
-}
+  section1: PropTypes.object,
+  section2: PropTypes.object,
+  section3: PropTypes.object,
+  section4: PropTypes.object,
+  section5: PropTypes.object,
+  heroImage: PropTypes.object,
+};
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log('stuff');
-  console.log(frontmatter);
   return (
     <Layout>
-      <AboutBanner headerImage={frontmatter.headerImage.childImageSharp.fluid.src}></AboutBanner>
+      <AboutBanner
+        headerImage={getImage(frontmatter.headerImage.childImageSharp)}
+      />
       <AboutPageTemplate
         title={frontmatter.title}
         heroImage={frontmatter.heroImage}
@@ -147,83 +146,70 @@ const AboutPage = ({ data }) => {
         section5={frontmatter.section5}
       />
     </Layout>
-  )
-}
+  );
+};
 
 AboutPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  })
-}
+      frontmatter: PropTypes.object,
+    }),
+  }),
+};
 
-export default AboutPage
-
-export const aboutPageQuery = graphql`
+graphql`
   query AboutPage($id: String!) {
-    markdownRemark(id: {eq: $id}) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         headerImage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
           }
         }
         heroImage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
           }
         }
         title
         section1 {
+          title
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
-          title
         }
         section2 {
           title
           description
           image1 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
           image2 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
           image3 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
           image4 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
         }
         section3 {
           title
+          description {
+            text
+          }
         }
         section4 {
           title
@@ -232,12 +218,14 @@ export const aboutPageQuery = graphql`
           }
         }
         section5 {
+          title
           description {
             text
           }
-          title
         }
       }
     }
   }
-`
+`;
+
+export default AboutPageTemplate;

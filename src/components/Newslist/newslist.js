@@ -1,32 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import './newslist.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Row, Col } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql, StaticQuery } from "gatsby";
+import "./newslist.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Row, Col } from "react-bootstrap";
 
 class NewsList extends React.Component {
   render() {
-	const { data } = this.props;
-  const { nodes: newses } = data.allMarkdownRemark;
-  
+    const { data } = this.props;
+    const { nodes: newses } = data.allMarkdownRemark;
+
     return (
       <div className="news_feed">
         <Row>
-            <Col md="8">
-              {newses.map((news) => (
-                <Link to={news.fields.slug} className="news">
-                  <img src={news.frontmatter.featuredimage.childImageSharp.fixed.src} alt=""/>
-                    <br />
-                    <br />
-                    <strong className="news-date">{news.frontmatter.date}</strong>
-                    <h6>{news.frontmatter.title}</h6>
-                </Link>
-              ))}
-            </Col>
-            <Col md="4">
-               <div className="instagram_feed">
-						{/* {allInstaNode.map((post) => (
+          <Col md="8">
+            {newses.map((news) => (
+              <Link to={news.fields.slug} className="news">
+                <img
+                  src={news.frontmatter.featuredimage.childImageSharp.fixed.src}
+                  alt=""
+                />
+                <br />
+                <br />
+                <strong className="news-date">{news.frontmatter.date}</strong>
+                <h6>{news.frontmatter.title}</h6>
+              </Link>
+            ))}
+          </Col>
+          <Col md="4">
+            <div className="instagram_feed">
+              {/* {allInstaNode.map((post) => (
 						<Link to={post.node.preview}>
 							<img
 								src={post.node.preview}
@@ -35,11 +38,11 @@ class NewsList extends React.Component {
 							/>
 						</Link>
 						))}*/}
-               </div>
-            </Col>
+            </div>
+          </Col>
         </Row>
-     </div>
-    )
+      </div>
+    );
   }
 }
 
@@ -49,13 +52,15 @@ NewsList.propTypes = {
       nodes: PropTypes.array,
     }),
   }),
-}
+};
 
-export default () => (
+const NewsListWrapper = () => (
   <StaticQuery
     query={graphql`
       query NewsListQuery {
-        allMarkdownRemark(filter: {frontmatter: {templateKey: {eq: "blog-post"}}}) {
+        allMarkdownRemark(
+          filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+        ) {
           nodes {
             frontmatter {
               date(formatString: "DD MMM, YYYY")
@@ -80,4 +85,6 @@ export default () => (
     `}
     render={(data, count) => <NewsList data={data} count={count} />}
   />
-)
+);
+
+export default NewsListWrapper;

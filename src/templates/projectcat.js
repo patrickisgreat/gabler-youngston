@@ -1,80 +1,86 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import LatestWork from '../components/Latestwork/latestwork'
-import WorkTypefilter from '../components/worktypesfilter'
-import { Container, Row, Col } from 'react-bootstrap';
-import '../pages/work/work.css'
+import React from "react";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../components/Layout";
+import LatestWork from "../components/Latestwork/latestwork";
+import WorkTypefilter from "../components/worktypesfilter";
+import { Container, Row, Col } from "react-bootstrap";
+import "../pages/work/work.css";
 
 class CatRoute extends React.Component {
-
   constructor(props) {
     super(props);
     console.log(props);
     this.state = {
-      fromFilter: false
-    }
-    
+      fromFilter: false,
+    };
   }
-  
+
   componentDidMount() {
     setTimeout(() => {
       this.scrollDown();
-    }, 200)
+    }, 200);
   }
 
   scrollDown() {
-    console.log("working")
-    let workView = document.getElementById('hvrbox-id');
-    workView.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+    console.log("working");
+    let workView = document.getElementById("hvrbox-id");
+    workView.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+      inline: "nearest",
+    });
   }
 
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
-    const postLinks = posts.map(post => (
-       <Col md="4" sm="6" xs="6">
-            <div className="hvrbox">
-              <img
-                src={
-                  post.node.frontmatter.projectimage !== null ? 
-                  post.node.frontmatter.projectimage.childImageSharp.original.src : null
-                }
-                alt="Our Team"
-                style={{ display: 'block', width:'100%'}}
-                className="hvrbox-layer_bottom"
-                id="hvrbox-id"
-              />
-              <Link to={post.node.fields.slug} className="hvrbox-layer_top">
-                <div className="hvrbox-text">
-                  <h5>{post.node.frontmatter.projectname}</h5>
-                  <span>Project Type:  <b>{post.node.frontmatter.projectscope}</b></span>
-                </div>
-              </Link>
+    const posts = this.props.data.allMarkdownRemark.edges;
+    const postLinks = posts.map((post) => (
+      <Col md="4" sm="6" xs="6">
+        <div className="hvrbox">
+          <img
+            src={
+              post.node.frontmatter.projectimage !== null
+                ? post.node.frontmatter.projectimage.childImageSharp.original
+                    .src
+                : null
+            }
+            alt="Our Team"
+            style={{ display: "block", width: "100%" }}
+            className="hvrbox-layer_bottom"
+            id="hvrbox-id"
+          />
+          <Link to={post.node.fields.slug} className="hvrbox-layer_top">
+            <div className="hvrbox-text">
+              <h5>{post.node.frontmatter.projectname}</h5>
+              <span>
+                Project Type: <b>{post.node.frontmatter.projectscope}</b>
+              </span>
             </div>
-        </Col>
-    ))
+          </Link>
+        </div>
+      </Col>
+    ));
 
-    const category = this.props.pageContext.category
-    const title = this.props.data.site.siteMetadata.title
+    const category = this.props.pageContext.category;
+    const title = this.props.data.site.siteMetadata.title;
 
     return (
       <Layout>
-         <Helmet title={`${category} | ${title}`} />
-         <div className="work_min">
-         <Container>
+        <Helmet title={`${category} | ${title}`} />
+        <div className="work_min">
+          <Container>
             <h1>Work </h1>
-        </Container>
-        <WorkTypefilter />
-            <LatestWork />
-            <Row>{postLinks}</Row>
-          </div>
-     </Layout>
-    )
+          </Container>
+          <WorkTypefilter />
+          <LatestWork />
+          <Row>{postLinks}</Row>
+        </div>
+      </Layout>
+    );
   }
 }
 
-export default CatRoute
+export default CatRoute;
 
 export const catsPageQuery = graphql`
   query CatPage($category: String) {
@@ -85,7 +91,7 @@ export const catsPageQuery = graphql`
     }
     allMarkdownRemark(
       limit: 1000
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { frontmatter: { date: DESC } }
       filter: { frontmatter: { projectcategory: { in: [$category] } } }
     ) {
       totalCount
@@ -95,18 +101,18 @@ export const catsPageQuery = graphql`
             slug
           }
           frontmatter {
-              projectname
-              projectimage {
-                childImageSharp {
-                  original {
-                    src
-                  }
+            projectname
+            projectimage {
+              childImageSharp {
+                original {
+                  src
                 }
               }
-              projectscope
             }
+            projectscope
+          }
         }
       }
     }
   }
-`
+`;

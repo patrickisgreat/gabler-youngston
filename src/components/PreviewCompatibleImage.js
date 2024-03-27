@@ -1,36 +1,41 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Img from 'gatsby-image'
+import React from "react";
+import PropTypes from "prop-types";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const PreviewCompatibleImage = ({ imageInfo, className}) => {
+const PreviewCompatibleImage = ({ imageInfo, className }) => {
+  let imgStyle = { borderRadius: "5px" };
 
-  let imgStyle = {borderRadius: "5px"}
-  
-  let userDefinedStyles = {}
-  
+  let userDefinedStyles = {};
+
   if (imageInfo.style !== "undefined") {
-    userDefinedStyles = imageInfo.style
+    userDefinedStyles = imageInfo.style;
   }
 
-  const imageStyle = Object.assign(imgStyle, userDefinedStyles)
+  const imageStyle = { ...imgStyle, ...userDefinedStyles };
 
-  const { alt = '', childImageSharp, image } = imageInfo
+  const { alt = "", childImageSharp, image } = imageInfo;
 
-  if (!!image && !!image.childImageSharp) {
+  let imageSrc = image?.childImageSharp
+    ? getImage(image.childImageSharp)
+    : getImage(childImageSharp);
+
+  if (imageSrc) {
     return (
-      <Img style={imageStyle} fluid={image.childImageSharp.fluid} alt={alt} className={className} />
-    )
+      <GatsbyImage
+        style={imageStyle}
+        image={imageSrc}
+        alt={alt}
+        className={className}
+      />
+    );
+  } else if (!!image && typeof image === "string") {
+    return (
+      <img style={imageStyle} src={image} alt={alt} className={className} />
+    );
   }
 
-  if (!!childImageSharp) {
-    return <Img style={imageStyle} fluid={childImageSharp.fluid} alt={alt} className={className} />
-  }
-
-  if (!!image && typeof image === 'string')
-    return <img style={imageStyle} src={image} alt={alt} className={className} />
-
-  return null
-}
+  return null;
+};
 
 PreviewCompatibleImage.propTypes = {
   imageInfo: PropTypes.shape({
@@ -39,6 +44,7 @@ PreviewCompatibleImage.propTypes = {
     image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]).isRequired,
     style: PropTypes.object,
   }).isRequired,
-}
+  className: PropTypes.string,
+};
 
-export default PreviewCompatibleImage
+export default PreviewCompatibleImage;

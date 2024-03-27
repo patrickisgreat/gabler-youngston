@@ -6,9 +6,8 @@ import "./team_detail.css";
 import Purpose2 from "../../img/Bitmap2.png";
 import backbutton from "../../img/back-btn.jpg";
 import OurTeam from "../../components/Team/team";
-import { graphql } from "gatsby";
 
-const TeamPageTemplate = ({ frontmatter }) => {
+export const TeamPageTemplate = ({ frontmatter }) => {
   const memberImage = getImage(frontmatter.memberimage.childImageSharp);
 
   return (
@@ -55,25 +54,3 @@ const TeamPageTemplate = ({ frontmatter }) => {
     </div>
   );
 };
-// PropTypes and Teamdetails component remains unchanged
-
-graphql`
-  query Teamdetails($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        templateKey
-        description
-        designation
-        memberimage {
-          childImageSharp {
-            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
-          }
-        }
-        resume
-      }
-    }
-  }
-`;
-
-export default TeamPageTemplate;
