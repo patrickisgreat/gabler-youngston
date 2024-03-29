@@ -7,6 +7,28 @@ import AboutBanner from "../components/Aboutbanner/banner";
 import OurTeam from "../components/Team/team";
 import "./allpage.css";
 
+// Updated RenderImage component to use GatsbyImage
+const RenderImage = ({ image, alt, style }) => {
+  // Assuming `image` is directly the object needed for GatsbyImage when it has childImageSharp
+  // Otherwise, you might need to adjust how you retrieve the image object
+  const imageObject = getImage(image);
+  console.log("IMAGE", image);
+  return image.childImageSharp ? (
+    <GatsbyImage image={imageObject} alt={alt} style={style} />
+  ) : (
+    <img src={image} alt={alt} style={style} />
+  );
+};
+
+// Functional component for rendering lists
+const RenderList = ({ items }) => (
+  <ul>
+    {items.map((item, index) => (
+      <li key={index}>{item.text}</li>
+    ))}
+  </ul>
+);
+
 export const AboutPageTemplate = ({
   title,
   section1,
@@ -19,7 +41,7 @@ export const AboutPageTemplate = ({
   return (
     <div>
       <div className="about-us">
-        <img src={heroImage.childImageSharp.fluid.src} alt="About us" />
+        <RenderImage image={heroImage} alt="Hero Image" />
         <div className="about_text">
           <p>
             <span>{section1.title}</span> {section1.description}
@@ -29,51 +51,20 @@ export const AboutPageTemplate = ({
       <div className="Our_purpose">
         <div className="columns">
           <div className="column is-4">
-            {section2.image1.childImageSharp ? (
-              <GatsbyImage
-                image={getImage(section2.image1.childImageSharp)}
-                alt="Our purpose 1"
-              />
-            ) : (
-              <img src={section2.image1} alt="Our purpose 2" />
-            )}
-            {section2.image2.childImageSharp ? (
-              <GatsbyImage
-                image={getImage(section2.image2.childImageSharp)}
-                alt="Our purpose 3"
-                style={{ padding: "25px 0 0 30px", width: "100%" }}
-              />
-            ) : (
-              <img
-                src={section2.image2}
-                alt="Our purpose 4"
-                style={{ padding: "25px 0 0 30px", width: "100%" }}
-              />
-            )}
+            <RenderImage image={section2.image1} alt="Our purpose 1" />
+            <RenderImage
+              image={section2.image2}
+              alt="Our purpose 2"
+              style={{ padding: "25px 0 0 30px", width: "100%" }}
+            />
           </div>
           <div className="column is-8">
             <div className="columns">
               <div className="column is-6 column.is-6-mobile">
-                {section2.image3.childImageSharp ? (
-                  <GatsbyImage
-                    image={getImage(section2.image2.childImageSharp)}
-                    alt="Our purpose 3"
-                    style={{ padding: "25px 0 0 30px", width: "100%" }}
-                  />
-                ) : (
-                  <img src={section2.image3} alt="Our purpose 6" />
-                )}
+                <RenderImage image={section2.image3} alt="Our purpose 3" />
               </div>
               <div className="column is-6 column.is-6-mobile">
-                {section2.image4.childImageSharp ? (
-                  <GatsbyImage
-                    image={getImage(section2.image2.childImageSharp)}
-                    alt="Our purpose 3"
-                    style={{ padding: "25px 0 0 30px", width: "100%" }}
-                  />
-                ) : (
-                  <img src={section2.image4} alt="Our purpose 8" />
-                )}
+                <RenderImage image={section2.image4} alt="Our purpose 4" />
               </div>
             </div>
             <div className="columns">
@@ -85,18 +76,14 @@ export const AboutPageTemplate = ({
           </div>
         </div>
       </div>
-      <OurTeam></OurTeam>
+      <OurTeam />
       <div className="through_years">
         <div className="container">
           <h4>{section4.title}</h4>
           <div className="columns">
             <div className="column is-2"></div>
             <div className="column is-10">
-              <ul>
-                {section4.description.map((singletext) => {
-                  return <li>{singletext.text}</li>;
-                })}
-              </ul>
+              <RenderList items={section4.description} />
             </div>
           </div>
         </div>
@@ -107,11 +94,7 @@ export const AboutPageTemplate = ({
           <div className="columns">
             <div className="column is-2"></div>
             <div className="column is-10">
-              <ul>
-                {section5.description.map((singletext) => {
-                  return <li>{singletext.text}</li>;
-                })}
-              </ul>
+              <RenderList items={section5.description} />
             </div>
           </div>
         </div>
@@ -122,11 +105,11 @@ export const AboutPageTemplate = ({
 
 AboutPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
-  section1: PropTypes.array,
-  section2: PropTypes.array,
-  section3: PropTypes.array,
-  section4: PropTypes.array,
-  section5: PropTypes.array,
+  section1: PropTypes.object,
+  section2: PropTypes.object,
+  section3: PropTypes.object,
+  section4: PropTypes.object,
+  section5: PropTypes.object,
 };
 
 const AboutPage = ({ data }) => {
@@ -135,9 +118,7 @@ const AboutPage = ({ data }) => {
   console.log(frontmatter);
   return (
     <Layout>
-      <AboutBanner
-        headerImage={frontmatter.headerImage.childImageSharp.fluid.src}
-      ></AboutBanner>
+      <AboutBanner headerImage={frontmatter.headerImage} />
       <AboutPageTemplate
         title={frontmatter.title}
         heroImage={frontmatter.heroImage}
@@ -167,16 +148,22 @@ export const aboutPageQuery = graphql`
       frontmatter {
         headerImage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 2048
+              quality: 100
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         heroImage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(
+              width: 600
+              quality: 100
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         title
@@ -184,9 +171,12 @@ export const aboutPageQuery = graphql`
           description
           image {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 2048
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
           title
@@ -196,30 +186,42 @@ export const aboutPageQuery = graphql`
           description
           image1 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 2048
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
           image2 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 2048
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
           image3 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 2048
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
           image4 {
             childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(
+                width: 2048
+                quality: 100
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

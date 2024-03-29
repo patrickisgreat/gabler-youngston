@@ -1,17 +1,17 @@
 $breakpoint-tablet: 768px;
-nav {  
-  background-color: $dark-bg;
-  padding:20px 0;
-  border-bottom:0px solid #fff;
+nav {
+  background-color: $body-color;
+  padding: 20px 0;
+  border-bottom: 0px solid #fff;
 }
-.navbar {
-  background-color: $dark-bg;
+
+body nav.navbar {
+  background-color: $dark-bg; /* More specific path */
 }
 
 .navbar .navbar-menu {
-  box-shadow:none !important;
+  box-shadow: none !important;
   background-color: #222222;
-
 }
 
 .navbar-item {
@@ -19,10 +19,11 @@ nav {
   padding: 0.5rem 2rem !important;
   letter-spacing: 0.1em;
   font-weight: 400 !important;
-  font-family: 'Source Sans Pro', sans-serif !important;
+  font-family: "Source Sans Pro", sans-serif !important;
+  color: #2222;
 }
-.navbar-burger{
-  color:#fff!important;
+.navbar-burger {
+  color: #fff !important;
 }
 .navbar-brand {
   margin-left: 0rem !important;
@@ -33,15 +34,15 @@ nav {
 }
 
 //Menu overrides
-$menu-item-color: $white-ter;
+$menu-item-color: white;
 $menu-item-hover-color: $black !important;
 $menu-item-hover-background-color: $black;
 $menu-item-active-color: $kaldi-red-invert;
-$menu-item-active-background-color:	$kaldi-red-invert;
+$menu-item-active-background-color: $kaldi-red-invert;
 $menu-list-border-left: 1px solid $kaldi-red-invert;
 $menu-label-color: $white-ter;
 
-$navbar-item-active-color: #EE4423;
+$navbar-item-active-color: #ee4423;
 
 .menu-label {
   font-size: 1em !important;
@@ -53,12 +54,12 @@ $navbar-item-active-color: #EE4423;
   text-align: left;
 }
 
-a.navbar-item:hover{
-  color:#fff !important
+a.navbar-item:hover {
+  color: #fff !important;
 }
 
-.post-s{
-  position:initial;
+.post-s {
+  position: initial;
 }
 #sidebarMenu {
   height: 100%;
@@ -68,34 +69,48 @@ a.navbar-item:hover{
   margin-top: 7px;
   transform: translateX(-100%);
   transition: transform 850ms ease-in-out;
-  background:rgba(238,68,35, 0.98);
+  background: rgba(238, 68, 35, 0.98);
 }
-.sidebarMenuInner{
-  margin:0;
-  padding:0 2rem;
+.sidebarMenuInner {
+  margin: 0;
+  padding: 0 2rem;
   margin-top: 30px;
 }
 
-
-.sidebarMenuInner a{
+.sidebarMenuInner a {
   color: #fff;
   text-decoration: none;
-  font-size:25px;
+  font-size: 25px;
   font-weight: bold;
   padding: 20px;
 }
-.mobile_menu .sidebarMenuInner a:hover{
+.mobile_menu .sidebarMenuInner a:hover {
   color: #fff;
 }
-.mobile_menu a.navbar-item.is-active,  a.navbar-item:hover{
+.mobile_menu a.navbar-item.is-active,
+a.navbar-item:hover {
   background: none !important;
-  color: #fff!important;
+  color: #fff !important;
 }
+body {
+  .navbar-link.is-active,
+  .navbar-link.is-selected,
+  a.navbar-item.is-active,
+  a.navbar-item.is-selected {
+    --bulma-navbar-h: none;
+    --bulma-navbar-s: none;
+    --bulma-navbar-l: none;
+    --bulma-navbar-item-background-l: none;
+    --bulma-navbar-item-background-a: 1;
+    --bulma-navbar-item-color-l: none;
+  }
+}
+
 .mobile_menu input[type="checkbox"]:checked ~ #sidebarMenu {
   transform: translateX(0);
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   transition: all 0.3s;
   box-sizing: border-box;
   display: none;
@@ -141,40 +156,40 @@ input[type=checkbox] {
   float: left;
   margin-top: 3px;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .horizontal {
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .horizontal {
   transition: all 0.3s;
   box-sizing: border-box;
   opacity: 0;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-1 {
   transition: all 0.3s;
   box-sizing: border-box;
   transform: rotate(135deg);
   margin-top: 8px;
 }
-input[type=checkbox]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
+input[type="checkbox"]:checked ~ .sidebarIconToggle > .diagonal.part-2 {
   transition: all 0.3s;
   box-sizing: border-box;
   transform: rotate(-135deg);
   margin-top: -9px;
 }
-.mobile_menu{
+.mobile_menu {
   display: none !important;
 }
 
-@media (max-width:1023px){
-  .destop_menu{
-    display: none!important;
+@media (max-width: 1023px) {
+  .destop_menu {
+    display: none !important;
   }
-  .mobile_menu{
-    display: block!important;
+  .mobile_menu {
+    display: block !important;
   }
 }
 @media (max-width: $breakpoint-tablet) {
-  .navbar{
-    width:100%;
+  .navbar {
+    width: 100%;
     position: fixed !important;
-    top:0px;
+    top: 0px;
   }
   .navbar-item {
     padding: 0.5rem 0rem !important;

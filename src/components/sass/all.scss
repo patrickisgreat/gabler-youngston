@@ -1,6 +1,7 @@
+//@import "./debug";
 @import "~bulma/sass/utilities/initial-variables";
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900&display=swap");
-//@import "./debug";
+
 $breakpoint-tablet: 768px;
 // Config vars;
 $kaldi-red: #d64000;
@@ -12,7 +13,7 @@ $body-color: #333;
 $black: #2b2523;
 $dark-bg: #222222;
 $link-active: #ee4423;
-$navbar-background-color: $dark-bg;
+$navbar-background-color: $body-color;
 $sidebar-gray: #3a3a3c;
 $gabler-red: #ee4423;
 $aqua: #8da492;

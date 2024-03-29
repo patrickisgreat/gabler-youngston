@@ -15,6 +15,7 @@ $breakpoint-phone: 568px;
     flex-direction: column;
     align-items: center;
     color: white;
+    border-radius: none;
 
     @keyframes float {
       0% {
@@ -158,13 +159,12 @@ $breakpoint-phone: 568px;
       }
     }
     .slider-sidebar {
-      
     }
     .slider-img {
       width: 93%;
       min-width: 105px;
       float: left;
-      img{
+      img {
         width: 100%;
         height: 100vh !important;
       }
@@ -284,7 +284,7 @@ $breakpoint-phone: 568px;
       height: 100%;
       background-color: $aqua;
       z-index: 3;
-      box-sizing:border-box;
+      box-sizing: border-box;
       font-family: "Futura-Koyu", sans-serif !important;
       p.sidebar-hero {
         writing-mode: tb-rl;
@@ -415,9 +415,9 @@ $breakpoint-phone: 568px;
 .scrollmagic-pin-spacer {
   overflow: hidden;
 }
-.ScrollUpButton__Container.ScrollUpButton__Toggled{
+.ScrollUpButton__Container.ScrollUpButton__Toggled {
   //bottom:19px !important;
-  right:21px!important;
+  right: 21px !important;
 }
 @media (max-width: $breakpoint-tablet-l) {
   .home-slides .panel-3 .sidebar {
@@ -441,8 +441,8 @@ $breakpoint-phone: 568px;
     width: 100% !important;
   }
   .slideDescriptionv {
-    text-align:left;
-    padding-left:20px;
+    text-align: left;
+    padding-left: 20px;
   }
 }
 @media (max-width: $breakpoint-phone) {
@@ -457,12 +457,12 @@ $breakpoint-phone: 568px;
     line-height: 2rem;
   }
   .home-slides .panel-3 .slider-img {
-      width: 93%;
-      min-width: 105px;
-      float: left;
-      img{
-        width: 100%;
-        height: auto !important;
-      }
+    width: 93%;
+    min-width: 105px;
+    float: left;
+    img {
+      width: 100%;
+      height: auto !important;
     }
+  }
 }

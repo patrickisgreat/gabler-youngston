@@ -16,9 +16,8 @@ class OurTeam extends React.Component {
         <h3>Team</h3>
         <Row>
           {teams.map((team) => {
-            const memberImage = getImage(
-              team.frontmatter.memberimage.childImageSharp.gatsbyImageData
-            );
+            console.log("TEAM", team);
+            const memberImage = getImage(team.frontmatter.memberimage);
             return (
               <Col md="3" sm="6" xs="6" key={team.fields.slug}>
                 <div className="our_team">
@@ -60,37 +59,26 @@ OurTeam.propTypes = {
   }),
 };
 
-const TeamWrapper = () => (
-  <StaticQuery
-    query={graphql`
-      query OurTeamQuery {
-        allMarkdownRemark(
-          filter: { frontmatter: { templateKey: { eq: "team-member" } } }
-          sort: { frontmatter: { date: ASC } }
-        ) {
-          nodes {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              designation
-              memberimage {
-                childImageSharp {
-                  gatsbyImageData(
-                    width: 2048
-                    quality: 100
-                    layout: CONSTRAINED
-                  )
-                }
-              }
+const query = graphql`
+  query OurTeamQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "team-member" } } }
+      sort: { frontmatter: { date: ASC } }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          designation
+          memberimage {
+            childImageSharp {
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
             }
           }
         }
       }
-    `}
-    render={(data) => <OurTeam data={data} />}
-  />
-);
-
-export default TeamWrapper;
+    }
+  }
+`;
