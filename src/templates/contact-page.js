@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import { StaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
@@ -27,7 +26,7 @@ const ContactPageTemplate = ({ frontmatter }) => {
           </Col>
           <Col md={4}>
             {frontmatter.sidebarcontent.map((sidebar, i) => (
-              <div className="contact-f">
+              <div className="contact-f" key={i}>
                 <strong>{sidebar.title}</strong>
                 <p>{sidebar.description}</p>
               </div>
@@ -40,50 +39,34 @@ const ContactPageTemplate = ({ frontmatter }) => {
 };
 
 ContactPageTemplate.propTypes = {
-  frontmatter: PropTypes.array,
+  frontmatter: PropTypes.object,
 };
 
-class ContactPage extends React.Component {
-  render() {
-    const { data } = this.props;
-    const { frontmatter } = data.markdownRemark;
-
-    return (
-      <Layout>
-        <ContactPageTemplate frontmatter={frontmatter} />
-      </Layout>
-    );
-  }
-}
-
-ContactPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
-};
-
-const ContactPageWrapper = () => (
-  <StaticQuery
-    query={graphql`
-      query ContactPageQuery {
-        markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
-          frontmatter {
+const ContactPage = () => {
+  const data = useStaticQuery(graphql`
+    query ContactPageQuery {
+      markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+        frontmatter {
+          title
+          contactnumber
+          contactnumberone
+          contactnumbertwo
+          sidebarcontent {
+            description
             title
-            contactnumber
-            contactnumberone
-            contactnumbertwo
-            sidebarcontent {
-              description
-              title
-            }
           }
         }
       }
-    `}
-    render={(data) => <ContactPage data={data} />}
-  />
-);
+    }
+  `);
 
-export default ContactPageTemplate;
+  const { frontmatter } = data.markdownRemark;
+
+  return (
+    <Layout>
+      <ContactPageTemplate frontmatter={frontmatter} />
+    </Layout>
+  );
+};
+
+export default ContactPage;

@@ -12,19 +12,16 @@ export const WorkPageTemplate = ({ frontmatter }) => {
     <div className="project_min">
       {/* Banner Start */}
       <div className="project_banner">
-        {frontmatter.projectimage.childImageSharp ? (
-          <GatsbyImage
-            image={getImage(frontmatter.projectimage.childImageSharp)}
-            alt="Banner"
-            style={{ display: "block", width: "100%" }}
-          />
-        ) : (
-          <img
-            src={frontmatter.projectimage}
-            alt="Banner"
-            style={{ display: "block", width: "100%" }}
-          />
-        )}
+        <div className="hero-image-container">
+          {frontmatter.projectimage.childImageSharp ? (
+            <GatsbyImage
+              image={getImage(frontmatter.projectimage.childImageSharp)}
+              alt="Banner"
+            />
+          ) : (
+            <img src={frontmatter.projectimage} alt="Banner" />
+          )}
+        </div>
 
         <div className="banner-text">
           <h2>{frontmatter.projectname}</h2>
@@ -34,23 +31,33 @@ export const WorkPageTemplate = ({ frontmatter }) => {
       {/* Banner End */}
       {/* Project Destils Start */}
       {frontmatter.descriptionblockone.map((items, i) => (
-        <div className="project_details">
+        <div className="project_details" key={i}>
           <Container>
             {items.imagepos === "left" ? (
               <Row className="d-flex flex-wrap align-items-center">
                 <Col md="6" className="mt-4">
                   {items.image.childImageSharp ? (
-                    <GatsbyImage
-                      image={getImage(items.image.childImageSharp)}
-                      alt="Project Image"
-                      style={{ display: "block", width: "100%" }}
-                    />
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                      }}
+                    >
+                      <GatsbyImage
+                        image={getImage(items.image.childImageSharp)}
+                        alt="Project Image"
+                        objectFit="contain"
+                      />
+                    </div>
                   ) : (
-                    <GatsbyImage
-                      image={getImage(items.image.childImageSharp)}
-                      alt="Projects"
-                      style={{ display: "block", width: "100%" }}
-                    />
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                      }}
+                    >
+                      <img src={items.image.publicURL} alt="Projects" />
+                    </div>
                   )}
                 </Col>
                 <Col md="6" className="mt-4">
@@ -70,17 +77,27 @@ export const WorkPageTemplate = ({ frontmatter }) => {
                 </Col>
                 <Col md="6" className="mt-4">
                   {items.image.childImageSharp ? (
-                    <GatsbyImage
-                      image={getImage(items.image.childImageSharp)}
-                      alt="Project Image"
-                      style={{ display: "block", width: "100%" }}
-                    />
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                      }}
+                    >
+                      <GatsbyImage
+                        image={getImage(items.image.childImageSharp)}
+                        alt="Project Image"
+                        objectFit="contain"
+                      />
+                    </div>
                   ) : (
-                    <GatsbyImage
-                      image={getImage(items.image.childImageSharp)}
-                      alt="Projects"
-                      style={{ display: "block", width: "100%" }}
-                    />
+                    <div
+                      style={{
+                        position: "relative",
+                        width: "100%",
+                      }}
+                    >
+                      <img src={items.image.publicURL} alt="Projects" />
+                    </div>
                   )}
                 </Col>
               </Row>
@@ -104,41 +121,7 @@ export const WorkPageTemplate = ({ frontmatter }) => {
               </ul>
             </Col>
             <Col md="5" className="social_links">
-              {/* <h6>Like it? Share it!</h6>
-                     <ul>
-                        <li><a href=""> 
-                         <img
-                               src={facebook}
-                               alt="facebook"
-                            /> 
-                        </a></li>
-                        <li><a href=""> 
-                         <img
-                               src={twitter}
-                               alt="twitter"
-                            /> 
-                        </a></li>
-                        <li><a href=""> 
-                         <img
-                               src={linkdin}
-                               alt="linkdin"
-                            /> 
-                        </a></li>
-                        <li><a href=""> 
-                         <img
-                               src={googleplus}
-                               alt="googleplus"
-                            /> 
-                        </a></li>
-                        <li><a href=""> 
-                         <img
-                               src={email}
-                               alt="email"
-                            /> 
-                        </a></li>
-                     </ul> */}
-
-              <div class="back-btn-up">
+              <div className="back-btn-up">
                 <Link to="/works">
                   <img
                     src={back_btn_up}
@@ -156,5 +139,5 @@ export const WorkPageTemplate = ({ frontmatter }) => {
 };
 
 WorkPageTemplate.propTypes = {
-  frontmatter: PropTypes.array,
+  frontmatter: PropTypes.object,
 };

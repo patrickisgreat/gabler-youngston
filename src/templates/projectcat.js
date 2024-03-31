@@ -10,7 +10,6 @@ import "../pages/work/work.css";
 class CatRoute extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       fromFilter: false,
     };
@@ -23,7 +22,6 @@ class CatRoute extends React.Component {
   }
 
   scrollDown() {
-    console.log("working");
     let workView = document.getElementById("hvrbox-id");
     workView.scrollIntoView({
       behavior: "smooth",

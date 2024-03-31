@@ -36,7 +36,11 @@ export const WorkdetailsQuery = graphql`
         sortdescription
         projectimage {
           childImageSharp {
-            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(
+              width: 550
+              layout: FIXED
+              formats: [AUTO, WEBP, AVIF]
+            )
           }
         }
         extrafield {
@@ -49,7 +53,11 @@ export const WorkdetailsQuery = graphql`
           imagepos
           image {
             childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+              gatsbyImageData(
+                width: 550
+                layout: FIXED
+                formats: [AUTO, WEBP, AVIF]
+              )
             }
           }
         }

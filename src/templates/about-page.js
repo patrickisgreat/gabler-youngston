@@ -9,10 +9,7 @@ import "./allpage.css";
 
 // Updated RenderImage component to use GatsbyImage
 const RenderImage = ({ image, alt, style }) => {
-  // Assuming `image` is directly the object needed for GatsbyImage when it has childImageSharp
-  // Otherwise, you might need to adjust how you retrieve the image object
   const imageObject = getImage(image);
-  console.log("IMAGE", image);
   return image.childImageSharp ? (
     <GatsbyImage image={imageObject} alt={alt} style={style} />
   ) : (
@@ -114,7 +111,6 @@ AboutPageTemplate.propTypes = {
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("stuff");
   console.log(frontmatter);
   return (
     <Layout>
