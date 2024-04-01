@@ -2,13 +2,12 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import Nav from "./Nav";
 import "./sass/all.scss";
-import Footer from "./Footer";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import Typography from "../fonts/typography.js";
-import { FooterQuery } from "./queries/footer-query.js";
+import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, footerData }) => {
   const { title, description } = useSiteMetadata();
   return (
     <div>
@@ -53,7 +52,7 @@ const Layout = ({ children }) => {
       </Helmet>
       <Nav />
       <div>{children}</div>
-      <Footer data={data} />
+      <Footer data={footerData} />
     </div>
   );
 };

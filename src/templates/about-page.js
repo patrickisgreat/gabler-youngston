@@ -34,6 +34,7 @@ export const AboutPageTemplate = ({
   section4,
   section5,
   heroImage,
+  teamData,
 }) => {
   return (
     <div>
@@ -73,7 +74,7 @@ export const AboutPageTemplate = ({
           </div>
         </div>
       </div>
-      <OurTeam />
+      <OurTeam data={teamData} />
       <div className="through_years">
         <div className="container">
           <h4>{section4.title}</h4>
@@ -111,7 +112,7 @@ AboutPageTemplate.propTypes = {
 
 const AboutPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log(frontmatter);
+  const teamData = data;
   return (
     <Layout>
       <AboutBanner headerImage={frontmatter.headerImage} />
@@ -123,6 +124,7 @@ const AboutPage = ({ data }) => {
         section3={frontmatter.section3}
         section4={frontmatter.section4}
         section5={frontmatter.section5}
+        teamData={teamData}
       />
     </Layout>
   );
@@ -235,6 +237,25 @@ export const aboutPageQuery = graphql`
             text
           }
           title
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
+      sort: { frontmatter: { date: ASC } }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          designation
+          memberimage {
+            childImageSharp {
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            }
+          }
         }
       }
     }

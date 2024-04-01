@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
 const NewsList = ({ data }) => {
-  const { nodes: newses } = data.allMarkdownRemark;
+  const { nodes: newses } = data;
 
   return (
     <div className="news_feed">
@@ -43,29 +43,3 @@ const NewsList = ({ data }) => {
 };
 
 export default NewsList;
-
-export const query = graphql`
-  query NewsListQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-    ) {
-      nodes {
-        frontmatter {
-          date(formatString: "DD MMM, YYYY")
-          title
-          description
-          featuredimage {
-            childImageSharp {
-              fixed(width: 300, height: 200) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`;

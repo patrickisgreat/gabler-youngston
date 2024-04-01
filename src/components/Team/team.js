@@ -81,27 +81,3 @@ OurTeam.propTypes = {
 };
 
 export default OurTeam;
-
-export const query = graphql`
-  query OurTeamQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
-      sort: { frontmatter: { date: ASC } }
-    ) {
-      nodes {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          designation
-          memberimage {
-            childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
-            }
-          }
-        }
-      }
-    }
-  }
-`;

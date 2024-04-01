@@ -6,7 +6,7 @@ import { Row, Col } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const LatestWork = ({ data }) => {
-  const { nodes: works } = data.allMarkdownRemark;
+  const { nodes: works } = data;
 
   return (
     <div>

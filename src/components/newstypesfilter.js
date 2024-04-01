@@ -5,7 +5,7 @@ import { Link, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NewsTypefilter = ({ data }) => {
-  const { nodes: newscats } = data.allMarkdownRemark;
+  const { nodes: newscats } = data;
 
   return (
     <Container>
@@ -65,20 +65,3 @@ const NewsTypefilter = ({ data }) => {
 };
 
 export default NewsTypefilter;
-
-export const query = graphql`
-  query NewsTypefilterQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "newscat" } } }
-    ) {
-      nodes {
-        frontmatter {
-          categoryname
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`;

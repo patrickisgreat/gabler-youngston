@@ -1,11 +1,35 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Newsletter from "./Newsletter/Newsletter";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./sass/footer.scss";
 
-const Footer = ({ data }) => {
+const Footer = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      markdownRemark(frontmatter: { templateKey: { eq: "footer-page" } }) {
+        frontmatter {
+          copyrightcontent
+          contactnumber
+          contactnumberone
+          address1
+          address2
+          image {
+            childImageSharp {
+              gatsbyImageData(
+                width: 323
+                layout: FIXED
+                placeholder: BLURRED
+                formats: [AUTO, WEBP, AVIF]
+              )
+            }
+          }
+        }
+      }
+    }
+  `);
+
   const { frontmatter } = data.markdownRemark;
   const image = getImage(frontmatter.image);
 

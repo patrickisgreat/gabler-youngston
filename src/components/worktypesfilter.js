@@ -6,7 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
 const WorkTypefilter = ({ data }) => {
-  const { nodes: cats } = data.allMarkdownRemark;
+  console.log("DATA", data);
+  const { nodes: cats } = data;
 
   return (
     <Row>
@@ -56,20 +57,3 @@ WorkTypefilter.propTypes = {
 };
 
 export default WorkTypefilter;
-
-export const query = graphql`
-  query WorkTypefilterQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "projectcat" } } }
-    ) {
-      nodes {
-        frontmatter {
-          categoryname
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`;

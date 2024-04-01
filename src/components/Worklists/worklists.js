@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
 const WorkLists = ({ data }) => {
-  const { nodes: works } = data.allMarkdownRemark;
+  const { nodes: works } = data;
 
   return (
     <Row>
@@ -60,29 +60,3 @@ WorkLists.propTypes = {
 };
 
 export default WorkLists;
-
-export const query = graphql`
-  query WorkListsQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
-      sort: { frontmatter: { date: DESC } }
-    ) {
-      nodes {
-        frontmatter {
-          projectname
-          projectimage {
-            childImageSharp {
-              original {
-                src
-              }
-            }
-          }
-          projectscope
-        }
-        fields {
-          slug
-        }
-      }
-    }
-  }
-`;
