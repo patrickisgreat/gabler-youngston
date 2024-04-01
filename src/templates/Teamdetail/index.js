@@ -9,7 +9,7 @@ import OurTeam from "../../components/Team/team";
 import { graphql } from "gatsby";
 
 const TeamPageTemplate = ({ frontmatter }) => {
-  const memberImage = getImage(frontmatter.memberimage.childImageSharp);
+  const memberImage = getImage(frontmatter?.memberimage?.childImageSharp);
 
   return (
     <div>
@@ -17,20 +17,7 @@ const TeamPageTemplate = ({ frontmatter }) => {
         <h3>Team</h3>
         <div className="columns">
           <div className="column is-4">
-            {memberImage ? (
-              <GatsbyImage
-                image={memberImage}
-                alt="Team"
-                style={{ width: "100%" }}
-              />
-            ) : (
-              <img
-                src={frontmatter.memberimage}
-                alt="Team"
-                style={{ width: "100%" }}
-              />
-            )}
-
+            {memberImage && <GatsbyImage image={memberImage} alt="Our Team" />}
             <img
               className="hide-phone"
               src={Purpose2}
@@ -67,7 +54,7 @@ graphql`
         designation
         memberimage {
           childImageSharp {
-            gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
           }
         }
         resume

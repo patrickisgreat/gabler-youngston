@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Row, Col } from "react-bootstrap";
 import Helmet from "react-helmet";
 import { graphql, Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/Layout";
 import Content, { HTMLContent } from "../components/Content";
 import back_btn_up from "../img/back-to-top-button.jpg";
@@ -17,6 +18,8 @@ const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
+  const image = getImage(featuredimage);
+
   return (
     <div className="all_news">
       {helmet || ""}
@@ -27,21 +30,9 @@ const BlogPostTemplate = ({
             <div className="news_details">
               <strong className="news-date">{date}</strong>
               <h6>{title}</h6>
-              <img src={featuredimage.childImageSharp.fluid.src} alt="" />
+              {image && <GatsbyImage image={image} alt="" />}
               <PostContent content={content} />
             </div>
-            {/* {tags && tags.length ? (
-                        <div style={{ marginTop: `4rem` }}>
-                          <h4>Tags</h4>
-                          <ul className="taglist">
-                            {tags.map(tag => (
-                              <li key={tag + `tag`}>
-                                <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : null} */}
             <div className="col-md-12">
               <div className="back-btn-up">
                 <Link to="/news">
@@ -102,7 +93,7 @@ BlogPost.propTypes = {
   }),
 };
 
-graphql`
+export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
@@ -113,9 +104,7 @@ graphql`
         description
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH, quality: 100)
           }
         }
         tags
@@ -124,4 +113,4 @@ graphql`
   }
 `;
 
-export default BlogPostTemplate;
+export default BlogPost;

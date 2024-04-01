@@ -37,7 +37,7 @@ export const WorkdetailsQuery = graphql`
         projectimage {
           childImageSharp {
             gatsbyImageData(
-              width: 550
+              width: 500
               layout: FIXED
               formats: [AUTO, WEBP, AVIF]
             )
@@ -54,7 +54,7 @@ export const WorkdetailsQuery = graphql`
           image {
             childImageSharp {
               gatsbyImageData(
-                width: 550
+                width: 500
                 layout: FIXED
                 formats: [AUTO, WEBP, AVIF]
               )
