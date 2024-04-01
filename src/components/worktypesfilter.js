@@ -1,28 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { kebabCase } from "lodash";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
-const WorkTypefilter = () => {
-  const data = useStaticQuery(graphql`
-    query WorkTypefilterQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "projectcat" } } }
-      ) {
-        nodes {
-          frontmatter {
-            categoryname
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const WorkTypefilter = ({ data }) => {
   const { nodes: cats } = data.allMarkdownRemark;
 
   return (
@@ -55,4 +38,38 @@ const WorkTypefilter = () => {
   );
 };
 
+WorkTypefilter.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          frontmatter: PropTypes.shape({
+            categoryname: PropTypes.string.isRequired,
+          }),
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+};
+
 export default WorkTypefilter;
+
+export const query = graphql`
+  query WorkTypefilterQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "projectcat" } } }
+    ) {
+      nodes {
+        frontmatter {
+          categoryname
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

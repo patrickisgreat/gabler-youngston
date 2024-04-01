@@ -1,45 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const LatestWork = () => {
-  const data = useStaticQuery(graphql`
-    query LatestWorkQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
-        sort: { frontmatter: { date: DESC } }
-        limit: 1
-      ) {
-        nodes {
-          id
-          frontmatter {
-            projectname
-            projectscope
-            sortdescription
-            projectimage {
-              childImageSharp {
-                gatsbyImageData(layout: FULL_WIDTH)
-              }
-            }
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const LatestWork = ({ data }) => {
   const { nodes: works } = data.allMarkdownRemark;
 
   return (
     <div>
       {works.map((work) => {
         const projectImage = getImage(work.frontmatter.projectimage);
-
         return (
           <Row className="latest-work" key={work.id}>
             <Col md="7" className="mt-3">
@@ -82,4 +54,52 @@ const LatestWork = () => {
   );
 };
 
+LatestWork.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          frontmatter: PropTypes.shape({
+            projectname: PropTypes.string.isRequired,
+            projectscope: PropTypes.string.isRequired,
+            sortdescription: PropTypes.string.isRequired,
+            projectimage: PropTypes.object,
+          }),
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+};
+
 export default LatestWork;
+
+export const query = graphql`
+  query LatestWorkQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: 1
+    ) {
+      nodes {
+        id
+        frontmatter {
+          projectname
+          projectscope
+          sortdescription
+          projectimage {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

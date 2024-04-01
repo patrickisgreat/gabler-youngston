@@ -1,37 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "./worklists.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
-const WorkLists = () => {
-  const data = useStaticQuery(graphql`
-    query WorkListsQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
-        sort: { frontmatter: { date: DESC } }
-      ) {
-        nodes {
-          frontmatter {
-            projectname
-            projectimage {
-              childImageSharp {
-                original {
-                  src
-                }
-              }
-            }
-            projectscope
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const WorkLists = ({ data }) => {
   const { nodes: works } = data.allMarkdownRemark;
 
   return (
@@ -60,4 +34,55 @@ const WorkLists = () => {
   );
 };
 
+WorkLists.propTypes = {
+  data: PropTypes.shape({
+    allMarkdownRemark: PropTypes.shape({
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          frontmatter: PropTypes.shape({
+            projectname: PropTypes.string.isRequired,
+            projectimage: PropTypes.shape({
+              childImageSharp: PropTypes.shape({
+                original: PropTypes.shape({
+                  src: PropTypes.string.isRequired,
+                }),
+              }),
+            }).isRequired,
+            projectscope: PropTypes.string.isRequired,
+          }),
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
+        })
+      ),
+    }),
+  }).isRequired,
+};
+
 export default WorkLists;
+
+export const query = graphql`
+  query WorkListsQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
+      nodes {
+        frontmatter {
+          projectname
+          projectimage {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
+          projectscope
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
@@ -39,27 +39,20 @@ const ContactPageTemplate = ({ frontmatter }) => {
 };
 
 ContactPageTemplate.propTypes = {
-  frontmatter: PropTypes.object,
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    contactnumber: PropTypes.string.isRequired,
+    contactnumberone: PropTypes.string.isRequired,
+    sidebarcontent: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
 };
 
-const ContactPage = () => {
-  const data = useStaticQuery(graphql`
-    query ContactPageQuery {
-      markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
-        frontmatter {
-          title
-          contactnumber
-          contactnumberone
-          contactnumbertwo
-          sidebarcontent {
-            description
-            title
-          }
-        }
-      }
-    }
-  `);
-
+const ContactPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -70,3 +63,20 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+export const query = graphql`
+  query ContactPageQuery {
+    markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+      frontmatter {
+        title
+        contactnumber
+        contactnumberone
+        contactnumbertwo
+        sidebarcontent {
+          description
+          title
+        }
+      }
+    }
+  }
+`;

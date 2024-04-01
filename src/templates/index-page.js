@@ -63,10 +63,6 @@ export const IndexPageTemplate = ({
   const slide3 = slides[1];
   const slide4 = slides[2];
 
-  // slides get wonky on window resize
-  // this seems hacky but it works
-  // slides get wonky on window resize
-  // this seems hacky but it works
   const [value, setValue] = useState(0);
   useEffect(() => {
     function reRender() {

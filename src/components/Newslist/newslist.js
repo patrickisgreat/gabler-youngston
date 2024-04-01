@@ -1,38 +1,10 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "./newslist.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
-const NewsList = () => {
-  const data = useStaticQuery(graphql`
-    query NewsListQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
-      ) {
-        nodes {
-          frontmatter {
-            date(formatString: "DD MMM, YYYY")
-            title
-            description
-            featuredimage {
-              childImageSharp {
-                # Specify the image processing specifications right in the query.
-                # Makes it trivial to update as your page's design changes.
-                fixed(width: 300, height: 200) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const NewsList = ({ data }) => {
   const { nodes: newses } = data.allMarkdownRemark;
 
   return (
@@ -71,3 +43,29 @@ const NewsList = () => {
 };
 
 export default NewsList;
+
+export const query = graphql`
+  query NewsListQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+    ) {
+      nodes {
+        frontmatter {
+          date(formatString: "DD MMM, YYYY")
+          title
+          description
+          featuredimage {
+            childImageSharp {
+              fixed(width: 300, height: 200) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

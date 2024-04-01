@@ -1,27 +1,10 @@
 import React from "react";
 import { kebabCase } from "lodash";
 import { Container, Row, Col, Dropdown } from "react-bootstrap";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const NewsTypefilter = () => {
-  const data = useStaticQuery(graphql`
-    query NewsTypefilterQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "newscat" } } }
-      ) {
-        nodes {
-          frontmatter {
-            categoryname
-          }
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
+const NewsTypefilter = ({ data }) => {
   const { nodes: newscats } = data.allMarkdownRemark;
 
   return (
@@ -46,9 +29,7 @@ const NewsTypefilter = () => {
                     key={newscat.fields.slug}
                     className="dropdown-item"
                     role="button"
-                    to={`/newscat/${kebabCase(
-                      newscat.frontmatter.categoryname
-                    )}/`}
+                    to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
                   >
                     {" "}
                     {newscat.frontmatter.categoryname}
@@ -68,9 +49,7 @@ const NewsTypefilter = () => {
                   <li key={newscat.fields.slug}>
                     <Link
                       activeClassName="active-cat"
-                      to={`/newscat/${kebabCase(
-                        newscat.frontmatter.categoryname
-                      )}/`}
+                      to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
                     >
                       {newscat.frontmatter.categoryname}
                     </Link>
@@ -86,3 +65,20 @@ const NewsTypefilter = () => {
 };
 
 export default NewsTypefilter;
+
+export const query = graphql`
+  query NewsTypefilterQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "newscat" } } }
+    ) {
+      nodes {
+        frontmatter {
+          categoryname
+        }
+        fields {
+          slug
+        }
+      }
+    }
+  }
+`;

@@ -1,15 +1,15 @@
-import React from 'react'
-import { Helmet } from 'react-helmet'
-import Nav from './Nav'
-import './sass/all.scss'
-import Footer from './Footer'
-import useSiteMetadata from './SiteMetadata'
-import { withPrefix } from "gatsby"
-import Typography from "../fonts/typography.js"
+import React from "react";
+import { Helmet } from "react-helmet";
+import Nav from "./Nav";
+import "./sass/all.scss";
+import Footer from "./Footer";
+import useSiteMetadata from "./SiteMetadata";
+import { withPrefix } from "gatsby";
+import Typography from "../fonts/typography.js";
+import { FooterQuery } from "./queries/footer-query.js";
 
-const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
-
+const Layout = ({ children }) => {
+  const { title, description } = useSiteMetadata();
   return (
     <div>
       <Typography />
@@ -46,13 +46,16 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:type" content="business.business" />
         <meta property="og:title" content={title} />
         <meta property="og:url" content="/" />
-        <meta property="og:image" content={`${withPrefix("/")}img/home/gy_icon_logo.png`} />
+        <meta
+          property="og:image"
+          content={`${withPrefix("/")}img/home/gy_icon_logo.png`}
+        />
       </Helmet>
       <Nav />
       <div>{children}</div>
-      <Footer></Footer>
+      <Footer data={data} />
     </div>
-  )
-}
+  );
+};
 
-export default TemplateWrapper
+export default Layout;

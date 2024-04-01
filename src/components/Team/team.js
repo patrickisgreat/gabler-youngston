@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link, graphql } from "gatsby";
 import "./team.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const OurTeam = () => {
+const OurTeam = ({ data }) => {
   const teamRowRef = useRef(null);
   const h3Ref = useRef(null);
 
@@ -30,31 +30,8 @@ const OurTeam = () => {
     };
   }, []);
 
-  const data = useStaticQuery(graphql`
-    query OurTeamQuery {
-      allMarkdownRemark(
-        filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
-        sort: { frontmatter: { date: ASC } }
-      ) {
-        nodes {
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            designation
-            memberimage {
-              childImageSharp {
-                gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
-
   const { nodes: teams } = data.allMarkdownRemark;
+
   return (
     <div className="team-section">
       <div className="Our_team">
@@ -100,7 +77,31 @@ OurTeam.propTypes = {
         })
       ),
     }),
-  }),
+  }).isRequired,
 };
 
 export default OurTeam;
+
+export const query = graphql`
+  query OurTeamQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
+      sort: { frontmatter: { date: ASC } }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          designation
+          memberimage {
+            childImageSharp {
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
