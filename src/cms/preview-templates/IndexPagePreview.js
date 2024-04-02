@@ -3,26 +3,17 @@ import PropTypes from "prop-types";
 import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
-  const image = entry.getIn(["data", "image"]);
-  const title = entry.getIn(["data", "title"]);
-  const data = entry.getIn(["data"]).toJS();
-  console.log("data:", data);
-  // const slides = entry.getIn(["data", "slides"]).toJS();
-  // // const galleryImages = entry.getIn(["data", "galleryImages"]).toJS();
-  // // const footerWorks = entry.getIn(["data", "footerWorks"]).toJS();
-
-  console.log("entry:", entry);
-  console.log("getAsset:", getAsset);
-  console.log("widgetsFor:", widgetsFor);
-  console.log("image:", image);
-  console.log("title:", title);
-  console.log("slides:", slides);
-  console.log("galleryImages:", galleryImages);
-  console.log("footerWorks:", footerWorks);
-
-  return (
-    "STUFF"
-  );
+    const data = entry.getIn(["data"]).toJS();
+    console.log("DATA", data);
+    return (
+      <IndexPageTemplate
+        image={data.image}
+        title={data.title}
+        slides={data.slides}
+        galleryImages={data.galleryImages}
+        footerWorks={data.footerWorks}
+      />
+    );
 };
 
 IndexPagePreview.propTypes = {
