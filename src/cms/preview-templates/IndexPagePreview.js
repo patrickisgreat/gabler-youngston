@@ -4,8 +4,6 @@ import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
   const data = entry.getIn(["data"]).toJS();
-
-  //console.log(slides);
   if (data) {
     return (
       <IndexPageTemplate

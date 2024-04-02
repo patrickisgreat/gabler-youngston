@@ -16,6 +16,7 @@ const BlogPostTemplate = ({
   featuredimage,
   title,
   helmet,
+  newsTypeData,
 }) => {
   const PostContent = contentComponent || Content;
   const image = getImage(featuredimage);
@@ -23,7 +24,7 @@ const BlogPostTemplate = ({
   return (
     <div className="all_news">
       {helmet || ""}
-      <NewsTypefilter />
+      <NewsTypefilter data={newsTypeData} />
       <div className="news_feed">
         <Row>
           <Col md="8">
@@ -58,10 +59,12 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
+  newsTypeData: PropTypes.object,
 };
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data;
+  const newsTypeData = data.allMarkdownRemark;
 
   return (
     <Layout>
@@ -82,6 +85,7 @@ const BlogPost = ({ data }) => {
         title={post.frontmatter.title}
         date={post.frontmatter.date}
         featuredimage={post.frontmatter.featuredimage}
+        newsTypeData={newsTypeData}
       />
     </Layout>
   );
@@ -90,6 +94,7 @@ const BlogPost = ({ data }) => {
 BlogPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
+    allMarkdownRemark: PropTypes.object,
   }),
 };
 
@@ -108,6 +113,18 @@ export const pageQuery = graphql`
           }
         }
         tags
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "newscat" } } }
+    ) {
+      nodes {
+        frontmatter {
+          categoryname
+        }
+        fields {
+          slug
+        }
       }
     }
   }

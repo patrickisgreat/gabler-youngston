@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./team_detail.css";
 import Purpose2 from "../../img/Bitmap2.png";
 import backbutton from "../../img/back-btn.jpg";
 import OurTeam from "../../components/Team/team";
-import { graphql } from "gatsby";
 
-const TeamPageTemplate = ({ frontmatter }) => {
+const TeamPageTemplate = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
   const memberImage = getImage(frontmatter?.memberimage?.childImageSharp);
+  const teamData = data;
 
   return (
     <div>
@@ -31,7 +32,7 @@ const TeamPageTemplate = ({ frontmatter }) => {
           </div>
           <div className="column is-8">
             {/* Other content remains unchanged */}
-            <OurTeam></OurTeam>
+            <OurTeam data={teamData} />
             <Link to="/about" className="back-btn only-phone">
               <img src={backbutton} alt="back Button" />
               <span>Back</span>
@@ -42,9 +43,8 @@ const TeamPageTemplate = ({ frontmatter }) => {
     </div>
   );
 };
-// PropTypes and Teamdetails component remains unchanged
 
-graphql`
+export const query = graphql`
   query Teamdetails($id: String!) {
     markdownRemark(id: { eq: $id }) {
       frontmatter {
@@ -58,6 +58,25 @@ graphql`
           }
         }
         resume
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
+      sort: { frontmatter: { date: ASC } }
+    ) {
+      nodes {
+        fields {
+          slug
+        }
+        frontmatter {
+          title
+          designation
+          memberimage {
+            childImageSharp {
+              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
+            }
+          }
+        }
       }
     }
   }

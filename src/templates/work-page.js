@@ -13,7 +13,6 @@ const WorkPage = ({ data }) => {
   const projectCategories = data.projectCatMarkdownRemark;
   const latestWork = data.latestWorkMarkdownRemark;
   const workLists = data.workListsMarkdownRemark;
-  console.log("FUCK", latestWork);
   return (
     <Layout>
       <div className="work_min">

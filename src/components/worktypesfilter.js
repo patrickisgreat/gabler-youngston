@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Row, Col } from "react-bootstrap";
 
 const WorkTypefilter = ({ data }) => {
-  console.log("DATA", data);
   const { nodes: cats } = data;
 
   return (
