@@ -1,5 +1,5 @@
 import CMS from "decap-cms-app";
-import uploadcare from "netlify-cms-media-library-uploadcare";
+// import uploadcare from "netlify-cms-media-library-uploadcare";
 import cloudinary from "netlify-cms-media-library-cloudinary";
 
 import AboutPagePreview from "./preview-templates/AboutPagePreview";
@@ -9,7 +9,7 @@ import ContactPagePreview from "./preview-templates/ContactPagePreview";
 import WorkPagePreview from "./preview-templates/WorkPagePreview";
 import TeamPagePreview from "./preview-templates/TeamPagePreview";
 
-CMS.registerMediaLibrary(uploadcare);
+// CMS.registerMediaLibrary(uploadcare);
 CMS.registerMediaLibrary(cloudinary);
 
 CMS.registerPreviewTemplate("index", IndexPagePreview);
