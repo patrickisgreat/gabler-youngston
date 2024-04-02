@@ -7,6 +7,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
     const title = entry.getIn(["data", "title"]);
     const slides = entry.getIn(["data", "slides"]).toJS();
     const galleryImages = entry.getIn(["data", "galleryImages"]).toJS();
+    const footerWorks = entry.getIn(["data", "footerWorks"]).toJS();
 
     return (
       <IndexPageTemplate
@@ -14,6 +15,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
         title={title}
         slides={slides}
         galleryImages={galleryImages}
+        footerWorks={footerWorks}
       />
     );
 };
