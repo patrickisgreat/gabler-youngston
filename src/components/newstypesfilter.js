@@ -5,9 +5,6 @@ import { Link } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NewsTypefilter = ({ data }) => {
-  console.log("CLUMP", data);
-  console.log("NODES", data.nodes);
-
   return (
     <Container>
       <Row>
