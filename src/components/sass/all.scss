@@ -157,3 +157,24 @@ footer.footer {
     margin-top: 70px;
   }
 }
+
+/* Extra small phones */
+@media screen and (max-width: 480px) {
+  .navbar-brand {
+    width: 93%;
+  }
+}
+
+/* Small phones */
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  .navbar-brand {
+    width: 100%;
+  }
+}
+
+/* Medium phones */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  .navbar-brand {
+    width: 100%;
+  }
+}

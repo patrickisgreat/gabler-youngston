@@ -439,6 +439,7 @@ $breakpoint-phone: 568px;
   }
   .panel-3 .left .slideText {
     width: 100% !important;
+    margin-top: 290px !important;
   }
   .slideDescriptionv {
     text-align: left;
@@ -449,7 +450,9 @@ $breakpoint-phone: 568px;
   .site-logo img {
     width: 75% !important;
   }
-
+  body.slideText {
+    margin-top: 300px;
+  }
   .home-slides .panel-2 .right .slideText p,
   .home-slides .panel-3 .left .slideText p,
   .home-slides .panel-4 .right .slideText p {
@@ -457,7 +460,7 @@ $breakpoint-phone: 568px;
     line-height: 2rem;
   }
   .home-slides .panel-3 .slider-img {
-    width: 93%;
+    width: 100%;
     min-width: 105px;
     float: left;
     img {
