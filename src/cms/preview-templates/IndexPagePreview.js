@@ -5,9 +5,11 @@ import { IndexPageTemplate } from "../../templates/index-page";
 const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
   const image = entry.getIn(["data", "image"]);
   const title = entry.getIn(["data", "title"]);
-  const slides = entry.getIn(["data", "slides"]).toJS();
-  const galleryImages = entry.getIn(["data", "galleryImages"]).toJS();
-  const footerWorks = entry.getIn(["data", "footerWorks"]).toJS();
+  const data = entry.getIn(["data"]).toJS();
+  console.log("data:", data);
+  // const slides = entry.getIn(["data", "slides"]).toJS();
+  // // const galleryImages = entry.getIn(["data", "galleryImages"]).toJS();
+  // // const footerWorks = entry.getIn(["data", "footerWorks"]).toJS();
 
   console.log("entry:", entry);
   console.log("getAsset:", getAsset);
@@ -19,13 +21,7 @@ const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
   console.log("footerWorks:", footerWorks);
 
   return (
-    <IndexPageTemplate
-      image={image}
-      title={title}
-      slides={slides}
-      galleryImages={galleryImages}
-      footerWorks={footerWorks}
-    />
+    "STUFF"
   );
 };
 
