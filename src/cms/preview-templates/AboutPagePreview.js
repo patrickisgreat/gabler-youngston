@@ -3,22 +3,23 @@ import PropTypes from "prop-types";
 import { AboutPageTemplate } from "../../templates/about-page";
 
 const AboutPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(["data"]);
+    const title = entry.getIn(["data", "title"]);
+    const section1 = entry.getIn(["data", "section1"]);
+    const section2 = entry.getIn(["data", "section2"]);
+    const section3 = entry.getIn(["data", "section3"]);
+    const section4 = entry.getIn(["data", "section4"]);
+    const section5 = entry.getIn(["data", "section5"]);
 
-  if (data) {
     return (
       <AboutPageTemplate
-        title={data.title}
-        section1={data.section1}
-        section2={data.section2}
-        section3={data.section3}
-        section4={data.section4}
-        section5={data.section5}
+        title={title}
+        section1={section1}
+        section2={section2}
+        section3={section3}
+        section4={section4}
+        section5={section5}
       />
     );
-  } else {
-    return <div>Loading...</div>;
-  }
 };
 
 AboutPagePreview.propTypes = {

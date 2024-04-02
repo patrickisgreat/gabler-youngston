@@ -59,7 +59,6 @@ export const IndexPageTemplate = ({
   recentWorks,
   footerWorks,
 }) => {
-  console.log("slides", slides);
   const slide2 = slides[0];
   const slide3 = slides[1];
   const slide4 = slides[2];

@@ -3,13 +3,8 @@ import PropTypes from "prop-types";
 import { ContactPageTemplate } from "../../templates/contact-page";
 
 const ContactPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(["data"]);
-
-  if (data) {
+    const data = entry.getIn(["data"]).toJS();
     return <ContactPageTemplate frontmatter={data} />;
-  } else {
-    return <div>Loading...</div>;
-  }
 };
 
 ContactPagePreview.propTypes = {

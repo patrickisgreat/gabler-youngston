@@ -2,40 +2,30 @@ import React from "react";
 import PropTypes from "prop-types";
 import { TeamPageTemplate } from "../../templates/Teamdetail/index";
 
-const TeamPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(["data"]);
-  const teamData = {
-    nodes: data.team.map((member) => ({
-      fields: {
-        slug: member.slug,
-      },
-      frontmatter: {
-        title: member.name,
-        designation: member.designation,
-        memberimage: member.image,
-      },
-    })),
-  };
+const TeamPagePreview = ({ entry }) => {
+  const title = entry.getIn(["data", "title"]);
+  const date = entry.getIn(["data", "date"]);
+  const memberimage = entry.getIn(["data", "memberimage"]);
+  const resume = entry.getIn(["data", "resume"]);
+  const designation = entry.getIn(["data", "designation"]);
+  const description = entry.getIn(["data", "description"]);
 
-  if (data) {
-    return (
-      <TeamPageTemplate
-        data={{
-          markdownRemark: { frontmatter: data },
-          allMarkdownRemark: teamData,
-        }}
-      />
-    );
-  } else {
-    return <div>Loading...</div>;
-  }
+  return (
+    <TeamPageTemplate
+      title={title}
+      date={date}
+      memberimage={memberimage}
+      resume={resume}
+      designation={designation}
+      description={description}
+    />
+  );
 };
 
 TeamPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func,
   }),
-  widgetFor: PropTypes.func,
 };
 
 export default TeamPagePreview;
