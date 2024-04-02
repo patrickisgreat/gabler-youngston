@@ -4,9 +4,9 @@ import { IndexPageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset, widgetsFor }) => {
     const image = entry.getIn(["data", "image"]);
-    const title = data.getIn(["data", "title"]);
-    const slides = data.getIn(["data", "slides"]).toJS();
-    const galleryImages = data.getIn(["data", "galleryImages"]).toJS();
+    const title = entry.getIn(["data", "title"]);
+    const slides = entry.getIn(["data", "slides"]).toJS();
+    const galleryImages = entry.getIn(["data", "galleryImages"]).toJS();
 
     return (
       <IndexPageTemplate
