@@ -1,147 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import logo from "../img/gy_logo.png";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Nav = class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      active: false,
-      navBarActiveClass: "",
-    };
-  }
+const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: "is-active",
-            })
-          : this.setState({
-              navBarActiveClass: "",
-            });
-      }
-    );
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
   };
 
-  render() {
-    return (
-      <div className="">
-        <nav
-          className="navbar is-transparent destop_menu"
-          role="navigation"
-          aria-label="main-navigation"
-        >
-          <div className="container post-s">
-            <div className="navbar-brand">
-              <Link to="/" className="navbar-item" title="Logo">
-                <img src={logo} alt="Gabler Youngston" />
-              </Link>
-            </div>
-            <div
-              id="navMenu"
-              className={`navbar-menu ${this.state.navBarActiveClass}`}
-            >
-              <div className="navbar-end has-text-centered">
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/about"
-                >
-                  ABOUT
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/works"
-                >
-                  WORK
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/news"
-                >
-                  NEWS
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/contact"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
+  return (
+    <nav className="navbar">
+      <div className="container">
+        <div className="navbar-brand">
+          <Link to="/" className="navbar-item" title="Logo">
+            <img src={logo} alt="Gabler Youngston" />
+          </Link>
+          <button
+            className={`navbar-burger burger ${isOpen ? "is-active" : ""}`}
+            aria-label="menu"
+            aria-expanded="false"
+            onClick={toggleMenu}
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div className={`navbar-menu ${isOpen ? "is-active" : ""}`}>
+          <div className="navbar-end">
+            <Link activeClassName="is-active" className="navbar-item" to="/about">
+              ABOUT
+            </Link>
+            <Link activeClassName="is-active" className="navbar-item" to="/works">
+              WORK
+            </Link>
+            <Link activeClassName="is-active" className="navbar-item" to="/news">
+              NEWS
+            </Link>
+            <Link activeClassName="is-active" className="navbar-item" to="/contact">
+              CONTACT
+            </Link>
           </div>
-        </nav>
-        <nav
-          className="navbar is-transparent mobile_menu"
-          role="navigation"
-          aria-label="main-navigation"
-        >
-          <div className="container">
-            <div className="navbar-brand">
-              <Link to="/" className="navbar-item" title="Logo">
-                <img src={logo} alt="Gabler Youngston" />
-              </Link>
-            </div>
-            <label className="sidebarIconToggle">
-              <input
-                type="checkbox"
-                className="openSidebarMenu"
-                id="openSidebarMenu"
-              />
-              <div className="spinner diagonal part-1"></div>
-              <div className="spinner horizontal"></div>
-              <div className="spinner diagonal part-2"></div>
-            </label>
-
-            <div id="sidebarMenu">
-              <div className=" sidebarMenuInner">
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/about"
-                >
-                  ABOUT
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/works"
-                >
-                  WORK
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/news"
-                >
-                  NEWS
-                </Link>
-                <Link
-                  activeClassName="is-active"
-                  className="navbar-item"
-                  to="/contact"
-                >
-                  CONTACT
-                </Link>
-              </div>
-            </div>
-          </div>
-        </nav>
+        </div>
       </div>
-    );
-  }
+    </nav>
+  );
 };
 
 export default Nav;
