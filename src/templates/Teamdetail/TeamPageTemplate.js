@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./team_detail.css";
@@ -7,10 +7,8 @@ import Purpose2 from "../../img/Bitmap2.png";
 import backbutton from "../../img/back-btn.jpg";
 import OurTeam from "../../components/Team/team";
 
-const TeamPageTemplate = ({ data }) => {
-  const { frontmatter } = data.markdownRemark;
-  const memberImage = getImage(frontmatter?.memberimage?.childImageSharp);
-  const teamData = data;
+export const TeamPageTemplate = ({ frontmatter, teamData }) => {
+  const memberImage = getImage(frontmatter.memberimage.childImageSharp);
 
   return (
     <div>
@@ -18,7 +16,19 @@ const TeamPageTemplate = ({ data }) => {
         <h3>Team</h3>
         <div className="columns">
           <div className="column is-4">
-            {memberImage && <GatsbyImage image={memberImage} alt="Our Team" />}
+            {memberImage ? (
+              <GatsbyImage
+                image={memberImage}
+                alt="Team"
+                style={{ width: "100%" }}
+              />
+            ) : (
+              <img
+                src={frontmatter.memberimage}
+                alt="Team"
+                style={{ width: "100%" }}
+              />
+            )}
             <img
               className="hide-phone"
               src={Purpose2}
@@ -43,43 +53,3 @@ const TeamPageTemplate = ({ data }) => {
     </div>
   );
 };
-
-export const query = graphql`
-  query Teamdetails($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        templateKey
-        description
-        designation
-        memberimage {
-          childImageSharp {
-            gatsbyImageData(width: 400, quality: 100, layout: CONSTRAINED)
-          }
-        }
-        resume
-      }
-    }
-    allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "Teamdetail/index" } } }
-      sort: { frontmatter: { date: ASC } }
-    ) {
-      nodes {
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          designation
-          memberimage {
-            childImageSharp {
-              gatsbyImageData(width: 2048, quality: 100, layout: CONSTRAINED)
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-export default TeamPageTemplate;

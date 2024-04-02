@@ -1,79 +1,105 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Row, Col } from 'react-bootstrap';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Row, Col } from "react-bootstrap";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-class LatestWork extends React.Component {
-  render() {
-    const { data } = this.props
-    const { nodes: works } = data.allMarkdownRemark
-    return (
-      <div>
-        {works.map((work) => (
-        <Row className="latest-work">
-          <Col md="7" className="mt-3">
-          <Link to={work.fields.slug}>
-            <img
-                src={work.frontmatter.projectimage.childImageSharp.original.src}
-                alt="Recently Completed Project"
-                style={{ display: 'block', width:'100%'}}
-            />
-            </Link>
-          </Col>
-          <Col md="5" className="mt-3">
-            <div className="latest-project-info">
-              <strong>Recently Completed</strong>
+const LatestWork = ({ data }) => {
+  const { nodes: works } = data;
+
+  return (
+    <div>
+      {works.map((work) => {
+        const projectImage = getImage(work.frontmatter.projectimage);
+        return (
+          <Row className="latest-work" key={work.id}>
+            <Col md="7" className="mt-3">
+              <Link to={work.fields.slug}>
+                {projectImage ? (
+                  <GatsbyImage
+                    image={projectImage}
+                    alt="Recently Completed Project"
+                    style={{ width: "100%" }}
+                  />
+                ) : (
+                  <div
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      backgroundColor: "#ccc",
+                    }}
+                  >
+                    No Image
+                  </div>
+                )}
+              </Link>
+            </Col>
+            <Col md="5" className="mt-3">
+              <div className="latest-project-info">
+                <strong>Recently Completed</strong>
                 <Link to={work.fields.slug}>
-                <h2>{work.frontmatter.projectname}</h2>
+                  <h2>{work.frontmatter.projectname}</h2>
                 </Link>
-                <span>Project Type <b>{work.frontmatter.projectscope}</b></span>
+                <span>
+                  Project Type <b>{work.frontmatter.projectscope}</b>
+                </span>
                 <p>{work.frontmatter.sortdescription}</p>
-            </div>
-          </Col>
-        </Row>
-        ))}
-      </div>
-    )
-  }
-}
+              </div>
+            </Col>
+          </Row>
+        );
+      })}
+    </div>
+  );
+};
 
 LatestWork.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.array,
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.string.isRequired,
+          frontmatter: PropTypes.shape({
+            projectname: PropTypes.string.isRequired,
+            projectscope: PropTypes.string.isRequired,
+            sortdescription: PropTypes.string.isRequired,
+            projectimage: PropTypes.object,
+          }),
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
+        })
+      ),
     }),
-  }),
-}
+  }).isRequired,
+};
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query LatestWorkQuery {
-        allMarkdownRemark(
-          filter: {frontmatter: {templateKey: {eq: "Projectdetail/index"}}}, 
-          sort: {order: DESC, fields: frontmatter___date}, limit: 1
-          ) {
-          nodes {
-            frontmatter {
-              projectname
-              projectimage {
-                childImageSharp {
-                  original {
-                    src
-                  }
-                }
-              }
-              projectscope
-              sortdescription
-            }
-            fields {
-              slug
+export default LatestWork;
+
+export const query = graphql`
+  query LatestWorkQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { templateKey: { eq: "Projectdetail/index" } } }
+      sort: { frontmatter: { date: DESC } }
+      limit: 1
+    ) {
+      nodes {
+        id
+        frontmatter {
+          projectname
+          projectscope
+          sortdescription
+          projectimage {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
           }
         }
+        fields {
+          slug
+        }
       }
-    `}
-    render={(data, count) => <LatestWork data={data} count={count} />}
-  />
-)
+    }
+  }
+`;

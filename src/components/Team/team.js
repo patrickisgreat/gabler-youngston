@@ -1,79 +1,83 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link, graphql, StaticQuery } from 'gatsby'
-import './team.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Row, Col } from 'react-bootstrap';
-import Img from 'gatsby-image'
+import React, { useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import { Link, graphql } from "gatsby";
+import "./team.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Row, Col } from "react-bootstrap";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-class OurTeam extends React.Component {
-  render() {
-    const { data } = this.props
-    const { nodes: teams } = data.allMarkdownRemark
+const OurTeam = ({ data }) => {
+  const teamRowRef = useRef(null);
+  const h3Ref = useRef(null);
 
-    return (
+  useEffect(() => {
+    const updateH3Alignment = () => {
+      const teamImages = teamRowRef.current.querySelectorAll(".our_team");
+      const numImages = teamImages.length;
+      const lastImageRight =
+        teamImages[numImages - 1]?.getBoundingClientRect().right || 0;
+      const rowRight = teamRowRef.current.getBoundingClientRect().right;
+      const offset = rowRight - lastImageRight;
+      const offsetPadded = offset - 12;
+      h3Ref.current.style.paddingRight = `${offsetPadded}px`;
+    };
+
+    updateH3Alignment();
+    window.addEventListener("resize", updateH3Alignment);
+
+    return () => {
+      window.removeEventListener("resize", updateH3Alignment);
+    };
+  }, []);
+
+  const { nodes: teams } = data.allMarkdownRemark;
+
+  return (
+    <div className="team-section">
       <div className="Our_team">
-        <h3>Team</h3>
-        <Row>
-          {teams.map((team) => (
-            <Col md="3" sm="6" xs="6">
+        <h3 ref={h3Ref}>Team</h3>
+      </div>
+      <Row ref={teamRowRef}>
+        {teams.map((team) => {
+          const memberImage = getImage(team.frontmatter.memberimage);
+          return (
+            <Col md={3} sm={6} xs={6} key={team.fields.slug}>
               <div className="our_team">
-                <Img
-                  fluid={team.frontmatter.memberimage.childImageSharp.fluid}
-                  alt="Our Team"
-                />
-                <Link to={team.fields.slug}> 
+                {memberImage && (
+                  <GatsbyImage image={memberImage} alt="Our Team" />
+                )}
+                <Link to={team.fields.slug}>
                   <div className="team_info">
                     <h5>{team.frontmatter.title}</h5>
                     <span>{team.frontmatter.designation}</span>
-                  </div> 
-                </Link>              
+                  </div>
+                </Link>
               </div>
-           </Col>
-          ))}
-        </Row>
-      </div>
-    )
-  }
-}
+            </Col>
+          );
+        })}
+      </Row>
+    </div>
+  );
+};
 
 OurTeam.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
-      nodes: PropTypes.array,
+      nodes: PropTypes.arrayOf(
+        PropTypes.shape({
+          frontmatter: PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            designation: PropTypes.string,
+            memberimage: PropTypes.object.isRequired,
+          }),
+          fields: PropTypes.shape({
+            slug: PropTypes.string.isRequired,
+          }),
+        })
+      ),
     }),
-  }),
-}
+  }).isRequired,
+};
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query OurTeamQuery {
-        allMarkdownRemark(
-          filter: {
-            frontmatter: {templateKey: {eq: "Teamdetail/index"}}
-          },
-          sort: {order: ASC, fields: frontmatter___date}
-          ) {
-          nodes {
-            frontmatter {
-            title
-              memberimage {
-                childImageSharp {
-                  fluid(maxWidth: 2048, quality: 100) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
-              }
-              designation
-            }
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    `}
-    render={(data, count) => <OurTeam data={data} count={count} />}
-  />
-)
+export default OurTeam;

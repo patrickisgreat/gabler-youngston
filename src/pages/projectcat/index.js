@@ -1,8 +1,8 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import React from "react";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../../components/Layout";
 
 const CatsPage = ({
   data: {
@@ -19,11 +19,11 @@ const CatsPage = ({
         <div className="columns">
           <div
             className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
+            style={{ marginBottom: "6rem" }}
           >
             <h1 className="title is-size-2 is-bold-light">Categories</h1>
             <ul className="taglist">
-              {group.map(category => (
+              {group.map((category) => (
                 <li key={category.fieldValue}>
                   <Link to={`/projectcat/${kebabCase(category.fieldValue)}/`}>
                     {category.fieldValue} ({category.totalCount})
@@ -36,9 +36,9 @@ const CatsPage = ({
       </div>
     </section>
   </Layout>
-)
+);
 
-export default CatsPage
+export default CatsPage;
 
 export const catsPageQuery = graphql`
   query CatsQuery {
@@ -48,10 +48,10 @@ export const catsPageQuery = graphql`
       }
     }
     allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___projectcategory) {
+      group(field: { frontmatter: { projectcategory: SELECT } }) {
         fieldValue
         totalCount
       }
     }
   }
-`
+`;

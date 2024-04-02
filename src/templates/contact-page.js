@@ -1,82 +1,82 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
-import { StaticQuery } from 'gatsby'
-import Layout from '../components/Layout'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col } from 'react-bootstrap'
-import '../pages/contact/contact-style.css'
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
+import Layout from "../components/Layout";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+import "../pages/contact/contact-style.css";
 
-export const ContactPageTemplate = ({frontmatter}) => {
+const ContactPageTemplate = ({ frontmatter }) => {
   return (
     <section className="Contact-min">
-        <Container>
-          <Row>
-            <Col md={8}>
-               <h1>{frontmatter.title}</h1>
-               <span>T: <a href={`tel: ${frontmatter.contactnumber}`}>{frontmatter.contactnumber}</a></span>
-               <a href={`mailto: ${frontmatter.contactnumberone}`}>{frontmatter.contactnumberone}</a> <br/>
-            </Col>
-            <Col md={4}>
-              {frontmatter.sidebarcontent.map((sidebar, i) => (
-                  <div className="contact-f">
-                   <strong>{sidebar.title}</strong>
-                   <p>{sidebar.description}</p>
-               </div>
-              ))} 
-            </Col>
-          </Row>
-        </Container>          
+      <Container>
+        <Row>
+          <Col md={8}>
+            <h1>{frontmatter.title}</h1>
+            <span>
+              T:{" "}
+              <a href={`tel: ${frontmatter.contactnumber}`}>
+                {frontmatter.contactnumber}
+              </a>
+            </span>
+            <a href={`mailto: ${frontmatter.contactnumberone}`}>
+              {frontmatter.contactnumberone}
+            </a>{" "}
+            <br />
+          </Col>
+          <Col md={4}>
+            {frontmatter.sidebarcontent.map((sidebar, i) => (
+              <div className="contact-f" key={i}>
+                <strong>{sidebar.title}</strong>
+                <p>{sidebar.description}</p>
+              </div>
+            ))}
+          </Col>
+        </Row>
+      </Container>
     </section>
   );
-}
+};
 
 ContactPageTemplate.propTypes = {
-  frontmatter: PropTypes.array,
-}
+  frontmatter: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    contactnumber: PropTypes.string.isRequired,
+    contactnumberone: PropTypes.string.isRequired,
+    sidebarcontent: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      })
+    ).isRequired,
+  }).isRequired,
+};
 
-class ContactPage extends React.Component {
-  render() {
-    const { data } = this.props
-    const { frontmatter } = data.markdownRemark
-    
-    return (
-      <Layout>
-         <ContactPageTemplate frontmatter={frontmatter} />
-      </Layout>
-    )
-}
-}
+const ContactPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
 
-ContactPage.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object
-    })
-  }),
-}
+  return (
+    <Layout>
+      <ContactPageTemplate frontmatter={frontmatter} />
+    </Layout>
+  );
+};
 
-export default () => (
-  <StaticQuery
-    query={graphql`
-      query ContactPageQuery {
-        markdownRemark(frontmatter: {templateKey: {eq: "contact-page"}}) {
-          frontmatter {
-            title
-            contactnumber
-            contactnumberone
-            contactnumbertwo
-            sidebarcontent {
-              description
-              title
-            }
-          }
+export default ContactPage;
+
+export const query = graphql`
+  query ContactPageQuery {
+    markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
+      frontmatter {
+        title
+        contactnumber
+        contactnumberone
+        contactnumbertwo
+        sidebarcontent {
+          description
+          title
         }
       }
-    `}
-
-    render={(data) => <ContactPage data={data} />}
-  />
-)
-
-
+    }
+  }
+`;

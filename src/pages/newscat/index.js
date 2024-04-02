@@ -1,8 +1,8 @@
-import React from 'react'
-import { kebabCase } from 'lodash'
-import Helmet from 'react-helmet'
-import { Link, graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import React from "react";
+import { kebabCase } from "lodash";
+import Helmet from "react-helmet";
+import { Link, graphql } from "gatsby";
+import Layout from "../../components/Layout";
 
 const NewsCatsPage = ({
   data: {
@@ -19,11 +19,11 @@ const NewsCatsPage = ({
         <div className="columns">
           <div
             className="column is-10 is-offset-1"
-            style={{ marginBottom: '6rem' }}
+            style={{ marginBottom: "6rem" }}
           >
             <h1 className="title is-size-2 is-bold-light">Categories</h1>
             <ul className="taglist">
-              {group.map(category => (
+              {group.map((category) => (
                 <li key={category.fieldValue}>
                   <Link to={`/newscat/${kebabCase(category.fieldValue)}/`}>
                     {category.fieldValue} ({category.totalCount})
@@ -36,9 +36,9 @@ const NewsCatsPage = ({
       </div>
     </section>
   </Layout>
-)
+);
 
-export default NewsCatsPage
+export default NewsCatsPage;
 
 export const newscatsPageQuery = graphql`
   query NewscatsQuery {
@@ -48,10 +48,10 @@ export const newscatsPageQuery = graphql`
       }
     }
     allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___newscategory) {
+      group(field: { frontmatter: { newscategory: SELECT } }) {
         fieldValue
         totalCount
       }
     }
   }
-`
+`;

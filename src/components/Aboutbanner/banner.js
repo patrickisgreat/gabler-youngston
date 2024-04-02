@@ -1,20 +1,25 @@
-import React from 'react'
-import './banner.css'
+import React from "react";
+import { getSrc } from "gatsby-plugin-image";
+import "./banner.css";
 
-const AboutBanner = class extends React.Component {
+const AboutBanner = ({ headerImage }) => {
+  // Assuming `headerImage` is now an object with `childImageSharp`
+  const imageUrl = getSrc(headerImage.childImageSharp) || headerImage;
 
-  render() {
-    return (
-      <div>
-        <div className="Banner-min" style={{backgroundImage: `url(${this.props.headerImage})`}}>
-          <div className="container">
-              <h1>Our <span>Studio</span></h1>
-          </div>
+  return (
+    <div>
+      <div
+        className="Banner-min"
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      >
+        <div className="container">
+          <h1>
+            Our <span>Studio</span>
+          </h1>
         </div>
-       
       </div>
-    )
-  }
-}
+    </div>
+  );
+};
 
-export default AboutBanner
+export default AboutBanner;
