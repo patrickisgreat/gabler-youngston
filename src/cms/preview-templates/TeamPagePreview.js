@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { TeamPageTemplate } from "../../templates/Teamdetail/index";
 
 const TeamPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.getIn(["data"]);
   const teamData = {
     nodes: data.team.map((member) => ({
       fields: {

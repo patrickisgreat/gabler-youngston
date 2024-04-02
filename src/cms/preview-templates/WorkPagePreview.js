@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { WorkPageTemplate } from "../../templates/Projectdetail/index";
 
 const WorkPagePreview = ({ entry, widgetFor }) => {
-  const data = entry.getIn(["data"]).toJS();
+  const data = entry.getIn(["data"]);
 
   if (data) {
     return <WorkPageTemplate frontmatter={data} />;
