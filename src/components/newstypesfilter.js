@@ -1,11 +1,12 @@
 import React from "react";
 import { kebabCase } from "lodash";
 import { Container, Row, Col, Dropdown } from "react-bootstrap";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const NewsTypefilter = ({ data }) => {
-  const { nodes: newscats } = data;
+  console.log("CLUMP", data);
+  console.log("NODES", data.nodes);
 
   return (
     <Container>
@@ -24,17 +25,18 @@ const NewsTypefilter = ({ data }) => {
                   {" "}
                   All
                 </Link>
-                {newscats.map((newscat) => (
-                  <Link
-                    key={newscat.fields.slug}
-                    className="dropdown-item"
-                    role="button"
-                    to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
-                  >
-                    {" "}
-                    {newscat.frontmatter.categoryname}
-                  </Link>
-                ))}
+                {data.nodes &&
+                  data.nodes.map((newscat) => (
+                    <Link
+                      key={newscat.fields.slug}
+                      className="dropdown-item"
+                      role="button"
+                      to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
+                    >
+                      {" "}
+                      {newscat.frontmatter.categoryname}
+                    </Link>
+                  ))}
               </Dropdown.Menu>
             </Dropdown>
             <div className="d-filter">
@@ -45,16 +47,17 @@ const NewsTypefilter = ({ data }) => {
                     All
                   </Link>
                 </li>
-                {newscats.map((newscat) => (
-                  <li key={newscat.fields.slug}>
-                    <Link
-                      activeClassName="active-cat"
-                      to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
-                    >
-                      {newscat.frontmatter.categoryname}
-                    </Link>
-                  </li>
-                ))}
+                {data.nodes &&
+                  data.nodes.map((newscat) => (
+                    <li key={newscat.fields.slug}>
+                      <Link
+                        activeClassName="active-cat"
+                        to={`/newscat/${kebabCase(newscat.frontmatter.categoryname)}/`}
+                      >
+                        {newscat.frontmatter.categoryname}
+                      </Link>
+                    </li>
+                  ))}
               </ul>
             </div>
           </div>
