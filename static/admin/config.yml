@@ -58,12 +58,6 @@ collections:
               {label: "title", name: "title", widget: "string"},
               {label: "Description", name: "description", widget: "list", fields: [
                 {name: "text", widget: "string"},
-              ]},
-            ]}
-          - {label: "Section 5", name: "section5", widget: "object", fields: [
-              {label: "title", name: "title", widget: "string"},
-              {label: "Description", name: "description", widget: "list", fields: [
-                {name: "text", widget: "string"},
               ]}
             ]}
 

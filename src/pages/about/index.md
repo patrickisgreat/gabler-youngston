@@ -34,10 +34,6 @@ section3:
   title: TEAM 1
 section4:
   description:
-    - text: stuff
-  title: Through The Years
-section5:
-  description:
     - text: GE Edison Award of Merit – Showroom for Allsteel and Gunlocke
     - text: >-
         GE Edison Award for Sustainable Design – Showroom for Allsteel and

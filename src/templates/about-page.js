@@ -32,7 +32,6 @@ export const AboutPageTemplate = ({
   section2,
   section3,
   section4,
-  section5,
   heroImage,
   teamData,
 }) => {
@@ -75,24 +74,13 @@ export const AboutPageTemplate = ({
         </div>
       </div>
       <OurTeam data={teamData} />
-      <div className="through_years">
+      <div className="through_years pt-0">
         <div className="container">
           <h4>{section4.title}</h4>
           <div className="columns">
             <div className="column is-2"></div>
             <div className="column is-10">
               <RenderList items={section4.description} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="through_years pt-0">
-        <div className="container">
-          <h4>{section5.title}</h4>
-          <div className="columns">
-            <div className="column is-2"></div>
-            <div className="column is-10">
-              <RenderList items={section5.description} />
             </div>
           </div>
         </div>
@@ -107,7 +95,6 @@ AboutPageTemplate.propTypes = {
   section2: PropTypes.object,
   section3: PropTypes.object,
   section4: PropTypes.object,
-  section5: PropTypes.object,
 };
 
 const AboutPage = ({ data }) => {
@@ -123,7 +110,6 @@ const AboutPage = ({ data }) => {
         section2={frontmatter.section2}
         section3={frontmatter.section3}
         section4={frontmatter.section4}
-        section5={frontmatter.section5}
         teamData={teamData}
       />
     </Layout>
@@ -227,12 +213,6 @@ export const aboutPageQuery = graphql`
           title
         }
         section4 {
-          title
-          description {
-            text
-          }
-        }
-        section5 {
           description {
             text
           }

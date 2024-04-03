@@ -8,7 +8,6 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
     const section2 = entry.getIn(["data", "section2"]);
     const section3 = entry.getIn(["data", "section3"]);
     const section4 = entry.getIn(["data", "section4"]);
-    const section5 = entry.getIn(["data", "section5"]);
 
     return (
       <AboutPageTemplate
@@ -17,7 +16,6 @@ const AboutPagePreview = ({ entry, widgetFor }) => {
         section2={section2}
         section3={section3}
         section4={section4}
-        section5={section5}
       />
     );
 };
